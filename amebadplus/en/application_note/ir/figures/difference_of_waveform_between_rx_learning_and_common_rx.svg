@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 difference_of_waveform_between_rx_learning_and_common_rx.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="4.30176in" height="1.08108in"
+		viewBox="0 0 309.726 77.838" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {fill:#f2f2f2;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(190.296,-62.6496)">
+			<title>工作表.1</title>
+			<desc>Waveform after dioxide receiving</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="59.5276" cy="73.586" width="119.06" height="8.50394"/>
+			<rect x="0" y="69.334" width="119.055" height="8.50394" class="st1"/>
+			<text x="4" y="75.99" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Waveform after dioxide receiving</text>		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(190.296,-35.7205)">
+			<title>工作表.2</title>
+			<desc>Rx learning</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="59.5276" cy="73.586" width="119.06" height="8.50394"/>
+			<rect x="0" y="69.334" width="119.055" height="8.50394" class="st1"/>
+			<text x="4" y="75.99" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Rx learning</text>		</g>
+		<g id="shape3-7" v:mID="3" v:groupContext="shape" transform="translate(190.296,-8.53827)">
+			<title>工作表.3</title>
+			<desc>Common Rx</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="39.685" cy="73.586" width="79.38" height="8.50394"/>
+			<rect x="0" y="69.334" width="79.3701" height="8.50394" class="st1"/>
+			<text x="4" y="75.99" class="st2" v:langID="1033"><v:paragraph/><v:tabList/>Common Rx</text>		</g>
+		<g id="shape4-10" v:mID="4" v:groupContext="shape" transform="translate(0.375,-0.375)">
+			<title>工作表.4</title>
+			<rect v:rectContext="foreign" x="0" y="0.749999" width="188.693" height="77.088" class="st3"/>
+			<image x="0" y="0.749999" width="188.693" height="77.088" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+						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
+						B8FOD6OaGBAOAAAAAElFTkSuQmCC"/>
+			<rect v:rectContext="foreign" x="0" y="0.749999" width="188.693" height="77.088" class="st1"/>
+		</g>
+	</g>
+</svg>
