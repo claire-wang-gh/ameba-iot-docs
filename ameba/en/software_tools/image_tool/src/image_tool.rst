@@ -1,0 +1,1028 @@
+.. _image_tool:
+
+Introduction
+------------------------
+The Image Tool is the official image download tool developed by Realtek for Ameba series SoC.
+It can be used to download images to the Flash of the device through the interfaces below.
+   
+   
+.. table:: Download interface supported by different Ameba ICs
+   :width: 100%
+   :widths: auto
+
+   +------------+------------+-------------------------+------------------------+
+   | Ameba IC   | Flash type | UART download interface | USB download interface |
+   +============+============+=========================+========================+
+   | AmebaSmart | NOR Flash  | √                       | √                      |
+   |            +------------+-------------------------+------------------------+
+   |            | NAND Flash | ×                       | √                      |
+   +------------+------------+-------------------------+------------------------+
+   | AmebaDPlus | NAND Flash | ×                       | √                      |
+   +------------+------------+-------------------------+------------------------+
+   | AmebaLite  | NAND Flash | ×                       | √                      |
+   +------------+------------+-------------------------+------------------------+
+
+
+The UI of Image Tool is shown below.
+
+.. only:: FreeRTOS
+   
+   .. figure:: ../figures/image_tool_ui_freertos.png
+      :scale: 90%
+      :align: center
+
+      Image Tool UI
+
+
+.. only:: Linux
+   
+   .. figure:: ../figures/image_tool_ui_linux.png
+      :scale: 90%
+      :align: center
+
+      Image Tool UI
+
+Environment Setup
+----------------------------------
+Hardware Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The hardware setup for image download is shown below.
+
+.. tabs::
+
+   .. tab:: AmebaSmart
+
+      .. figure:: ../figures/hardware_setup_for_image_download_smart.svg
+         :scale: 130%
+         :align: center
+
+         Hardware setup for image download
+
+   .. tab:: AmebaLite
+
+      .. figure:: ../figures/hardware_setup_for_image_download_lite.svg
+         :scale: 130%
+         :align: center
+
+         Hardware setup for image download
+
+   .. tab:: AmebaDPlus
+
+      .. figure:: ../figures/hardware_setup_for_image_download_dplus.svg
+         :scale: 130%
+         :align: center
+
+         Hardware setup for image download
+   
+
+Software Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Environment Requirements: EX. WinXP, Win 7 or later, Microsoft .NET Framework 4.0.
+
+- Software location:
+
+   - Image Tool: ``{SDK}/tools/ameba/ImageTool/AmebaImageTool.exe``
+
+   - Device Profile Editor: ``{SDK}/tools/ameba/DeviceProfileEditor/AmebaDeviceProfileEditor.exe``
+
+   .. only:: internal
+      
+      
+         - Device Profile Editor internal version: ``{SDK}/tools/ameba/DeviceProfileEditor/AmebaDeviceProfileEditor(Internal).exe``
+   
+
+   - Device profiles: ``{SDK}/tools/ameba/DeviceProfiles``
+
+     Device profiles provide the necessary device information required for image download, with the naming rules:
+
+     .. code-block::
+      
+        <SoC name>_<OS type>_<Flash type>[_<Extra info>].rdev
+
+     Where:
+
+      :SoC name: the name of Realtek Ameba SoC
+
+      .. only:: internal
+          
+         The SoC names corresponding with the RTL numbers are listed below:
+         
+         .. table::
+            :width: 100%
+            :widths: auto
+         
+            +------------+------------------------------------------+
+            | SoC Name   | RTL Number                               |
+            +============+==========================================+
+            | Ameba1     | RTL8195X                                 |
+            +------------+------------------------------------------+
+            | AmebaZ     | RTL871XB                                 |
+            +------------+------------------------------------------+
+            | AmebaZ2    | RTL872XC                                 |
+            +------------+------------------------------------------+
+            | AmebaD     | RTL872XD                                 |
+            +------------+------------------------------------------+
+            | AmebaLite  | RTL8720E/RTL8710E: without DSP and audio |
+            |            |                                          |
+            |            | RTL8726E/RTL8713E: full-function         |
+            +------------+------------------------------------------+
+            | AmebaSmart | RTL8730E                                 |
+            +------------+------------------------------------------+
+            | AmebaDplus | RTL8721D: with TZ                        |
+            |            |                                          |
+            |            | RTL8711D: without TZ                     |
+            +------------+------------------------------------------+
+
+      :OS type: FreeRTOS or Linux
+
+      :Flash type: NOR or NAND
+
+      :Extra info: extra information like Flash size, application, etc.
+
+.. note::
+      - ``{ImageTool}`` will be used for short of ``{SDK}/tools/ameba/ImageTool`` in the following sections.
+
+      - To download images through UART interface, the host driver for USB to UART adapter (e.g. PL2303GC) on the board shall be installed first, please find the exact driver from the official website of corresponding vendor of the USB to UART adapter.
+
+      - For WinXP or Win7 only, install the following USB driver if there is a need to download images through USB interface: :file:`{ImageTool}/RtkUsbCdcAcmSetup.INF`.
+      
+Image Download
+-----------------
+Download Images
+~~~~~~~~~~~~~~~~
+For an empty chip, the following mandatory images shall be downloaded:
+
+.. only:: FreeRTOSS
+
+   .. table::
+      :width: 100%
+      :widths: auto
+   
+      +---------------------------+----------------------+---------------------------+---------------------------------------+
+      | IC                        | Image name           | Description               | Mandatory?                            |
+      +===========================+======================+===========================+=======================================+
+      | AmebaSmart                | km4_boot_all.bin     | KM4 bootloader            | √                                     |
+      |                           +----------------------+---------------------------+---------------------------------------+
+      |                           | km0_km4_ca32_app.bin | KM0/KM4/CA32 applications | √                                     |
+      +---------------------------+----------------------+---------------------------+---------------------------------------+
+      | AmebaLite                 | km4_boot_all.bin     | KM4 bootloader            | √                                     |
+      |                           +----------------------+---------------------------+---------------------------------------+
+      |                           | kr4_km4_app.bin      | KR4/KM4 applications      | √                                     |
+      |                           +----------------------+---------------------------+---------------------------------------+
+      |                           | dsp_all.bin          | DSP image                 | X (only for IC series with DSP)       |
+      +---------------------------+----------------------+---------------------------+---------------------------------------+
+      | AmebaDPlus                | km4_boot_all.bin     | KM4 bootloader            | √                                     |
+      |                           +----------------------+---------------------------+---------------------------------------+
+      |                           | km0_km4_app.bin      | KM0/KM4 applications      | √                                     |  
+      +---------------------------+----------------------+---------------------------+---------------------------------------+
+
+.. only:: Linux
+      
+   .. table::
+      :width: 100%
+      :widths: auto
+   
+      +-------------+---------------------+------------------------------------------------------------------+------------+
+      | IC          | Image name          | Description                                                      | Mandatory? |
+      +=============+=====================+==================================================================+============+
+      | AmebaSmart  | A: km4_boot_all.bin | A slot: KM4 bootloader                                           | √          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | A: km0_km4_app.bin  | A slot: KM0/KM4 applications                                     | √          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | A: boot.img         | A slot: CA32 firmware package, including BL1, BL2, BL32 and BL33 | √          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | B: km4_boot_all.bin | B slot: KM4 bootloader                                           | X          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | B: km0_km4_app.bin  | B slot: KM0/KM4 applications                                     | X          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | B: boot.img         | B slot: CA32 firmware package, including BL1, BL2, BL32 and BL33 | X          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | A: vbmeta.img       | A slot: AP Linux meta data image, only for secure boot           | X          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | B: vbmeta.img       | B slot: AP Linux meta data image, only for secure boot           | X          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | A: xxx.dtb*         | A slot: AP Linux DTB (device tree blob)                          | √          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | B: xxx.dtb*         | B slot: AP Linux DTB for recovery                                | X          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | A: kernel.img       | A slot: AP Linux kernel                                          | √          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | B: kernel.img       | B slot: AP Linux kernel                                          | X          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | rootfs.img          | AP Linux rootfs binary                                           | √          |
+      |             +---------------------+------------------------------------------------------------------+------------+
+      |             | userdata.img        | AP user data binary                                              | √          |
+      +-------------+---------------------+------------------------------------------------------------------+------------+
+      
+   .. note::
+
+      \ * For DTB image, Yocto will build all available DTS files in SDK into DTB images for users to select as required.
+
+   .. table::
+      :width: 100%
+      :widths: auto
+   
+      +------------------------------+---------------------------------------------------------------------------------+
+      | DTB image name               | Description                                                                     |
+      +==============================+=================================================================================+
+      | rtl8730elh-va7-generic.dtb   | DTB for RTL8730ELH-VA7, with minimum features for customer design reference     |
+      +------------------------------+---------------------------------------------------------------------------------+
+      | rtl8730elh-va7-full.dtb      | DTB for RTL8730ELH-VA7, with maximum features for development and demonstration |
+      +------------------------------+---------------------------------------------------------------------------------+
+      | rtl8730elh-va7-tests-xxx.dtb | DTB for RTL8730ELH-VA7, with BSP test support, where `xxx` is:                  |
+      |                              |                                                                                 |
+      |                              | - adc-diff: ADC differential mode test                                          |
+      |                              |                                                                                 |
+      |                              | - adc-sig: ADC single mode test                                                 |
+      |                              |                                                                                 |
+      |                              | - ctc: CTC test                                                                 |
+      |                              |                                                                                 |
+      |                              | - i2c: I2C test                                                                 |
+      |                              |                                                                                 |
+      |                              | - ir-rx: IR RX test                                                             |
+      |                              |                                                                                 |
+      |                              | - ir-tx: IR TX test                                                             |
+      |                              |                                                                                 |
+      |                              | - misc: Misc test                                                               |
+      |                              |                                                                                 |
+      |                              | - spi: SPI test                                                                 |
+      |                              |                                                                                 |
+      |                              | - uart: UART test                                                               |
+      +------------------------------+---------------------------------------------------------------------------------+
+      | rtl8730elh-va8-generic.dtb   | DTB for RTL8730ELH-VA8, with minimum features for customer design reference     |
+      +------------------------------+---------------------------------------------------------------------------------+
+      | rtl8730elh-va8-full.dtb      | DTB for RTL8730ELH-VA8, with maximum features for development and demonstration |
+      +------------------------------+---------------------------------------------------------------------------------+
+      | rtl8730elh-va8-tests-xxx.dtb | DTB for RTL8730ELH-VA8, with BSP test support, where `xxx` is:                  |
+      |                              |                                                                                 |
+      |                              | - adc-diff: ADC differential mode test                                          |
+      |                              |                                                                                 |
+      |                              | - adc-sig: ADC single mode test                                                 |
+      |                              |                                                                                 |
+      |                              | - ctc: CTC test                                                                 |
+      |                              |                                                                                 |
+      |                              | - i2c: I2C test                                                                 |
+      |                              |                                                                                 |
+      |                              | - ir-rx: IR RX test                                                             |
+      |                              |                                                                                 |
+      |                              | - ir-tx: IR TX test                                                             |
+      |                              |                                                                                 |
+      |                              | - misc: Misc test                                                               |
+      |                              |                                                                                 |
+      |                              | - spi: SPI test                                                                 |
+      |                              |                                                                                 |
+      |                              | - uart: UART test                                                               |
+      +------------------------------+---------------------------------------------------------------------------------+
+
+   .. note::
+      Refer to :download:`Linux DTS Pinmux Configurations <../../../../../_static/PM0603_RTL8730E_Linux_DTS_Pinmux_Configurations.xlsx>` for detailed information of DTS pinmux groups.
+
+Download Steps
+~~~~~~~~~~~~~~~~
+.. only:: FreeRTOS
+
+   The image download steps are illustrated below:
+   
+   1. Enter into download mode.
+
+      There are two ways to enter into download mode.
+      
+         A. The first and recommended way is to push the hardware :guilabel:`Download` and :guilabel:`CHIP_EN` buttons.
+      
+            a. Push the :guilabel:`Download` button and keep it pressed.
+      
+            b. Re-power on the device or press the :guilabel:`CHIP_EN` button.
+      
+            c. Release the :guilabel:`Download` button.
+      
+         B. The alternate way is to type the ``reboot uartburn`` command from the UART console if this command is not removed from SDK and AP is running normally.
+   
+      Now, the device goes into download mode and is ready to receive data.
+   
+   .. tabs::
+
+      .. tab:: AmebaSmart
+
+         2. Open Image Tool, click :menuselection:`File > Open` and select the proper device profile.
+      
+            - For IC series with NOR Flash, select :file:`AmebaSmart_FreeRTOS_NOR.rdev`.
+      
+            - For IC series with NAND Flash, select :file:`AmebaSmart_FreeRTOS_NAND.rdev`.         
+   
+      .. tab:: AmebaLite
+
+         2. Open Image Tool, click :menuselection:`File > Open` and select the device profile :file:`AmebaLite_FreeRTOS_NOR.rdev`.
+
+      .. tab:: AmebaDPlus
+
+         2. Open Image Tool, click :menuselection:`File > Open` and select the device profile :file:`AmebaDplus_FreeRTOS_NOR.rdev`.
+
+   
+   3. Select the corresponding serial port and transmission baud rate. The default baud rate is 1500000.
+      
+      .. only:: RTL8730E or RTL8721D or RTL8711D
+      
+         .. note::
+            The baud rate will be ignored for USB download interface.
+         
+   4. Click the :menuselection:`Browse` button to select the images to be programmed.
+   
+      .. note::
+            Flash layout is allowed to be changed via Image Tool if indeed necessary.
+            However, to formally change the Flash layout, it is suggested to use :mod:`Device Profile Editor` other than :mod:`Image Tool` and the Flash layout in SDK shall be changed accordingly. Refer to Section :ref:`image_tool_modifying_device_profile` for details.
+     
+   5. Click the :menuselection:`Download` button to start.
+
+      The progress bar will show the download progress of each image and the log widget will show the operation status.
+
+      .. tabs::
+      
+         .. tab:: AmebaSmart
+      
+            .. figure:: ../figures/image_download_operation_smart_freertos.png
+               :scale: 90%
+               :align: center
+
+               Image download operation
+      
+         .. tab:: AmebaLite
+      
+            .. figure:: ../figures/image_download_operation_lite.png
+               :scale: 90%
+               :align: center
+
+               Image download operation
+
+         .. tab:: AmebaDPlus
+      
+            .. figure:: ../figures/image_download_operation_dplus.png
+               :scale: 90%
+               :align: center
+
+               Image download operation
+
+   
+.. only:: Linux
+         
+   The image download steps are illustrated below:
+   
+   1. Enter into download mode.
+   
+      a. Push the :menuselection:`DOWNLOAD` button and keep it pressed.
+   
+      b. Re-power on the device or press the :menuselection:`CHIP_EN` button.
+   
+      c. Release the :menuselection:`DOWNLOAD` button.
+   
+      Now, the device goes into download mode and is ready to receive data.
+   
+   2. Open Image Tool, click :menuselection:`File > Open` and select the proper device profile.
+   
+      - For RTL8730ELH-VA7, select :file:`AmebaSmart_Linux_NAND_128MB.rdev`
+   
+      - For RTL8730ELH-VA8, select :file:`AmebaSmart_Linux_NAND_256MB.rdev`
+   
+   3. Select the corresponding serial port, and the baud rate will be ignored for USB download interface.
+   
+   4. Click the :menuselection:`Browse` button to select the images to be programmed.
+        
+      .. note::
+
+         Flash layout is allowed to be changed via Image Tool if indeed necessary.
+         However, to formally change the Flash layout, it is suggested to use :mod:`Device Profile Editor` other than :mod:`Image Tool` and the Flash layout in SDK shall be changed accordingly. Refer to Section :ref:`image_tool_modifying_device_profile` for details.
+      
+   5. Click the :menuselection:`DOWNLOAD` button to start. The progress bar will show the download progress of each image and the log widget will show the operation status.
+   
+      .. figure:: ../figures/image_download_operation_smart_linux.png
+         :scale: 90%
+         :align: center
+      
+         Image download operation  
+   
+Flash Erase
+----------------------
+Steps to erase Flash are illustrated below:
+
+1. Enter into download mode as introduced above.
+
+2. Open Image Tool, click :menuselection:`File > Open` and select the proper device profile.
+
+3. Select the corresponding serial port and baud rate.
+
+   .. note::
+      The baud rate will be ignored for USB download interface.
+
+
+4. Input erase start address.
+
+   - For NOR Flash, the value shall be 4KB aligned.
+   
+   - For NAND Flash, the value shall be aligned to block size.
+   
+   .. note::
+      Refer to the datasheet of the corresponding NAND Flash for block size, normally 128KB.
+
+5. Input erase size.
+
+   - For NOR Flash, the value shall be cast to a multiple of 4KB.
+        
+   - For NAND Flash, the value shall be cast to a multiple of block size.
+   
+   .. note::
+      Refer to the datasheet of the corresponding NAND Flash for block size, normally 128KB.
+
+.. _image_tool_flash_erase_step_6:
+
+6. Click the :menuselection:`Erase` button, and erase operation begins.
+
+   You would get the operation result from the log window.
+
+   .. figure:: ../figures/nor_flash_erase_operation.png
+      :scale: 90%
+      :align: center
+
+      NOR Flash erase operation
+
+   .. only:: RTL8730E
+         
+      .. figure:: ../figures/nand_flash_erase_operation_smart.png
+         :scale: 90%
+         :align: center
+      
+         NAND Flash erase operation
+   
+   .. note::
+
+         - No need to erase Flash manually before image download since Flash will be automatically erased during image download process.
+
+         - If Flash block protection is detected at :ref:`Step 6 <image_tool_flash_erase_step_6>`, refer to Section :ref:`image_tool_flash_block_protection_process` for details.
+
+
+Flash Register Access
+------------------------------------------
+This function is for internal usage only, used to read/write Flash status/feature registers.
+
+
+.. caution::
+
+   Any Flash register operations, especially write operations, shall refer to the datasheet of the Flash; otherwise, it may cause irreversible damage to the Flash.
+
+Common pre-steps to access Flash register are illustrated below:
+
+1. Make sure the Image Tool is closed.
+
+2. Enter **expert mode** by editing :file:`<ImageTool>/Setting.json`, and set `ExpertMode` value to none-zero integer (such as 1).
+
+3. Enter into download mode as introduced above.
+
+4. Open Image Tool, click :menuselection:`File > Open` and select the proper device profile.
+
+5. Select the corresponding serial port and baud rate.
+
+NOR Flash Register Access
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Besides the common pre-steps, click :menuselection:`Advanced` and select :menuselection:`NOR Flash Register Access` item to lunch the NOR Flash Register Access dialog for further operations:
+
+.. figure:: ../figures/nor_flash_register_access.png
+   :scale: 90%
+   :align: center
+
+   NOR Flash Register Access dialog
+
+.. _read_nor_flash_register:
+
+Read NOR Flash Register
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+After the common pre-steps, next steps to read NOR Flash register:
+
+1. Select the read command to read specific register.
+
+2. Click the :menuselection:`Read` button, the register value will show up in the Register Value text box.
+
+   .. figure:: ../figures/read_nor_flash_register_operation.png
+      :scale: 90%
+      :align: center
+
+      Read NOR Flash register operation
+
+Write NOR Flash Register
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+After the common pre-steps, next steps to write NOR Flash register:
+
+1. Select the write command to write specific register.
+
+2. Input the register value.
+
+3. Click the :menuselection:`Write` button.
+
+4. Read back the register value for verification, refer to Section :ref:`read_nor_flash_register`.
+
+   .. figure:: ../figures/write_nor_flash_register_operation.png
+      :scale: 90%
+      :align: center
+
+      Write NOR Flash register operation
+
+.. only:: RTL8730E
+   
+   NAND Flash Register Access
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Besides the common pre-steps, click :menuselection:`Advanced` and select :menuselection:`NAND Flash Register Access` item to lunch the NAND Flash Register Access dialog for further operations.
+   
+   .. figure:: ../figures/nand_flash_register_access_smart.png
+      :scale: 90%
+      :align: center
+   
+      NAND Flash Register Access dialog
+   
+   Read NAND Flash Register
+   ^^^^^^^^^^^^^^^^^^^^^^^^^
+   After the common pre-steps, next steps to read NAND Flash register:
+   
+   1. Select the read command.
+   
+   2. Select the register address.
+   
+   3. Click the :menuselection:`Read` button, the register value will show up in the Register Value text box.
+   
+      .. figure:: ../figures/read_nand_flash_register_operation_smart.png
+         :scale: 90%
+         :align: center
+      
+         Read NAND Flash register operation
+   
+   Write NAND Flash Register
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   After the common pre-steps, next steps to write NAND Flash register:
+   
+   4. Select the write command.
+   
+   5. Select the register address.
+   
+   6. Input the register value.
+   
+   7. Click the :menuselection:`Write` button.
+   
+      .. figure:: ../figures/write_nand_flash_register_operation_smart.png
+         :scale: 90%
+         :align: center
+      
+         Write NAND Flash register operation
+   
+.. only:: RTL8730E
+   
+   NAND Bad Block Management
+   --------------------------------------------------------------------------------
+   This function is for internal usage only, used to scan or mark NAND block status.
+   
+   Common pre-steps for NAND bad block management:
+   
+   1. Make sure Image Tool is closed.
+   
+   2. Enter *expert mode* by editing :file:`<ImageTool>/Setting.json`, setting *ExpertMode* value to none-zero integer (such as 1).
+   
+   3. Enter into download mode as introduced above.
+   
+   4. Open Image Tool, click :menuselection:`File > Open` and select the proper device profile.
+   
+   5. Select the corresponding serial port and baud rate.
+   
+   6. Click :menuselection:`Advanced` and select :menuselection:`NAND Flash Bad Block Managemen` to lunch the NAND Flash Bad Block Management dialog.
+   
+      .. figure:: ../figures/nand_flash_bad_block_management_smart.png
+         :scale: 50%
+         :align: center
+      
+         NAND Flash Bad Block Management dialog
+   
+   Scan Block Status
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   After the common pre-steps, next steps to scan block status:
+   
+   1. (Optional) Check the :menuselection:`Check Weak Blocks` check box as required.
+   
+      - If not checked as default, Image Tool will only scan the bad marker of each block to get a list of bad blocks.
+
+      - If checked, Image Tool will scan the status of all the blocks and the status of all pages of non-bad blocks, to get a detailed status result of blocks and pages, which will cost much more time than bad-block-only scan.
+   
+   2. (Optional) Check the :menuselection:`Show Bad/Weak Blocks Only` check box as required.
+   
+      - If not checked as default, Image Tool will show the status of all the blocks.
+
+      - If checked, Image Tool will only show the status of bad and weak blocks.
+
+      It is recommended to check the option to get a clear result.
+   
+   3. Click the :menuselection:`Scan` button.
+   
+      .. figure:: ../figures/scan_nand_flash_block_status_operation_smart.png
+         :scale: 50%
+         :align: center
+      
+         Scan NAND Flash block status operation
+   
+   4. The scan result will be shown as below:
+   
+      - For bad-block-only scan result, bad blocks will be shown with red background color in the Address cell.
+   
+        .. figure:: ../figures/nand_flash_bad_block_scan_result_smart.png
+           :scale: 50%
+           :align: center
+        
+           NAND Flash bad block scan result
+   
+      - For weak blocks scan result, not only the Address cells of blocks but also the cells of pages will be marked with special colors:
+      
+         - For bad blocks, the Address cell of the block will be marked with red, while the pages of the block will not be marked.
+      
+         - For weak blocks, the Address cell of the block will be marked with:
+      
+            - **Yellow**: if there are only bit flip warnings for all the pages of the block
+      
+            - **Orange**: if there are any bit flip errors for all the pages of the block
+      
+            - **Brown**: if there are any fatal bit flip errors for all the pages of the block
+      
+            - **Gray**: if the status scan results in any other errors for any pages of the block
+      
+         - For weak pages, the cell of the page will be marked with:
+      
+            - **Yellow**: if the page read results in bit flip warning
+      
+            - **Orange**: if the page read results in bit flip error
+      
+            - **Brown**: if the page read results in fatal bit flip error
+      
+            - **Gray**: if the page read results in any other errors
+   
+         .. figure:: ../figures/nand_flash_weak_block_scan_result_smart.png
+            :scale: 50%
+            :align: center
+         
+            NAND Flash weak block scan result
+   
+   Mark Block Status
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   After taking the block scan operation, user will be able to mark the status of specified blocks to good or bad. This function is only for internal debug purpose.
+
+
+   .. caution::
+      Be careful to change the status of a block, especially mark a bad block to good.
+      
+   To mark the status of non-bad block(s) to bad:
+   
+   1. Select one or more non-bad blocks.
+   
+   2. Click the :menuselection:`Mark Bad` button and confirm the operation.
+   
+      .. figure:: ../figures/mark_nand_flash_block_status_to_bad_smart.png
+         :scale: 60%
+         :align: center
+      
+         Mark NAND Flash block status to bad
+   
+   To mark the status of bad block(s) to good:
+   
+   1. Select one or more bad blocks.
+   
+   2. Click the :menuselection:`Mark Good` button and confirm the operation.
+   
+      .. figure:: ../figures/mark_nand_flash_block_status_to_good_smart.png
+         :scale: 60%
+         :align: center
+      
+         Mark NAND Flash block status to good
+
+.. _image_tool_flash_block_protection_process:
+
+Flash Block Protection Process
+------------------------------------------------------------
+During image download or Flash Erase operation, if Flash block protection configuration is detected on the device,
+Image Tool will pop up a dialog to guide user for the follow-up actions.
+
+- For NAND Flash, detailed Flash information will be shown.
+   
+  .. figure:: ../figures/nand.png
+     :scale: 90%
+     :align: center
+  
+     Flash block protection detected dialog for NAND Flash
+
+- For NOR Flash, only Flash type and protection register value will be shown.
+
+.. figure:: ../figures/nor.png
+   :scale: 90%
+   :align: center
+
+   Flash block protection detected dialog for NOR Flash
+
+Following follow-up actions are provided for user to choose:
+
+- Try operation with block protected (may fail)
+
+- Remove the protection and restore the protection after operation
+
+- Abort the operation
+
+Additionally, user can check the :menuselection:`Remember the choice of follow-up action` check box to remember the choice for further operations, and uncheck :menuselection:`Option > Remember Flash Protection Process` to forget the remembered choice.
+
+.. only:: internal
+   
+   Flash Read
+   ------------------------------------------
+   This function is for internal usage only and shall be never exported to customers.
+   
+   Steps to read data from Flash:
+   
+   1. Make sure Image Tool is closed.
+   
+   2. Enter *developer mode* by editing runtime configuration file :file:`<ImageTool>/Setting.json`, set *ExpertMode* value to *0x0BDA* for hex or *3034* for decimal, to enable the Flash read function.
+      
+      .. note::
+         - :file:`Setting.json` will be automatically generated at the first time that Image Tool is opened and saved each time that Image Tool is normally closed.
+   
+         - The magic key 0x0BDA is Realtek's USB IF VID.
+      
+   3. Enter into download mode as introduced above.
+   
+   4. Open Image Tool, click :menuselection:`File > Open` and select the proper device profile.
+   
+   5. Select the corresponding serial port and baud rate.
+      
+      .. note::
+         The baud rate will be ignored for USB download interface.
+   
+   
+   6. Input read address.
+   
+      - For NOR Flash, only Start Addr shall be specified and the value has no limitation.
+   
+      - For NAND Flash, both Start Addr and End Addr shall be specified, and the values shall be aligned to page size.
+   
+      .. note::
+         Refer to the datasheet of the corresponding NAND Flash for page size, normally 2KB for <1Gbit SPI NAND Flash models.
+   
+   
+   7. Input read size.
+   
+      - For NOR Flash, the value shall be a multiple of 4KB.
+   
+      - For NAND Flash, the value shall be a multiple of page size.
+      
+      .. note::
+         - Refer to the datasheet of the corresponding NAND Flash for page size, normally 2KB for SPI NAND Flash models.
+   
+         - For NAND Flash, Image Tool will try to read data from address Start Addr for size Size with bad blocks skipped, until the read out data size counted to Size of address exceed address End Addr.
+   
+   
+   8. Click the :menuselection:`Read` button, and the Flash data will be dumped into the same path of :file:`AmebaImageTool.exe`, named with :file:`<start address>.bin`.
+   
+      .. figure:: ../figures/nor_flash_read_operation.png
+         :scale: 90%
+         :align: center
+      
+         NOR Flash read operation
+   
+      .. figure:: ../figures/nand_flash_read_operation.png
+         :scale: 90%
+         :align: center
+      
+         NAND Flash read operation
+   
+.. only:: internal
+   
+   eFuse Access
+   ----------------------------------------------
+   This function is for internal usage only and shall not be exported to customers.
+   
+   Common preparation steps to access eFuse:
+   
+   1. Make sure Image Tool is closed.
+   
+   2. Enter **developer mode** as introduced above.
+   
+   3. Enter into download mode as introduced above.
+   
+   4. Open Image Tool, click :menuselection:`File > Open` and select the proper device profile.
+   
+   5. Select the corresponding serial port and baud rate.
+   
+      .. note::
+         The baud rate will be ignored for USB download interface.
+   
+   
+   6. Switch to eFuse tab.
+   
+      .. figure:: ../figures/efuse_tab.png
+         :scale: 90%
+         :align: center
+      
+         eFuse tab
+   
+   Read
+   ~~~~~~~~
+   Read full eFuse map:
+   
+   1. Select eFuse type, logical or physical.
+   
+   2. Click the :guilabel:`Read` button, a pop up dialog will show the read result and the eFuse data will be printed to the left table if read success.
+   
+      .. figure:: ../figures/read_efuse_map.png
+         :scale: 90%
+         :align: center
+      
+         Read eFuse map
+   
+   Program
+   ~~~~~~~~~~~~~~
+   After the eFuse map has been successfully read out from device of loaded from a map file, user can program the specified bytes of eFuse map as required:
+   
+   1. Select eFuse type, logical or physical.
+   
+   2. Edit the eFuse map as required.
+   
+   3. Click the :guilabel:`Program` button, a pop up dialog will show the program result.
+   
+      .. figure:: ../figures/program_efuse_map.png
+         :scale: 90%
+         :align: center
+      
+         Program eFuse map
+   
+   Save Map File
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+   After the eFuse map has been successfully read out from device of loaded from a map file, user can save the eFuse data to a map file by clicking the :guilabel:`Save` button.
+   
+      .. figure:: ../figures/save_map_file.png
+         :scale: 90%
+         :align: center
+      
+         Save map file
+   
+   Load Map File
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Load a saved map file to the eFuse table:
+   
+   1. Click the :guilabel:`Browse` button to select an eFuse map file.
+   
+   2. Click the :guilabel:`Load` button to load it to the eFuse table.
+   
+      .. figure:: ../figures/load_map_file.png
+         :scale: 90%
+         :align: center
+      
+         Load map file
+   
+   Load Default Map
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Click the :guilabel:`Default` button to load default logical map.
+   
+      .. figure:: ../figures/load_default_map.png
+         :scale: 90%
+         :align: center
+      
+         Load default map
+
+.. _image_tool_modifying_device_profile:
+
+Modifying Device Profile
+------------------------------------------------
+.. only:: internal
+   
+   
+   Customer Version
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Steps to modify an existing device profile are listed below:
+
+1. Launch Device Profile Editor.
+
+2. Click :guilabel:`Open` button to load an existing device profile.
+
+3. Change the configuration of ``Flash Layout`` as required.
+
+   - ``Image Name``: the image name built by SDK
+
+   - ``Start Address``: start address in hex format. For NAND Flash, the value shall be aligned to block size.
+
+   - ``End Address``: end address in hex format. For NAND Flash, the value shall be aligned to block size and the partition size shall be a multiple of block size with proper percent of spare blocks (at least one) for bad block management.
+
+   - ``Full Erase``: flag indicating ImageTool to erase the entire partition or not before image download
+
+      - **Checked**: full erase, normally for file system partitions; for NAND Flash, all the partitions will be checked as default and not allowed to uncheck.
+
+      - **Unchecked**: not full erase, only the actual size of the image file will be erased, only for NOR Flash non-file-system partitions.
+
+   - ``Mandatory``: flag indicating ImageTool to enable the partition to download as default.
+
+      - **Checked**: mandatory partition, enabled as default.
+
+      - **Unchecked**: optional partition, disabled as default.
+
+   - ``Description``: the description text to describe the image, this information will be used as mouse hover tips for images.
+
+4. Click :guilabel:`Save` button to overwrite the existing device profile or click :guilabel:`Save As` button to save the modified device profile to a new file.
+
+   .. figure:: ../figures/edit_an_existing_device_profile.png
+      :scale: 80%
+      :align: center
+
+      Edit an existing device profile
+
+.. only:: internal
+   
+   Internal Version
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Steps to modify an existing device profile via internal version are listed below:
+   
+   1. Launch Device Profile Editor internal version.
+   
+   2. Click :menuselection:`Open` button to load an existing device profile.
+   
+   3. Change the configuration of ``General Info`` as required.
+   
+      - ``SoC Name``: the name of Realtek Ameba SoC
+   
+         - For SoC series Ameba1/AmebaZ/AmebaZ2/AmebaD, the SoC Name should not be changed.
+   
+         - For other SoC series, the SoC Name is just a string for ImageTool to display in the title and is allowed to be freely changed.
+   
+      - ``Flash Type``: NOR or NAND
+   
+      - ``Support >16MB NOR Flash``: flag indicating whether to support >16MB NOR Flash or not, check this option for SoC series later than AmebaSmart
+   
+      - ``Floader File Name``: the file name of the ImageTool Flash loader, read-only for release version
+   
+      - ``Floader Address``: the RAM load address of the ImageTool Flash loader, in hex format, read-only for release version
+   
+      - ``Handshake Baudrate``: the handshake baudrate of the ImageTool Flash loader, in decimal format, read-only for release version
+   
+      - ``Log Baudrate``: the baudrate of LOGUART in decimal format, used for ImageTool to command the normal mode SoC switching to UART download mode
+   
+      - ``Logical eFuse Length``: the length of logical eFuse map in byte, set it to 0x000 for SoC series earlier than AmebaSmart, read-only for release version
+   
+      - ``Physical eFuse Length``: the length of physical eFuse map in byte, set it to 0x000 for SoC series earlier than AmebaSmart, read-only for release version
+   
+   4. Change the configuration of ``Flash Layout`` as required.
+   
+      - ``Image Name``: the image name built by SDK
+   
+      - ``Start Address``: start address in hex format. For NAND Flash, the value shall be aligned to block size.
+   
+      - ``End Address``: end address in hex format. For NAND Flash, the value shall be aligned to block size and the partition size shall be a multiple of block size with proper percent of spare blocks (at least one) for bad block management.
+   
+      - ``Full Erase``: flag indicating ImageTool to erase the entire partition or not before image download
+   
+         - Checked: full erase, normally for file system partitions; for NAND Flash, all the partitions will be checked as default and not allowed to uncheck.
+   
+         - Unchecked: not full erase, only the actual size of the image file will be erased, only for NOR Flash non-file-system partitions.
+   
+      - ``Mandatory``: flag indicating ImageTool to enable the partition to download as default.
+   
+         - Checked: mandatory partition, enabled as default.
+   
+         - Unchecked: optional partition, disabled as default.
+   
+      - ``Description``: the description text to describe the image, this information will be used as mouse hover tips for images.
+   
+   5. Change the configuration of ``Logical eFuse Default Map`` as required.
+   
+      The data item of eFuse map is defined as a start offset address with 16-byte data.
+   
+      Leave it empty for SoC series either earlier than AmebaSmart or default map is not required.
+   
+   6. Click :guilabel:`Save` button to overwrite the existing device profile or click :guilabel:`Save As` button to save the modified device profile to a new file.
+   
+      .. figure:: ../figures/edit_an_existing_device_profile_via_internal_version.png
+         :scale: 90%
+         :align: center
+      
+         Edit an existing device profile via internal version
+   
+
+   .. caution::
+      Do NOT change the configuration unless indeed necessary and you are an expert.
+   
+.. only:: internal
+   
+   Create New Device Profile
+   ------------------------------------------------------------------------
+   Steps to create a new device profile are listed below:
+   
+   1. Launch Device Profile Editor internal version.
+   
+   2. Set up ``General Info``, refer to Section :ref:`image_tool_modifying_device_profile` for details.
+   
+   3. Set up ``Flash Layout``, refer to Section :ref:`image_tool_modifying_device_profile` for details.
+   
+   4. (Optional) Set up ``Logical eFuse Default Map``, refer to Section :ref:`image_tool_modifying_device_profile` for details.
+   
+   5. Click :guilabel:`Save` button to save the new created device profile.
+   
+      .. figure:: ../figures/create_a_new_device_profile.png
+         :scale: 90%
+         :align: center
+      
+         Create a new device profile
+   
