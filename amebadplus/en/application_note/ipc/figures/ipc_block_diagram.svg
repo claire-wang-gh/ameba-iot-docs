@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 Microsoft_Visio___.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="3.20024in" height="0.851088in"
+		viewBox="0 0 230.418 61.2784" xml:space="preserve" color-interpolation-filters="sRGB" class="st7">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#e8eef7;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {marker-end:url(#mrkr5-15);marker-start:url(#mrkr5-13);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25}
+		.st4 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.55555555555556}
+		.st5 {fill:#000000;font-family:Calibri;font-size:0.583328em}
+		.st6 {font-size:1em}
+		.st7 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-13" class="st4" v:arrowType="5" v:arrowSize="1" v:setback="2.99" refX="2.99" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(1.8) "/>
+		</marker>
+		<marker id="mrkr5-15" class="st4" v:arrowType="5" v:arrowSize="1" v:setback="3.15" refX="-3.15" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-1.8,-1.8) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.12,-21.4733)">
+			<title>矩形.1641</title>
+			<desc>IPC_KM0</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="31.1811" cy="41.4358" width="62.37" height="39.685"/>
+			<rect x="0" y="21.5933" width="62.3622" height="39.685" rx="5.66929" ry="5.66929" class="st1"/>
+			<text x="16.46" y="43.84" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>IPC_KM0</text>		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(167.935,-21.4733)">
+			<title>矩形.1642</title>
+			<desc>IPC_KM4</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="31.1811" cy="41.4358" width="62.37" height="39.685"/>
+			<rect x="0" y="21.5933" width="62.3622" height="39.685" rx="5.66929" ry="5.66929" class="st1"/>
+			<text x="16.46" y="43.84" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>IPC_KM4</text>		</g>
+		<g id="shape6-7" v:mID="6" v:groupContext="shape" transform="translate(62.4822,-41.3158)">
+			<title>工作表.6</title>
+			<path d="M6.73 61.28 L7.09 61.28 L98.37 61.28" class="st3"/>
+		</g>
+		<g id="shape7-16" v:mID="7" v:groupContext="shape" transform="translate(83.742,-0.12)">
+			<title>矩形.1661</title>
+			<desc>KM0 shared SRAM</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="26.3796" cy="48.249" width="52.76" height="26.0587"/>
+			<rect x="0" y="35.2196" width="52.7591" height="26.0587" rx="4.25197" ry="4.25197" class="st1"/>
+			<text x="19.79" y="46.15" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>KM0<v:newlineChar/><tspan
+						x="7.38" dy="1.2em" class="st6">shared SRAM</tspan></text>		</g>
+	</g>
+</svg>
