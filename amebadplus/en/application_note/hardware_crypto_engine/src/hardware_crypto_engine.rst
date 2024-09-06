@@ -135,13 +135,13 @@ Crypto Key Order
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The key order for Crypto Engine is the same with mbedtls, it uses little endian mode. For example, if the key is:
 
-.. code::
+.. code-block::
 
    0x0123456789abcdef0123456789abcdef00112233445566778899aabbccddeeff
 
 When the key is put in an array and pass to HW engine using RTK API or mbedtls API, the array should like:
 
-.. code::
+.. code-block::
 
    u8 key1[32]={
    0xff, 0xee, 0xdd, 0xcc, 0xbb, 0xaa, 0x99, 0x88, 0x77, 0x66, 0x55, 0x44, 0x33, 0x22, 0x11, 0x00,
@@ -150,7 +150,7 @@ When the key is put in an array and pass to HW engine using RTK API or mbedtls A
 
 When program the key into OTP, customer should use the following commands, Take NS_SHA_key2 as an example:
 
-.. code::
+.. code-block::
 
    Efuse wraw 0x260 20 ffeeddccbbaa99887766554433221100efcdab8967452301efcdab8967452301
 
@@ -204,17 +204,20 @@ The process of programming OTP physical map is as follows:
 
 2. Write into OTP physical map by command ``Efuse wraw <address> <length> <data>``
 
-   .. code::
+   .. code-block::
+
       Efuse wraw 0x260 20 0123456789abcdef0123456789abcdef00112233445566778899aabbccddeeff
 
 3. Use the following command to read OTP key back to check if it is written correctly. If not, re-write it.
 
-   .. code::
+   .. code-block::
+
       Efuse rraw
 
 4. Enable Key Read Protection and Write Protection to prevent key exposure and tampering after the written IPSEC Key is confirmed.
 
-   .. code::
+   .. code-block::
+
       Efuse wraw 0x366 1 f9
 
 
@@ -237,13 +240,13 @@ Using Auto-loaded OTP Key from OTP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Initialize AES OTP key function:
 
-   .. code::
+   .. code-block:: c
 
       CRYPTO_OTPKey_Init(keynum, ENABLE);
 
 2. Initialize HMAC OTP key function:
 
-   .. code::
+   .. code-block:: c
 
       CRYPTO_OTPKey_SHA_Init(keynum, ENABLE);
 
@@ -278,7 +281,7 @@ When using sequential hash, follow the steps below:
 
          - Or call the following line to restore data from memory before reading digest when calculation is finished if it’s a local variable.
 
-      .. code::
+      .. code-block:: c
 
          DCache_Invalidate(((u32)digest&CACHE_LINE_ADDR_MSK),(sizeof(digest)+CACHE_LINE_SIZE));
 
@@ -286,17 +289,19 @@ When using sequential hash, follow the steps below:
 
       - To prevent errors caused by multi-core access to crypto simultaneously, a lock is added before ``CRYPTO_OTPKey_Init``, and the lock is released after crypto calculation.
 
-      .. code::
+      .. code-block:: c
 
          /*take sema to obtain the right to crypto engine*/
+         {
          while (IPC_SEMTake(IPC_SEM_CRYPTO, timeout) != _TRUE);
          CRYPTO_OTPKey_SHA_Init(keynum, status);
          rtl_crypto_hmac_sha2_update(u8 *message, IN u32 msglen, hw_sha_context *ctx);
-         ……
+         ...
          rtl_crypto_hmac_sha2_final(u8 *pDigest, hw_sha_context *ctx);
          
          /*free sema to release the right to crypto engine*/
          IPC_SEMFree(IPC_SEM_CRYPTO);
+         }
 
 Cipher Algorithm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -315,7 +320,7 @@ Steps to encrypt or decrypt message are as follows:
       - To prevent errors caused by multi-core access to crypto simultaneously, a lock is added before ``CRYPTO_OTPKey_Init``, and the lock is released after ``rtl_crypto_aes_xxx_encrypt`` or ``rtl_crypto_aes_xxx_decrypt``.
 
 
-   .. code::
+   .. code-block:: c
 
       /*take sema to obtain the right to crypto engine*/
       while (IPC_SEMTake(IPC_SEM_CRYPTO, timeout) != _TRUE);

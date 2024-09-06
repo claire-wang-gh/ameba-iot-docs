@@ -642,15 +642,14 @@ I2S PLL APIs
 
 
 There are two ways to generate I2S PLL:
-- One is that the system clock is an integer multiple of 98.304M or 45.1584M, we add the system clock in *SocClk_Info* array, so you can modify the index of *SocClk_Info* array in :file:`bootloader_km4.c`.
-  When you need high-quality audio applications, you can use this method.
+- One is that the system clock is an integer multiple of 98.304M or 45.1584M, we add the system clock in *SocClk_Info* array, so you can modify the index of *SocClk_Info* array in :file:`bootloader_km4.c`. When you need high-quality audio applications, you can use this method.
 
 - The other is that the system clock is not an integer multiple of 98.304M or 45.1584M, in this case, we automatically get the 98.304M or 45.1584M.
 
 The details are shown in the following figure.
 
 .. figure:: ../figures/audio_i2s_pll_interfaces.svg
-   :scale: 130%T
+   :scale: 130%
    :align: center
 
    Flow of using I2S PLL interfaces

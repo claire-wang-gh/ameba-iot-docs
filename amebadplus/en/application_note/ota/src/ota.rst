@@ -25,7 +25,8 @@ The device boot from OTA1 or OTA2 mainly depends on the version number in certif
 
 The combination of major version and minor version is the 4-byte version number. OTA select flow checks the whole version number.
 
-.. code::
+.. code-block::
+
    Version number = (Major version << 16) | Minor version
 
 .. figure:: ../figures/major_and_minor_version.svg
@@ -36,11 +37,9 @@ The combination of major version and minor version is the 4-byte version number.
    Major and minor version
 
 .. note::
-      - For bootloader, version number can be 0 to 32767; for application, version number can be 0 to 65535.
-
-      - For detailed layouts of manifest and certificate, refer to :ref:`Secure Boot <secure_boot>`.
    
-
+   - For bootloader, version number can be 0 to 32767; for application, version number can be 0 to 65535.
+   
 As described in :ref:`Image Slot <image_slot>`, there are two slots (OTA1 and OTA2) for all the images in the Flash layout. When reboot after OTA upgrade finished, the device would check the image to determine to boot from OTA1 or OTA2.
 
 
@@ -174,7 +173,7 @@ Modifying Configurations
 
       The bootloader version of anti-rollback is 0 by default. Users can change the number of '0' bit to enlarge the bootloader version. For example, users can program the bootloader version of anti-rollback to 1 by the following command:
 
-      .. code::
+      .. code-block::
 
          EFUSE wraw 36E 2 FFFE
 
@@ -182,7 +181,7 @@ Modifying Configurations
 
       Users can program OTP by the following command to enable anti-rollback.
 
-      .. code::
+      .. code-block::
 
          EFUSE wraw 368 1 BF
 
@@ -192,9 +191,9 @@ Modifying Configurations
       - If bootloader and application do not use the same anti-rollback version, modify BOOT_OTA_GetCertRollbackVer() in ``{SDK}\component\soc\amebadplus\bootloader\boot_ota_km4.c`` and define another anti-rollback version in OTP for the application.
 
 
-3. Write the bootloader OTA2 address into OTP if users need to upgrade the bootloader, which sets the bootloader OTA2 address according to Flash_Layout in ``{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c``, refer to :ref:`User Configuration <user_configuration>`.
+3. Write the bootloader OTA2 address into OTP if users need to upgrade the bootloader, which sets the bootloader OTA2 address according to Flash_Layout in ``{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c``, refer to :ref:`User Configuration <ota_user_configuration>`.
 
-   .. code::
+   .. code-block::
 
       EFUSE wraw 36C 2 6082
 
@@ -316,7 +315,7 @@ Follow these steps to run the OTA demo to update from local server:
 
    a. Edit the host according to the server IP address.
 
-      .. code::
+      .. code-block::
 
          #define PORT   8082
          static const char *host = "192.168.31.193";   //"m-apps.oss-cn-shenzhen.aliyuncs.com"
@@ -324,7 +323,7 @@ Follow these steps to run the OTA demo to update from local server:
 
    b. Edit the OTA type to OTA_LOCAL.
 
-      .. code::
+      .. code-block::
 
          ret = ota_update_init(ctx, (char *)host, PORT, (char *)resource, OTA_LOCAL);
 
@@ -332,8 +331,7 @@ Follow these steps to run the OTA demo to update from local server:
 
 3. Modify the major and minor version number in Manifest to a bigger version as described in :ref:`Version Number <version_number>`.
 
-   .. note::
-      The bootloader will select OTA image with a bigger version number by default. If users don't want to modify the version number, modify OTA_CLEAR_PATTERN to 1 defined in ameba_ota.h before step (2). It should only be used in the development stage.
+   .. note:: The bootloader will select OTA image with a bigger version number by default. If users don't want to modify the version number, modify OTA_CLEAR_PATTERN to 1 defined in ameba_ota.h before step (2). It should only be used in the development stage.
 
 4. Rebuild the project and copy ``ota_all.bin`` into the folder ``{SDK}\tools\DownloadServer``.
 
@@ -343,7 +341,7 @@ Follow these steps to run the OTA demo to update from local server:
 
    - file name = ota_all.bin
 
-   .. code::
+   .. code-block::
 
       @echo off
       DownloadServer 8082 ota_all.bin
@@ -365,7 +363,7 @@ The following figure shows the firmware swap procedure after OTA upgrade.
 
    OTA firmware swap procedure
 
-.. _user_configuration:
+.. _ota_user_configuration:
 
 User Configuration
 ------------------------------------
