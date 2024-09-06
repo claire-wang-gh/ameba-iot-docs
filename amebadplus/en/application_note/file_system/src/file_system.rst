@@ -61,6 +61,7 @@ Usage of VFS
 ------------------------
 
 .. _vfs_on_flash_section:
+
 VFS on Flash
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Adjust the Flash partitions appropriately if the VFS interfaces are set to the Flash, and modify VFS1 in ``Flash_Layout[]`` in ``{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c``.
@@ -103,81 +104,81 @@ The common file operation interfaces used in VFS are listed below:
    +-----------+------------------------+------------------------------------------------------------------------+
    | API       | Parameter              | Description                                                            |
    +===========+========================+========================================================================+
-   | fopen     | - const char *filename | Open the filename pointed to, by filename using the given mode         |
+   | fopen     | - const char * filename| Open the filename pointed to, by filename using the given mode         |
    |           |                        |                                                                        |
-   |           | - const char *mode     |                                                                        |
+   |           | - const char * mode    |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | fclose    | FILE *stream           | Close the stream                                                       |
+   | fclose    | FILE * stream          | Close the stream                                                       |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | fread     | - void *ptr            | Read data from the given stream by ptr into the array pointed to       |
+   | fread     | - void * ptr           | Read data from the given stream by ptr into the array pointed to       |
    |           |                        |                                                                        |
    |           | - size_t size          |                                                                        |
    |           |                        |                                                                        |
    |           | - size_t count         |                                                                        |
    |           |                        |                                                                        |
-   |           | - FILE *stream         |                                                                        |
+   |           | - FILE * stream        |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | fwrite    | - const void *ptr      | Write data from the array pointed to by ptr to the given stream        |
+   | fwrite    | - const void * ptr     | Write data from the array pointed to by ptr to the given stream        |
    |           |                        |                                                                        |
    |           | - size_t size          |                                                                        |
    |           |                        |                                                                        |
    |           | - size_t count         |                                                                        |
    |           |                        |                                                                        |
-   |           | - FILE *stream         |                                                                        |
+   |           | - FILE * stream        |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | fseek     | - FILE *stream         | Set the file position of the stream to the given offset                |
+   | fseek     | - FILE * stream        | Set the file position of the stream to the given offset                |
    |           |                        |                                                                        |
    |           | - long int offset      |                                                                        |
    |           |                        |                                                                        |
    |           | - int origin           |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | rewind    | FILE *stream           | Set the file position to the beginning of the file of the given stream |
+   | rewind    | FILE * stream          | Set the file position to the beginning of the file of the given stream |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | fgetpos   | - FILE *stream         | Get the current file position of the stream and writes it to pos       |
+   | fgetpos   | - FILE * stream        | Get the current file position of the stream and writes it to pos       |
    |           |                        |                                                                        |
-   |           | - fpos_t *p            |                                                                        |
+   |           | - fpos_t * p           |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | fsetpos   | - FILE *stream         | Set the file position of the given stream to the given position        |
+   | fsetpos   | - FILE * stream        | Set the file position of the given stream to the given position        |
    |           |                        |                                                                        |
-   |           | - fpos_t *p            |                                                                        |
+   |           | - fpos_t * p           |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | fflush    | FILE *stream           | Flush the output buffer of a stream                                    |
+   | fflush    | FILE * stream          | Flush the output buffer of a stream                                    |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | remove    | const char *filename   | Delete the given filename so that it is no longer accessible           |
+   | remove    | const char * filename  | Delete the given filename so that it is no longer accessible           |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | rename    | - const char *oldname  | Cause the filename referred to from old_filename to new_filename       |
+   | rename    | - const char * oldname | Cause the filename referred to from old_filename to new_filename       |
    |           |                        |                                                                        |
-   |           | - const char *newname  |                                                                        |
+   |           | - const char * newname |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | feof      | FILE *stream           | Test the end-of-file indicator for the given stream                    |
+   | feof      | FILE * stream          | Test the end-of-file indicator for the given stream                    |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | ferror    | FILE *stream           | Test the error indicator for the given stream                          |
+   | ferror    | FILE * stream          | Test the error indicator for the given stream                          |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | ftell     | FILE *stream           | Return the current file position of the given stream                   |
+   | ftell     | FILE * stream          | Return the current file position of the given stream                   |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | ftruncate | - FILE *stream         | Truncate a file to a specified length                                  |
+   | ftruncate | - FILE * stream        | Truncate a file to a specified length                                  |
    |           |                        |                                                                        |
    |           | - off_t length         |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | opendir   | const char *name       | Open a directory                                                       |
+   | opendir   | const char * name      | Open a directory                                                       |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | readdir   | DIR *pdir              | Read a directory                                                       |
+   | readdir   | DIR * pdir             | Read a directory                                                       |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | closedir  | DIR *dirp              | Close a directory                                                      |
+   | closedir  | DIR * dirp             | Close a directory                                                      |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | rmdir     | const char *path       | Remove a directory                                                     |
+   | rmdir     | const char * path      | Remove a directory                                                     |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | mkdir     | - const char *pathname | Make a directory                                                       |
+   | mkdir     | - const char * pathname| Make a directory                                                       |
    |           |                        |                                                                        |
    |           | - mode_t mode          |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | access    | - const char *pathname | Determine accessibility of a file                                      |
+   | access    | - const char * pathname| Determine accessibility of a file                                      |
    |           |                        |                                                                        |
    |           | - int mode             |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
-   | stat      | - const char *path     | Get file status                                                        |
+   | stat      | - const char * path    | Get file status                                                        |
    |           |                        |                                                                        |
-   |           | - struct stat *buf     |                                                                        |
+   |           | - struct stat * buf    |                                                                        |
    +-----------+------------------------+------------------------------------------------------------------------+
 
 

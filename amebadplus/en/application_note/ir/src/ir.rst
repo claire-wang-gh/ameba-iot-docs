@@ -10,6 +10,7 @@ This chapter introduces how to use IR.
 IR Sending
 --------------------
 .. _ir_tx_polling_mode:
+
 Tx Polling Mode
 ~~~~~~~~~~~~~~~~
 To use IR sending function, the following steps are mandatory.
@@ -23,9 +24,11 @@ To use IR sending function, the following steps are mandatory.
       Pinmux_Config(_PB_4, PINMUX_FUNCTION_IR_TX);
 
 .. _ir_sending_step_2:
+
 2. Call :func:`IR_Cmd()` to disable IR.
 
 .. _ir_sending_step_3:
+
 3. Set parameters, and modify some parameters if needed.
 
    .. code-block:: c
@@ -39,9 +42,11 @@ To use IR sending function, the following steps are mandatory.
       IR_Init(IR_InitTypeDef *IR_InitStruct);
 
 .. _ir_sending_step_5:
+
 5. Write Tx data to FIFO by using :func:`IR_SendBuf()` or :func:`IR_SendData()`.
 
 .. _ir_sending_step_6:
+
 6. Call :func:`cIR_Cmd()` to enable IR to start transmission.
 
 7. Write more data to FIFO if needed.
@@ -80,6 +85,7 @@ To use IR receiving function, the following steps are mandatory.
       Pinmux_Config(_PB_5, PINMUX_FUNCTION_IR_RX);
 
 .. _ir_receiving_step_2:
+
 2. Set parameters, such as sampling frequency, Rx FIFO threshold level, Rx counter threshold type, Rx counter threshold level, and Rx trigger mode if needed.
 
    .. code-block:: c
@@ -105,6 +111,7 @@ To use IR receiving function, the following steps are mandatory.
 6. Call :func:`IR_ClearRxFIFO()` to clear Rx FIFO.
 
 .. _ir_receiving_step_7:
+
 7. When Rx FIFO threshold interrupt triggers, read data from Rx FIFO with :func:`IR_ReceiveBuf()` and :func:`IR_ReceiveData()`, and make further processing in interrupt handle function.
 
 .. note::

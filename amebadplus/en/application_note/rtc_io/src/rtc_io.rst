@@ -30,6 +30,7 @@ For the first time power on, follow these steps:
       RTCIO_SetRValue(RTCIO_RECV_RVAL_RST);      
 
 .. _rtc_io_first_time_power_on_step_2:
+
 2. Perform 131K calibration, in order to acquire the calibration parameter which will be shifted into RTC_IO
 
    .. code-block:: c

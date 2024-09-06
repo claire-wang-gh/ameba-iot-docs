@@ -12,13 +12,8 @@ Antifuse one-time programmable (OTP) is the most secure embedded non-volatile me
 
    OTP Layout
 
-
-
-.. note::
-   For detailed layout of each OTP zone, refer to UM1000.
+.. note:: For detailed layout of each OTP zone, refer to UM1000.
    
-
-
 
 OTP Programming APIs
 ----------------------------------------
@@ -171,6 +166,7 @@ OTP Programming Commands
 You can access OTP by the following commands from serial port.
 
 .. _otpc_logical_zone:
+
 Logical Zone
 ~~~~~~~~~~~~~~~~~~~~~~~~
 You can read and write the logical zone by commands listed below.
@@ -192,13 +188,9 @@ You can read and write the logical zone by commands listed below.
    |           |                                      |                                                           |
    |           |                                      | - data: data to be written, in hex                        |
    |           |                                      |                                                           |
-   |           |                                      |                                                           |
-   |           |                                      |                                                           |
    |           |                                      | .. note::                                                 |
    |           |                                      |    The string length of data to be written must be even.  |
    +-----------+--------------------------------------+-----------------------------------------------------------+
-
-
 
 For example:
 
@@ -266,15 +258,13 @@ Usage
 ----------
 Logical Zone
 ~~~~~~~~~~~~~~~~~~~~~~~~
-The OTP can only be programmed once, however some data needs to be overwritten in some reason. Therefore, the logical data can be overwritten after format conversion defined by Realtek, as described in User Manual (Section: Mapping Relationship of Physical OTP and Logical OTP).
+The OTP can only be programmed once, however some data needs to be overwritten in some reason.
+Therefore, the logical data can be overwritten after format conversion defined by Realtek, as described in User Manual (Section: Mapping Relationship of Physical OTP and Logical OTP).
 
 
 The logical zone can be programmed multi-times, in case the remain length of physical zone 0x0~0x1FF is enough.
 
-
-
-.. note::
-   The logical zone is programmed in bytes instead of bits. Therefore, to avoid writing incorrectly that would cause wasting the physical zone for logical mapping, you should read logical map to check the original value before programming new value.
+.. note:: The logical zone is programmed in bytes instead of bits. Therefore, to avoid writing incorrectly that would cause wasting the physical zone for logical mapping, you should read logical map to check the original value before programming new value.
 
 
 System Data
@@ -296,18 +286,17 @@ About the target address that you want to program, there're two cases:
 
 - The other is that the system data hasn't been programmed never. In this case, you can refer to :ref:`Example 2 <otpc_system_data_example_2>`.
 
-
-
-.. note::
-   When programming the system data, the start address must be 4-byte aligned at 4-byte length.
+.. note:: When programming the system data, the start address must be 4-byte aligned at 4-byte length.
 
 .. _otpc_system_data_example_1:
+
 Example 1
 **********
 
 Program the value of logical address 0x02[1] to 1, you should follow these steps:
 
 .. _otpc_system_data_example_1_step_1:
+
 1. Read the logical map to check the original value in logical address 0x00~0x03.
 
    .. code-block:: c
@@ -321,7 +310,7 @@ Program the value of logical address 0x02[1] to 1, you should follow these steps
       u8 data_read[4];
       OTP_LogicalMap_Read(&data_read,0,4);
 
-2. Assume the data is 0x12A03456 in logical address 0x00~0x03 in Step :ref:`1 <otpc_system_data_example_1_step_1>`. Let 0xA0 makes 'OR' operation with programmed bit[1], and other data keeps default value. So the new value to be written is 0x12A23456.
+2. Assume the data is 0x12A03456 in logical address 0x00~0x03 in :ref:`Step 1 <otpc_system_data_example_1_step_1>`. Let 0xA0 makes 'OR' operation with programmed bit[1], and other data keeps default value. So the new value to be written is 0x12A23456.
 
 3. Write the new value 0x12A23456 to logical address 0x00~0x03.
 
@@ -350,12 +339,14 @@ Program the value of logical address 0x02[1] to 1, you should follow these steps
       OTP_LogicalMap_Read(&data_read,0,4);
 
 .. _otpc_system_data_example_2:
+
 Example 2
 **********
 
 Program the value of logical address 0x08[0] to 1, you should follow following steps:
 
 .. _otpc_system_data_example_2_step_1:
+
 1. Read the logical map to check the original value.
 
    .. code-block:: c
@@ -369,7 +360,7 @@ Program the value of logical address 0x08[0] to 1, you should follow following s
       u8 data_read[4];
       OTP_LogicalMap_Read(&data_read,8,4);
 
-2. Assume the data is 0xFFFFFFFF in logical address 0x08~0x0B in step :ref:`1 <otpc_system_data_example_2_step_1>`. Let 0x00 makes 'OR' operation with programmed bit[0], and other data keeps default value. So the new value to be written is 0x00000001.
+2. Assume the data is 0xFFFFFFFF in logical address 0x08~0x0B in :ref:`Step 1 <otpc_system_data_example_2_step_1>`. Let 0x00 makes 'OR' operation with programmed bit[0], and other data keeps default value. So the new value to be written is 0x00000001.
 
 3. Write the new value 0x00000001 to logical address 0x08~0x0B.
 
@@ -647,18 +638,16 @@ Contents in configuration area are listed below. About field's usage in this are
 
 
 .. _otpc_usage_security_zone_config_area_crc:
+
 CRC
 ******
 CRC is used for defending against injection attacks, and this function is accomplished by comparing the valid CRC entry that you programmed into OTP with the one calculated by hardware for security zone (0x200~0x36B).
 If you want to ensure the secure zone un-attacked, then CRC field needs to be programmed.
 
-
 One CRC entry takes 4 bytes, including a 2-byte magic number and a 2-byte valid CRC value.
-
 
 There are 4 CRC entries in total in physical OTP and you can only use one entry at one time. You must use entry 0 first, and then entry1, entry2 and use entry3 at last.
 CRC check cannot be disabled once enabled. Rom will enter endless loop if magic number or valid CRC check fail.
-
 
 When you use CRC validation function for the first time, please follow the following steps:
 
@@ -690,8 +679,7 @@ When you use CRC validation function for the first time, please follow the follo
       
       EFUSE rraw
 
-   .. caution::
-      Pay attention to the order of data.
+   .. caution:: Pay attention to the order of data.
 
 
 5. Reset the chip
@@ -763,13 +751,11 @@ In this area, two keys have their own read protection and write protection. Thes
 
 - For secure boot public key hash, a non-programmed value means that the secure boot is disabled in RMA mode.
 
-
 Contents in hidden physical area and usage is listed below.
 
 .. table::
    :width: 100%
    :widths: auto
-   :class: longtable
 
    +--------+--------+-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | Offset | Bit    | Symbol                      | Description                                                                       | Usage                                                                                                       |
@@ -813,8 +799,5 @@ Contents in hidden physical area and usage is listed below.
    | 0x720  | 256    | RMA SBOOT KEY HASH          | SBOOT Key Hash in RMA Mode                                                        | :ref:`Secure Boot <secure_boot>`                                                                            |
    +--------+--------+-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
-
-
-.. note::
-   After Read protection and Write protection programmed, the key can never be read out again. Please maintain the key carefully.
+.. note:: After Read protection and Write protection programmed, the key can never be read out again. Please maintain the key carefully.
 

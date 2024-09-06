@@ -269,6 +269,7 @@ The FullMAC driver has been tested and verified to work on Linux kernel versions
          cd {driver_path}/cfg80211_fullmac/rtl8730e;make 
 
 .. _load_the_module_step_4:
+
 4. Load the module.
 
    - SDIO: :file:`fullmac_sdio.ko` is generated in ``/cfg80211_fullmac/rtl8730e/sdio``.

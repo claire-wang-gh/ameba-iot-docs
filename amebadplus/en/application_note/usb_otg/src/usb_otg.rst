@@ -68,6 +68,7 @@ Configuration
       :align: center
 
 .. _usb_implementation_configuration_step_2:
+
 2. Select ``Enable USB Device``, then choose the desired USB class:
 
    .. figure:: ../figures/usb_configuration.png
@@ -163,6 +164,7 @@ APIs for Class
    +--------------------------+---------------------------------------------------------------------------------------------------+
 
 .. _usb_device_api_callback_class:
+
 Class Callback
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The USB device class is defined by type ``usbd_class_driver_t`` as a group of callbacks:
@@ -186,7 +188,6 @@ The USB device class is defined by type ``usbd_class_driver_t`` as a group of ca
    } usbd_class_driver_t;
 
 Description of the callbacks:
-
 
 .. table::
    :width: 100%

@@ -59,6 +59,7 @@ The default Flash layout used in SDK is illustrated in the following figure and 
    +------------------------------+------------------+-----------+-------------------------------------------------------------------------------------------------------+-----------+
 
 .. note:: 
+
    [1] KM4_IMG3 only exists in the RTL8721Dx series.
 
 
@@ -141,14 +142,14 @@ If the anti-rollback function is enabled to ensure that the version of the Bootl
 	},
 
 
-.. note::
-   The location of Bootloader OTA1 is fixed to 0x0800_0000, and cannot be modified.
+.. note:: The location of Bootloader OTA1 is fixed to 0x0800_0000, and cannot be modified.
 
 
 Modifying APP Location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _flash_layout_app_ota1:
+
 APP OTA1
 ^^^^^^^^^^^^^^^^
 Follow the steps to modify the location of APP OTA1:
@@ -176,10 +177,12 @@ Follow the steps to modify the location of APP OTA1:
       };
 
 
-   .. _flash_layout_app_ota1_step2:
+.. _flash_layout_app_ota1_step2:
+
 2. Re-build the project to generate the Bootloader and APP OTA1.
 
 .. _flash_layout_app_ota1_step3:
+
 3. Modify the address of ``km0_km4_app.bin`` if you update the location of APP OTA1 through ImageTool, and download the new Bootloader and APP OTA1.
 
    .. figure:: ../figures/app_ota1_step3.png
@@ -254,8 +257,6 @@ Flash Protect Enable
 ----------------------------------------
 Before loading APP IMG, the Bootloader will read the Status Register from Flash. If only Quad Enable (QE) Bit is set in the output of bitwise AND between Status Register of Flash and status_mask in Flash_AVL (``{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c``), do nothing, or the output of bitwise AND will be written to the Flash Status Register.
 
-
-
 .. note::
    By default, setting the QE bit will unlock all the Block Protect Bits. To avoid this operation, set Block Protect bits corresponding to ``Status_mask`` in ``Flash_AVL`` to 0. For example, change the ``Status_mask`` of Winbond in the ``Flash_AVL`` to 0x000043C0.
 
@@ -263,12 +264,10 @@ Before loading APP IMG, the Bootloader will read the Status Register from Flash.
    :scale: 60%
    :align: center
 
-
 In order to avoid the image being damaged due to improper operation when using LittleFS to write user data, it is recommended to modify the location of FTL/LittleFS to the last 64KB area of Flash, and set the Block Protect Bit in the Status Register of Flash at the same time.
 
-
-
 .. note::
+   
       - Only the last 64KB area of Flash can be modified, and the other areas are protected. Remember to unlock the Flash during OTA upgrade, and keep it locked when OTA is completed.
 
       - For some Flashes, you cannot set the Flash to allow only the last block to be modified through Block Protect Bit. In this case, it is recommended to enable the Flash block protection of the first half part.

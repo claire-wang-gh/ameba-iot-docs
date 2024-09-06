@@ -4,7 +4,6 @@ Introduction
 ------------------------
 The KM4 in |CHIP_NAME| device boots at 200MHz at the BootRom Stage, and switches to a higher frequency during the Bootloader Stage. There are some limits when changing SoC clock:
 
-
 .. table:: 
    :width: 100%
    :widths: auto
@@ -22,7 +21,6 @@ The KM4 in |CHIP_NAME| device boots at 200MHz at the BootRom Stage, and switches
    +-------+-------+-----------------+--------------+
 
 
-
 .. note::
    The maximum operating speed of Flash with Wide Range VCC 1.65V~3.6V should use the speed limit of 1.65V~2.3V power supply.
 
@@ -31,10 +29,12 @@ SoC Clock Switch
 The SDK path mentioned in the following sections is ``{SDK}\component\soc\amebadplus\``.
 
 .. _flow:
+
 Flow
 ~~~~~~~~
 
 .. _soc_clock_switch_flow_step_1:
+
 1. (Optional) Find out the speed limit of PSRAM device embedded in |CHIP_NAME| if not sure.
 
    a. Print the value of ``ChipInfo_BDNum()`` function, which will get the chip info from OTP.
@@ -53,7 +53,7 @@ Flow
       // PLL can be 300MHz~688.128MHz
       // KM4_CKD range is [1, 8], KM0_CKD range is [1, 16] or USEXTAL
       const SocClk_Info_TypeDef SocClk_Info[] = {
-	    /* PLL_CLK,    Vol_Type,      KM4_CKD,     KM0_CKD,    PSRAMC_CKD */
+	    // PLL_CLK,    Vol_Type,      KM4_CKD,    KM0_CKD,   PSRAMC_CKD
 	    {PLL_520M,     CORE_VOL_0P9,  CLKDIV(2),	CLKDIV(5),  CLKDIV(2)},
 	    {PLL_331M,     CORE_VOL_1P0,  CLKDIV(1),	CLKDIV(3),  CLKDIV(1)},
 	    {PLL_400M,     CORE_VOL_0P9,  CLKDIV(2),	CLKDIV(4),  CLKDIV(1)},
@@ -67,7 +67,7 @@ Flow
       * Boot_SocClk_Info_Idx is [0, sizeof(SocClk_Info)), Soc will set the SoC clock by SocClk_Info[Boot_SocClk_Info_Idx]
       * /
       #ifdef CONFIG_USB_DEVICE_EN
-      u8 Boot_SocClk_Info_Idx = 3; /* Make sure the PLL_CLK for USB is an integer multiple of 48MHz */
+      u8 Boot_SocClk_Info_Idx = 3; // Make sure the PLL_CLK for USB is an integer multiple of 48MHz 
       #else
       u8 Boot_SocClk_Info_Idx = 0;
       #endif
@@ -131,11 +131,13 @@ Flow
 5. Rebuild the project and download the new image again.
 
 .. _example:
+
 Example
 ~~~~~~~~~~~~~~
 1. Refer to Section :ref:`flow` Step :ref:`1 <soc_clock_switch_flow_step_1>` to find out the speed limit of PSRAM device if not sure (suppose the maximum speed is 200MHz).
 
 .. _soc_clock_switch_example_step_2:
+
 1. Change ``KM4_CKD`` of ``SocClk_Info[0]`` to ``CLKDIV(3)`` if KM4 is wanted to run at 520MHz/3.
 
    .. code-block:: c
@@ -146,7 +148,7 @@ Example
       // PLL can be 300MHz~688.128MHz
       // KM4_CKD range is [1, 8], KM0_CKD range is [1, 16] or USEXTAL
       const SocClk_Info_TypeDef SocClk_Info[] = {
-	    /* PLL_CLK,    Vol_Type,      KM4_CKD,     KM0_CKD,    PSRAMC_CKD */
+	    // PLL_CLK,    Vol_Type,      KM4_CKD,    KM0_CKD,   PSRAMC_CKD 
 	    {PLL_520M,     CORE_VOL_0P9,  CLKDIV(2),	CLKDIV(5),  CLKDIV(2)},
 	    {PLL_331M,     CORE_VOL_1P0,  CLKDIV(1),	CLKDIV(3),  CLKDIV(1)},
 	    {PLL_400M,     CORE_VOL_0P9,  CLKDIV(2),	CLKDIV(4),  CLKDIV(1)},

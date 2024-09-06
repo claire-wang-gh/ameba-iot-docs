@@ -73,12 +73,15 @@ For example, KM0 sends an IPC to KM4 through channel 8.
       */
 
 .. _ipc_usage_procedure_step_3:
+
 3. Register the transmit IRQ handler function of the selected channel in transmit IPC and uncomment the corresponding channel. This step is ``optional`` , because this step is for register Tx interrupt, which is for transmit IPC to know that the receiver IPC has received this IPC. In this case, add a new IPC_INIT_TABLE in the KM0 for channel 8 of KM0 to KM4.
 
 .. _ipc_usage_procedure_step_4:
+
 4. SDK will enable the IPC receiver interrupt of KM4 and transmit interrupt of KM0 (if configured in step :ref:`3 <ipc_usage_procedure_step_3>`) according to ``IPC_INIT_TABLE`` , and register the corresponding IRQ handler and data for the channel.
 
 .. _ipc_usage_procedure_step_5:
+
 5. When KM0 sends an IPC request to KM4 through channel 8, it should call ``ipc_send_message()`` and specify the channel number and message. If no message is needed, just input NULL for the third parameter of ``ipc_send_message ()`` .
 
    .. code-block:: c

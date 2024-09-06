@@ -28,6 +28,7 @@ The steps to prepare GCC environment are as follows:
 2. Run the installer. MSYS2 requires 64-bit Windows 7 or later.
 
 .. _windows_preparing_gcc_environment_step_3:
+
 3. Enter your desired ``Installation Folder`` (ASCII, no accents, spaces nor symlinks, short path)
 
 4. When done, tick ``Run MSYS2 now``.
@@ -193,6 +194,7 @@ This section introduces the steps to prepare the toolchain environment.
 1. Acquire the zip files of |CHIP_NAME| toolchain from Realtek.
 
 .. _windows_installing_toolchain_step_2:
+
 2. Create a new directory ``rtk-toolchain`` under the path ``{MSYS2_path}\opt``.
 
    For example, if your MSYS2 installation path is as set in Section :ref:`windows_gcc_environment` step :ref:`3 <windows_preparing_gcc_environment_step_3>`, the ``rtk-toolchain`` should be in ``C:\msys64\opt``.
@@ -579,8 +581,7 @@ To check whether the image is downloaded correctly into memory, you can select `
 
 After download is successful, press ``Reset`` button and you will see that the device boots with the new image.
 
-.. note::
-   The command is only supported to use in KM4 project, and ``km4_boot_all.bin`` & ``KM0_km4_app.bin`` can be downloaded to Flash.
+.. note:: The command is only supported to use in KM4 project, and ``km4_boot_all.bin`` & ``KM0_km4_app.bin`` can be downloaded to Flash.
 
 .. _entering_debug_mode:
 
@@ -598,27 +599,28 @@ J-Link
 ~~~~~~~~~~~~
 Steps
 ^^^^^^^^^^
-1. Press ``Win+R``on your keyboard. Hold down the Windows key on your keyboard, and press the ``R`` button. This will open the ``Run`` tool in a new pop-up window. Alternatively, you can find and click ``Run`` on the Start menu.
+1. Press ``Win+R`` on your keyboard. Hold down the Windows key on your keyboard, and press the ``R`` button. This will open the ``Run`` tool in a new pop-up window. Alternatively, you can find and click ``Run`` on the Start menu.
 
 2. Type ``cmd`` in the Run window. This shortcut will open the Command Prompt terminal.
 
-3. Click ``OK``in the Run window. This will run your shortcut command, and open the Command Prompt terminal in a new window.
+3. Click ``OK`` in the Run window. This will run your shortcut command, and open the Command Prompt terminal in a new window.
 
 4. Copy the J-Link script command below for specific target:
 
 - For KM4:
 
-  .. code::
+  .. code-block::
   
      "{Jlink_path}\JLink.exe" -device Cortex-M33 -if SWD -speed 4000 -autoconnect 1
   
 - For KM0:
 
-  .. code::
+  .. code-block::
   
      "{Jlink_path}\JLink.exe" -device Cortex-M23 -if SWD -speed 4000 -autoconnect 1
 
 .. note::
+
    The J-Link connection command path mentioned above are:
 
    - ``{Jlink_path}``: the path your Segger J-Link installed, default is ``C:\Program Files (x86)\SEGGER\JLink``.
@@ -673,7 +675,7 @@ The commands mentioned above are listed in the following table.
    +-------+-----------------------------------+---------------------------------------------+
    | flash | ``$make flash``                   | Download ram_all.bin to Flash               |
    +-------+-----------------------------------+---------------------------------------------+
-   | clean | ``$make clean``                   | Remove compile file (*.bin, *.o, …)         |
+   | clean | ``$make clean``                   | Remove compile file (xx.bin, xx.o, …)       |
    +-------+-----------------------------------+---------------------------------------------+
    | debug | ``$make debug``                   | Enter debug mode                            |
    +-------+-----------------------------------+---------------------------------------------+
@@ -689,7 +691,6 @@ The following table describes commonly used instructions and their functions, an
 .. table:: GDB debugger command list
    :width: 100%
    :widths: 20 10 70
-   :class: longtable
 
    +---------------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Usage                           | Command    | Description                                                                                                                                                               |

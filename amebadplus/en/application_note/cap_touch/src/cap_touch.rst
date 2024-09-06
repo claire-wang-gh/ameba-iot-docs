@@ -26,6 +26,7 @@ CTC Initialization
 The CTC initialization is implemented by the following steps:
 
 .. _ctc_initialization_step_1:
+
 1. Call ``CapTouch_StructInit()`` to initialize the configuration parameters of Cap-Touch, such as SampleCnt, ScanInterval, DiffThreshold, etc.
 
 2. Set configuration parameters in the following table and update configuration parameters of Cap-Touch in step :ref:`1 <ctc_initialization_step_1>` with it, which include touch threshold, noise threshold, mbias current, and enable control for each channel. This method to tune parameters for each channel can be found in section :ref:`ctc_calibration`.

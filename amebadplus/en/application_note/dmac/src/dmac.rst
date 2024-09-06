@@ -56,7 +56,7 @@ Transfer Direction and Flow Controller
    :widths: auto
 
    +-----------------------------------------------------+--------------------------+------------------------+
-   | TT_FC[2:0] field of CTLx register (`x is channel)   | Direction                | Flow controller        |
+   | TT_FC[2:0] field of CTLx register (`x` is channel)  | Direction                | Flow controller        |
    +=====================================================+==========================+========================+
    | 000                                                 | Memory to Memory         | DMAC                   |
    +-----------------------------------------------------+--------------------------+------------------------+
@@ -508,6 +508,7 @@ This example is SRC auto reload, compared with single block, multi-block is diff
       - Register the GDMA channel to use
 
 .. _multi_block_demo_step_2:
+
 2. Configure the interrupt type
 
    .. code-block:: C
@@ -529,6 +530,7 @@ This example is SRC auto reload, compared with single block, multi-block is diff
          GDMA_ChCleanAutoReload(0, GDMA_InitStruct->GDMA_ChNum, CLEAN_RELOAD_SRC);
 
 .. _multi_block_demo_step_4:
+
 4. Configure transfer settings
 
    .. code-block:: C

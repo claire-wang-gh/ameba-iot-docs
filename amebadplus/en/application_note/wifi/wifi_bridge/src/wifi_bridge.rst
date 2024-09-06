@@ -247,6 +247,7 @@ The testapp uses netlink to communicate with SDIO host driver. When SDIO host dr
    testapp control flow
 
 .. _bridge_supported_commands:
+
 Supported Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The supported commands are listed below.
@@ -276,6 +277,7 @@ The supported commands are listed below.
    +----------------------------+----------------------------------------------------------------------------------------------+
 
 .. _bridge_command_usage:
+
 Command Usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Copy ``sdio_bridge/bridge_api`` folder to host
