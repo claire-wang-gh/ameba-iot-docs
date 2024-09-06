@@ -54,11 +54,9 @@ Software Setup
 
       - Do not modify or delete :file:`floader_amebaxxx.bin` files, because they are flashloader binary files.
 
-.. only:: RTL8730E or RTL8721D or RTL8711D
-   
-   .. note::
+.. note::
 
-      For WinXP or Win7 only, install the following USB driver if there is a need to download images through USB interface: ``{SDK}/tools/ameba/MP_ImageTool_1_N/RtkUsbCdcAcmSetup.INF``.
+   For WinXP or Win7 only, install the following USB driver if there is a need to download images through USB interface: ``{SDK}/tools/ameba/MP_ImageTool_1_N/RtkUsbCdcAcmSetup.INF``.
    
 
 
