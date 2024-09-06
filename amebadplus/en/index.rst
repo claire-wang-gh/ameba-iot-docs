@@ -8,23 +8,16 @@
 AmebaDPlus Documents
 ==========================================
 
-.. |CHIP_NAME| replace:: AmebaDPlus
-
-.. reStructuredText <rst_syntax/src/template_rst_syntax>
-
 .. toctree::
    :maxdepth: 2
 
 
 
-   Product Overview <product_overview/src/index>
-   Quick Start <quick_start/src/index>
    AT Command <../../ameba/en/at_command/src/index>
    Application Note <application_note/index>
    Software Tools <../../ameba/en/software_tools/index>
    MP Tools <../../ameba/en/mp_tools/src/index>
-   Glossary <../../ameba/en/glossary/index>
-   reStructuredText <../../ameba/en/rst_syntax/src/template_rst_syntax>
+
 
 
    

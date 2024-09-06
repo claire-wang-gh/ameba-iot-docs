@@ -17,7 +17,7 @@ Application Note
    boot_process/src/index
    user_config/src/index  
    hardware_crypto_engine/src/index
-   otp/src/index
+   otpc/src/index
    power_save/src/index
    ipc/src/index
    dmac/src/index
