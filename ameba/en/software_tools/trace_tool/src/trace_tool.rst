@@ -24,21 +24,7 @@ By default, the AGG (aggregation) function of loguart is disabled so any serial 
 When the AGG function is enabled, every packet will be send from UART Tx module with AGG header, which is used for Trace Tool 
 to distinguish multi-path data that from different cores.
 
-.. only:: RTL8730E 
-   
-   The AGG function is used for multi-paths to print logs at the same time, which are KM0, KM4, CA32, BT trace and BT FW logs.
-
-.. only:: RTL8721D or RTL8711D
-     
-   The AGG function is used for multi-paths to print logs at the same time, which are KM0, KM4, BT trace and BT FW logs.
-   
-.. only:: RTL8720EA or RTL8710EC
-   
-   The AGG function is used for multi-paths to print logs at the same time, which are KM4, KR4, BT trace and BT FW logs.
-
-.. only:: RTL8726EA or RTL8713EC
-   
-   The AGG function is used for multi-paths to print logs at the same time, which are KM4, KR4, DSP, BT trace and BT FW logs.
+The AGG function is used for multi-paths to print logs at the same time, which are KM0, KM4, BT trace and BT FW logs.
    
 - When the AGG function is enabled, hardware will attach AGG header automatically. TraceTool can separate logs from different paths according to AGG header. 
   In this case, logs from BT trace and BT FW will be saved into files separately and other logs will print on screen.
@@ -58,37 +44,11 @@ Hardware Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The hardware connection is illustrated below.
 
-.. only:: RTL8730E
-   
-   .. figure:: ../figures/hardware_connection_8730e.svg
-      :scale: 90%
-      :align: center
+.. figure:: ../figures/hardware_connection_8721d.svg
+   :scale: 90%
+   :align: center
 
-      Hardware connection
-
-.. only:: RTL8726EA or RTL8713EC
-   
-   .. figure:: ../figures/hardware_connection_8726e.svg
-      :scale: 90%
-      :align: center
-
-      Hardware connection
-
-.. only:: RTL8720EA or RTL8710EC
-
-   .. figure:: ../figures/hardware_connection_8720e.svg
-      :scale: 90%
-      :align: center
-
-      Hardware connection
-
-.. only:: RTL8721D or RTL8711D
-
-   .. figure:: ../figures/hardware_connection_8721d.svg
-      :scale: 90%
-      :align: center
-
-      Hardware connection
+   Hardware connection
 
 .. note::
    If external UART is used to download images, the USB to UART dongle must be used.
@@ -193,109 +153,17 @@ The history command box records the commands have been sent before.
 
 Command Prefix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. only:: internal
-   
-   Dedicate for Clintwood.
-   
-   .. table::
-      :width: 100%
-      :widths: auto
+.. table::
+   :width: 100%
+   :widths: auto
 
-      +------+-------------+----------------+
-      | Core | Role        | Command prefix |
-      +======+=============+================+
-      | CA32 | None        | ~              |
-      +------+-------------+----------------+
-      | KM4  | Single core | None           |
-      +------+-------------+----------------+
-      | KM0  | Firmware    | @              |
-      +------+-------------+----------------+
-
-.. only:: RTL8730E
-
-   .. table::
-      :width: 100%
-      :widths: auto   
-
-      +------+----------+----------------+
-      | Core | Role     | Command prefix |
-      +======+==========+================+
-      | CA32 | AP       | None           |
-      +------+----------+----------------+
-      | KM4  | NP       | ~              |
-      +------+----------+----------------+
-      | KM0  | Firmware | @              |
-      +------+----------+----------------+
-
-.. only:: RTL8720EA or RTL8710EC
-
-   .. table::
-      :width: 100%
-      :widths: auto
-
-      +------+------+----------------+
-      | Core | Role | Command prefix |
-      +======+======+================+
-      | KM4  | NP   | @              |
-      +------+------+----------------+
-      | KR4  | AP   | None           |
-      +------+------+----------------+
-
-   .. table::
-      :width: 100%
-      :widths: auto
-
-      +------+------+----------------+
-      | Core | Role | Command prefix |
-      +======+======+================+
-      | KM4  | AP   | None           |
-      +------+------+----------------+
-      | KR4  | NP   | @              |
-      +------+------+----------------+
-
-.. only:: RTL8726EA or RTL8713EC
-
-   .. table::
-      :width: 100%
-      :widths: auto
-
-      +------+-----------+----------------+
-      | Core | Role      | Command prefix |
-      +======+===========+================+
-      | DSP  | Algorithm | ~              |
-      +------+-----------+----------------+
-      | KM4  | NP        | @              |
-      +------+-----------+----------------+
-      | KR4  | AP        | None           |
-      +------+-----------+----------------+
-
-   .. table::
-      :width: 100%
-      :widths: auto
-
-      +------+-----------+----------------+
-      | Core | Role      | Command prefix |
-      +======+===========+================+
-      | DSP  | Algorithm | ~              |
-      +------+-----------+----------------+
-      | KM4  | AP        | None           |
-      +------+-----------+----------------+
-      | KR4  | NP        | @              |
-      +------+-----------+----------------+
-
-.. only:: RTL8721D or RTL8711D
-
-   .. table::
-      :width: 100%
-      :widths: auto
-
-      +------+------+----------------+
-      | Core | Role | Command prefix |
-      +======+======+================+
-      | KM4  | AP   | None           |
-      +------+------+----------------+
-      | KM0  | NP   | @              |
-      +------+------+----------------+
+   +------+------+----------------+
+   | Core | Role | Command prefix |
+   +======+======+================+
+   | KM4  | AP   | None           |
+   +------+------+----------------+
+   | KM0  | NP   | @              |
+   +------+------+----------------+
 
 Debug
 ~~~~~~~~~~
@@ -452,23 +320,3 @@ The format of script.txt which is used in auto mode is as follows:
 
       - WHITE SPACE before or after ``=`` is not allowed.
 
-.. only:: internal
-   
-   Efuse Access
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   This function is for internal usage only, used to read/write efuse.
-   
-   .. figure:: ../figures/efuse_access.png
-      :scale: 90%
-      :align: center
-   
-   For more function see below:
-   
-   - Click :guilabel:`Read` button to read efuse, ``efuse rmap`` command will be send to device.
-   
-   - Modify the efuse table value as needed. Click :guilabel:`Program` button to PG efuse, ``efuse wmap`` command will be send to device.
-   
-   - Click :guilabel:`Load` or :guilabel:`Save` button to load or save efuse map.
-   
-   - The :guilabel:`Default` button is used to get default value of efuse table, and the :guilabel:`Clear` button is used to clear efuse table.
-   
