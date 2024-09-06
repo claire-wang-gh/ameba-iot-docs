@@ -34,7 +34,7 @@ The AGG function is used for multi-paths to print logs at the same time, which a
   But disordered logs may appear when more than one CPU are printing logs.
 
 .. note::
-   The AGG function can be enabled by setting *Boot_Agg_En* to TR**UE in :file:`ameba_bootcfg.c`.
+   The AGG function can be enabled by setting *Boot_Agg_En* to TRUE in :file:`ameba_bootcfg.c`.
 
 .. _trace_tool_environment_setup:
 
