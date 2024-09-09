@@ -98,7 +98,7 @@ Software Setup
 
       - To download images through UART interface, the host driver for USB to UART adapter (e.g. PL2303GC) on the board shall be installed first, please find the exact driver from the official website of corresponding vendor of the USB to UART adapter.
 
-      - For WinXP or Win7 only, install the following USB driver if there is a need to download images through USB interface: :file:`{ImageTool}/RtkUsbCdcAcmSetup.INF`.
+      - For WinXP or Win7 only, install the USB driver :file:`{ImageTool}/RtkUsbCdcAcmSetup.INF` if there is a need to download images through USB interface.
       
 Image Download
 -----------------
@@ -121,7 +121,7 @@ For an empty chip, the following mandatory images shall be downloaded:
    |                           +----------------------+---------------------------+---------------------------------------+
    |                           | kr4_km4_app.bin      | KR4/KM4 applications      | √                                     |
    |                           +----------------------+---------------------------+---------------------------------------+
-   |                           | dsp_all.bin          | DSP image                 | X (only for IC series with DSP)       |
+   |                           | dsp_all.bin          | DSP image                 | x (only for IC series with DSP)       |
    +---------------------------+----------------------+---------------------------+---------------------------------------+
    | AmebaDPlus                | km4_boot_all.bin     | KM4 bootloader            | √                                     |
    |                           +----------------------+---------------------------+---------------------------------------+
@@ -169,8 +169,7 @@ The image download steps are illustrated below:
    
 3. Select the corresponding serial port and transmission baud rate. The default baud rate is 1500000.
       
-.. note::
-   The baud rate will be ignored for USB download interface.
+.. note:: The baud rate will be ignored for USB download interface.
          
    4. Click the :menuselection:`Browse` button to select the images to be programmed.
    
@@ -358,6 +357,12 @@ Following follow-up actions are provided for user to choose:
 
 Additionally, user can check the :menuselection:`Remember the choice of follow-up action` check box to remember the choice for further operations, and uncheck :menuselection:`Option > Remember Flash Protection Process` to forget the remembered choice.
 
+.. include:: flash_read_internal.rst
+
+
+.. include:: efuse_access_internal.rst  
+
+
 .. _image_tool_modifying_device_profile:
 
 Modifying Device Profile
@@ -396,5 +401,5 @@ Steps to modify an existing device profile are listed below:
       :scale: 80%
       :align: center
 
-      Edit an existing device profile
+      Editting an existing device profile
 
