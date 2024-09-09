@@ -13,71 +13,71 @@ Connect to AP (STA mode).
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLCONN=[<type>,<value>,<type>,<value>,……]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLCONN:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLCONN:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<type>: The type of the followed parameter <value>.
+:<type>: The type of the followed parameter <value>.
 
-   - "ssid": The <ssid> should be followed.
+   - ``ssid``: The <ssid> should be followed.
 
-   - "bssid": The <bssid> should be followed.
+   - ``bssid``: The <bssid> should be followed.
 
-   - "ch": The <ch> should be followed.
+   - ``ch``: The <ch> should be followed.
 
-   - "pw": The <pw> should be followed.
+   - ``pw``: The <pw> should be followed.
 
-   - "key_id": The <key_id> should be followed.
+   - ``key_id``: The <key_id> should be followed.
 
-<value>: The parameter followed correspond <type>, as bellow:
+:<value>: The parameter followed correspond <type>, as below:
 
-<ssid>: The ssid of Wi-Fi.
+:<ssid>: The ssid of Wi-Fi.
 
    - A name string with length shorter than 33.
 
-<bssid>: The bssid of Wi-Fi.
+:<bssid>: The bssid of Wi-Fi.
 
    - A hexadecimal number string separated by colons, such as 1a:2b:3c:4d:5e:6f.
 
-<pw>: The password of Wi-Fi.
+:<pw>: The password of Wi-Fi.
 
-<key_id>: Key id of Wi-Fi.
+:<key_id>: Key ID of Wi-Fi.
 
-   - [0,3].
+   - [0,3]
 
-<ch>: Channel of Wi-Fi.
+:<ch>: Channel of Wi-Fi.
 
    - The channel of Wi-Fi. It is 0 as default if this parameter is absent.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Error parameter number.
+:1: Error parameter number.
 
-- 2: Error parameter.
+:2: Error parameter.
 
-- 3: Memory failure.
+:3: Memory failure.
 
-- 4: Can not connect to this Wi-Fi.
+:4: Can not connect to this Wi-Fi.
 
-- 5: Wi-Fi is not on.
+:5: Wi-Fi is not on.
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Connect to a Wi-Fi with ssid and password
    AT+WLCONN=ssid,ssid_name,pw,12345678
@@ -99,31 +99,31 @@ Disconnect from AP.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLDISCONN
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLDISCONN:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLDISCONN:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 3: API error when disconnecting.
+:3: API error when disconnecting.
 
-- 4: Timeout.
+:4: Timeout.
 
 .. _wi_fi_at_wlstaticip:
 
@@ -135,41 +135,41 @@ Set static IP for station.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLSTATICIP=<ip>[,<gateway>,<netmask>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLSTATICIP:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLSTATICIP:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<ip>: IP address.
+:<ip>: IP address.
 
    - A data string of IP address, e.g. 192.168.10.33.
 
-<gateway>: Gateway of station.
+:<gateway>: Gateway of station.
 
    - A data string of gateway, e.g. 192.168.10.1.
 
-<netmask>: Netmask of station.
+:<netmask>: Netmask of station.
 
    - A data string of netmask, e.g. 255.255.255.0.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 3: API error when disconnecting.
+:3: API error when disconnecting.
 
-- 4: Timeout.
+:4: Timeout.
 
 .. _wi_fi_at_ping:
 
@@ -181,65 +181,63 @@ PING a domain or IP address.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+PING=<host>[<-t>,<interval>,<-n>,<count>,<-l>,<size>]
    AT+PING=<stop>
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +PING:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +PING:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<host>: The address of host.
+:<host>: The address of host.
 
    - An IP address, or dns address.
 
-<-t>: It will followed by <interval>.
+:<-t>: It will followed by <interval>.
 
-<interval>: Interval time in second.
+:<interval>: Interval time in second.
 
    - A positive number.
 
    - If <-t> <interval> are absent, it is 1s as default.
 
-<-n>: It will followed by <count>.
+:<-n>: It will followed by <count>.
 
-<count>: Ping packets number.
+:<count>: Ping packets number.
 
    - A positive number.
 
    - If <-n> <count> are absent, it is 4 as default.
 
-<-l>: It will followed by <size>.
+:<-l>: It will followed by <size>.
 
-<size>: Ping packet size in byte.
+:<size>: Ping packet size in byte.
 
    - A positive number.
 
    - If <-l> <size> are absent, it is 32 bytes as default.
 
-<stop>: Stop the ongoing ping procedure.
+:<stop>: Stop the ongoing ping procedure.
 
    - "stop": It will stop the ongoing ping procedure.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input null parameter.
+:1: Input null parameter.
 
-- 2: Error parameter number.
+:2: Error parameter number.
 
-Note
-~~~~~~~~
 .. note::
    In this command, the sequence of <-t> <-l> <-n> is not required.
 
@@ -250,7 +248,7 @@ Note
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Default parameters
    AT+PING=192.168.31.200
@@ -280,103 +278,100 @@ IPERF test for TCP or UDP.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+IPERF=<-s>[,<-p>,<port>,<-u>]
 
 Or
 
-.. code::
+.. code-block::
 
    AT+IPERF=<-c>,<host|stop>[,<-i>,<periodic>,<-l>,<size>,<-u>,<-b>,<bandwidth>,<-d>,<-t>,<transtime>,<-n>,<count>,<-S>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +IPERF:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +IPERF:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<-s>: Work as a server.
+:<-s>: Work as a server.
 
-<-c>: Work as a client.
+:<-c>: Work as a client.
 
-<-p>: It will be followed by <port>.
+:<-p>: It will be followed by <port>.
 
-<port>: The server port.
+:<port>: The server port.
 
    - [1,65535].
 
    - It is 5001 as default if absent.
 
-<-u>: Work in UDP.
+:<-u>: Work in UDP.
 
    - If absent, it works in TCP as default.
 
-<host|stop>: A host name or stop stream id.
+:<host|stop>: A host name or stop stream id.
 
    - <stop>: Terminate specific stream id or terminate all stream if no id.
 
    - <host>: The host name of service.
 
-<-i>: It will be followed by <periodic>.
+:<-i>: It will be followed by <periodic>.
 
-<periodic>: Seconds between periodic bandwidth reports.
+:<periodic>: Seconds between periodic bandwidth reports.
 
    - A positive number.
 
-<-l>: It will be followed by <size>.
+:<-l>: It will be followed by <size>.
 
-<size>: Packet size to read or write.
+:<size>: Packet size to read or write.
 
    - A positive number.
 
    - It is 1460 bytes as default if absent.
 
-<-b>: It will be followed by <bandwidth>.
+:<-b>: It will be followed by <bandwidth>.
 
-<bandwidth>: For UDP, the bandwidth in bits/sec.
+:<bandwidth>: For UDP, the bandwidth in bits/sec.
 
    - If <-b>, <bandwidth> are absent, it is 1 bits/sec as default.
 
-<-d>: Do a bidirectional test simultaneously.
+:<-d>: Do a bidirectional test simultaneously.
 
-<-t>: It will be followed by <transtime>.
+:<-t>: It will be followed by <transtime>.
 
-<transtime>: Time in seconds to transmit for.
+:<transtime>: Time in seconds to transmit for.
 
    - If <-t>, <transtime> are absent, it is 10 seconds as default.
 
-<-n>: It will be followed by <count>.
+:<-n>: It will be followed by <count>.
 
-<count>: Number of bytes to transmit.
+:<count>: Number of bytes to transmit.
 
    - A positive number.
 
-<-S>: For UDP, set the IP "type of service".
+:<-S>: For UDP, set the IP "type of service".
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input null parameter.
+:1: Input null parameter.
 
-- 3: Error parameter number.
+:3: Error parameter number.
 
-Note
-~~~~~~~~
-.. note::
-   In this command, the sequence of <-t> <-l> <-n>, etc. is not required.
+.. note:: In this command, the sequence of <-t> <-l> <-n>, etc. is not required.
 
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // For TCP
    AT+IPERF=-s,-p,5002
@@ -397,91 +392,88 @@ IPERF3 test for TCP.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+IPERF3=<-s>[<-p>,<port>]
 
 Or
 
-.. code::
+.. code-block::
 
    AT+IPERF3=<-c>,<host|stop>[,<-i>,<periodic>,<-l>,<size>,<-d>,<-t>,<transtime>,<-n>,<count>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +IPERF3:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +IPERF3:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<-s>: Work as a server.
+:<-s>: Work as a server.
 
-<-c>: Work as a client.
+:<-c>: Work as a client.
 
-<-p>: It will be followed by <port>.
+:<-p>: It will be followed by <port>.
 
-<port>: The server port.
+:<port>: The server port.
 
    - [1,65535].
 
    - It is 5001 as default if absent.
 
-<host|stop>: A host name or stop stream id.
+:<host|stop>: A host name or stop stream id.
 
    - <stop>: Terminate specific stream id or terminate all stream if no id.
 
    - <host>: The host name of service.
 
-<-i>: It will be followed by <periodic>.
+:<-i>: It will be followed by <periodic>.
 
-<periodic>: Seconds between periodic bandwidth reports.
+:<periodic>: Seconds between periodic bandwidth reports.
 
    - A positive number.
 
-<-l>: It will be followed by <size>.
+:<-l>: It will be followed by <size>.
 
-<size>: Packet size to read or write.
+:<size>: Packet size to read or write.
 
    - A positive number.
 
    - It is 1460 bytes as default if absent.
 
-<-d>: Do a bidirectional test simultaneously.
+:<-d>: Do a bidirectional test simultaneously.
 
-<-t>: It will be followed by <transtime>.
+:<-t>: It will be followed by <transtime>.
 
-<transtime>: Time in seconds to transmit for.
+:<transtime>: Time in seconds to transmit for.
 
    - If <-t>, <transtime> are absent, it is 10 seconds as default.
 
-<-n>: It will be followed by <count>.
+:<-n>: It will be followed by <count>.
 
-<count>: Number of bytes to transmit.
+:<count>: Number of bytes to transmit.
 
    - A positive number.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input null parameter.
+:1: Input null parameter.
 
-- 2: Error parameter number.
+:2: Error parameter number.
 
-Note
-~~~~~~~~
-.. note::
-   In this command, the sequence of <-t> <-l> <-n>, etc. is not required.
+.. note:: In this command, the sequence of <-t> <-l> <-n>, etc. is not required.
 
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+IPERF3=-s,-p,5002
    AT+IPERF3=-c,192.168.1.2,-t,100,-p,5002
@@ -496,19 +488,19 @@ Scan the Wi-Fi.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLSCAN
 
 Or
 
-.. code::
+.. code-block::
 
    AT+WLSCAN=[<type>,<value>,<type>,<value>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // The first Wi-Fi scanned
    <bss_type>  <mac>  <rssi>  <channel>  <wps>  <security>  <aes>  <ssid>
@@ -518,19 +510,19 @@ Response
 
 Or
 
-.. code::
+.. code-block::
 
    +WLSCAN:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<type>: The parameter's type.
+:<type>: The parameter's type.
 
    - "ssid": It is followed by <ssid>.
 
    - "ch": It is followed by <chlist>.
 
-<value>: The parameter followed <type>.
+:<value>: The parameter followed <type>.
 
    - <ssid>: the string of ssid name.
 
@@ -538,21 +530,18 @@ Parameter
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Error Wi-Fi join status.
+:1: Error Wi-Fi join status.
 
-- 3: Memory failure.
+:3: Memory failure.
 
-- 5: Failed when scanning.
+:5: Failed when scanning.
 
-Note
-~~~~~~~~
-.. note::
-   The sequence beyond different <type>s is not inquired.
+.. note:: The sequence beyond different <type>s is not inquired.
 
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Scan 2 channels, 1 and 2.
    AT+WLSCAN=ch,1:2
@@ -580,13 +569,13 @@ Get the RSSI of connected AP currently.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLRSSI
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    rssi = <rssi>
    data rssi = <data_rssi>
@@ -595,12 +584,10 @@ Response
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
-Note
-~~~~~~~~
-.. note::
-   If it is not connected status right now, there will be still a response output, but it is meaningless.
+
+.. note:: If it is not connected status right now, there will be still a response output, but it is meaningless.
 
 .. _wi_fi_at_wlstartap:
 
@@ -612,25 +599,25 @@ Start this module as a Wi-Fi AP.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLSTARTAP=[<type>,<value>,<type>,<value>,……]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLSTARTAP:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLSTARTAP:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<type>: The type of the followed parameter <value>.
+:<type>: The type of the followed parameter <value>.
 
    - "ssid": The <ssid> should be followed.
 
@@ -640,15 +627,15 @@ Parameter
 
    - "sec ": The <sec> should be followed.
 
-<value>: The parameter followed correspond <type>, as bellow:
+:<value>: The parameter followed correspond <type>, as bellow:
 
-<ssid>: The string of ssid name.
+:<ssid>: The string of ssid name.
 
-<ch>: Channel of AP.
+:<ch>: Channel of AP.
 
    - [1,11].
 
-<sec>: The security type, with string format.
+:<sec>: The security type, with string format.
 
    - "open".
 
@@ -660,23 +647,23 @@ Parameter
 
    - "wpa3".
 
-<pw>: The string of password.
+:<pw>: The string of password.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input null parameter.
+:1: Input null parameter.
 
-- 2: Error parameter.
+:2: Error parameter.
 
-- 3: Timeout.
+:3: Timeout.
 
-- 4: Failed when starting AP.
+:4: Failed when starting AP.
 
-- 5: Memory failure.
+:5: Memory failure.
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Start with anonymous Wi-Fi
    AT+WLSTARTAP=ssid,new_ssid,ch,1,sec,open
@@ -696,19 +683,19 @@ Stop this module as a Wi-Fi AP.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLSTOPAP
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLSTOPAP:OK
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 .. _wi_fi_at_wlstate:
 
@@ -720,13 +707,13 @@ Get the Wi-Fi state of module, maybe as an AP or a device.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLSTATE
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    WLAN0 Status: <status>
    ==============================
@@ -782,31 +769,31 @@ Enable or disable Wi-Fi auto-connection.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLRECONN=<command>,<parameter>
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLRECONN:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLRECONN:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<command>: Set auto connect or fast re-connect.
+:<command>: Set auto connect or fast re-connect.
 
    - "auto": auto reconnect when wifi disconnect or connect fail.
 
    - "fast": Fast reconnect when wifi power on.
 
-<parameter>: The corresponding value for <command>.
+:<parameter>: The corresponding value for <command>.
 
    - 0: Disable auto-reconnect when <command> is auto. Clear stored flash when <command> is fast.
 
@@ -814,9 +801,9 @@ Parameter
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Error parameter number.
+:1: Error parameter number.
 
-- 2: Invalid <enable> value.
+:2: Invalid <enable> value.
 
 .. _wi_fi_at_wlpromisc:
 
@@ -828,31 +815,31 @@ Enable or disable Wi-Fi promisc.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLPROMISC=<enable>[,<all/apall>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLPROMISC:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLPROMISC:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<enable>: Enable or disable Wi-Fi promisc, with string format.
+:<enable>: Enable or disable Wi-Fi promisc, with string format.
 
    - "enable": Enable.
 
    - "disable": Disable.
 
-<all/apall>: Filter mode.
+:<all/apall>: Filter mode.
 
    - "all": All packets.
 
@@ -860,10 +847,8 @@ Parameter
 
    - If <enable> equals to "enable", the <all/apall> is mandatory.
 
-Note
-~~~~~~~~
-.. note::
-   The <all/apall> is only needed when <enable> equals to "enable".
+
+.. note:: The <all/apall> is only needed when <enable> equals to "enable".
 
 .. _wi_fi_at_wldbg:
 
@@ -875,37 +860,37 @@ Test Wi-Fi iwpriv command.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLDBG=<command>[,<parameters>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLDBG:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLDBG:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<command>: The iwpriv command, with string format.
+:<command>: The iwpriv command, with string format.
 
    - Including command and command length.
 
-<parameters>: The parameters of specific command.
+:<parameters>: The parameters of specific command.
 
    - Including api_id, api_parameters for debugging.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input error parameter.
+:1: Input error parameter
 
-- 2: Failed when do iwpriv testing.
+:2: Failed when doing iwpriv testing
 
 .. _wi_fi_at_wlwps:
 
@@ -917,44 +902,42 @@ Test Wi-Fi wps command.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLWPS=<pcb_pin>[,<pin_val>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLWPS:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLWPS:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<pcb_pin>: The string of "pcb" or "pin".
+:<pcb_pin>: The string of ``pcb`` or ``pin``.
 
-   - "pcb": Start wps pcb.
+   - ``pcb``: Start wps pcb.
 
-   - "pin": Start wps pin display or keypad.
+   - ``pin``: Start wps pin display or keypad.
 
-<pin_val>: The pin value.
+:<pin_val>: The pin value.
 
    - The pin has a valid checksum.
 
-   - If <pcb_pin> equals to "pin", the <pin_val> is mandatory.
+   - If <pcb_pin> equals to ``pin``, the <pin_val> is mandatory.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input error parameter.
+:1: Input error parameter
 
-Note
-~~~~~~~~
-.. note::
-   The <pin_val> is only used when <pcb_pin> equals to "pin".
+
+.. note:: The <pin_val> is only used when <pcb_pin> equals to ``pin``.
 
 .. _wi_fi_at_wlps:
 
@@ -962,49 +945,49 @@ AT+WLPS
 --------------
 Description
 ~~~~~~~~~~~~~~~~~~~~~~
-Enable or disable lps, ips.
+Enable or disable LPS, IPS.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLPS=<mode>,<enable>[,<mode>,<enable>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +WLPS:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +WLPS:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<mode>: The string of "lps" or "ips".
+:<mode>: The string of ``lps`` or ``ips``.
 
-   - "lps": LPS.
+   - ``lps``: LPS
 
-   - "ips": IPS.
+   - ``ips``: IPS
 
-<enable>: Enable or disable LPS/IPS.
+:<enable>: Enable or disable LPS/IPS.
 
-   - 0: Disable.
+   - 0: Disable
 
-   - 1: Enable.
+   - 1: Enable
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input error parameter number.
+:1: Input error parameter number
 
-- 2: Error <lps_ips>.
+:2: Error <lps_ips>
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+WLPS=lps,1
    +WLPS:OK

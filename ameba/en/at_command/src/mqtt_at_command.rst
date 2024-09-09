@@ -13,33 +13,33 @@ Create an MQTT entity.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTOPEN=<con_id>,<host>[,<port>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +MQTTOPEN:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +MQTTOPEN:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<con_id>: The connect entity id.
+:<con_id>: The connect entity id.
 
    - [0,3]
 
-<host>: The string of host name.
+:<host>: The string of host name.
 
    - Not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.
 
-<port>: The connection port.
+:<port>: The connection port.
 
    - [1,65535]
 
@@ -47,23 +47,23 @@ Parameter
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Common error in software.
+:1: Common error in software.
 
-- 2: Error parameters.
+:2: Error parameters.
 
-- 3: Already existed connect id.
+:3: Already existed connect id.
 
-- 4: Memory failure.
+:4: Memory failure.
 
-- 9: Invalid connect id.
+:9: Invalid connect id.
 
-- 18: Task failure.
+:18: Task failure.
 
-- 19: Network is not connected yet.
+:19: Network is not connected yet.
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // At first, you should connect a Wi-Fi
    AT+MQTTOPEN=1,my_test_host,1883
@@ -79,48 +79,45 @@ Delete an MQTT entity.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTCLOSE=<con_id>
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +MQTTCLOSE:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +MQTTCLOSE:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<con_id>: The connect entity id.
+:<con_id>: The connect entity id.
 
    - [0,3]
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Common error in software.
+:1: Common error in software.
 
-- 2: Error parameters.
+:2: Error parameters.
 
-- 3: Already existed connect id.
+:3: Already existed connect id.
 
-- 4: Memory failure.
+:4: Memory failure.
 
-- 6: This connect id has not been created.
+:6: This connect id has not been created.
 
-- 9: Invalid connect id.
+:9: Invalid connect id.
 
-- 11. Can not disconect.
+:11: Can not disconect.
 
-Note
-~~~~~~~~
-.. note::
-   If this MQTT entity has connected to the server, you'd better execute AT+MQTTDISCONN at first, then close this entity.
+.. note:: If this MQTT entity has connected to the server, you'd better execute AT+MQTTDISCONN at first, then close this entity.
 
 .. _mqtt_at_mqttconn:
 
@@ -132,13 +129,13 @@ Connect to host server.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTCONN=<con_id>,<clientid>[,<username>,<password>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Here, this OK will be response immediately, if the command is correct.
    +MQTTCONN:OK
@@ -147,47 +144,47 @@ Response
 
 Or
 
-.. code::
+.. code-block::
 
    +MQTTCONN:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<con_id>: The connect entity id.
+:<con_id>: The connect entity id.
 
    - [0,3]
 
-<clientid>: The string of client id.
+:<clientid>: The string of client id.
 
    - It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.
 
-<username>: The string of username.
+:<username>: The string of username.
 
    - It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.
 
-<password>: The string of pasword.
+:<password>: The string of pasword.
 
    - It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Common error in software.
+:1: Common error in software.
 
-- 2: Error parameters.
+:2: Error parameters.
 
-- 5: Attach error.
+:5: Attach error.
 
-- 6: This connect id has not been created.
+:6: This connect id has not been created.
 
-- 7: Can not connect to host.
+:7: Can not connect to host.
 
-- 9: Invalid connect id.
+:9: Invalid connect id.
 
-- 17: Time out.
+:17: Time out.
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Connect to a service with username and password
    AT+MQTTCONN=1,my_test_host,user_test,pswd_test
@@ -208,41 +205,41 @@ Disconnect from host server.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTDISCONN=<con_id>
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +MQTTDISCONN:OK
 
 Or
 
-.. code::
+.. code-block::
 
    +MQTTDISCONN:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<con_id>: The connect entity id.
+:<con_id>: The connect entity id.
 
    - [0,3]
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Common error in software.
+:1: Common error in software.
 
-- 2: Error parameters.
+:2: Error parameters.
 
-- 6: This connect id has not been created.
+:6: This connect id has not been created.
 
-- 9: Invalid connect id.
+:9: Invalid connect id.
 
-- 10: It is not connected before.
+:10: It is not connected before.
 
-- 17: Time out.
+:17: Time out.
 
 .. _mqtt_at_mqttsub:
 
@@ -254,13 +251,13 @@ Subscribe a topic from host server.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTSUB=<con_id>,<topic_string>[,<qos>]
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Here, this response will be output immediately once the command is correct.
    +MQTTSUB:OK
@@ -269,21 +266,21 @@ Response
 
 Or
 
-.. code::
+.. code-block::
 
    +MQTTSUB:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<con_id>: The connect entity id.
+:<con_id>: The connect entity id.
 
    - [0,3]
 
-<topic_string>: The string of topic to be subscibed.
+:<topic_string>: The string of topic to be subscibed.
 
    - It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.
 
-<qos>: The QoS value.
+:<qos>: The QoS value.
 
    - [0,2]
 
@@ -291,21 +288,21 @@ Parameter
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Common error in software.
+:1: Common error in software.
 
-- 2: Error parameters.
+:2: Error parameters.
 
-- 6: This connect id has not been created.
+:6: This connect id has not been created.
 
-- 9: Invalid connect id.
+:9: Invalid connect id.
 
-- 10: It is not connected before.
+:10: It is not connected before.
 
-- 13: Can not subscribe this topic.
+:13: Can not subscribe this topic.
 
-- 14: Has subscribed this topic already.
+:14: Has subscribed this topic already.
 
-- 17: Time out.
+:17: Time out.
 
 .. _mqtt_at_mqttunsub:
 
@@ -317,13 +314,13 @@ Unsubscribe a topic from host server.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTUSSUB=<con_id>,<topic_string>
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Here, this response will be output immediately once the command is correct.
    +MQTTUNSUB:OK
@@ -332,35 +329,35 @@ Response
 
 Or
 
-.. code::
+.. code-block::
 
    +MQTTUNSUB:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<con_id>: The connect entity id.
+:<con_id>: The connect entity id.
 
    - [0,3]
 
-<topic_string>: The string of topic to be subscibed.
+:<topic_string>: The string of topic to be subscibed.
 
    - It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Common error in software.
+:1: Common error in software.
 
-- 2: Error parameters.
+:2: Error parameters.
 
-- 6: This connect id has not been created.
+:6: This connect id has not been created.
 
-- 9: Invalid connect id.
+:9: Invalid connect id.
 
-- 10: It is not connected before.
+:10: It is not connected before.
 
-- 16: Can not unsubscribe this topic.
+:16: Can not unsubscribe this topic.
 
-- 17: Time out.
+:17: Time out.
 
 .. _mqtt_at_mqttpub:
 
@@ -372,13 +369,13 @@ Publish a message for specific topic.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTPUB=<con_id>,<messageid>[,<qos>,<retain>],<topic>,<message>
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Here, this response will be output immediately once the command is correct.
    +MQTTPUB:OK
@@ -389,70 +386,65 @@ Response
 
 Or
 
-.. code::
+.. code-block::
 
    +MQTTPUB:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<con_id>: The connect entity id.
+:<con_id>: The connect entity id.
 
    - [0,3]
 
-<messageid>: The message id.
+:<messageid>: The message id.
 
    - [1,65534]
 
-<qos>: QoS value.
+:<qos>: (optional) QoS value.
 
    - [0,2]
 
    - It is 2 as default if absent.
 
-<retain>: Retain value.
+:<retain>: (optional) Retain value.
 
    - [0,1]
 
    - It is 0 as default if absent.
 
-<topic>: The string of topic.
+:<topic>: The string of topic.
 
    - It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.
 
    - It is suggested to fill a topic subscribed before.
 
-<msg_string>: The message you will send.
+:<msg_string>: The message you will send.
 
    - It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Common error in software.
+:1: Common error in software.
 
-- 2: Error parameters.
+:2: Error parameters.
 
-- 4. Memory failure.
+:4: Memory failure.
 
-- 6: This connect id has not been created.
+:6: This connect id has not been created.
 
-- 9: Invalid connect id.
+:9: Invalid connect id.
 
-- 10: It is not connected before.
+:10: It is not connected before.
 
-- 12: Can not publish successfully.
+:12: Can not publish successfully.
 
-- 17: Time out.
-
-Note
-~~~~~~~~
-.. note::
-   The <qos> and <retain> are optional.
+:17: Time out.
 
 
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Normal message
    AT+MQTTPUB=1,1,2,0,topic_test,my_message
@@ -475,7 +467,7 @@ Configure the parameters of MQTT entity.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTCFG=<con_id>,?
    AT+MQTTCFG=<con_id>,version,<version>
@@ -488,7 +480,7 @@ Command
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // If execute sub-command "?"
    +MQTTCFG:MQTTVersion <version>
@@ -502,13 +494,13 @@ Response
 
 Or
 
-.. code::
+.. code-block::
 
    +MQTTCFG:ERROR:<error_no>
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<con_id>: The connect entity id.
+:<con_id>: The connect entity id.
 
    - [0,3]
 
@@ -526,45 +518,45 @@ Parameter
 
    - "ssl": Followed by <ssl>.
 
-<version>: MQTT version.
+:<version>: MQTT version.
 
    - [3,4]
 
-<keepalive>: Keepalive value.
+:<keepalive>: Keepalive value.
 
    - [1,3600]
 
-<session>: Session value.
+:<session>: Session value.
 
    - [0,1]
 
-<timeout>: The timeout value in millisecond.
+:<timeout>: The timeout value in millisecond.
 
    - [10000,60000]
 
-<will>: The will value.
+:<will>: The will value.
 
    - 0 or 1.
 
    - When it is 1, it is followed by <qos>, <retain>, <topic> and <message>.
 
-<qos>: QoS value for LWT message.
+:<qos>: QoS value for LWT message.
 
    - [0,2]
 
-<retain>: Retain value for LWT message.
+:<retain>: Retain value for LWT message.
 
    - [0,1]
 
-<topic>: The LWT topic.
+:<topic>: The LWT topic.
 
    - A string.
 
-<message>: The LWT message.
+:<message>: The LWT message.
 
    - A string.
 
-<ssl>: Whether support SSL.
+:<ssl>: Whether support SSL.
 
    - 0: Not support SSL.
 
@@ -572,13 +564,13 @@ Parameter
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Common error in software.
+:1: Common error in software.
 
-- 2: Error parameters.
+:2: Error parameters.
 
 Example
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    // Create an MQTT entity with <con_id> = 1 at first.
    // Inquiry the current parameter.
@@ -613,17 +605,14 @@ Reset all MQTT entities.
 
 Command
 ~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    AT+MQTTRESET
 
 Response
 ~~~~~~~~~~~~~~~~
-.. code::
+.. code-block::
 
    +MQTTRESET:OK
 
-Note
-~~~~~~~~
-.. note::
-   If there are any running MQTT entities, there will be all disconnected and deleted right now.
+.. note:: If there are any running MQTT entities, there will be all disconnected and deleted right now.

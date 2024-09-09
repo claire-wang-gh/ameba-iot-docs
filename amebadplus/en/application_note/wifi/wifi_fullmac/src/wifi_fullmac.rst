@@ -2,15 +2,36 @@
 
 Introduction
 ------------------------
-The Wi-Fi FullMAC solution provides a standard wireless network interface for Linux host, allowing Wi-Fi applications (such as wpa_supplicant, TCP/IP stack, etc.) to run smoothly on the Linux system.
+The Wi-Fi FullMAC solution provides a standard wireless network interface for the host, allowing Wi-Fi applications (such as wpa_supplicant, TCP/IP stack, etc.) to run smoothly on the operating system.
+
+The interfaces supported by Wi-Fi FullMAC are listed below：
+
+.. table::
+   :width: 100%
+   :widths: auto
+
+   +-----------------+-----------------+---------------+
+   | Interface       | Host (Operating system)         |
+   |                 +-----------------+---------------+
+   |                 | Linux           | FreeRTOS      |
+   +=================+=================+===============+
+   | SDIO            | Y               | Y             |
+   +-----------------+-----------------+---------------+
+   | SPI             | Y               | Y             |
+   +-----------------+-----------------+---------------+
+   | USB full speed  | Y               | N             |
+   +-----------------+-----------------+---------------+
+   | UART            | TBD             | TBD           |
+   +-----------------+-----------------+---------------+
+
 
 The Wi-Fi FullMAC driver implements the following modules:
 
-1. Provide a data transmission path between the host and the device based on a private transmission protocol via the SDIO/SPI interface
+- Provide a data transmission path between the host and the device based on a private transmission protocol via the SDIO/SPI interface
 
-2. Adapt the cfg80211 layer and register the wireless network interface (wlan0/1) in the kernel to enable network data packet interaction between the Linux kernel and the |CHIP_NAME|
+- Adapt the cfg80211 layer and register the wireless network interface (wlan0/1) in the kernel to enable network data packet interaction between the Linux kernel and the |CHIP_NAME|
 
-3. Provide commonly-used and proprietary commands to configure the parameters of Wi-Fi interface
+- Provide commonly-used and proprietary commands to configure the parameters of Wi-Fi interface
 
 
 To clarify, in the following sections, the term ``host`` refers to the Linux PC acting as the host, and the term ``device`` refers to the |CHIP_NAME| serving as the device.
@@ -27,39 +48,41 @@ Features
    :width: 100%
    :widths: auto
 
-   +------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Item       | Detail                           | Description                                                                                                                                                                                                   |
-   +============+==================================+===============================================================================================================================================================================================================+
-   | WiFi Mode  | - STA                            | - The STA mode can coexist with any of the other three modes.                                                                                                                                                 |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - SoftAP                         | - The SoftAP mode and NAN mode cannot coexist with P2P GO mode.                                                                                                                                               |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - NAN                            |                                                                                                                                                                                                               |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - P2P GO                         |                                                                                                                                                                                                               |
-   +------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Protocal   | 802.11 b/g/n                     |                                                                                                                                                                                                               |
-   +------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Security   | Open/WPA/WPA2/WPA3               |                                                                                                                                                                                                               |
-   +------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Power Save | Wowlan:                          | In the suspend state, the device can wake up to send and receive packets. The host will only be awakened when the device receives a packet that matches a predefined pattern, thereby achieving power saving. |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - Pattern Match Wakeup (TODO)    | Some filtering conditions (patterns) can be customized as needed, for example, wakeup packet type, MAC address, IP address, or port, etc.                                                                     |
-   |            +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   |            | Proxy Offload:                   | The host can offload some protocols to the device.                                                                                                                                                            |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - ARP Response                   | In the suspend state, when the device receives an offloaded protocol request, it can handle the request autonomously and send a response without waking up the host, thereby saving power.                    |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - mDNS                           |                                                                                                                                                                                                               |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - ICMP Response (TODO)           |                                                                                                                                                                                                               |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - SNMP (TODO)                    |                                                                                                                                                                                                               |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - LLMNR (TODO)                   |                                                                                                                                                                                                               |
-   |            |                                  |                                                                                                                                                                                                               |
-   |            | - SSDP/SLP/WSD/LLTD (TODO)       |                                                                                                                                                                                                               |
-   +------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------+----------------------------------+-----------------------------------------------------------------------------+
+   | Item       | Detail                           | Description                                                                 |
+   +============+==================================+=============================================================================+
+   | Wi-Fi Mode | - STA                            | - The STA mode can coexist with any of the other three modes.               |
+   |            |                                  |                                                                             |
+   |            | - SoftAP                         | - The SoftAP mode and NAN mode cannot coexist with P2P GO mode.             |
+   |            |                                  |                                                                             |
+   |            | - NAN (Linux host only)          |                                                                             |
+   |            |                                  |                                                                             |
+   |            | - P2P GO (Linux host only)       |                                                                             |
+   +------------+----------------------------------+-----------------------------------------------------------------------------+
+   | Protocal   | 802.11 b/g/n                     |                                                                             |
+   +------------+----------------------------------+-----------------------------------------------------------------------------+
+   | Security   | Open/WPA/WPA2/WPA3               |                                                                             |
+   +------------+----------------------------------+-----------------------------------------------------------------------------+
+   | Power Save | Wowlan                           | | In the suspend state, the device can wake up to send and receive packets. |
+   |            |                                  | | The host will only be awakened when the device receives a packet that     |
+   |            |                                  | | matches a predefined pattern, thereby achieving power saving.             |
+   |            |                                  | | Some filtering conditions (patterns) can be customized as needed, for     |
+   |            |                                  | | example, wakeup packet type, MAC address, IP address, or port, etc.       |
+   |            +----------------------------------+-----------------------------------------------------------------------------+
+   |            | Proxy Offload:                   | | The host can offload some protocols to the device.                        |
+   |            |                                  | | In the suspend state, when the device receives an offloaded protocol      |
+   |            | - ARP Response                   | | request, it can handle the request autonomously and send a response       | 
+   |            |                                  | | without waking up the host, thereby saving power.                         |
+   |            | - mDNS                           |                                                                             |
+   |            |                                  |                                                                             |
+   |            | - ICMP Response (TODO)           |                                                                             |
+   |            |                                  |                                                                             |
+   |            | - SNMP (TODO)                    |                                                                             |
+   |            |                                  |                                                                             |
+   |            | - LLMNR (TODO)                   |                                                                             |
+   |            |                                  |                                                                             |
+   |            | - SSDP/SLP/WSD/LLTD (TODO)       |                                                                             |
+   +------------+----------------------------------+-----------------------------------------------------------------------------+
 
 File Tree
 ----------
@@ -115,7 +138,8 @@ Linux PC
 For the Linux PC, an SDIO host peripheral is required. Please connect to |CHIP_NAME| with the corresponding pins according to :ref:`sdio_fullmac_pins`.
 
 
-The |CHIP_NAME| can also use a gold finger adapter to convert the SDIO pins into a standard SD card, as the following figure shows, and supports the hardware platform only with an SD card slot. Note that in this case, you need to contact us to modify the demo board circuit.
+The |CHIP_NAME| can also use a gold finger adapter to convert the SDIO pins into a standard SD card, as the following figure shows, and supports the hardware platform only with an SD card slot.
+Note that in this case, you need to contact us to modify the demo board circuit.
 
 .. This figure is located at ../../wifi_bridge/figures.
    If the figure name has been changed, make sure to update sdio_fullmac.rst accordingly.
@@ -146,28 +170,29 @@ The SPI FullMAC can be used on on platforms with SPI interface, such as Raspberr
    :width: 100%
    :widths: auto
 
-   +-----------------+------------------+---------------+--------------------------------------------------------------------------------------------------------------------------+
-   ||CHIP_NAME| pin  | Raspberry Pi pin | Function      | Description                                                                                                              |
-   +-----------------+------------------+---------------+--------------------------------------------------------------------------------------------------------------------------+
-   | PB24            | GPIO 10          | SPI_MOSI      | SPI pins                                                                                                                 |
-   |                 |                  |               |                                                                                                                          |
-   +-----------------+------------------+---------------+                                                                                                                          |
-   | PB25            | GPIO 9           | SPI_MISO      |                                                                                                                          |
-   |                 |                  |               |                                                                                                                          |
-   +-----------------+------------------+---------------+                                                                                                                          |
-   | PB23            | GPIO 11          | SPI_CLK       |                                                                                                                          |
-   |                 |                  |               |                                                                                                                          |
-   +-----------------+------------------+---------------+                                                                                                                          |
-   | PB26            | GPIO 8           | SPI_CS        |                                                                                                                          |
-   |                 |                  |               |                                                                                                                          |
-   +-----------------+------------------+---------------+--------------------------------------------------------------------------------------------------------------------------+
-   | PB8             | GPIO 23          | DEV_TX_REQ    | This is an output pin for |CHIP_NAME|, used to indicate to host that it has a data packet to send with a rising edge.    |
-   +-----------------+------------------+---------------+--------------------------------------------------------------------------------------------------------------------------+
-   | PB9             | GPIO 22          | DEV_READY     | This is an output pin for AmebaDplus, used to indicate its readiness for SPI transcation to host.                        |
-   |                 |                  |               |                                                                                                                          |
-   |                 |                  |               | - 1: Device is ready.                                                                                                    |
-   |                 |                  |               | - 0: Device is busy.                                                                                                     |
-   +-----------------+------------------+---------------+--------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+------------------+---------------+-----------------------------------------------------------------+
+   ||CHIP_NAME| pin  | Raspberry Pi pin | Function      | Description                                                     |
+   +-----------------+------------------+---------------+-----------------------------------------------------------------+
+   | PB24            | GPIO 10          | SPI_MOSI      | SPI pins                                                        |
+   |                 |                  |               |                                                                 |
+   +-----------------+------------------+---------------+                                                                 |
+   | PB25            | GPIO 9           | SPI_MISO      |                                                                 |
+   |                 |                  |               |                                                                 |
+   +-----------------+------------------+---------------+                                                                 |
+   | PB23            | GPIO 11          | SPI_CLK       |                                                                 |
+   |                 |                  |               |                                                                 |
+   +-----------------+------------------+---------------+                                                                 |
+   | PB26            | GPIO 8           | SPI_CS        |                                                                 |
+   |                 |                  |               |                                                                 |
+   +-----------------+------------------+---------------+-----------------------------------------------------------------+
+   | PB8             | GPIO 23          | DEV_TX_REQ    | | An output pin for |CHIP_NAME|, used to indicate               |
+   |                 |                  |               | | to host that it has a data packet to send with a rising edge. |
+   +-----------------+------------------+---------------+-----------------------------------------------------------------+
+   | PB9             | GPIO 22          | DEV_READY     | | An output pin for |CHIP_NAME|, used to indicate               |
+   |                 |                  |               | | its readiness for SPI transcation to host.                    |
+   |                 |                  |               | - 1: Device is ready.                                           |
+   |                 |                  |               | - 0: Device is busy.                                            |
+   +-----------------+------------------+---------------+-----------------------------------------------------------------+
    
 
 
@@ -428,58 +453,45 @@ The FullMAC driver has been tested and verified to work on Linux kernel versions
 
 Throughput
 --------------------
-SDIO
-~~~~~
 
 .. table::
    :width: 100%
    :widths: auto
 
-   +-----------------------+--------+---------------+---------------+
-   | Wi-Fi driver location | Item   | BW 20M (Mbps) | BW 40M (Mbps) |
-   +=======================+========+===============+===============+
-   | KM0                   | TCP RX | 36            | 42            |
-   |                       +--------+---------------+---------------+
-   |                       | TCP TX | 46            | 54            |
-   |                       +--------+---------------+---------------+
-   |                       | UDP RX | 50            | 60            |
-   |                       +--------+---------------+---------------+
-   |                       | UDP TX | 55            | 62            |
-   +-----------------------+--------+---------------+---------------+
-   | KM4 (331MHz)          | TCP RX | 41            | 58            |
-   |                       +--------+---------------+---------------+
-   |                       | TCP TX | 46            | 80            |
-   |                       +--------+---------------+---------------+
-   |                       | UDP RX | 53            | 74            |
-   |                       +--------+---------------+---------------+
-   |                       | UDP TX | 53            | 90            |
-   +-----------------------+--------+---------------+---------------+
+   +----------------+-----------------------+--------+---------------+---------------+
+   | Interface      | Wi-Fi driver location | Item   | BW 20M (Mbps) | BW 40M (Mbps) |
+   +================+=======================+========+===============+===============+
+   | SDIO :sup:`[1]`| KM0                   | TCP RX | 36            | 42            |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | TCP TX | 46            | 54            |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | UDP RX | 50            | 60            |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | UDP TX | 55            | 62            |
+   |                +-----------------------+--------+---------------+---------------+
+   |                | KM4 (331MHz)          | TCP RX | 41            | 58            |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | TCP TX | 46            | 80            |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | UDP RX | 53            | 74            |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | UDP TX | 53            | 90            |
+   +----------------+-----------------------+--------+---------------+---------------+
+   | SPI :sup:`[2]` | KM0                   | TCP RX | 14.5          |               |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | TCP TX | 16            |               |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | UDP RX | 17.4          |               |
+   |                |                       +--------+---------------+---------------+
+   |                |                       | UDP TX | 17.8          |               |
+   +----------------+-----------------------+--------+---------------+---------------+
 
 .. note::
-   The data above is the test result of device code running in PSRAM, host driver running on Dell Optiplex 3080 MT.
 
+   - [1] The data is the test result of device code running in PSRAM, host driver running on Dell Optiplex 3080 MT.
+   
+   - [2] The data is the test result of device code running in PSRAM, host driver running on Raspberry Pi 4.
 
-SPI
-~~~~~
-
-.. table::
-   :width: 100%
-   :widths: auto
-
-   +-----------------------+--------+---------------+
-   | Wi-Fi driver location | Item   | BW 20M (Mbps) |
-   +=======================+========+===============+
-   | KM0                   | TCP RX | 14.5          |
-   |                       +--------+---------------+
-   |                       | TCP TX | 16            |
-   |                       +--------+---------------+
-   |                       | UDP RX | 17.4          |
-   |                       | UDP TX | 17.8          |
-   +-----------------------+--------+---------------+
-
-
-.. note::
-   TThe data above is the test result of device code running in PSRAM, host driver running on Raspberry Pi 4.
 
 Memory Size Requirement
 ----------------------------------------------
@@ -505,34 +517,25 @@ Take the Wi-Fi driver running on KM0 for an example:
 
 Host
 ~~~~~~~~
-SDIO
-^^^^^
+
 .. table::
    :width: 100%
    :widths: auto
 
-   +------+-----------------+
-   | Item | fullmac_sdio.ko |
-   +======+=================+
-   | txt  | 88KB            |
-   +------+-----------------+
-   | data | 65KB            |
-   +------+-----------------+
-   | bss  | 18KB            |
-   +------+-----------------+
+   +------------+------+-----------------+
+   | Host       | Item | fullmac_xxx.ko  |
+   +============+======+=================+
+   | SDIO       | txt  | 88KB            |
+   |            +------+-----------------+
+   |            | data | 65KB            |
+   |            +------+-----------------+
+   |            | bss  | 18KB            |
+   +------------+------+-----------------+
+   | SPI        | txt  | 73KB            |
+   |            +------+-----------------+
+   |            | data | 54KB            |
+   |            +------+-----------------+
+   |            | bss  | 18KB            |
+   +------------+------+-----------------+
 
-SPI
-^^^^^
-.. table::
-   :width: 100%
-   :widths: auto
-
-   +------+-----------------+
-   | Item | fullmac_spi.ko  |
-   +======+=================+
-   | txt  | 73KB            |
-   +------+-----------------+
-   | data | 54KB            |
-   +------+-----------------+
-   | bss  | 18KB            |
-   +------+-----------------+
+.. note:: The characters before .ko are ``sdio`` or ``spi``, corresponding to different hosts.

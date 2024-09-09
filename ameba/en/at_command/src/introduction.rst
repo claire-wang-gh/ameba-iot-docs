@@ -12,15 +12,19 @@ While receiving the AT command, the slave recognizes the validity of the command
 
 Overview
 ----------------
-Regarding the chip types in slave module, we commonly use AmebaLite, AmebaGreen2, AmebaSmart, and AmebaDPlus.
-For their Usages, the hardware connections are generally similar, but the interfaces used are slightly different.
+Regarding the different chips in slave module, we commonly call them AmebaLite, AmebaGreen2, AmebaSmart, and AmebaDPlus.
+For their usages, the hardware connections are generally similar, but the interfaces used are slightly different.
+
 There are two currently used AT command input and response methods, which can be called LOGUART mode and UART mode.
-In LOGUART mode, the log of the program is in the same window with the input and response of the AT command, but the connection of the device is relatively simple, the module can be directly connected to the PC by USB cable.
-In UART mode, the log of program, input and response of AT commands, are presented in their respective windows, so that the results of AT commands can be displayed to the user more clearly, which can facilitate some automated testing.
+
+- In LOGUART mode, the log of the program is in the same window with the input and response of the AT command, but the connection of the device is relatively simple, the module can be directly connected to the PC by USB cable.
+
+- In UART mode, the log of program, input and response of AT commands, are presented in their respective windows, so that the results of AT commands can be displayed to the user more clearly, which can facilitate some automated testing.
+
 However, the device connection is relatively complicated, it requires an additional designated UART port to be connected to the PC through USB2TTL cable.
 
 
-You can run ``make menuconfig`` to choice UART mode or LOGUART mode. The procedure is as follows:
+You can run ``make menuconfig`` to choose UART mode or LOGUART mode. The procedure is as follows:
 
 .. code-block::
 
@@ -61,7 +65,6 @@ In case of LOGUART mode, the input and response of AT commands are shown in the 
 
 
 In case of UART mode, the input and response of AT commands can be separated from the debug log, through the UART port, making it easier for users to view the execution results of AT commands more intuitively.
-For different chip types, the default UART input and output ports are as :ref:`default_uart_port_and_baud_rates_for_chips` lists.
 
 .. figure:: ../figures/uart.png
    :scale: 90%
@@ -69,14 +72,14 @@ For different chip types, the default UART input and output ports are as :ref:`d
 
    UART mode
 
+For different ICs, the default UART input and output ports are listed below.
+
 .. table:: Default UART port and baud rates for chips
-   :align: center
-   :name: default_uart_port_and_baud_rates_for_chips
    :width: 100%
    :widths: auto
 
    +-------------+---------+---------+-------------------+
-   | CHIPS       | UART TX | UART RX | Default baud rate |
+   | IC          | UART TX | UART RX | Default baud rate |
    +=============+=========+=========+===================+
    | AmebaSmart  | PA_3    | PA_2    | 38400             |
    +-------------+---------+---------+-------------------+
@@ -92,13 +95,13 @@ You can modify these values in :file:`work/ameba_sdk/source/component/at_cmd/at_
 
 1. Modify the baud rate
 
-.. code-block:: C
+.. code-block:: c
 
    #define UART_BAUD   38400
 
 2. Modify the UART ports for chips
 
-.. code-block:: C
+.. code-block:: c
 
    #if defined (CONFIG_AMEBASMART)
    #define UART_TX     _PA_3 // UART0 TX
@@ -182,7 +185,6 @@ For the other AT commands not need use escapes character, the comma will always 
 
 
 .. table:: Commands with escapes character
-   :name: commands_with_escapes_character
    :width: 100%
    :widths: auto
 
@@ -214,10 +216,8 @@ AT Command List
 The AT commands supported now are listed in the following table.
 
 .. table:: AT commands list
-   :name: at_commands_list
    :width: 100%
    :widths: auto
-   :class: longtable
 
    +------------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------+
    | Type                                                 | AT Command                                                   | Description                                               |

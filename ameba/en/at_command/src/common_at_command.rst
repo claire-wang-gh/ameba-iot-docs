@@ -27,7 +27,7 @@ Response
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 .. _common_at_list:
 
@@ -66,7 +66,7 @@ Response
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 .. _common_at_otaclear:
 
@@ -90,7 +90,7 @@ Response
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 .. _common_at_otarecover:
 
@@ -114,7 +114,7 @@ Response
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 .. _common_at_cpuload:
 
@@ -182,7 +182,7 @@ Or
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<mode>: The mode of read CPU load.
+:<mode>: The mode of read CPU load.
 
    - 0: Create task of CPU load statistic.
 
@@ -192,21 +192,21 @@ Parameter
 
    - 3: Output the information from the last statistic time by now.
 
-<interval>: The interval time, in second.
+:<interval>: The interval time, in second.
 
    - [1,INT_MAX]
 
-<count>: The statistic count, 0 or -1 means infinit count.
+:<count>: The statistic count, 0 or -1 means infinit count.
 
    - [-1,INT_MAX]
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Error input parameter numbers.
+:1: Error input parameter numbers.
 
-- 2: Can not start task successfully.
+:2: Can not start task successfully.
 
-- 3: Error input mode.
+:3: Error input mode.
 
 Example
 ~~~~~~~~~~~~~~
@@ -274,7 +274,7 @@ Response
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 .. _common_at_state:
 
@@ -308,7 +308,7 @@ Response
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 Example
 ~~~~~~~~~~~~~~
@@ -352,7 +352,7 @@ Response
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-NULL
+None
 
 Example
 ~~~~~~~~~~~~~~
@@ -418,9 +418,9 @@ Parameter
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Error input parameter.
+:1: Error input parameter.
 
-- 2: Failed when setting.
+:2: Failed when setting.
 
 Example
 ~~~~~~~~~~~~~~
@@ -475,17 +475,17 @@ Or
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<address>: The address of flash.
+:<address>: The address of flash.
 
    - [<start>,268435455]
 
    - Here the <start> means the start address of flash.
 
-<length>: The dump length of flash.
+:<length>: The dump length of flash.
 
    - The length based on <address> should not overflow.
 
-<in_byte>: Dump data in bytes.
+:<in_byte>: Dump data in bytes.
 
    - "B" or "b" if present, it means dump data in bytes.
 
@@ -493,10 +493,8 @@ Parameter
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input error parameters.
+:1: Input error parameters.
 
-Note
-~~~~~~~~
 .. note::
    The address entered must be valid, otherwise, crash may happen.
 
@@ -530,20 +528,17 @@ Or
 
 Parameter
 ~~~~~~~~~~~~~~~~~~
-<address>: The address of flash.
+:<address>: The address of flash.
 
    - [<start>,<end>]
 
    - Here the <start> means the start address of flash, <end> means the end address of flash.
 
-<data>: The data you will write at this address.
+:<data>: The data you will write at this address.
 
 Error Number
 ~~~~~~~~~~~~~~~~~~~~~~~~
-- 1: Input error parameters.
+:1: Input error parameters.
 
-Note
-~~~~~~~~
-.. note::
-   The address entered must be valid, otherwise, crash may happen.
+.. note:: The address entered must be valid, otherwise, crash may happen.
 
