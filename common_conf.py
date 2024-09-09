@@ -163,8 +163,8 @@ numfig_format = {
 }
 
 # 设置资源路径
-templates_path = ["..\..\_templates"]
-html_static_path = ["..\..\_static"]
+templates_path = ["_templates"]
+html_static_path = ["_static"]
 
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_theme = "sphinx_rtd_theme"
