@@ -6,6 +6,7 @@
 
 import re
 import os
+import shutil
 from pathlib import Path
 from typing import List
 
@@ -13,10 +14,9 @@ from typing import List
 exclude_patterns = []
 running_path = Path.cwd()
 project_dir = running_path.parent
-source_dir = project_dir.parent
-for fpath in source_dir.iterdir():
-    if fpath.name not in ["ameba", project_dir.name] and fpath.is_dir():
-        exclude_patterns.append(fpath.name)
+repo_root = project_dir.parent
+
+common_dirs_files = ["_static", "_templates", "ameba"]
 
 
 # 定义排除更多与toctree无关的rst的方法
@@ -55,12 +55,12 @@ def get_toctree_rst(root_rst: Path, toctree_rst_files: List) -> None:
                 get_toctree_rst(sub_rst, toctree_rst_files)
 
 
-def get_exclude_rst(root_rst: Path, repo_root: Path, exclude_patterns) -> List:
+def get_exclude_rst(root_rst: Path, src_root: Path, exclude_patterns) -> List:
     """
     get exclude rst files
     Args:
         root_rst (Path): root rst path
-        repo_root (Path): repo path
+        src_root (Path): source path
         exclude_patterns(List):
 
     Returns:
@@ -69,26 +69,72 @@ def get_exclude_rst(root_rst: Path, repo_root: Path, exclude_patterns) -> List:
     exclude_rst = []
     toctree_rst_files = []
     get_toctree_rst(root_rst, toctree_rst_files)
-    for fpath in Path(repo_root).iterdir():
+    for fpath in Path(src_root).iterdir():
         if fpath.is_dir():
             if fpath.name in exclude_patterns:  # skip already in exclude dir
                 continue
             for file in fpath.rglob("*.rst"):
                 if file not in toctree_rst_files:
-                    exclude_rst.append(os.path.relpath(file, repo_root).replace("\\", "/"))
+                    exclude_rst.append(os.path.relpath(file, src_root).replace("\\", "/"))
         elif fpath.is_file() and fpath.suffix == ".rst":
             if fpath not in toctree_rst_files:
-                exclude_rst.append(os.path.relpath(fpath, repo_root).replace("\\", "/"))
+                exclude_rst.append(os.path.relpath(fpath, src_root).replace("\\", "/"))
 
     return exclude_rst
 
 
-def get_master_doc(config_file, repo_root):
+def get_master_doc():
     if os.environ.get("SET_NDA"):
-        master_doc = os.path.relpath(f"{config_file.parent}/index_nda", repo_root).replace("\\", "/")
+        master_doc = "index_nda"
     else:
-        master_doc = os.path.relpath(f"{config_file.parent}/index", repo_root).replace("\\", "/")
+        master_doc = "index"
     return master_doc
+
+
+# -- 清理公共文件 -------------------------------------------------
+def clean_common_files(source_dir):
+    print("Clean common files...")
+    for common_dirs_file in common_dirs_files:
+        tgt_ = source_dir / common_dirs_file
+        if tgt_.exists():
+            try:
+                if tgt_.is_file():
+                    os.remove(tgt_)
+                elif tgt_.is_dir():
+                    shutil.rmtree(tgt_)
+            except:
+                print(f"[Warning]Fail to clean {tgt_}!")
+
+
+# -- 复制公共文件 -------------------------------------------------
+def copy_common_files(source_dir):
+    for common_dirs_file in common_dirs_files:
+        src_ = repo_root / common_dirs_file
+        tgt_ = source_dir / common_dirs_file
+
+        if src_.exists():
+            try:
+                if src_.is_file():
+                    shutil.copy(src_, tgt_)
+                elif src_.is_dir():
+                    shutil.copytree(src_, tgt_)
+                else:
+                    pass
+                print(f"Copy {src_}!")
+            except:
+                print(f"[Failed]Copy {src_}!")
+        else:
+            print(f"[Warning]Not exists {src_}!")
+
+
+# -- 注册事件，用于清理公共文件 -------------------------------------------------
+def run_after_build(app, exception):
+    if exception is None:
+        clean_common_files(app.srcdir)
+
+
+def setup(app):
+    app.connect('build-finished', run_after_build)
 
 
 # 公共设置

@@ -68,11 +68,11 @@ if "%1" == "" (
 ) else if "%1" == "visio" (
     python ..\sphinx_venv\Scripts\trans_visio_files.py -r ..
 ) else if "%1" == "en" (
-    echo "..\sphinx_venv\Scripts\sphinx-build.exe -b html .. build/html/latest -c %1 !tag!"
-    python ..\sphinx_venv\Scripts\sphinx-build.exe -b html .. build/html/latest -c %1 !tag!
+    echo "..\sphinx_venv\Scripts\sphinx-build.exe -b html %1 build/html/latest -c %1 !tag!"
+    python ..\sphinx_venv\Scripts\sphinx-build.exe -b html %1 build/html/latest -c %1 !tag!
 ) else if "%1" == "cn" (
-    echo "..\sphinx_venv\Scripts\sphinx-build.exe -b html .. build/html/latest -c %1 !tag!"
-    python ..\sphinx_venv\Scripts\sphinx-build.exe -b html .. build/html/latest -c %1 !tag!
+    echo "..\sphinx_venv\Scripts\sphinx-build.exe -b html %1 build/html/latest -c %1 !tag!"
+    python ..\sphinx_venv\Scripts\sphinx-build.exe -b html %1 build/html/latest -c %1 !tag!
 ) else (
     echo "Invalid target: %1."
     exit /b 1
