@@ -20,7 +20,7 @@ build:
     - echo "Checking Sphinx version..."
     - sphinx-build --version  # Check if sphinx-build is available
     - echo "Building Sphinx documentation..."
-    - sphinx-build -b html amebdplus/en/ $READTHEDOCS_OUTPUT/html
+    - sphinx-build -b html amebadplus/en/ $READTHEDOCS_OUTPUT/html
 
 # Optional but recommended, declare the Python requirements required
 # to build your documentation
@@ -31,7 +31,7 @@ python:
 
 # Build documentation in the directory with Sphinx
 sphinx:
-  configuration: amebdplus/en/conf.py
+  configuration: amebadplus/en/conf.py
 
 # Optionally build your docs in additional formats such as PDF and ePub
 formats:
