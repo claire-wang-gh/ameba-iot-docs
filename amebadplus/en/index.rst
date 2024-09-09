@@ -13,10 +13,10 @@ AmebaDPlus Documents
 
 
 
-   AT Command <../../ameba/en/at_command/src/index>
+   AT Command <ameba/en/at_command/src/index>
    Application Note <application_note/index>
-   Software Tools <../../ameba/en/software_tools/index>
-   MP Tools <../../ameba/en/mp_tools/src/index>
+   Software Tools <ameba/en/software_tools/index>
+   MP Tools <ameba/en/mp_tools/src/index>
 
 
 
