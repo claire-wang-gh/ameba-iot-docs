@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Modify Memory Layout &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="MPU and Cache" href="../../../mpu_cache/src/index.html" />
+    <link rel="prev" title="Introduction" href="ram_layout.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Flash and Memory Layout</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../flash_layout/src/index.html">Flash Layout</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Memory Layout</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ram_layout.html">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ram_layout.html#ram-layout">RAM Layout</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">How to Modify Memory Layout</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Flash and Memory Layout</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Memory Layout</a></li>
+      <li class="breadcrumb-item active">How to Modify Memory Layout</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/application_note/flash_memory_layout/memory_layout/src/how_to_modify_memory_layout.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-modify-memory-layout">
+<h1>How to Modify Memory Layout<a class="headerlink" href="#how-to-modify-memory-layout" title="Link to this heading"></a></h1>
+<p>The following memory size can be modified.</p>
+<ul class="simple">
+<li><p>Bootloader</p></li>
+<li><p>BD_RAM</p></li>
+<li><p>BD_PSRAM</p></li>
+<li><p>Heap</p></li>
+</ul>
+<section id="modifying-bootloader-size">
+<h2>Modifying Bootloader Size<a class="headerlink" href="#modifying-bootloader-size" title="Link to this heading"></a></h2>
+<p>If you need to enlarge the size of <code class="docutils literal notranslate"><span class="pre">KM4_BOOT_RAM_S</span></code>,`` the modified <code class="docutils literal notranslate"><span class="pre">KM4_BOOT_RAM_S</span></code> size should be 4KB aligned because the MPC protection is protected in unit 4KB.</p>
+<p>Follow the steps to modify the size of Bootloader:</p>
+<ol class="arabic">
+<li><p>Modify the CONFIG Link Option in menuconfig to choose whether to place the Bootloader (IMG1) on FLASH or SRAM. When SRAM is selected, the size of <code class="docutils literal notranslate"><span class="pre">KM4_BOOTLOADER_RAM_S</span></code> is 24K; when FLASH is selected, the size of <code class="docutils literal notranslate"><span class="pre">KM4_BOOTLOADER_RAM_S</span></code> is 4K.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/modify_bootloader_size_step1.png"><img alt="../../../../_images/modify_bootloader_size_step1.png" src="../../../../_images/modify_bootloader_size_step1.png" style="width: 409.5px; height: 62.1px;" /></a>
+</figure>
+</li>
+<li><p>By modifying <code class="docutils literal notranslate"><span class="pre">KM4_IMG1_SIZE</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project\amebaDplus_layout.ld</span></code>, users can change the size of the KM4 BOOTLOADER RAM S.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/modify_bootloader_size_step2.png"><img alt="../../../../_images/modify_bootloader_size_step2.png" src="../../../../_images/modify_bootloader_size_step2.png" style="width: 367.2px; height: 108.9px;" /></a>
+</figure>
+</li>
+<li><p>Re-build the project to generate the Bootloader.</p></li>
+<li><p>Modify the end address of <code class="docutils literal notranslate"><span class="pre">km4_boot_all.bin</span></code> if Bootloader is too large, and download the new Bootloader.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/modify_bootloader_size_step4.png"><img alt="../../../../_images/modify_bootloader_size_step4.png" src="../../../../_images/modify_bootloader_size_step4.png" style="width: 819.45px; height: 171.45000000000002px;" /></a>
+</figure>
+</li>
+</ol>
+<p>After that, Boot ROM will load the new Bootloader if the version of new Bootloader is bigger.</p>
+</section>
+<section id="modifying-bd-ram-size">
+<h2>Modifying BD_RAM Size<a class="headerlink" href="#modifying-bd-ram-size" title="Link to this heading"></a></h2>
+<p>Follow the steps to modify the size of KM4 BD RAM:</p>
+<ol class="arabic">
+<li><p>Users can change the KM4 BD RAM size by modifying <code class="docutils literal notranslate"><span class="pre">RAM_KM0_IMG2_SIZE</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project\amebaDplus_</span> <span class="pre">layout.ld</span></code> to change the end address of <code class="docutils literal notranslate"><span class="pre">KM4_BD_RAM</span></code>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/modify_sd_ram_step1.png"><img alt="../../../../_images/modify_sd_ram_step1.png" src="../../../../_images/modify_sd_ram_step1.png" style="width: 359.1px; height: 24.3px;" /></a>
+</figure>
+</li>
+<li><p>Re-build and download the new Bootloader and IMG2 OTA2 as described in Section section <a class="reference internal" href="../../flash_layout/src/flash_layout.html#flash-layout-app-ota1"><span class="std std-ref">APP OTA1</span></a> step <a class="reference internal" href="../../flash_layout/src/flash_layout.html#flash-layout-app-ota1-step2"><span class="std std-ref">2</span></a> ~ <a class="reference internal" href="../../flash_layout/src/flash_layout.html#flash-layout-app-ota1-step3"><span class="std std-ref">3</span></a>.</p></li>
+</ol>
+</section>
+<section id="modifying-bd-psram-size">
+<h2>Modifying BD_PSRAM Size<a class="headerlink" href="#modifying-bd-psram-size" title="Link to this heading"></a></h2>
+<p>If user wants to modify the KM4 BD PSRAM size, please modify the running position of IMG2 in menuconfig first. Any option with PSRAM is acceptable. Then modify <code class="docutils literal notranslate"><span class="pre">PSRAM_KM4_IMG2_SIZE</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project\amebaDplus_layout.ld</span></code> to change the end address of <code class="docutils literal notranslate"><span class="pre">KM4_BD_PSRAM</span></code>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/modify_sd_ram_step2.png"><img alt="../../../../_images/modify_sd_ram_step2.png" src="../../../../_images/modify_sd_ram_step2.png" style="width: 689.5px; height: 60.9px;" /></a>
+</figure>
+</section>
+<section id="extending-heap-size">
+<h2>Extending Heap Size<a class="headerlink" href="#extending-heap-size" title="Link to this heading"></a></h2>
+<p>The heap size consists of multi-blocks and is passed to the operating system by the <code class="docutils literal notranslate"><span class="pre">os_heap_init()</span></code> function in <code class="docutils literal notranslate"><span class="pre">component\os\freertos\freertos_heap5_config.c</span></code>. By default, <code class="docutils literal notranslate"><span class="pre">PSRAM_HEAP1_START</span></code> is invalid address and <code class="docutils literal notranslate"><span class="pre">PSRAM_HEAP1_SIZE</span></code> is 0.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/modify_sd_ram_step2_2.png"><img alt="../../../../_images/modify_sd_ram_step2_2.png" src="../../../../_images/modify_sd_ram_step2_2.png" style="width: 714.0px; height: 30.799999999999997px;" /></a>
+</figure>
+<p>If the heap of KM4 is not enough, define Heap Start and Heap Size for some unused areas in <code class="docutils literal notranslate"><span class="pre">amebaDplus_layout.ld</span></code>, and then use the os_heap_add function to add the area to the heap array. The address shall be a valid value in PSRAM, then re-build and download the new image to let KM4 use the extended heap.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span> <span class="n">os_heap_add</span><span class="p">(</span><span class="n">u8</span> <span class="o">*</span><span class="n">start_addr</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">heap_size</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The symbols defined in linker script (<code class="docutils literal notranslate"><span class="pre">amebaDplus_layout.ld</span></code>) need to be declared in <code class="docutils literal notranslate"><span class="pre">ameba_boot.h</span></code> before they can be used.</p>
+</div>
+<p>If KM0 heap is not enough, modify the <code class="docutils literal notranslate"><span class="pre">KM0_PSRAM_HEAP_EXT</span></code> accordingly.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ram_layout.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../mpu_cache/src/index.html" class="btn btn-neutral float-right" title="MPU and Cache" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

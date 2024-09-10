@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wi-Fi CSI Introduction &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Wi-Fi Bridge" href="../../wifi_bridge/src/index.html" />
+    <link rel="prev" title="Wi-Fi CSI" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Wi-Fi</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_tunnel/src/index.html">Wi-Fi Tunnel</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Wi-Fi CSI</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Wi-Fi CSI Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wi-fi-csi-function-flow">Wi-Fi CSI Function Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wi-fi-csi-apis">Wi-Fi CSI APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-of-wi-fi-csi">Example of Wi-Fi CSI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-compile-image-for-wi-fi-csi">How to Compile Image for Wi-Fi CSI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_bridge/src/index.html">Wi-Fi Bridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_fullmac/src/index.html">Wi-Fi FullMAC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Wi-Fi</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Wi-Fi CSI</a></li>
+      <li class="breadcrumb-item active">Wi-Fi CSI Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/application_note/wifi/wifi_csi/src/wifi_csi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wi-fi-csi-introduction">
+<span id="wifi-csi"></span><h1>Wi-Fi CSI Introduction<a class="headerlink" href="#wi-fi-csi-introduction" title="Link to this heading"></a></h1>
+<p>Call CSI APIs to get DUT to specific STA’s channel frequency response information, which we also call Channel State Information (CSI).</p>
+<p>Realtek Wi-Fi CSI can divide into Active CSI and Passive CSI based on whether Realtek device (STA mode or SoftAP mode) participates in transmitting a CSI triggering frame.</p>
+<ul>
+<li><p><strong>Active CSI</strong>: Realtek STA would transmit a CSI triggering frame</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Active CSI is divided into two modes based on the type of CSI triggering frame: unicast mode and broadcast mode. The procedure is illustrated in <a class="reference internal" href="#wifi-acitve-csi-unicast-mode"><span class="std std-ref">Active CSI: Unicast mode</span></a> and <a class="reference internal" href="#wifi-acitve-csi-broadcast-mode"><span class="std std-ref">Active CSI: Broadcast Mode</span></a>.</p></li>
+<li><p>Using Public Action Fame as CSI triggering frame in Active CSI.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Passive CSI</strong>: Realtek STA does not require sending a CSI triggering frame</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The procedure is illustrated in <a class="reference internal" href="#wifi-passive-csi"><span class="std std-ref">Passive CSI</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="active-csi-unicast-mode">
+<span id="wifi-acitve-csi-unicast-mode"></span><h2>Active CSI: Unicast mode<a class="headerlink" href="#active-csi-unicast-mode" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>METHOD1</strong>: Realtek STA send unicast CSI triggering frame to the AP and capture CSI of the ACK for previous CSI triggering frame (only one-to-one).</p></li>
+<li><p><strong>METHOD1_Variant</strong>: Realtek STA send unicast CSI triggering frame to other STAx and capture CSI of the ACK for previous CSI triggering frame (one-to-many by polling).</p></li>
+<li><p><strong>METHOD2</strong>: Realtek SoftAP send unicast CSI triggering frame to the associated stations and capture CSI of the ACK for previous unicast CSI triggering frame (one-to-many by polling).</p></li>
+</ul>
+<figure class="align-center" id="collecting-csi-from-rx-ack-packet-response-mode">
+<a class="reference internal image-reference" href="../../../../_images/collecting_csi_from_rx_ack_packet_response_mode.svg"><img alt="../../../../_images/collecting_csi_from_rx_ack_packet_response_mode.svg" height="489" src="../../../../_images/collecting_csi_from_rx_ack_packet_response_mode.svg" width="1346" /></a>
+<figcaption>
+<p><span class="caption-text">Collect CSI from Rx ACK packet for Rx response mode</span><a class="headerlink" href="#collecting-csi-from-rx-ack-packet-response-mode" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="active-csi-broadcast-mode">
+<span id="wifi-acitve-csi-broadcast-mode"></span><h2>Active CSI: Broadcast Mode<a class="headerlink" href="#active-csi-broadcast-mode" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>METHOD3</strong>: Realtek SoftAP sends broadcast packet for Realtek stations and Realtek stations captures CSI of the broadcast packet.</p></li>
+<li><p><strong>METHOD4</strong>: Realtek STA sends broadcast packet and other Realtek stations capture CSI of the broadcast packet.</p></li>
+</ul>
+<figure class="align-center" id="collecting-csi-from-rx-broadcast-packet-normal-mode">
+<a class="reference internal image-reference" href="../../../../_images/collecting_csi_from_rx_broadcast_packet_normal_mode.svg"><img alt="../../../../_images/collecting_csi_from_rx_broadcast_packet_normal_mode.svg" height="625" src="../../../../_images/collecting_csi_from_rx_broadcast_packet_normal_mode.svg" width="1324" /></a>
+<figcaption>
+<p><span class="caption-text">Collect CSI from Rx broadcast packet for Rx normal mode</span><a class="headerlink" href="#collecting-csi-from-rx-broadcast-packet-normal-mode" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="passive-csi">
+<span id="wifi-passive-csi"></span><h2>Passive CSI<a class="headerlink" href="#passive-csi" title="Link to this heading"></a></h2>
+<p>Realtek STA or SoftAP captures CSI from the Rx packet (only one-to-one).</p>
+<figure class="align-center" id="collecting-csi-from-rx-packet-normal-mode">
+<a class="reference internal image-reference" href="../../../../_images/collecting_csi_from_rx_packet_normal_mode.svg"><img alt="../../../../_images/collecting_csi_from_rx_packet_normal_mode.svg" height="501" src="../../../../_images/collecting_csi_from_rx_packet_normal_mode.svg" width="813" /></a>
+<figcaption>
+<p><span class="caption-text">Collect CSI from Rx packet for Rx normal mode</span><a class="headerlink" href="#collecting-csi-from-rx-packet-normal-mode" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="wi-fi-csi-function-flow">
+<h1>Wi-Fi CSI Function Flow<a class="headerlink" href="#wi-fi-csi-function-flow" title="Link to this heading"></a></h1>
+<p>The following figure illustrates the CSI operation flow for unicast mode.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/csi_operation_flow_unicast_mode.svg"><img alt="../../../../_images/csi_operation_flow_unicast_mode.svg" height="550" src="../../../../_images/csi_operation_flow_unicast_mode.svg" width="863" /></a>
+<figcaption>
+<p><span class="caption-text">CSI operation flow for unicast mode</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>As described below, Wi-Fi CSI report mainly consists of three modules for unicast mode.</p>
+<ol class="arabic simple">
+<li><p>Configure and enable Wi-Fi CSI parameter</p>
+<ul class="simple">
+<li><p>APP needs to call APIs to configure Wi-Fi CSI parameters which they wanted and enable Wi-Fi CSI function.</p></li>
+<li><p>APP can call the APIs to disable Wi-Fi CSI function when Wi-Fi CSI is not required.</p></li>
+</ul>
+</li>
+<li><p>Register or release Wi-Fi CSI callback function</p>
+<ul class="simple">
+<li><p>Register a Wi-Fi CSI callback function when enabling Wi-Fi CSI, Wi-Fi will transfer a flag inform app when per CSI packet receive ready through the callback function</p></li>
+<li><p>Release the Wi-Fi CSI callback function when disabling Wi-Fi CSI</p></li>
+</ul>
+</li>
+<li><p>Report Wi-Fi CSI</p>
+<ul class="simple">
+<li><p>APP should run a thread used to wait for CSI packet ready and then call APIs to fetch a CSI packet.</p></li>
+<li><p>APP should give a semaphore in the Wi-Fi CSI callback function and take the semaphore in the thread.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="wi-fi-csi-apis">
+<h1>Wi-Fi CSI APIs<a class="headerlink" href="#wi-fi-csi-apis" title="Link to this heading"></a></h1>
+<section id="wifi-csi-config">
+<h2>wifi_csi_config<a class="headerlink" href="#wifi-csi-config" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Function prototype:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">wifi_csi_config</span><span class="w"> </span><span class="p">(</span><span class="n">rtw_csi_action_parm_t</span><span class="w"> </span><span class="o">*</span><span class="n">act_parm</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Description: CSI parameter configuration</p></li>
+<li><p>CSI parameters configuration can be divided into two steps:</p>
+<ul class="simple">
+<li><p>act = <em>CSI_ACT_CFG</em> for Wi-Fi CSI parameters input</p></li>
+<li><p>act = <em>CSI_ACT_EN</em> for only Wi-Fi CSI enable or disable. If disabled, APP should reconfigure Wi-Fi CSI parameters and re-enable Wi-Fi CSI.</p></li>
+</ul>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>group_num</p></td>
+<td><p>rtw_csi_group_type</p></td>
+<td><p>CSI info subcarrier decimation</p>
+<ul class="simple">
+<li><p>0: per tone</p></li>
+<li><p>1: per 2 tone</p></li>
+<li><p>2: per 4 tone</p></li>
+<li><p>3: per 8 tone</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>accuracy</p></td>
+<td><p>rtw_csi_accuracy_type</p></td>
+<td><p>CSI raw data (CH I or Q) word length</p>
+<ul class="simple">
+<li><p>0: S(8,3)</p></li>
+<li><p>1: S(16,11)</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>alg_opt</p></td>
+<td><p>rtw_csi_alg_opt_type</p></td>
+<td><p>Default: 0 (not supported)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ch_opt</p></td>
+<td><p>rtw_csi_alg_opt_type</p></td>
+<td><ul class="simple">
+<li><p>0: legacy portion</p></li>
+<li><p>1: non-legacy portion</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>csi_role</p></td>
+<td><p>rtw_csi_op_role</p></td>
+<td><ul class="simple">
+<li><p>0: TRx</p></li>
+<li><p>1: Tx</p></li>
+<li><p>2: Rx</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>mode</p></td>
+<td><p>rtw_csi_mode_type</p></td>
+<td><ul class="simple">
+<li><p>0: Rx normal mode (estimating CSI by the currently received packet)</p></li>
+<li><p>1: Rx ndp mode (not supported)</p></li>
+<li><p>2: Rx response mode (estimating CSI by receiving ACK for the previous transmission)</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>act</p></td>
+<td><p>rtw_csi_action_type</p></td>
+<td><p>Enable Wi-Fi CSI or configure Wi-Fi CSI parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>trig_frame_mgnt</p></td>
+<td><p>unsigned short</p></td>
+<td><p>Specify frame type(s) of CSI triggering frame for fetching CSI (used for Rx normal mode and no need for Rx response mode)</p></td>
+</tr>
+<tr class="row-even"><td><p>trig_frame_ctrl</p></td>
+<td><p>unsigned short</p></td>
+<td><p>Specify frame type(s) of CSI triggering frame for fetching CSI (used for Rx normal mode and no need for Rx response mode)</p></td>
+</tr>
+<tr class="row-odd"><td><p>trig_frame_data</p></td>
+<td><p>unsigned short</p></td>
+<td><p>Specify frame type(s) of CSI triggering frame for fetching CSI (used for Rx normal mode and no need for Rx response mode)</p></td>
+</tr>
+<tr class="row-even"><td><p>enable</p></td>
+<td><p>unsigned char</p></td>
+<td><ul class="simple">
+<li><p>0: disable Wi-Fi CSI report</p></li>
+<li><p>1: enable Wi-Fi CSI report</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>trig_period</p></td>
+<td><p>unsigned char</p></td>
+<td><p>Wi-Fi CSI sounding rate, unit: 320us (10~255)</p></td>
+</tr>
+<tr class="row-even"><td><p>data_rate</p></td>
+<td><p>unsigned char</p></td>
+<td><p>Specify Tx data rate of CSI triggering frame, but the parameters is invalid in Rx response mode for getting Wi-Fi CSI</p>
+<p>because Wi-Fi CSI dependeds on the Rx rate of ACK.</p>
+<p>OFDM/HT/VHT mgn_rate_type (max.: 0xFF)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>data_bw</p></td>
+<td><p>unsigned char</p></td>
+<td><p>Indicate the bandwidth of trigger frame</p>
+<ul class="simple">
+<li><p>0: 20M</p></li>
+<li><p>1: 40M</p></li>
+<li><p>Others: reserved</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>mac_addr[6]</p></td>
+<td><p>unsigned char</p></td>
+<td><p>Specify destination address (MAC address) for CSI triggering frame (purpose to fetch CSI information from response packet)</p>
+<ul class="simple">
+<li><p>If multi_type=1, the mac_addr is reserved.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>multi_type</p></td>
+<td><p>unsigned char</p></td>
+<td><p>Indicate whether the CSI triggering frame is unicast or broadcast, only valid in Active CSI.</p>
+<ul class="simple">
+<li><p>0: unicast (using unicast packet and fetching CSI from the ACK for unicast packet)</p></li>
+<li><p>1: broadcast (using broadcast packet and fetching CSI from the broadcast packet)</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>trig_flag</p></td>
+<td><p>unsigned char</p></td>
+<td><p>Indicate role for transmitting CSI triggering frame in METHOD4 and role for transmitting response ACK for CSI triggering</p>
+<p>frame in METHOD1_Variant, others are reserved.</p>
+<p>Value=1 ~ 15 (0 is reserved)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p>The parameter configuration examples for different CSI methods are shown in Figures <a class="reference internal" href="#collecting-csi-from-rx-ack-packet-response-mode"><span class="std std-ref">Collect CSI from Rx ACK packet for Rx response mode</span></a>, <a class="reference internal" href="#collecting-csi-from-rx-broadcast-packet-normal-mode"><span class="std std-ref">Collect CSI from Rx broadcast packet for Rx normal mode</span></a> and <a class="reference internal" href="#collecting-csi-from-rx-packet-normal-mode"><span class="std std-ref">Collect CSI from Rx packet for Rx normal mode</span></a>.</p></li>
+<li><p>You should disable power saving when using <strong>METHOD1_Variant/2/3/4</strong> in STA mode (as shown in the following codes, i.e. modify the corresponding parameters).</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">wifi_user_config</span><span class="p">.</span><span class="n">lps_enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">wifi_user_config</span><span class="p">.</span><span class="n">lps_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PS_MODE_LEGACY</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li><p>File path: <code class="docutils literal notranslate"><span class="pre">component/soc/amebadplus/usrcfg/ameba_wificfg.c</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">wifi_set_user_config()</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><em>data_rate</em> is mandatory and must set to be greater than or equal to OFDM rate.</p></li>
+<li><p><em>trig_frame_xx/group_num/accuarcy/ch_opt/csi_role/trig_period/data_bw</em> are optional and can be set to the allowed value that you want.</p></li>
+</ul>
+</div>
+</li>
+<li><p>The format of <code class="xref py py-func docutils literal notranslate"><span class="pre">trig_frame_xxx_type()</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">trig_frame_mgnt_type</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">CSI_TRIG_ASSOCREQ</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_ASSOCRSP</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_REASSOCREQ</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_REASSOCRSP</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_PROBEREQ</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_PROBERSP</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_BEACON</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_ATIM</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_DISASSOC</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_AUTH</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_DEAUTH</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">12</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_ACTION</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="n">trig_frame_ctrl_type</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">CSI_TRIG_TRIGGER</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_BA</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_PSPOLL</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_RTS</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_CTS</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">12</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_ACK</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">13</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_CFEND</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_CFEND_CFACK</span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="n">trig_frame_data_type</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">CSI_TRIG_DATA</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_DATA_CFACK</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_DATA_CFPOLL</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_DATA_CFACKPOLL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_DATA_NULL</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_CF_ACK</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_CF_POLL</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_CF_ACKPOLL</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_QOS_DATA</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+<span class="w"> </span><span class="n">CSI_TRIG_QOS_DATA_NULL</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BIT</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+<li><p>The format of <code class="xref py py-func docutils literal notranslate"><span class="pre">data_rate()</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">mgn_rate_type</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">MGN_6M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0C</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_9M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x12</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_11M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x16</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_12M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x18</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_18M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x24</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_24M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x30</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_36M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x48</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_48M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x60</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_54M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x6C</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_MCS0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x80</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_MCS1</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_MCS2</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_MCS3</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_MCS4</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_MCS5</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_MCS6</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_MCS7</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xA0</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS1</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS2</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS3</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS4</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS5</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS6</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS7</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_VHT1SS_MCS8</span><span class="p">,</span>
+<span class="w"> </span><span class="n">MGN_UNKNOWN</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+<li><p>Other parameters:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">rtw_csi_group_type</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">CSI_GROUP_NUM_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w"> </span><span class="n">CSI_GROUP_NUM_2</span><span class="p">,</span>
+<span class="w"> </span><span class="n">CSI_GROUP_NUM_4</span><span class="p">,</span>
+<span class="w"> </span><span class="n">CSI_GROUP_NUM_16</span><span class="p">,</span><span class="w">  </span><span class="cm">/**&lt; per 8tone in dplus*/</span>
+<span class="w"> </span><span class="n">CSI_GROUP_NUM_MAX</span>
+<span class="p">}</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="n">rtw_csi_accuracy_type</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">CSI_ACCU_1BYTE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="cm">/**&lt; CSI_ACCU_1BYTE: S(8,3) */</span>
+<span class="w"> </span><span class="n">CSI_ACCU_2BYTES</span><span class="p">,</span><span class="w">     </span><span class="cm">/**&lt; CSI_ACCU_2BYTE: S(16,11) */</span>
+<span class="w"> </span><span class="n">CSI_ACCU_MAX</span>
+<span class="p">}</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="n">rtw_csi_ch_opt_type</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">CSI_CH_LEGACY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">  </span><span class="cm">/**&lt; legacy part(L-LTF) channel estimation result */</span>
+<span class="w"> </span><span class="n">CSI_CH_NON_LEGACY</span><span class="p">,</span><span class="w">  </span><span class="cm">/**&lt; non-legacy(HT-LTF) part */</span>
+<span class="w"> </span><span class="n">CSI_CH_MAX</span>
+<span class="p">}</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="n">rtw_csi_op_role</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">CSI_OP_ROLE_TRX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">  </span><span class="cm">/**&lt; both TRx */</span>
+<span class="w"> </span><span class="n">CSI_OP_ROLE_TX</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="cm">/**&lt; only Tx CSI triggering frame */</span>
+<span class="w"> </span><span class="n">CSI_OP_ROLE_RX</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">  </span><span class="cm">/**&lt; only Rx CSI triggering frame for fetching CSI report */</span>
+<span class="w"> </span><span class="n">CSI_OP_ROLE_MAX</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<section id="design-for-method4">
+<h3>Design for METHOD4<a class="headerlink" href="#design-for-method4" title="Link to this heading"></a></h3>
+<p><strong>METHOD1</strong>, <strong>METHOD2</strong> and <strong>METHOD3</strong> are all interactions between STA and AP in infrastructure mode, Realtek driver will follow the requirements of the Wi-Fi standard protocol to configure the correct address of A1/A2/A3 for CSI trigger frame.</p>
+<p>For example, if the Ameba IC acts as STA role, the frame format specified in the Wi-Fi standard is shown in the following figure.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/interaction_between_sta_and_ap_infrastructure_mode.svg"><img alt="../../../../_images/interaction_between_sta_and_ap_infrastructure_mode.svg" height="178" src="../../../../_images/interaction_between_sta_and_ap_infrastructure_mode.svg" width="666" /></a>
+<figcaption>
+<p><span class="caption-text">Interaction between STA and AP in infrastructure mode</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>However, for <strong>METHOD4</strong>, the interaction between STAs does not comply with Wi-Fi protocol specifications. To ensure that the STA can receive packets from other STAs, the Ameba IC will transmit forged packets as the CSI triggering frame. So Realtek driver will modify <code class="docutils literal notranslate"><span class="pre">A1=broadcast</span> <span class="pre">address</span></code> and <code class="docutils literal notranslate"><span class="pre">A2=BSSID</span></code> in CSI Triggering frame based on the Realtek MAC layer filtering conditions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only after Realtek MAC layer receives the packet, Realtek MAC layer will trigger the CSI circuit to obtain CSI packet.</p>
+</div>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/interaction_between_sta_and_sta_infrastructure_mode.svg"><img alt="../../../../_images/interaction_between_sta_and_sta_infrastructure_mode.svg" height="297" src="../../../../_images/interaction_between_sta_and_sta_infrastructure_mode.svg" width="792" /></a>
+<figcaption>
+<p><span class="caption-text">Interaction between STA and STA in infrastructure mode</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>There is still a problem for METHOD4, Ameba2 receives Wi-Fi packets from Ameba3 and Ameba1 with same content, so Ameba2 cannot distinguish whether the CSI packet triggered by this Wi-Fi packet belongs to Ameba1 or Ameba3. To solve this problem, we fill in the unique identification value in the Fragment Number subfield in Sequence Control filed in Wi-Fi packet, and the value will be carried in the corresponding CSI packet. The application layer can distinguish which device this CSI belongs to base on the trig_flag value.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../../../_images/mapping_trig_flag_with_sta.svg"><img alt="../../../../_images/mapping_trig_flag_with_sta.svg" height="598" src="../../../../_images/mapping_trig_flag_with_sta.svg" width="974" /></a>
+<figcaption>
+<p><span class="caption-text">Mapping trig_flag with STAx</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="wifi-csi-report">
+<h2>wifi_csi_report<a class="headerlink" href="#wifi-csi-report" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Function prototype:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">wifi_csi_report</span><span class="p">(</span><span class="n">u32</span><span class="w"> </span><span class="n">buf_len</span><span class="p">,</span><span class="w"> </span><span class="n">u8</span><span class="w"> </span><span class="o">*</span><span class="n">csi_buf</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="o">*</span><span class="n">len</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Description: fetch CSI information (CSI header information and CSI raw data)</p>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>buf_len</p></td>
+<td><p>u32</p></td>
+<td><p>Buffer size for storing CSI packet which specified by APP</p></td>
+</tr>
+<tr class="row-odd"><td><p>csi_buf</p></td>
+<td><p>u8*</p></td>
+<td><p>CSI data buffer address for storing CSI packet which specified by APP</p></td>
+</tr>
+<tr class="row-even"><td><p>len</p></td>
+<td><p>u32*</p></td>
+<td><p>Size of CSI raw data</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<section id="csi-buffer-layout">
+<h3>CSI Buffer Layout<a class="headerlink" href="#csi-buffer-layout" title="Link to this heading"></a></h3>
+<p>The CSI buffer is separated into two parts: CSI header information and CSI raw data, and the size of CSI raw data is indicated by <em>csi_data_length</em> of CSI header information.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../../../_images/csi_buffer_layout.svg"><img alt="../../../../_images/csi_buffer_layout.svg" height="166" src="../../../../_images/csi_buffer_layout.svg" width="296" /></a>
+<figcaption>
+<p><span class="caption-text">CSI buffer layout</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="csi-header-information">
+<h4>CSI Header Information<a class="headerlink" href="#csi-header-information" title="Link to this heading"></a></h4>
+<p>The CSI header information format comprises a set of fields that occur in a fixed order. The figure below depicts the CSI header information format.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/csi_header_information_format.svg"><img alt="../../../../_images/csi_header_information_format.svg" height="171" src="../../../../_images/csi_header_information_format.svg" width="901" /></a>
+<figcaption>
+<p><span class="caption-text">CSI header information format</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following list shows the description of each field.</p>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Subfield</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>csi_signature</p></td>
+<td><p>2</p></td>
+<td><p>Pattern that may be used to detect a new CSI packet.</p>
+<p>The unique pattern is set to the value 0xABCD.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>hdr_len</p></td>
+<td><p>1</p></td>
+<td><p>Length of the CSI header information except the subfields of <em>csi_signature</em> and <em>hdr_len</em></p></td>
+</tr>
+<tr class="row-even"><td><p>mac_addr</p></td>
+<td><p>6</p></td>
+<td><p>Client MAC address, specifies transmitter address (MAC address) for CSI triggering frame</p>
+<p>in Active CSI and receiver address for CSI triggering frame in Passive CSI.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>trig_addr</p></td>
+<td><p>6</p></td>
+<td><p>Client MAC address, specifies destination address (MAC address) for CSI triggering frame</p>
+<p>in Active CSI and source address for CSI triggering frame in Passive CSI (purpose to</p>
+<p>fetch CSI information from response packet)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reserved in <strong>METHOD4</strong></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>hw_assigned_timestamp</p></td>
+<td><p>4</p></td>
+<td><p>CSI timestamp, unit is us.</p></td>
+</tr>
+<tr class="row-odd"><td><p>channel</p></td>
+<td><p>1</p></td>
+<td><p>Operation channel of current client</p></td>
+</tr>
+<tr class="row-even"><td><p>bandwidth</p></td>
+<td><p>1</p></td>
+<td><p>Operation bandwidth</p>
+<ul class="simple">
+<li><p>0: 20M</p></li>
+<li><p>1: 40M</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>rx_data_rate</p></td>
+<td><p>1</p></td>
+<td><p>Specify the rate of source packet that triggers CSI, the value in the <em>rx_data_rate</em> field</p>
+<p>is obtained from the previously defined structure <em>mgn_rate_type enum</em>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>protocol_mode</p></td>
+<td><p>1</p></td>
+<td><p>Specify the protocol mode of the response packet which is used to fetch CSI information</p>
+<ul class="simple">
+<li><p>0: OFDM</p></li>
+<li><p>1: HT</p></li>
+<li><p>2: VHT</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>num_sub_carrier</p></td>
+<td><p>2</p></td>
+<td><p>Number of subcarriers contain in CSI raw data</p></td>
+</tr>
+<tr class="row-even"><td><p>num_bit_per_tone</p></td>
+<td><p>1</p></td>
+<td><p>CSI data word length (sum of I and Q)</p>
+<p>Accuracy: S(8,3) or S(16,11)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>evm[2]</p></td>
+<td><p>2</p></td>
+<td><p>Error vector magnitude, only evm[0] is valid, evm[1] is reserved.</p></td>
+</tr>
+<tr class="row-even"><td><p>rssi</p></td>
+<td><p>1</p></td>
+<td><p>dbm=[value] - 110</p></td>
+</tr>
+<tr class="row-odd"><td><p>rxsc</p></td>
+<td><p>1</p></td>
+<td><p>Indicate which sub 20M channel is used to transmit packet</p></td>
+</tr>
+<tr class="row-even"><td><p>csi_sequence</p></td>
+<td><p>4</p></td>
+<td><p>Indicate the sequence number of a CSI packet (invalid in METHOD4).</p></td>
+</tr>
+<tr class="row-odd"><td><p>csi_data_length</p></td>
+<td><p>4</p></td>
+<td><p>CSI raw_data length, unit is byte</p></td>
+</tr>
+<tr class="row-even"><td><p>csi_valid</p></td>
+<td><p>1</p></td>
+<td><p>Indicate the current CSI raw data whether valid</p></td>
+</tr>
+<tr class="row-odd"><td><p>trig_flag</p></td>
+<td><p>1</p></td>
+<td><p>Valid in only METHOD4, indicates source of role for triggering CSI in METHOD4.</p>
+<p>Reserved in other METHODs.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>antenna</p></td>
+<td><p>1</p></td>
+<td><p>Reserved</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example of CSI header information:</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../../../_images/comparison_between_parsed_csi_header_information_data_and_csi_buffer_data.svg"><img alt="../../../../_images/comparison_between_parsed_csi_header_information_data_and_csi_buffer_data.svg" height="299" src="../../../../_images/comparison_between_parsed_csi_header_information_data_and_csi_buffer_data.svg" width="616" /></a>
+<figcaption>
+<p><span class="caption-text">Comparison between the parsed CSI header information data and the data in the CSI buffer</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="csi-raw-data-layout">
+<h4>CSI Raw Data Layout<a class="headerlink" href="#csi-raw-data-layout" title="Link to this heading"></a></h4>
+<p>A tone index of -20M~0 corresponds to 64:127, and 0~20M corresponds to 0:63.</p>
+<ul class="simple">
+<li><p>legacy 20M: tone_index (102, 103, …, 127, 1, 2, …, 26)</p></li>
+<li><p>Non-legacy 20M: tone_index (100, 101, 102, 103, …, 127, 1, 2, …, 26, 27, 28)</p></li>
+<li><p>legacy 40M: tone_index (70, 71, …, 94, 95, 97, 98, …, 122, 6, 7, …, 30, 31, 33, 34, …, 57, 58)</p></li>
+<li><p>Non-legacy 40M: tone_index (71, 72, …, 127, 1, 2, …, 56, 57)</p></li>
+</ul>
+<section id="example-of-csi-raw-data-without-decimation-20mhz">
+<h5>Example of CSI Raw Data (without Decimation):20MHz<a class="headerlink" href="#example-of-csi-raw-data-without-decimation-20mhz" title="Link to this heading"></a></h5>
+<p>Each subcarrier (tone) has an Nrx*Nsts CSI matrix. Take a VHT MIMO 1x2 matrix as an example (group_num: 1 + accuracy: 0), the sequences of H are H11 and H12.</p>
+<p>The layout of CSI data is:</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../../../../_images/csi_raw_data_layout_without_decimation.svg"><img alt="../../../../_images/csi_raw_data_layout_without_decimation.svg" height="280" src="../../../../_images/csi_raw_data_layout_without_decimation.svg" width="604" /></a>
+<figcaption>
+<p><span class="caption-text">CSI raw data layout (without decimation)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="example-of-csi-raw-data-with-decimation-20mhz">
+<h5>Example of CSI Raw Data (with Decimation): 20MHz<a class="headerlink" href="#example-of-csi-raw-data-with-decimation-20mhz" title="Link to this heading"></a></h5>
+<p>Each subcarrier (tone) has an Nrx*Nsts CSI matrix. Take a VHT MIMO 1x2 matrix as an example (group_num: 8 + accuracy: 0), the sequences of H are H11 and H12. Select tone idx based on the principle of tone%group_num==0.</p>
+<p>The layout of CSI data is:</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../../../../_images/csi_raw_data_layout_with_decimation.svg"><img alt="../../../../_images/csi_raw_data_layout_with_decimation.svg" height="56" src="../../../../_images/csi_raw_data_layout_with_decimation.svg" width="907" /></a>
+<figcaption>
+<p><span class="caption-text">CSI raw data layout (with decimation)</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="number-of-subcarriers-for-csi-raw-data">
+<h5>Number of Subcarriers for CSI Raw Data<a class="headerlink" href="#number-of-subcarriers-for-csi-raw-data" title="Link to this heading"></a></h5>
+<table class="docutils align-default" id="id10" style="width: 100%">
+<caption><span class="caption-text">{N_tone(BW) * group_num}</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>BW</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>1/2</p></th>
+<th class="head"><p>1/4</p></th>
+<th class="head"><p>1/8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Non-HT</p></td>
+<td><p>20M</p></td>
+<td><p>52</p></td>
+<td><p>26</p></td>
+<td><p>12</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>HT</p></td>
+<td><p>20M</p></td>
+<td><p>56</p></td>
+<td><p>28</p></td>
+<td><p>14</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>VHT</p></td>
+<td><p>20M</p></td>
+<td><p>56</p></td>
+<td><p>28</p></td>
+<td><p>14</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-HT</p></td>
+<td><p>40M</p></td>
+<td><p>104</p></td>
+<td><p>52</p></td>
+<td><p>24</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>HT</p></td>
+<td><p>40M</p></td>
+<td><p>114</p></td>
+<td><p>56</p></td>
+<td><p>28</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>VHT</p></td>
+<td><p>40M</p></td>
+<td><p>114</p></td>
+<td><p>56</p></td>
+<td><p>28</p></td>
+<td><p>14</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+<section id="wifi-reg-event-handler">
+<h2>wifi_reg_event_handler<a class="headerlink" href="#wifi-reg-event-handler" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Function prototype:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">wifi_reg_event_handler</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">event_cmds</span><span class="p">,</span><span class="w"> </span><span class="n">rtw_event_handler_t</span><span class="w"> </span><span class="n">handler_func</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">handler_user_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Description: register a callback function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">event_cmds<span class="colon">:</span></dt>
+<dd class="field-odd"><p>parameter in, unsigned int event_cmds &gt;&gt; WIFI_EVENT_CSI_DONE</p>
+</dd>
+<dt class="field-even">handler_func<span class="colon">:</span></dt>
+<dd class="field-even"><p>parameter in, rtw_event_handler_t handler_func &gt;&gt; function name</p>
+</dd>
+<dt class="field-odd">handler_user_data<span class="colon">:</span></dt>
+<dd class="field-odd"><p>parameter in, void *handler_user_data &gt;&gt; NULL</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The callback function need four input arguments, the first and last are pointer types and the remaining two are int types</p>
+</div>
+</li>
+<li><p>For example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">example_callback_func</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">buf_len</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">userdata</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">UNUSED</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+<span class="n">UNUSED</span><span class="p">(</span><span class="n">buf_len</span><span class="p">);</span>
+<span class="n">UNUSED</span><span class="p">(</span><span class="n">flags</span><span class="p">);</span>
+<span class="n">UNUSED</span><span class="p">(</span><span class="n">userdata</span><span class="p">);</span>
+<span class="cm">/* do something */</span>
+<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/* register wifi event callback function */</span>
+<span class="n">wifi_reg_event_handler</span><span class="p">(</span><span class="n">Element_ID</span><span class="p">,</span><span class="w"> </span><span class="n">example_callback_func</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="wifi-unreg-event-handler">
+<h2>wifi_unreg_event_handler<a class="headerlink" href="#wifi-unreg-event-handler" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Function prototype:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">wifi_unreg_event_handler</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">event_cmds</span><span class="p">,</span><span class="w"> </span><span class="n">rtw_event_handler_t</span><span class="w"> </span><span class="n">handler_func</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Description: release a callback function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">event_cmds<span class="colon">:</span></dt>
+<dd class="field-odd"><p>parameter in, unsigned int event_cmds &gt;&gt; WIFI_EVENT_CSI_DONE</p>
+</dd>
+<dt class="field-even">handler_func<span class="colon">:</span></dt>
+<dd class="field-even"><p>parameter in, rtw_event_handler_t handler_func &gt;&gt; function name</p>
+</dd>
+</dl>
+</li>
+<li><p>For example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* release wifi event callback function */</span>
+<span class="n">wifi_unreg_event_handler</span><span class="p">(</span><span class="n">WIFI_EVENT_CSI_DONE</span><span class="p">,</span><span class="w"> </span><span class="n">example_callback_func</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="example-of-wi-fi-csi">
+<h1>Example of Wi-Fi CSI<a class="headerlink" href="#example-of-wi-fi-csi" title="Link to this heading"></a></h1>
+<p>This section describes the path and structure of the Wi-Fi CSI example. The file path is <code class="docutils literal notranslate"><span class="pre">{SDK}\component\example\wifi\wifi_csi</span></code>.</p>
+<section id="overview-of-example-code">
+<h2>Overview of Example Code<a class="headerlink" href="#overview-of-example-code" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../../../../_images/example_flow_csi.svg"><img alt="../../../../_images/example_flow_csi.svg" height="551" src="../../../../_images/example_flow_csi.svg" width="898" /></a>
+<figcaption>
+<p><span class="caption-text">Example flow of Wi-Fi CSI</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
+<p>When power on or chip reset, <code class="xref py py-func docutils literal notranslate"><span class="pre">app_example()</span></code> will be called in <code class="xref py py-func docutils literal notranslate"><span class="pre">main()</span></code> and the following codes will be executed:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">app_example</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w"> </span><span class="n">example_wifi_csi</span><span class="p">();</span><span class="w">  </span><span class="cm">/* calling the entry function of wifi CSI example */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-wifi-csi">
+<h2>example_wifi_csi<a class="headerlink" href="#example-wifi-csi" title="Link to this heading"></a></h2>
+<p>When executing CSI example: <code class="xref py py-func docutils literal notranslate"><span class="pre">example_wifi_csi()</span></code>, a Wi-Fi CSI thread will be created.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">example_wifi_csi</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rtos_task_create</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="p">((</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="s">&quot;wifi_csi_thread&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">wifi_csi_thread</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">%s rtos_task_create(wifi_csi_thread) failed&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">__FUNCTION__</span><span class="p">);</span>
+<span class="w"> </span><span class="p">}</span>
+<span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="wifi-csi-thread">
+<h2>wifi_csi_thread<a class="headerlink" href="#wifi-csi-thread" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Wi-Fi CSI parameters assignment</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Configure the value according to your requirements */</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">assoc_ap_mac</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xa4</span><span class="p">,</span><span class="w"> </span><span class="mh">0x39</span><span class="p">,</span><span class="w"> </span><span class="mh">0xb3</span><span class="p">,</span><span class="w"> </span><span class="mh">0xa4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xbe</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2d</span><span class="p">};</span><span class="w">  </span><span class="cm">/* need modify to mac address of associated AP when sta mode */</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">group_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">accuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">trig_period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w">  </span><span class="cm">/* units: depend on ICs */</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">data_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xC</span><span class="p">;</span><span class="w">  </span><span class="cm">/* ofdm 6 mpbs*/</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">trig_frame_mgnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="cm">/* no need for Rx resp mode, default 0*/</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">trig_frame_ctrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="cm">/* no need for Rx resp mode, default 0*/</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">trig_frame_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="cm">/* no need for Rx resp mode, default 0*/</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="n">act_param</span><span class="p">.</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="n">assoc_ap_mac</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Check Wi-Fi is on &amp; Wi-Fi connect success or Wi-Fi is on &amp; SoftAP start</p>
+<ol class="loweralpha">
+<li><p>If SoftAP starts, the CSI must be enable by SoftAP role regardless of whether STA role is in an associated state. Then wait for a STA to connect to the AP role and enable CSI with the first associated STA.</p>
+<p>If not associated, <cite>vTaskDelay(2000)</cite></p>
+</li>
+<li><p>If SoftAP is disabled, we support fetch CSI information form the device which associated.</p>
+<p>If STA role is not connected, <cite>vTaskDelay(2000)</cite></p>
+</li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nl">NEXT</span><span class="p">:</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wifi_is_running</span><span class="p">(</span><span class="n">SOFTAP_WLAN_INDEX</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">wifi_get_associated_client_list</span><span class="p">(</span><span class="o">&amp;</span><span class="n">client_info</span><span class="p">);</span>
+<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">client_info</span><span class="p">.</span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">memcpy</span><span class="p">(</span><span class="n">act_param</span><span class="p">.</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="n">client_info</span><span class="p">.</span><span class="n">mac_list</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">octet</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span>
+<span class="w">     </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; ### SOFTAP Break ###</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w"> </span><span class="p">}</span>
+<span class="w"> </span><span class="n">rtos_time_delay_ms</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">  </span><span class="cm">/* 2s */</span>
+<span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="n">NEXT</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wifi_is_running</span><span class="p">(</span><span class="n">STA_WLAN_INDEX</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">wifi_get_join_status</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">RTW_JOINSTATUS_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">u32</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">LwIP_GetIP</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">IP_ADDR_INVALID</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">rtos_time_delay_ms</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">  </span><span class="cm">/* 2s */</span>
+<span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; ### STA Break ###</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w"> </span><span class="p">}</span>
+<span class="w"> </span><span class="n">rtos_time_delay_ms</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">  </span><span class="cm">/* 2s */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Register a Wi-Fi CSI callback function <code class="xref py py-func docutils literal notranslate"><span class="pre">example_wifi_csi_report_cb()</span></code></p></li>
+<li><p>Initialize a semephore <code class="docutils literal notranslate"><span class="pre">wc_ready_sema</span></code>, and you should use semaphore to wait Wi-Fi CSI event happen</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* register wifi event callback function */</span>
+<span class="n">wifi_reg_event_handler</span><span class="p">(</span><span class="n">WIFI_EVENT_CSI_DONE</span><span class="p">,</span><span class="w"> </span><span class="n">example_wifi_csi_report_cb</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="cm">/**</span>
+<span class="cm">* should use semaphore to wait wifi event happen</span>
+<span class="cm">* the following example shows that we wait for wifi csi ready</span>
+<span class="cm">*/</span>
+<span class="n">rtos_sema_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">wc_ready_sema</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">wc_ready_sema</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Init wc_ready_sema failed</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configure Wi-Fi CSI parameters and enable Wi-Fi CSI</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* cis cfg and csi en */</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">act</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="cm">/* csi cfg */</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">wifi_csi_config</span><span class="p">(</span><span class="o">&amp;</span><span class="n">act_param</span><span class="p">);</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">act</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="cm">/* csi en */</span>
+<span class="n">act_param</span><span class="p">.</span><span class="n">enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">wifi_csi_config</span><span class="p">(</span><span class="o">&amp;</span><span class="n">act_param</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Wait for the semaphore and fetch the CSI packet</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="cm">/* example: when wifi csi Rx done, call csi report handle function. */</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rtos_sema_take</span><span class="p">(</span><span class="n">wc_ready_sema</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">rtos_sema_delete</span><span class="p">(</span><span class="n">wc_ready_sema</span><span class="p">);</span>
+<span class="w"> </span><span class="n">act_param</span><span class="p">.</span><span class="n">act</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="cm">/* csi dis */</span>
+<span class="w"> </span><span class="n">act_param</span><span class="p">.</span><span class="n">enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w"> </span><span class="n">wifi_csi_config</span><span class="p">(</span><span class="o">&amp;</span><span class="n">act_param</span><span class="p">);</span>
+<span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">csi_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rtos_mem_malloc</span><span class="p">(</span><span class="n">csi_data_len</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">csi_buf</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">wifi_csi_report</span><span class="p">(</span><span class="n">csi_data_len</span><span class="p">,</span><span class="w"> </span><span class="n">csi_buf</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">len</span><span class="p">);</span>
+<span class="w"> </span><span class="cm">/*do something for handing csi info*/</span>
+<span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="p">)(</span><span class="n">csi_buf</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="p">)(</span><span class="n">csi_buf</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="p">)(</span><span class="n">csi_buf</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="n">csi_buf</span><span class="p">[</span><span class="mi">15</span><span class="p">];</span>
+<span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[CH INFO] timestamp = %d us, csi data(header+raw data): </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">timestamp</span><span class="p">);</span>
+<span class="w"> </span><span class="n">buff_tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">u64</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">csi_buf</span><span class="p">;</span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%02d]0x%016llx</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">buff_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w"> </span><span class="p">}</span>
+<span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[CH INFO] ...(only show 64 bytes)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s"> csi_buf malloc fail</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">csi_buf</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">rtos_mem_free</span><span class="p">(</span><span class="n">csi_buf</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Exit</p>
+<ol class="loweralpha simple">
+<li><p>Release the Wi-Fi CSI callback function</p></li>
+<li><p>Free the semaphore <code class="docutils literal notranslate"><span class="pre">wc_ready_sema</span></code></p></li>
+<li><p><cite>vTaskDelete</cite></p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* unregister wifi event callback function */</span>
+<span class="n">wifi_unreg_event_handler</span><span class="p">(</span><span class="n">WIFI_EVENT_CSI_DONE</span><span class="p">,</span><span class="w"> </span><span class="n">example_wifi_csi_report_cb</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wc_ready_sema</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">rtos_sema_delete</span><span class="p">(</span><span class="o">&amp;</span><span class="n">wc_ready_sema</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">rtos_task_delete</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="wi-fi-csi-callback-function">
+<h2>Wi-Fi CSI Callback Function<a class="headerlink" href="#wi-fi-csi-callback-function" title="Link to this heading"></a></h2>
+<p>When Wi-Fi gets a CSI report done, it will use the Wi-Fi CSI callback function to send a signal to the APP.
+For example, APP can up SEMA in the callback function to trigger <code class="xref py py-func docutils literal notranslate"><span class="pre">wifi_csi_thread()</span></code> for fetching a CSI report.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Try to avoid time-consuming operations in the callback function that may affect Rx performance.</p></li>
+<li><p>APP may can use “flags”, which specify the length of current CSI raw data.</p></li>
+</ul>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">example_wifi_csi_report_cb</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">buf_len</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">userdata</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w"> </span><span class="n">rtos_sema_give</span><span class="p">(</span><span class="n">wc_ready_sema</span><span class="p">);</span><span class="w">  </span><span class="cm">/* trigger thread */</span>
+<span class="w"> </span><span class="n">csi_data_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flags</span><span class="p">;</span><span class="w">  </span><span class="cm">/* APP can use for malloc csi_buf */</span>
+<span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-to-compile-image-for-wi-fi-csi">
+<h1>How to Compile Image for Wi-Fi CSI<a class="headerlink" href="#how-to-compile-image-for-wi-fi-csi" title="Link to this heading"></a></h1>
+<ol class="arabic">
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">{SDK}/amebadplus_gcc_project</span></code> and run the following command</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">make</span><span class="w"> </span><span class="n">menuconfig</span>
+</pre></div>
+</div>
+</li>
+<li><p>Select <span class="menuselection">CONFIG WIFI &gt; Enable CSI</span>, then save and exit</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/menuconfig_enable_csi.png"><img alt="../../../../_images/menuconfig_enable_csi.png" src="../../../../_images/menuconfig_enable_csi.png" style="width: 620.1999999999999px; height: 279.29999999999995px;" /></a>
+</figure>
+</li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">{SDK}/amebadplus_gcc_project</span></code> again and run the following command</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">make</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">EXAMPLE</span><span class="o">=</span><span class="n">wifi_csi</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The image bin files (<strong>km0_km4_app.bin</strong> &amp; <strong>km4_boot_all.bin</strong>) can be found in <code class="docutils literal notranslate"><span class="pre">{SDK}/amebadplus_gcc_project</span></code>.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Wi-Fi CSI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../wifi_bridge/src/index.html" class="btn btn-neutral float-right" title="Wi-Fi Bridge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

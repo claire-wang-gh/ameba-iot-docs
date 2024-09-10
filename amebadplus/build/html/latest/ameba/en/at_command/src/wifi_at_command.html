@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wi-Fi AT Commands &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="MQTT AT Commands" href="mqtt_at_command.html" />
+    <link rel="prev" title="Common AT Commands" href="common_at_command.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">AT Command</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_at_command.html">Common AT Commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Wi-Fi AT Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlconn">AT+WLCONN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#response">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameter">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#error-number">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wldisconn">AT+WLDISCONN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlstaticip">AT+WLSTATICIP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-ping">AT+PING</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-iperf">AT+IPERF</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-iperf3">AT+IPERF3</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id24">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id27">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id29">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlscan">AT+WLSCAN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id30">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id31">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id32">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id33">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id34">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id35">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlrssi">AT+WLRSSI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id36">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id37">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id38">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id39">Parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlstartap">AT+WLSTARTAP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id40">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id41">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id42">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id43">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id44">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id45">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlstopap">AT+WLSTOPAP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id46">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id47">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id48">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id49">Parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlstate">AT+WLSTATE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id50">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id51">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id52">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlreconn">AT+WLRECONN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id53">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id54">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id55">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id56">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id57">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlpromisc">AT+WLPROMISC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id58">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id59">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id60">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id61">Parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wldbg">AT+WLDBG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id62">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id63">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id64">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id65">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id66">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlwps">AT+WLWPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id67">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id68">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id69">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id70">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id71">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-wlps">AT+WLPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id72">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id73">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id74">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id75">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id76">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id77">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt_at_command.html">MQTT AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcp_ip_at_command.html">TCP/IP AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bluetooth_at_command.html">Bluetooth AT Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../application_note/index.html">Application Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">AT Command</a></li>
+      <li class="breadcrumb-item active">Wi-Fi AT Commands</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/ameba/en/at_command/src/wifi_at_command.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wi-fi-at-commands">
+<span id="id1"></span><h1>Wi-Fi AT Commands<a class="headerlink" href="#wi-fi-at-commands" title="Link to this heading"></a></h1>
+<section id="at-wlconn">
+<span id="wi-fi-at-wlconn"></span><h2>AT+WLCONN<a class="headerlink" href="#at-wlconn" title="Link to this heading"></a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h3>
+<p>Connect to AP (STA mode).</p>
+</section>
+<section id="command">
+<h3>Command<a class="headerlink" href="#command" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>AT+WLCONN=[&lt;type&gt;,&lt;value&gt;,&lt;type&gt;,&lt;value&gt;,……]
+</pre></div>
+</div>
+</section>
+<section id="response">
+<h3>Response<a class="headerlink" href="#response" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLCONN</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLCONN</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="parameter">
+<h3>Parameter<a class="headerlink" href="#parameter" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;type&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The type of the followed parameter &lt;value&gt;.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ssid</span></code>: The &lt;ssid&gt; should be followed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bssid</span></code>: The &lt;bssid&gt; should be followed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch</span></code>: The &lt;ch&gt; should be followed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pw</span></code>: The &lt;pw&gt; should be followed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key_id</span></code>: The &lt;key_id&gt; should be followed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;value&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parameter followed correspond &lt;type&gt;, as below:</p>
+</dd>
+<dt class="field-odd">&lt;ssid&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The ssid of Wi-Fi.</p>
+<ul class="simple">
+<li><p>A name string with length shorter than 33.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;bssid&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bssid of Wi-Fi.</p>
+<ul class="simple">
+<li><p>A hexadecimal number string separated by colons, such as 1a:2b:3c:4d:5e:6f.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;pw&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The password of Wi-Fi.</p>
+</dd>
+<dt class="field-even">&lt;key_id&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key ID of Wi-Fi.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;ch&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Channel of Wi-Fi.</p>
+<ul class="simple">
+<li><p>The channel of Wi-Fi. It is 0 as default if this parameter is absent.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="error-number">
+<h3>Error Number<a class="headerlink" href="#error-number" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error parameter number.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameter.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Memory failure.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Can not connect to this Wi-Fi.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Wi-Fi is not on.</p>
+</dd>
+</dl>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Connect</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Wi</span><span class="o">-</span><span class="n">Fi</span> <span class="k">with</span> <span class="n">ssid</span> <span class="ow">and</span> <span class="n">password</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLCONN</span><span class="o">=</span><span class="n">ssid</span><span class="p">,</span><span class="n">ssid_name</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="mi">12345678</span>
+<span class="o">+</span><span class="n">WLCONN</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Connect</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Wi</span><span class="o">-</span><span class="n">Fi</span> <span class="k">with</span> <span class="n">ssid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">key</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLCONN</span><span class="o">=</span><span class="n">ssid</span><span class="p">,</span><span class="n">ssid_name</span><span class="p">,</span><span class="n">key_id</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="mi">12345678</span>
+<span class="o">+</span><span class="n">WLCONN</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Connect</span> <span class="n">Wi</span><span class="o">-</span><span class="n">Fi</span> <span class="k">with</span> <span class="n">BSSID</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLCONN</span><span class="o">=</span><span class="n">bssid</span><span class="p">,</span><span class="mi">1</span><span class="n">a</span><span class="p">:</span><span class="mi">2</span><span class="n">b</span><span class="p">:</span><span class="mi">3</span><span class="n">c</span><span class="p">:</span><span class="mi">4</span><span class="n">d</span><span class="p">:</span><span class="mi">5</span><span class="n">e</span><span class="p">:</span><span class="mi">6</span><span class="n">f</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="mi">12345678</span>
+<span class="o">+</span><span class="n">WLCONN</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-wldisconn">
+<span id="wi-fi-at-wldisconn"></span><h2>AT+WLDISCONN<a class="headerlink" href="#at-wldisconn" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>Description<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Disconnect from AP.</p>
+</section>
+<section id="id3">
+<h3>Command<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLDISCONN</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Response<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLDISCONN</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLDISCONN</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>Parameter<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>None</p>
+</section>
+<section id="id6">
+<h3>Error Number<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>API error when disconnecting.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Timeout.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-wlstaticip">
+<span id="wi-fi-at-wlstaticip"></span><h2>AT+WLSTATICIP<a class="headerlink" href="#at-wlstaticip" title="Link to this heading"></a></h2>
+<section id="id7">
+<h3>Description<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>Set static IP for station.</p>
+</section>
+<section id="id8">
+<h3>Command<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLSTATICIP</span><span class="o">=&lt;</span><span class="n">ip</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">gateway</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">netmask</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>Response<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLSTATICIP</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLSTATICIP</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3>Parameter<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;ip&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IP address.</p>
+<ul class="simple">
+<li><p>A data string of IP address, e.g. 192.168.10.33.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;gateway&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Gateway of station.</p>
+<ul class="simple">
+<li><p>A data string of gateway, e.g. 192.168.10.1.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;netmask&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Netmask of station.</p>
+<ul class="simple">
+<li><p>A data string of netmask, e.g. 255.255.255.0.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id11">
+<h3>Error Number<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>API error when disconnecting.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Timeout.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-ping">
+<span id="wi-fi-at-ping"></span><h2>AT+PING<a class="headerlink" href="#at-ping" title="Link to this heading"></a></h2>
+<section id="id12">
+<h3>Description<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<p>PING a domain or IP address.</p>
+</section>
+<section id="id13">
+<h3>Command<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">PING</span><span class="o">=&lt;</span><span class="n">host</span><span class="o">&gt;</span><span class="p">[</span><span class="o">&lt;-</span><span class="n">t</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">interval</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">n</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">count</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">l</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">size</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">PING</span><span class="o">=&lt;</span><span class="n">stop</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h3>Response<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">PING</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">PING</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id15">
+<h3>Parameter<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;host&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The address of host.</p>
+<ul class="simple">
+<li><p>An IP address, or dns address.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;-t&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>It will followed by &lt;interval&gt;.</p>
+</dd>
+<dt class="field-odd">&lt;interval&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Interval time in second.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+<li><p>If &lt;-t&gt; &lt;interval&gt; are absent, it is 1s as default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;-n&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>It will followed by &lt;count&gt;.</p>
+</dd>
+<dt class="field-odd">&lt;count&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ping packets number.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+<li><p>If &lt;-n&gt; &lt;count&gt; are absent, it is 4 as default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;-l&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>It will followed by &lt;size&gt;.</p>
+</dd>
+<dt class="field-odd">&lt;size&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ping packet size in byte.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+<li><p>If &lt;-l&gt; &lt;size&gt; are absent, it is 32 bytes as default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;stop&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Stop the ongoing ping procedure.</p>
+<ul class="simple">
+<li><p>“stop”: It will stop the ongoing ping procedure.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id16">
+<h3>Error Number<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Input null parameter.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameter number.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this command, the sequence of &lt;-t&gt; &lt;-l&gt; &lt;-n&gt; is not required.</p>
+<p>The response of each packet can be only observed at log window.</p>
+<p>The response “OK” means this command’s format is correct, but not ping the target successfully.</p>
+</div>
+</section>
+<section id="id17">
+<h3>Example<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Default</span> <span class="n">parameters</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">PING</span><span class="o">=</span><span class="mf">192.168.31.200</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">32</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.31.1</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">1</span> <span class="n">time</span><span class="o">=</span><span class="mi">135</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">32</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.31.1</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">2</span> <span class="n">time</span><span class="o">=</span><span class="mi">5</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">32</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.31.1</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">3</span> <span class="n">time</span><span class="o">=</span><span class="mi">102</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">32</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.31.1</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">4</span> <span class="n">time</span><span class="o">=</span><span class="mi">3</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">4</span> <span class="n">packets</span> <span class="n">transmitted</span><span class="p">,</span> <span class="mi">4</span> <span class="n">received</span><span class="p">,</span> <span class="mi">0</span><span class="o">%</span> <span class="n">packet</span> <span class="n">loss</span><span class="p">,</span> <span class="n">average</span> <span class="mi">60</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="nb">min</span><span class="p">:</span> <span class="mi">3</span> <span class="n">ms</span><span class="p">,</span> <span class="nb">max</span><span class="p">:</span> <span class="mi">135</span> <span class="n">ms</span>
+<span class="o">+</span><span class="n">PING</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Ping</span> <span class="n">a</span> <span class="n">web</span> <span class="n">address</span> <span class="k">for</span> <span class="mi">3</span> <span class="n">times</span><span class="p">,</span> <span class="k">with</span> <span class="n">packet</span> <span class="n">of</span> <span class="mi">128</span> <span class="nb">bytes</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">PING</span><span class="o">=</span><span class="n">www</span><span class="o">.</span><span class="n">sohu</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="o">-</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="n">l</span><span class="p">,</span><span class="mi">128</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">128</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.31.1</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">1</span> <span class="n">time</span><span class="o">=</span><span class="mi">40</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">128</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.31.1</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">2</span> <span class="n">time</span><span class="o">=</span><span class="mi">9</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">128</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">192.168.31.1</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">3</span> <span class="n">time</span><span class="o">=</span><span class="mi">21</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="mi">3</span> <span class="n">packets</span> <span class="n">transmitted</span><span class="p">,</span> <span class="mi">3</span> <span class="n">received</span><span class="p">,</span> <span class="mi">0</span><span class="o">%</span> <span class="n">packet</span> <span class="n">loss</span><span class="p">,</span> <span class="n">average</span> <span class="mi">23</span> <span class="n">ms</span>
+<span class="p">[</span><span class="n">ping_test</span><span class="p">]</span> <span class="nb">min</span><span class="p">:</span> <span class="mi">9</span> <span class="n">ms</span><span class="p">,</span> <span class="nb">max</span><span class="p">:</span> <span class="mi">40</span> <span class="n">ms</span>
+<span class="o">+</span><span class="n">PING</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-iperf">
+<span id="wi-fi-at-iperf"></span><h2>AT+IPERF<a class="headerlink" href="#at-iperf" title="Link to this heading"></a></h2>
+<section id="id18">
+<h3>Description<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<p>IPERF test for TCP or UDP.</p>
+</section>
+<section id="id19">
+<h3>Command<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">IPERF</span><span class="o">=&lt;-</span><span class="n">s</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;-</span><span class="n">p</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">u</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">IPERF</span><span class="o">=&lt;-</span><span class="n">c</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">host</span><span class="o">|</span><span class="n">stop</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;-</span><span class="n">i</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">periodic</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">l</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">size</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">u</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">b</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">bandwidth</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">d</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">t</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">transtime</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">n</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">count</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">S</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id20">
+<h3>Response<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">IPERF</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">IPERF</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id21">
+<h3>Parameter<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;-s&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Work as a server.</p>
+</dd>
+<dt class="field-even">&lt;-c&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Work as a client.</p>
+</dd>
+<dt class="field-odd">&lt;-p&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It will be followed by &lt;port&gt;.</p>
+</dd>
+<dt class="field-even">&lt;port&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The server port.</p>
+<ul class="simple">
+<li><p>[1,65535].</p></li>
+<li><p>It is 5001 as default if absent.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;-u&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Work in UDP.</p>
+<ul class="simple">
+<li><p>If absent, it works in TCP as default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;host|stop&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>A host name or stop stream id.</p>
+<ul class="simple">
+<li><p>&lt;stop&gt;: Terminate specific stream id or terminate all stream if no id.</p></li>
+<li><p>&lt;host&gt;: The host name of service.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;-i&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It will be followed by &lt;periodic&gt;.</p>
+</dd>
+<dt class="field-even">&lt;periodic&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Seconds between periodic bandwidth reports.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;-l&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It will be followed by &lt;size&gt;.</p>
+</dd>
+<dt class="field-even">&lt;size&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Packet size to read or write.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+<li><p>It is 1460 bytes as default if absent.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;-b&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It will be followed by &lt;bandwidth&gt;.</p>
+</dd>
+<dt class="field-even">&lt;bandwidth&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>For UDP, the bandwidth in bits/sec.</p>
+<ul class="simple">
+<li><p>If &lt;-b&gt;, &lt;bandwidth&gt; are absent, it is 1 bits/sec as default.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;-d&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Do a bidirectional test simultaneously.</p>
+</dd>
+<dt class="field-even">&lt;-t&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>It will be followed by &lt;transtime&gt;.</p>
+</dd>
+<dt class="field-odd">&lt;transtime&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Time in seconds to transmit for.</p>
+<ul class="simple">
+<li><p>If &lt;-t&gt;, &lt;transtime&gt; are absent, it is 10 seconds as default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;-n&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>It will be followed by &lt;count&gt;.</p>
+</dd>
+<dt class="field-odd">&lt;count&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of bytes to transmit.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;-S&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>For UDP, set the IP “type of service”.</p>
+</dd>
+</dl>
+</section>
+<section id="id22">
+<h3>Error Number<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Input null parameter.</p>
+</dd>
+<dt class="field-even">3<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameter number.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this command, the sequence of &lt;-t&gt; &lt;-l&gt; &lt;-n&gt;, etc. is not required.</p>
+</div>
+</section>
+<section id="id23">
+<h3>Example<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">For</span> <span class="n">TCP</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">IPERF</span><span class="o">=-</span><span class="n">s</span><span class="p">,</span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="mi">5002</span>
+<span class="o">+</span><span class="n">IPERF</span><span class="p">:</span><span class="n">OK</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">IPERF</span><span class="o">=-</span><span class="n">c</span><span class="p">,</span><span class="mf">192.168.1.2</span><span class="p">,</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="mi">5002</span>
+<span class="o">+</span><span class="n">IPERF</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">For</span> <span class="n">UDP</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">IPERF</span><span class="o">=-</span><span class="n">c</span><span class="p">,</span><span class="mf">192.168.1.2</span><span class="p">,</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="mi">5002</span><span class="p">,</span><span class="o">-</span><span class="n">u</span>
+<span class="o">+</span><span class="n">IPERF</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-iperf3">
+<span id="wi-fi-at-iperf3"></span><h2>AT+IPERF3<a class="headerlink" href="#at-iperf3" title="Link to this heading"></a></h2>
+<section id="id24">
+<h3>Description<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<p>IPERF3 test for TCP.</p>
+</section>
+<section id="id25">
+<h3>Command<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">IPERF3</span><span class="o">=&lt;-</span><span class="n">s</span><span class="o">&gt;</span><span class="p">[</span><span class="o">&lt;-</span><span class="n">p</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">IPERF3</span><span class="o">=&lt;-</span><span class="n">c</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">host</span><span class="o">|</span><span class="n">stop</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;-</span><span class="n">i</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">periodic</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">l</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">size</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">d</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">t</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">transtime</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;-</span><span class="n">n</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">count</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id26">
+<h3>Response<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">IPERF3</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">IPERF3</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id27">
+<h3>Parameter<a class="headerlink" href="#id27" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;-s&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Work as a server.</p>
+</dd>
+<dt class="field-even">&lt;-c&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Work as a client.</p>
+</dd>
+<dt class="field-odd">&lt;-p&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It will be followed by &lt;port&gt;.</p>
+</dd>
+<dt class="field-even">&lt;port&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The server port.</p>
+<ul class="simple">
+<li><p>[1,65535].</p></li>
+<li><p>It is 5001 as default if absent.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;host|stop&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A host name or stop stream id.</p>
+<ul class="simple">
+<li><p>&lt;stop&gt;: Terminate specific stream id or terminate all stream if no id.</p></li>
+<li><p>&lt;host&gt;: The host name of service.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;-i&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>It will be followed by &lt;periodic&gt;.</p>
+</dd>
+<dt class="field-odd">&lt;periodic&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Seconds between periodic bandwidth reports.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;-l&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>It will be followed by &lt;size&gt;.</p>
+</dd>
+<dt class="field-odd">&lt;size&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Packet size to read or write.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+<li><p>It is 1460 bytes as default if absent.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;-d&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Do a bidirectional test simultaneously.</p>
+</dd>
+<dt class="field-odd">&lt;-t&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It will be followed by &lt;transtime&gt;.</p>
+</dd>
+<dt class="field-even">&lt;transtime&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Time in seconds to transmit for.</p>
+<ul class="simple">
+<li><p>If &lt;-t&gt;, &lt;transtime&gt; are absent, it is 10 seconds as default.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;-n&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It will be followed by &lt;count&gt;.</p>
+</dd>
+<dt class="field-even">&lt;count&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of bytes to transmit.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id28">
+<h3>Error Number<a class="headerlink" href="#id28" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Input null parameter.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameter number.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this command, the sequence of &lt;-t&gt; &lt;-l&gt; &lt;-n&gt;, etc. is not required.</p>
+</div>
+</section>
+<section id="id29">
+<h3>Example<a class="headerlink" href="#id29" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">IPERF3</span><span class="o">=-</span><span class="n">s</span><span class="p">,</span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="mi">5002</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">IPERF3</span><span class="o">=-</span><span class="n">c</span><span class="p">,</span><span class="mf">192.168.1.2</span><span class="p">,</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="o">-</span><span class="n">p</span><span class="p">,</span><span class="mi">5002</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-wlscan">
+<span id="wi-fi-at-wlscan"></span><h2>AT+WLSCAN<a class="headerlink" href="#at-wlscan" title="Link to this heading"></a></h2>
+<section id="id30">
+<h3>Description<a class="headerlink" href="#id30" title="Link to this heading"></a></h3>
+<p>Scan the Wi-Fi.</p>
+</section>
+<section id="id31">
+<h3>Command<a class="headerlink" href="#id31" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLSCAN</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLSCAN</span><span class="o">=</span><span class="p">[</span><span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id32">
+<h3>Response<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// The first Wi-Fi scanned
+&lt;bss_type&gt;  &lt;mac&gt;  &lt;rssi&gt;  &lt;channel&gt;  &lt;wps&gt;  &lt;security&gt;  &lt;aes&gt;  &lt;ssid&gt;
+// Any other Wi-Fi if exists
+// ……
++WLSCAN:OK
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLSCAN</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id33">
+<h3>Parameter<a class="headerlink" href="#id33" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;type&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The parameter’s type.</p>
+<ul class="simple">
+<li><p>“ssid”: It is followed by &lt;ssid&gt;.</p></li>
+<li><p>“ch”: It is followed by &lt;chlist&gt;.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;value&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parameter followed &lt;type&gt;.</p>
+<ul class="simple">
+<li><p>&lt;ssid&gt;: the string of ssid name.</p></li>
+<li><p>&lt;chlist&gt;: The channel list, segmented by colons.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id34">
+<h3>Error Number<a class="headerlink" href="#id34" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error Wi-Fi join status.</p>
+</dd>
+<dt class="field-even">3<span class="colon">:</span></dt>
+<dd class="field-even"><p>Memory failure.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Failed when scanning.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sequence beyond different &lt;type&gt;s is not inquired.</p>
+</div>
+</section>
+<section id="id35">
+<h3>Example<a class="headerlink" href="#id35" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Scan</span> <span class="mi">2</span> <span class="n">channels</span><span class="p">,</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mf">2.</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLSCAN</span><span class="o">=</span><span class="n">ch</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+<span class="o">+</span><span class="n">WLSCAN</span><span class="p">:</span><span class="n">OK</span>
+<span class="mi">1</span>   <span class="n">Infra</span>   <span class="mi">64</span><span class="p">:</span><span class="mi">64</span><span class="p">:</span><span class="mi">4</span><span class="n">a</span><span class="p">:</span><span class="mi">86</span><span class="p">:</span><span class="n">a6</span><span class="p">:</span><span class="mi">8</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">51</span>    <span class="mi">1</span>     <span class="mi">7</span>    <span class="n">WPA</span><span class="o">/</span><span class="n">WPA2</span> <span class="n">Mixed</span>      <span class="n">Xiaomi_F4D4</span>
+<span class="mi">2</span>   <span class="n">Infra</span>   <span class="mi">68</span><span class="p">:</span><span class="n">dd</span><span class="p">:</span><span class="n">b7</span><span class="p">:</span><span class="mi">6</span><span class="n">b</span><span class="p">:</span><span class="mi">84</span><span class="p">:</span><span class="n">ba</span><span class="p">,</span> <span class="o">-</span><span class="mi">54</span>    <span class="mi">1</span>     <span class="mi">6</span>    <span class="n">WPA</span><span class="o">/</span><span class="n">WPA2</span> <span class="n">AES</span>      <span class="n">MatCH</span>
+<span class="mi">3</span>   <span class="n">Infra</span>   <span class="mi">1</span><span class="n">c</span><span class="p">:</span><span class="n">fa</span><span class="p">:</span><span class="mi">68</span><span class="p">:</span><span class="n">f8</span><span class="p">:</span><span class="n">c4</span><span class="p">:</span><span class="mi">9</span><span class="n">c</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span>    <span class="mi">1</span>     <span class="mi">7</span>    <span class="n">WPA</span><span class="o">/</span><span class="n">WPA2</span> <span class="n">AES</span>      <span class="n">ATS_Linux_2</span><span class="mf">.4</span><span class="n">G</span>
+<span class="mi">4</span>   <span class="n">Infra</span>   <span class="n">d4</span><span class="p">:</span><span class="n">ee</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">61</span><span class="p">:</span><span class="n">d0</span><span class="p">:</span><span class="n">c2</span><span class="p">,</span> <span class="o">-</span><span class="mi">61</span>    <span class="mi">1</span>     <span class="mi">6</span>    <span class="n">WPA</span><span class="o">/</span><span class="n">WPA2</span> <span class="n">AES</span>      <span class="n">HiWiFi_61D0C2</span>
+<span class="o">//</span> <span class="n">Scan</span> <span class="n">ssid</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLSCAN</span><span class="o">=</span><span class="n">ssid</span><span class="p">,</span><span class="n">TP</span><span class="o">-</span><span class="n">LINK_BCC7</span>
+<span class="o">+</span><span class="n">WLSCAN</span><span class="p">:</span><span class="n">OK</span>
+<span class="mi">1</span>   <span class="n">Infra</span>   <span class="mi">7</span><span class="n">c</span><span class="p">:</span><span class="n">b5</span><span class="p">:</span><span class="mi">9</span><span class="n">b</span><span class="p">:</span><span class="n">c3</span><span class="p">:</span><span class="n">bc</span><span class="p">:</span><span class="n">c7</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span>    <span class="mi">4</span>     <span class="mi">6</span>    <span class="n">WPA</span><span class="o">/</span><span class="n">WPA2</span> <span class="n">AES</span>      <span class="n">TP</span><span class="o">-</span><span class="n">LINK_BCC7</span>
+<span class="o">//</span> <span class="n">Scan</span> <span class="n">both</span> <span class="n">ssid</span> <span class="ow">and</span> <span class="n">channels</span> <span class="p">(</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLSCAN</span><span class="o">=</span><span class="n">ssid</span><span class="p">,</span><span class="n">Xiaomi_F4D4</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">6</span>
+<span class="o">+</span><span class="n">WLSCAN</span><span class="p">:</span><span class="n">OK</span>
+<span class="mi">1</span>   <span class="n">Infra</span>   <span class="mi">64</span><span class="p">:</span><span class="mi">64</span><span class="p">:</span><span class="mi">4</span><span class="n">a</span><span class="p">:</span><span class="mi">86</span><span class="p">:</span><span class="n">a6</span><span class="p">:</span><span class="mi">8</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">54</span>    <span class="mi">1</span>     <span class="mi">7</span>    <span class="n">WPA</span><span class="o">/</span><span class="n">WPA2</span> <span class="n">Mixed</span>      <span class="n">Xiaomi_F4D4</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-wlrssi">
+<span id="wi-fi-at-wlrssi"></span><h2>AT+WLRSSI<a class="headerlink" href="#at-wlrssi" title="Link to this heading"></a></h2>
+<section id="id36">
+<h3>Description<a class="headerlink" href="#id36" title="Link to this heading"></a></h3>
+<p>Get the RSSI of connected AP currently.</p>
+</section>
+<section id="id37">
+<h3>Command<a class="headerlink" href="#id37" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLRSSI</span>
+</pre></div>
+</div>
+</section>
+<section id="id38">
+<h3>Response<a class="headerlink" href="#id38" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rssi</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">rssi</span><span class="o">&gt;</span>
+<span class="n">data</span> <span class="n">rssi</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">data_rssi</span><span class="o">&gt;</span>
+<span class="n">beacon</span> <span class="n">rssi</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">beacon_rssi</span><span class="o">&gt;</span>
+<span class="o">+</span><span class="n">WLRSSI</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+</section>
+<section id="id39">
+<h3>Parameter<a class="headerlink" href="#id39" title="Link to this heading"></a></h3>
+<p>None</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If it is not connected status right now, there will be still a response output, but it is meaningless.</p>
+</div>
+</section>
+</section>
+<section id="at-wlstartap">
+<span id="wi-fi-at-wlstartap"></span><h2>AT+WLSTARTAP<a class="headerlink" href="#at-wlstartap" title="Link to this heading"></a></h2>
+<section id="id40">
+<h3>Description<a class="headerlink" href="#id40" title="Link to this heading"></a></h3>
+<p>Start this module as a Wi-Fi AP.</p>
+</section>
+<section id="id41">
+<h3>Command<a class="headerlink" href="#id41" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>AT+WLSTARTAP=[&lt;type&gt;,&lt;value&gt;,&lt;type&gt;,&lt;value&gt;,……]
+</pre></div>
+</div>
+</section>
+<section id="id42">
+<h3>Response<a class="headerlink" href="#id42" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLSTARTAP</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLSTARTAP</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id43">
+<h3>Parameter<a class="headerlink" href="#id43" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;type&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The type of the followed parameter &lt;value&gt;.</p>
+<ul class="simple">
+<li><p>“ssid”: The &lt;ssid&gt; should be followed.</p></li>
+<li><p>“ch”: The &lt;ch&gt; should be followed.</p></li>
+<li><p>“pw”: The &lt;pw&gt; should be followed.</p></li>
+<li><p>“sec “: The &lt;sec&gt; should be followed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;value&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parameter followed correspond &lt;type&gt;, as bellow:</p>
+</dd>
+<dt class="field-odd">&lt;ssid&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The string of ssid name.</p>
+</dd>
+<dt class="field-even">&lt;ch&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Channel of AP.</p>
+<ul class="simple">
+<li><p>[1,11].</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;sec&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The security type, with string format.</p>
+<ul class="simple">
+<li><p>“open”.</p></li>
+<li><p>“wep”.</p></li>
+<li><p>“tpic”.</p></li>
+<li><p>“wpa2”.</p></li>
+<li><p>“wpa3”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;pw&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string of password.</p>
+</dd>
+</dl>
+</section>
+<section id="id44">
+<h3>Error Number<a class="headerlink" href="#id44" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Input null parameter.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameter.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Timeout.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Failed when starting AP.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Memory failure.</p>
+</dd>
+</dl>
+</section>
+<section id="id45">
+<h3>Example<a class="headerlink" href="#id45" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Start</span> <span class="k">with</span> <span class="n">anonymous</span> <span class="n">Wi</span><span class="o">-</span><span class="n">Fi</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLSTARTAP</span><span class="o">=</span><span class="n">ssid</span><span class="p">,</span><span class="n">new_ssid</span><span class="p">,</span><span class="n">ch</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">sec</span><span class="p">,</span><span class="nb">open</span>
+<span class="o">+</span><span class="n">WLSTARTAP</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Start</span> <span class="n">AP</span> <span class="k">with</span> <span class="n">wpa2</span> <span class="nb">type</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLSTARTAP</span><span class="o">=</span><span class="n">sec</span><span class="p">,</span><span class="n">wpa2</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="mi">12345678</span><span class="p">,</span><span class="n">ssid</span><span class="p">,</span><span class="n">new_ssid</span>
+<span class="o">+</span><span class="n">WLSTARTAP</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Now</span> <span class="n">you</span> <span class="n">can</span> <span class="n">connect</span> <span class="n">new_ssid</span> <span class="k">with</span> <span class="n">mobile</span><span class="o">-</span><span class="n">phone</span><span class="p">,</span> <span class="ow">or</span> <span class="n">another</span> <span class="n">board</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-wlstopap">
+<span id="wi-fi-at-wlstopap"></span><h2>AT+WLSTOPAP<a class="headerlink" href="#at-wlstopap" title="Link to this heading"></a></h2>
+<section id="id46">
+<h3>Description<a class="headerlink" href="#id46" title="Link to this heading"></a></h3>
+<p>Stop this module as a Wi-Fi AP.</p>
+</section>
+<section id="id47">
+<h3>Command<a class="headerlink" href="#id47" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLSTOPAP</span>
+</pre></div>
+</div>
+</section>
+<section id="id48">
+<h3>Response<a class="headerlink" href="#id48" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLSTOPAP</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+</section>
+<section id="id49">
+<h3>Parameter<a class="headerlink" href="#id49" title="Link to this heading"></a></h3>
+<p>None</p>
+</section>
+</section>
+<section id="at-wlstate">
+<span id="wi-fi-at-wlstate"></span><h2>AT+WLSTATE<a class="headerlink" href="#at-wlstate" title="Link to this heading"></a></h2>
+<section id="id50">
+<h3>Description<a class="headerlink" href="#id50" title="Link to this heading"></a></h3>
+<p>Get the Wi-Fi state of module, maybe as an AP or a device.</p>
+</section>
+<section id="id51">
+<h3>Command<a class="headerlink" href="#id51" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLSTATE</span>
+</pre></div>
+</div>
+</section>
+<section id="id52">
+<h3>Response<a class="headerlink" href="#id52" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>WLAN0 Status: &lt;status&gt;
+==============================
+max_skbinfo_used_num=&lt;maxinfonum&gt;, skbinfo_used_num=&lt;usedinfonum&gt;
+max_skbdata_used_num=&lt;maxdatanum&gt;, skbdata_used_num=&lt;useddatanum&gt;
+// As an device, the information ……
+WLAN0 Setting:
+==============================
+MODE =&gt; STATION
+SSID =&gt; &lt;wifi_ssid&gt; // If connected
+BSSID =&gt; &lt;bssid&gt; // If connected
+CHANNEL =&gt; &lt;channel&gt;
+SECURITY =&gt; &lt;security&gt;
+PASSWORD =&gt;
+Interface (0)
+==============================
+MAC =&gt; &lt;mac_address&gt;
+IP  =&gt; &lt;ip_address&gt;
+GW  =&gt; &lt;gateway&gt;
+msk  =&gt; &lt;netmask&gt;
+// As an AP, the information ……
+WLAN1 Status: &lt;status&gt;
+==============================
+WLAN1 Setting:
+==============================
+MODE =&gt; AP
+SSID =&gt; &lt;ssid&gt;
+BSSID =&gt; &lt;bssid&gt;
+CHANNEL =&gt; &lt;channel&gt;
+SECURITY =&gt; &lt;security&gt;
+PASSWORD =&gt;
+Interface (1)
+==============================
+MAC =&gt; &lt;mac_address&gt;
+IP  =&gt; &lt;ip_address&gt;
+GW  =&gt; &lt;gateway&gt;
+msk  =&gt; &lt;netmask&gt;
+Associated Client List:
+==============================
+Client Num: &lt;client_num&gt;  // If exist
+Client 1:  // If exist
+MAC =&gt; &lt;client_mac_address&gt;
+// Any other clients if exist.
++WLSTATE:OK
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-wlreconn">
+<span id="wi-fi-at-wlreconn"></span><h2>AT+WLRECONN<a class="headerlink" href="#at-wlreconn" title="Link to this heading"></a></h2>
+<section id="id53">
+<h3>Description<a class="headerlink" href="#id53" title="Link to this heading"></a></h3>
+<p>Enable or disable Wi-Fi auto-connection.</p>
+</section>
+<section id="id54">
+<h3>Command<a class="headerlink" href="#id54" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLRECONN</span><span class="o">=&lt;</span><span class="n">command</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">parameter</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id55">
+<h3>Response<a class="headerlink" href="#id55" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLRECONN</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLRECONN</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id56">
+<h3>Parameter<a class="headerlink" href="#id56" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;command&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Set auto connect or fast re-connect.</p>
+<ul class="simple">
+<li><p>“auto”: auto reconnect when wifi disconnect or connect fail.</p></li>
+<li><p>“fast”: Fast reconnect when wifi power on.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;parameter&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The corresponding value for &lt;command&gt;.</p>
+<ul class="simple">
+<li><p>0: Disable auto-reconnect when &lt;command&gt; is auto. Clear stored flash when &lt;command&gt; is fast.</p></li>
+<li><p>1: Enable auto-reconnect when &lt;command&gt; is auto. Allow fast reconnect when &lt;command&gt; is fast.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id57">
+<h3>Error Number<a class="headerlink" href="#id57" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error parameter number.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Invalid &lt;enable&gt; value.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-wlpromisc">
+<span id="wi-fi-at-wlpromisc"></span><h2>AT+WLPROMISC<a class="headerlink" href="#at-wlpromisc" title="Link to this heading"></a></h2>
+<section id="id58">
+<h3>Description<a class="headerlink" href="#id58" title="Link to this heading"></a></h3>
+<p>Enable or disable Wi-Fi promisc.</p>
+</section>
+<section id="id59">
+<h3>Command<a class="headerlink" href="#id59" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLPROMISC</span><span class="o">=&lt;</span><span class="n">enable</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="nb">all</span><span class="o">/</span><span class="n">apall</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id60">
+<h3>Response<a class="headerlink" href="#id60" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLPROMISC</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLPROMISC</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id61">
+<h3>Parameter<a class="headerlink" href="#id61" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;enable&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Enable or disable Wi-Fi promisc, with string format.</p>
+<ul class="simple">
+<li><p>“enable”: Enable.</p></li>
+<li><p>“disable”: Disable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;all/apall&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Filter mode.</p>
+<ul class="simple">
+<li><p>“all”: All packets.</p></li>
+<li><p>“apall”: Only AP related packets.</p></li>
+<li><p>If &lt;enable&gt; equals to “enable”, the &lt;all/apall&gt; is mandatory.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The &lt;all/apall&gt; is only needed when &lt;enable&gt; equals to “enable”.</p>
+</div>
+</section>
+</section>
+<section id="at-wldbg">
+<span id="wi-fi-at-wldbg"></span><h2>AT+WLDBG<a class="headerlink" href="#at-wldbg" title="Link to this heading"></a></h2>
+<section id="id62">
+<h3>Description<a class="headerlink" href="#id62" title="Link to this heading"></a></h3>
+<p>Test Wi-Fi iwpriv command.</p>
+</section>
+<section id="id63">
+<h3>Command<a class="headerlink" href="#id63" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLDBG</span><span class="o">=&lt;</span><span class="n">command</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">parameters</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id64">
+<h3>Response<a class="headerlink" href="#id64" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLDBG</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLDBG</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id65">
+<h3>Parameter<a class="headerlink" href="#id65" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;command&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The iwpriv command, with string format.</p>
+<ul class="simple">
+<li><p>Including command and command length.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;parameters&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parameters of specific command.</p>
+<ul class="simple">
+<li><p>Including api_id, api_parameters for debugging.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id66">
+<h3>Error Number<a class="headerlink" href="#id66" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Input error parameter</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Failed when doing iwpriv testing</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-wlwps">
+<span id="wi-fi-at-wlwps"></span><h2>AT+WLWPS<a class="headerlink" href="#at-wlwps" title="Link to this heading"></a></h2>
+<section id="id67">
+<h3>Description<a class="headerlink" href="#id67" title="Link to this heading"></a></h3>
+<p>Test Wi-Fi wps command.</p>
+</section>
+<section id="id68">
+<h3>Command<a class="headerlink" href="#id68" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLWPS</span><span class="o">=&lt;</span><span class="n">pcb_pin</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">pin_val</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id69">
+<h3>Response<a class="headerlink" href="#id69" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLWPS</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLWPS</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id70">
+<h3>Parameter<a class="headerlink" href="#id70" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;pcb_pin&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The string of <code class="docutils literal notranslate"><span class="pre">pcb</span></code> or <code class="docutils literal notranslate"><span class="pre">pin</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pcb</span></code>: Start wps pcb.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pin</span></code>: Start wps pin display or keypad.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;pin_val&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The pin value.</p>
+<ul class="simple">
+<li><p>The pin has a valid checksum.</p></li>
+<li><p>If &lt;pcb_pin&gt; equals to <code class="docutils literal notranslate"><span class="pre">pin</span></code>, the &lt;pin_val&gt; is mandatory.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id71">
+<h3>Error Number<a class="headerlink" href="#id71" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Input error parameter</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The &lt;pin_val&gt; is only used when &lt;pcb_pin&gt; equals to <code class="docutils literal notranslate"><span class="pre">pin</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="at-wlps">
+<span id="wi-fi-at-wlps"></span><h2>AT+WLPS<a class="headerlink" href="#at-wlps" title="Link to this heading"></a></h2>
+<section id="id72">
+<h3>Description<a class="headerlink" href="#id72" title="Link to this heading"></a></h3>
+<p>Enable or disable LPS, IPS.</p>
+</section>
+<section id="id73">
+<h3>Command<a class="headerlink" href="#id73" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLPS</span><span class="o">=&lt;</span><span class="n">mode</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">enable</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">mode</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">enable</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id74">
+<h3>Response<a class="headerlink" href="#id74" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLPS</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">WLPS</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id75">
+<h3>Parameter<a class="headerlink" href="#id75" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;mode&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The string of <code class="docutils literal notranslate"><span class="pre">lps</span></code> or <code class="docutils literal notranslate"><span class="pre">ips</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lps</span></code>: LPS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ips</span></code>: IPS</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;enable&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Enable or disable LPS/IPS.</p>
+<ul class="simple">
+<li><p>0: Disable</p></li>
+<li><p>1: Enable</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id76">
+<h3>Error Number<a class="headerlink" href="#id76" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Input error parameter number</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error &lt;lps_ips&gt;</p>
+</dd>
+</dl>
+</section>
+<section id="id77">
+<h3>Example<a class="headerlink" href="#id77" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">WLPS</span><span class="o">=</span><span class="n">lps</span><span class="p">,</span><span class="mi">1</span>
+<span class="o">+</span><span class="n">WLPS</span><span class="p">:</span><span class="n">OK</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLPS</span><span class="o">=</span><span class="n">ips</span><span class="p">,</span><span class="mi">0</span>
+<span class="o">+</span><span class="n">WLPS</span><span class="p">:</span><span class="n">OK</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">WLPS</span><span class="o">=</span><span class="n">lps</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">ips</span><span class="p">,</span><span class="mi">1</span>
+<span class="o">+</span><span class="n">WLPS</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="common_at_command.html" class="btn btn-neutral float-left" title="Common AT Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mqtt_at_command.html" class="btn btn-neutral float-right" title="MQTT AT Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

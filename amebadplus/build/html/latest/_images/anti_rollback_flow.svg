@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 Microsoft_Visio___3.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.29953in" height="2.43027in"
+		viewBox="0 0 381.566 174.979" xml:space="preserve" color-interpolation-filters="sRGB" class="st12">
+	<v:documentProperties v:langID="2052" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {font-size:1em}
+		.st4 {fill:none;marker-end:url(#mrkr5-9);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st5 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.22935779816514}
+		.st6 {fill:#ffffff;marker-end:url(#mrkr5-9);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st7 {font-family:Malgun Gothic;font-size:1em}
+		.st8 {marker-end:url(#mrkr5-9);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st9 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st10 {fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st11 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st12 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-9" class="st5" v:arrowType="5" v:arrowSize="2" v:setback="7.63" refX="-7.63" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-4.36,-4.36) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="连接线" v:index="0"/>
+		<g id="shape446-1" v:mID="446" v:groupContext="shape" transform="translate(141.31,-146.258)">
+			<title>工作表.446</title>
+			<desc>Get image version: Set OTA1 version as V1 Set OTA2 version as...</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="160.806" width="113.39" height="28.3465"/>
+			<rect x="0" y="146.633" width="113.386" height="28.3465" class="st1"/>
+			<text x="26.17" y="153.61" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Get image version:<v:newlineChar/><tspan
+						x="19.31" dy="1.2em" class="st3">Set OTA</tspan>1 version as V1<v:newlineChar/><tspan x="19.31" dy="1.2em"
+						class="st3">Set OTA</tspan>2 version as V2</text>		</g>
+		<g id="shape447-6" v:mID="447" v:groupContext="shape" transform="translate(140.481,-43.7862)">
+			<title>工作表.447</title>
+			<desc>Version compare: V1, V2, VN</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="167.893" width="113.39" height="14.1732"/>
+			<rect x="0" y="160.806" width="113.386" height="14.1732" class="st4"/>
+			<text x="9.82" y="170.29" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Version compare: V1, V2, VN</text>		</g>
+		<g id="shape448-11" v:mID="448" v:groupContext="shape" transform="translate(7.31194,-7.31194)">
+			<title>工作表.448</title>
+			<desc>Both OTA1 and OTA2 are invalid: V1 &#60; VN, V2 &#60; VN</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="57.9658" cy="165.058" width="115.94" height="19.8425"/>
+			<rect x="0" y="155.137" width="115.932" height="19.8425" class="st6"/>
+			<text x="4.67" y="162.66" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Both OTA1 and OTA2 are invalid:<v:newlineChar/><tspan
+						x="30.16" dy="1.2em" class="st3">V</tspan>1 &#60; VN, V2 &#60; VN</text>		</g>
+		<g id="shape449-16" v:mID="449" v:groupContext="shape" transform="translate(140.481,-7.31194)">
+			<title>工作表.449</title>
+			<desc>Only one image is valid: V1 ≥ VN &#62; V2 or V2 ≥ VN &#62; V1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="165.058" width="113.39" height="19.8425"/>
+			<rect x="0" y="155.137" width="113.386" height="19.8425" class="st4"/>
+			<text x="18.28" y="162.42" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Only one image is valid:<v:newlineChar/><tspan
+						x="7.66" dy="1.245em" class="st3">V</tspan>1 <tspan class="st7">≥</tspan> VN &#62; V2 or V2 <tspan
+						class="st7">≥</tspan> VN &#62; V1</text>		</g>
+		<g id="shape450-23" v:mID="450" v:groupContext="shape" transform="translate(272.207,-7.31194)">
+			<title>工作表.450</title>
+			<desc>Two IMG2 are valid: V1 ≥ VN, V2 ≥ VN</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="51.0236" cy="165.058" width="102.05" height="19.8425"/>
+			<rect x="0" y="155.137" width="102.047" height="19.8425" class="st6"/>
+			<text x="18.38" y="162.42" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Two IMG2 are valid:<v:newlineChar/><tspan
+						x="21.6" dy="1.245em" class="st3">V</tspan>1 <tspan class="st7">≥</tspan> VN, V2 <tspan class="st7">≥</tspan> VN</text>		</g>
+		<g id="shape451-30" v:mID="451" v:groupContext="shape" v:layerMember="0" transform="translate(253.867,-50.8728)">
+			<title>动态连接线.451</title>
+			<path d="M0 174.98 L69.36 174.98 L69.36 192.98" class="st8"/>
+		</g>
+		<g id="shape452-35" v:mID="452" v:groupContext="shape" v:layerMember="0" transform="translate(140.481,-50.8728)">
+			<title>动态连接线.452</title>
+			<path d="M0 174.98 L-75.2 174.98 L-75.2 192.98" class="st8"/>
+		</g>
+		<g id="shape453-40" v:mID="453" v:groupContext="shape" transform="translate(140.481,-78.3013)">
+			<title>工作表.453</title>
+			<desc>Get image version from OTP: VN VN=VN&#60;&#60;16</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="165.058" width="113.39" height="19.8425"/>
+			<rect x="0" y="155.137" width="113.386" height="19.8425" class="st1"/>
+			<text x="4.03" y="162.66" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Get image version from OTP: VN<v:newlineChar/><tspan
+						x="36.96" dy="1.2em" class="st3">VN</tspan>=VN&#60;&#60;16</text>		</g>
+		<g id="shape454-44" v:mID="454" v:groupContext="shape" transform="translate(272.207,-78.3013)">
+			<title>工作表.454</title>
+			<desc>VN = 0</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="51.0236" cy="165.058" width="102.05" height="19.8425"/>
+			<rect x="0" y="155.137" width="102.047" height="19.8425" class="st1"/>
+			<text x="41.25" y="167.46" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>VN = 0</text>		</g>
+		<g id="shape455-47" v:mID="455" v:groupContext="shape" v:layerMember="0" transform="translate(190.087,-146.258)">
+			<title>动态连接线.455</title>
+			<path d="M7.09 174.98 L7.09 183.64" class="st8"/>
+		</g>
+		<g id="shape456-52" v:mID="456" v:groupContext="shape" v:layerMember="0" transform="translate(190.087,-117.703)">
+			<title>动态连接线.456</title>
+			<desc>Y</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="7.00169" cy="182.864" width="40" height="17.6036"/>
+			<path d="M7.09 174.98 L7.09 188.82" class="st8"/>
+			<rect v:rectContext="textBkgnd" x="5.0525" y="178.064" width="3.8985" height="9.59985" class="st9"/>
+			<text x="5.05" y="185.26" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Y</text>		</g>
+		<g id="shape457-59" v:mID="457" v:groupContext="shape" v:layerMember="0" transform="translate(253.867,-124.789)">
+			<title>动态连接线.457</title>
+			<desc>N</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="48.0048" cy="174.979" width="40" height="17.6036"/>
+			<path d="M0 174.98 L69.36 174.98 L69.36 195.9" class="st8"/>
+			<rect v:rectContext="textBkgnd" x="45.4228" y="170.179" width="5.16412" height="9.59985" class="st9"/>
+			<text x="45.42" y="177.38" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>N</text>		</g>
+		<g id="shape458-66" v:mID="458" v:groupContext="shape" v:layerMember="0" transform="translate(190.087,-78.3013)">
+			<title>动态连接线.458</title>
+			<path d="M7.09 174.98 L7.09 189.6" class="st8"/>
+		</g>
+		<g id="shape459-71" v:mID="459" v:groupContext="shape" transform="translate(140.481,-117.703)">
+			<title>菱形.459</title>
+			<desc>Enable anti-rollback?</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="167.893" width="113.39" height="14.1732"/>
+			<path d="M56.69 174.98 L113.39 167.89 L56.69 160.81 L0 167.89 L56.69 174.98 Z" class="st10"/>
+			<text x="22.59" y="170.29" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Enable anti-rollback?  </text>		</g>
+		<g id="shape461-74" v:mID="461" v:groupContext="shape" v:layerMember="0" transform="translate(323.231,-80.5922)">
+			<title>动态连接线.461</title>
+			<path d="M0 177.27 L0 186.86 L-126.06 186.86" class="st11"/>
+		</g>
+		<g id="shape462-77" v:mID="462" v:groupContext="shape" v:layerMember="0" transform="translate(190.087,-43.7862)">
+			<title>动态连接线.462</title>
+			<path d="M7.09 174.98 L7.09 185.89" class="st8"/>
+		</g>
+	</g>
+</svg>

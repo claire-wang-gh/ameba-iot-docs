@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MQTT AT Commands &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="TCP/IP AT Commands" href="tcp_ip_at_command.html" />
+    <link rel="prev" title="Wi-Fi AT Commands" href="wifi_at_command.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">AT Command</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_at_command.html">Common AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wifi_at_command.html">Wi-Fi AT Commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MQTT AT Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttopen">AT+MQTTOPEN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#response">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameter">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#error-number">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttclose">AT+MQTTCLOSE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttconn">AT+MQTTCONN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttdisconn">AT+MQTTDISCONN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttsub">AT+MQTTSUB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttunsub">AT+MQTTUNSUB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id27">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttpub">AT+MQTTPUB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id29">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id31">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id32">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id33">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttcfg">AT+MQTTCFG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id34">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id35">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id36">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id37">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id38">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id39">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-mqttreset">AT+MQTTRESET</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id40">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id41">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id42">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tcp_ip_at_command.html">TCP/IP AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bluetooth_at_command.html">Bluetooth AT Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../application_note/index.html">Application Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">AT Command</a></li>
+      <li class="breadcrumb-item active">MQTT AT Commands</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/ameba/en/at_command/src/mqtt_at_command.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mqtt-at-commands">
+<span id="id1"></span><h1>MQTT AT Commands<a class="headerlink" href="#mqtt-at-commands" title="Link to this heading"></a></h1>
+<section id="at-mqttopen">
+<span id="mqtt-at-mqttopen"></span><h2>AT+MQTTOPEN<a class="headerlink" href="#at-mqttopen" title="Link to this heading"></a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h3>
+<p>Create an MQTT entity.</p>
+</section>
+<section id="command">
+<h3>Command<a class="headerlink" href="#command" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">MQTTOPEN</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">host</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="response">
+<h3>Response<a class="headerlink" href="#response" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTOPEN</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTOPEN</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="parameter">
+<h3>Parameter<a class="headerlink" href="#parameter" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;host&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string of host name.</p>
+<ul class="simple">
+<li><p>Not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;port&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connection port.</p>
+<ul class="simple">
+<li><p>[1,65535]</p></li>
+<li><p>It is 1883 as default if absent.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="error-number">
+<h3>Error Number<a class="headerlink" href="#error-number" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Common error in software.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameters.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Already existed connect id.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Memory failure.</p>
+</dd>
+<dt class="field-odd">9<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Invalid connect id.</p>
+</dd>
+<dt class="field-even">18<span class="colon">:</span></dt>
+<dd class="field-even"><p>Task failure.</p>
+</dd>
+<dt class="field-odd">19<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Network is not connected yet.</p>
+</dd>
+</dl>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">At</span> <span class="n">first</span><span class="p">,</span> <span class="n">you</span> <span class="n">should</span> <span class="n">connect</span> <span class="n">a</span> <span class="n">Wi</span><span class="o">-</span><span class="n">Fi</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">MQTTOPEN</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">my_test_host</span><span class="p">,</span><span class="mi">1883</span>
+<span class="o">+</span><span class="n">MQTTOPEN</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-mqttclose">
+<span id="mqtt-at-mqttclose"></span><h2>AT+MQTTCLOSE<a class="headerlink" href="#at-mqttclose" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>Description<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Delete an MQTT entity.</p>
+</section>
+<section id="id3">
+<h3>Command<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">MQTTCLOSE</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Response<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTCLOSE</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTCLOSE</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>Parameter<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>Error Number<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Common error in software.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameters.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Already existed connect id.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Memory failure.</p>
+</dd>
+<dt class="field-odd">6<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This connect id has not been created.</p>
+</dd>
+<dt class="field-even">9<span class="colon">:</span></dt>
+<dd class="field-even"><p>Invalid connect id.</p>
+</dd>
+<dt class="field-odd">11<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Can not disconect.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If this MQTT entity has connected to the server, you’d better execute AT+MQTTDISCONN at first, then close this entity.</p>
+</div>
+</section>
+</section>
+<section id="at-mqttconn">
+<span id="mqtt-at-mqttconn"></span><h2>AT+MQTTCONN<a class="headerlink" href="#at-mqttconn" title="Link to this heading"></a></h2>
+<section id="id7">
+<h3>Description<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>Connect to host server.</p>
+</section>
+<section id="id8">
+<h3>Command<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">MQTTCONN</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">clientid</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>Response<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">this</span> <span class="n">OK</span> <span class="n">will</span> <span class="n">be</span> <span class="n">response</span> <span class="n">immediately</span><span class="p">,</span> <span class="k">if</span> <span class="n">the</span> <span class="n">command</span> <span class="ow">is</span> <span class="n">correct</span><span class="o">.</span>
+<span class="o">+</span><span class="n">MQTTCONN</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">once</span> <span class="n">received</span> <span class="n">ACK</span> <span class="kn">from</span> <span class="nn">host</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">response</span> <span class="n">right</span> <span class="n">now</span><span class="o">.</span>
+<span class="n">ACK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTCONN</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3>Parameter<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;clientid&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string of client id.</p>
+<ul class="simple">
+<li><p>It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;username&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The string of username.</p>
+<ul class="simple">
+<li><p>It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;password&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string of pasword.</p>
+<ul class="simple">
+<li><p>It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id11">
+<h3>Error Number<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Common error in software.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameters.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Attach error.</p>
+</dd>
+<dt class="field-even">6<span class="colon">:</span></dt>
+<dd class="field-even"><p>This connect id has not been created.</p>
+</dd>
+<dt class="field-odd">7<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Can not connect to host.</p>
+</dd>
+<dt class="field-even">9<span class="colon">:</span></dt>
+<dd class="field-even"><p>Invalid connect id.</p>
+</dd>
+<dt class="field-odd">17<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Time out.</p>
+</dd>
+</dl>
+</section>
+<section id="id12">
+<h3>Example<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Connect</span> <span class="n">to</span> <span class="n">a</span> <span class="n">service</span> <span class="k">with</span> <span class="n">username</span> <span class="ow">and</span> <span class="n">password</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">MQTTCONN</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">my_test_host</span><span class="p">,</span><span class="n">user_test</span><span class="p">,</span><span class="n">pswd_test</span>
+<span class="o">+</span><span class="n">MQTTCONN</span><span class="p">:</span><span class="n">OK</span>
+<span class="n">ACK</span>
+<span class="o">//</span> <span class="n">Connect</span> <span class="n">to</span> <span class="n">an</span> <span class="n">anonymous</span> <span class="n">service</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">MQTTCONN</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">my_anonymous_host</span>
+<span class="o">+</span><span class="n">MQTTCONN</span><span class="p">:</span><span class="n">OK</span>
+<span class="n">ACK</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-mqttdisconn">
+<span id="mqtt-at-mqttdisconn"></span><h2>AT+MQTTDISCONN<a class="headerlink" href="#at-mqttdisconn" title="Link to this heading"></a></h2>
+<section id="id13">
+<h3>Description<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<p>Disconnect from host server.</p>
+</section>
+<section id="id14">
+<h3>Command<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">MQTTDISCONN</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id15">
+<h3>Response<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTDISCONN</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTDISCONN</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id16">
+<h3>Parameter<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id17">
+<h3>Error Number<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Common error in software.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameters.</p>
+</dd>
+<dt class="field-odd">6<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This connect id has not been created.</p>
+</dd>
+<dt class="field-even">9<span class="colon">:</span></dt>
+<dd class="field-even"><p>Invalid connect id.</p>
+</dd>
+<dt class="field-odd">10<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It is not connected before.</p>
+</dd>
+<dt class="field-even">17<span class="colon">:</span></dt>
+<dd class="field-even"><p>Time out.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-mqttsub">
+<span id="mqtt-at-mqttsub"></span><h2>AT+MQTTSUB<a class="headerlink" href="#at-mqttsub" title="Link to this heading"></a></h2>
+<section id="id18">
+<h3>Description<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<p>Subscribe a topic from host server.</p>
+</section>
+<section id="id19">
+<h3>Command<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">MQTTSUB</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">topic_string</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">qos</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id20">
+<h3>Response<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">this</span> <span class="n">response</span> <span class="n">will</span> <span class="n">be</span> <span class="n">output</span> <span class="n">immediately</span> <span class="n">once</span> <span class="n">the</span> <span class="n">command</span> <span class="ow">is</span> <span class="n">correct</span><span class="o">.</span>
+<span class="o">+</span><span class="n">MQTTSUB</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">once</span> <span class="n">received</span> <span class="n">ACK</span> <span class="kn">from</span> <span class="nn">host</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">response</span> <span class="n">here</span><span class="o">.</span>
+<span class="n">ACK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTSUB</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id21">
+<h3>Parameter<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;topic_string&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string of topic to be subscibed.</p>
+<ul class="simple">
+<li><p>It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;qos&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The QoS value.</p>
+<ul class="simple">
+<li><p>[0,2]</p></li>
+<li><p>It is 2 as default if absent.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id22">
+<h3>Error Number<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Common error in software.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameters.</p>
+</dd>
+<dt class="field-odd">6<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This connect id has not been created.</p>
+</dd>
+<dt class="field-even">9<span class="colon">:</span></dt>
+<dd class="field-even"><p>Invalid connect id.</p>
+</dd>
+<dt class="field-odd">10<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It is not connected before.</p>
+</dd>
+<dt class="field-even">13<span class="colon">:</span></dt>
+<dd class="field-even"><p>Can not subscribe this topic.</p>
+</dd>
+<dt class="field-odd">14<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Has subscribed this topic already.</p>
+</dd>
+<dt class="field-even">17<span class="colon">:</span></dt>
+<dd class="field-even"><p>Time out.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-mqttunsub">
+<span id="mqtt-at-mqttunsub"></span><h2>AT+MQTTUNSUB<a class="headerlink" href="#at-mqttunsub" title="Link to this heading"></a></h2>
+<section id="id23">
+<h3>Description<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<p>Unsubscribe a topic from host server.</p>
+</section>
+<section id="id24">
+<h3>Command<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">MQTTUSSUB</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">topic_string</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id25">
+<h3>Response<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">this</span> <span class="n">response</span> <span class="n">will</span> <span class="n">be</span> <span class="n">output</span> <span class="n">immediately</span> <span class="n">once</span> <span class="n">the</span> <span class="n">command</span> <span class="ow">is</span> <span class="n">correct</span><span class="o">.</span>
+<span class="o">+</span><span class="n">MQTTUNSUB</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">once</span> <span class="n">received</span> <span class="n">ACK</span> <span class="kn">from</span> <span class="nn">host</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">response</span> <span class="n">here</span><span class="o">.</span>
+<span class="n">ACK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTUNSUB</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id26">
+<h3>Parameter<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;topic_string&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string of topic to be subscibed.</p>
+<ul class="simple">
+<li><p>It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id27">
+<h3>Error Number<a class="headerlink" href="#id27" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Common error in software.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameters.</p>
+</dd>
+<dt class="field-odd">6<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This connect id has not been created.</p>
+</dd>
+<dt class="field-even">9<span class="colon">:</span></dt>
+<dd class="field-even"><p>Invalid connect id.</p>
+</dd>
+<dt class="field-odd">10<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It is not connected before.</p>
+</dd>
+<dt class="field-even">16<span class="colon">:</span></dt>
+<dd class="field-even"><p>Can not unsubscribe this topic.</p>
+</dd>
+<dt class="field-odd">17<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Time out.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-mqttpub">
+<span id="mqtt-at-mqttpub"></span><h2>AT+MQTTPUB<a class="headerlink" href="#at-mqttpub" title="Link to this heading"></a></h2>
+<section id="id28">
+<h3>Description<a class="headerlink" href="#id28" title="Link to this heading"></a></h3>
+<p>Publish a message for specific topic.</p>
+</section>
+<section id="id29">
+<h3>Command<a class="headerlink" href="#id29" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">MQTTPUB</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">messageid</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">qos</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">retain</span><span class="o">&gt;</span><span class="p">],</span><span class="o">&lt;</span><span class="n">topic</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">message</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id30">
+<h3>Response<a class="headerlink" href="#id30" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">this</span> <span class="n">response</span> <span class="n">will</span> <span class="n">be</span> <span class="n">output</span> <span class="n">immediately</span> <span class="n">once</span> <span class="n">the</span> <span class="n">command</span> <span class="ow">is</span> <span class="n">correct</span><span class="o">.</span>
+<span class="o">+</span><span class="n">MQTTPUB</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">there</span> <span class="n">may</span> <span class="n">be</span> <span class="n">the</span> <span class="n">message</span> <span class="n">callback</span>
+<span class="o">+</span><span class="n">MQTTRECV</span><span class="p">:</span><span class="o">&lt;</span><span class="n">conn_id</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">messageid</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">topic</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">message</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">length</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">qos</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">dup</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">retain</span><span class="o">&gt;</span>
+<span class="o">//</span> <span class="n">Here</span><span class="p">,</span> <span class="n">once</span> <span class="n">received</span> <span class="n">ACK</span> <span class="kn">from</span> <span class="nn">host</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">response</span> <span class="n">here</span><span class="o">.</span>
+<span class="n">ACK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTPUB</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id31">
+<h3>Parameter<a class="headerlink" href="#id31" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;messageid&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The message id.</p>
+<ul class="simple">
+<li><p>[1,65534]</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;qos&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(optional) QoS value.</p>
+<ul class="simple">
+<li><p>[0,2]</p></li>
+<li><p>It is 2 as default if absent.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;retain&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>(optional) Retain value.</p>
+<ul class="simple">
+<li><p>[0,1]</p></li>
+<li><p>It is 0 as default if absent.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;topic&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The string of topic.</p>
+<ul class="simple">
+<li><p>It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.</p></li>
+<li><p>It is suggested to fill a topic subscribed before.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;msg_string&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The message you will send.</p>
+<ul class="simple">
+<li><p>It has length not longer than 490 bytes when longer command format, otherwise not longer than 97 bytes.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id32">
+<h3>Error Number<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Common error in software.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameters.</p>
+</dd>
+<dt class="field-odd">4<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Memory failure.</p>
+</dd>
+<dt class="field-even">6<span class="colon">:</span></dt>
+<dd class="field-even"><p>This connect id has not been created.</p>
+</dd>
+<dt class="field-odd">9<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Invalid connect id.</p>
+</dd>
+<dt class="field-even">10<span class="colon">:</span></dt>
+<dd class="field-even"><p>It is not connected before.</p>
+</dd>
+<dt class="field-odd">12<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Can not publish successfully.</p>
+</dd>
+<dt class="field-even">17<span class="colon">:</span></dt>
+<dd class="field-even"><p>Time out.</p>
+</dd>
+</dl>
+</section>
+<section id="id33">
+<h3>Example<a class="headerlink" href="#id33" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Normal</span> <span class="n">message</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">MQTTPUB</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">topic_test</span><span class="p">,</span><span class="n">my_message</span>
+<span class="o">+</span><span class="n">MQTTPUB</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">+</span><span class="n">MQTTRECV</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">topic_test</span><span class="p">,</span><span class="n">my_message</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<span class="n">ACK</span>
+<span class="o">//</span> <span class="n">Json</span> <span class="n">message</span><span class="p">,</span> <span class="k">with</span> <span class="n">commas</span> <span class="ow">in</span> <span class="n">message</span><span class="p">,</span> <span class="ow">and</span> <span class="n">ignore</span> <span class="n">QoS</span> <span class="ow">and</span> <span class="n">retain</span>
+<span class="n">AT</span><span class="o">+</span><span class="n">MQTTPUB</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,,,</span><span class="n">topic_test</span><span class="p">,{</span><span class="n">head</span>\<span class="p">,{</span><span class="n">body</span><span class="p">}</span>\<span class="p">,{</span><span class="n">tail</span><span class="p">}}</span>
+<span class="o">+</span><span class="n">MQTTPUB</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">+</span><span class="n">MQTTRECV</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">topic_test</span><span class="p">,{</span><span class="n">head</span><span class="p">,{</span><span class="n">body</span><span class="p">},{</span><span class="n">tail</span><span class="p">}},</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<span class="n">ACK</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-mqttcfg">
+<span id="mqtt-at-mqttcfg"></span><h2>AT+MQTTCFG<a class="headerlink" href="#at-mqttcfg" title="Link to this heading"></a></h2>
+<section id="id34">
+<h3>Description<a class="headerlink" href="#id34" title="Link to this heading"></a></h3>
+<p>Configure the parameters of MQTT entity.</p>
+</section>
+<section id="id35">
+<h3>Command<a class="headerlink" href="#id35" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>AT+MQTTCFG=&lt;con_id&gt;,?
+AT+MQTTCFG=&lt;con_id&gt;,version,&lt;version&gt;
+AT+MQTTCFG=&lt;con_id&gt;,keepalive,&lt;keepalive&gt;
+AT+MQTTCFG=&lt;con_id&gt;,session,&lt;session&gt;
+AT+MQTTCFG=&lt;con_id&gt;,timeout,&lt;timeout&gt;
+AT+MQTTCFG=&lt;con_id&gt;,will,0
+AT+MQTTCFG=&lt;con_id&gt;,will,1,&lt;qos&gt;,&lt;retain&gt;,&lt;topic&gt;,&lt;message&gt;
+AT+MQTTCFG=&lt;con_id&gt;,ssl,&lt;ssl&gt;
+</pre></div>
+</div>
+</section>
+<section id="id36">
+<h3>Response<a class="headerlink" href="#id36" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">If</span> <span class="n">execute</span> <span class="n">sub</span><span class="o">-</span><span class="n">command</span> <span class="s2">&quot;?&quot;</span>
+<span class="o">+</span><span class="n">MQTTCFG</span><span class="p">:</span><span class="n">MQTTVersion</span> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span>
+<span class="o">+</span><span class="n">MQTTCFG</span><span class="p">:</span><span class="n">keepAliveInterval</span> <span class="o">&lt;</span><span class="n">timeout</span><span class="o">&gt;</span>
+<span class="o">+</span><span class="n">MQTTCFG</span><span class="p">:</span><span class="n">cleansession</span> <span class="o">&lt;</span><span class="n">session</span><span class="o">&gt;</span>
+<span class="o">+</span><span class="n">MQTTCFG</span><span class="p">:</span><span class="n">command_timeout_ms</span> <span class="o">&lt;</span><span class="n">timeout</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">ms</span><span class="p">)</span>
+<span class="o">+</span><span class="n">MQTTCFG</span><span class="p">:</span><span class="n">willFlag</span> <span class="o">&lt;</span><span class="n">will</span><span class="o">&gt;</span>
+<span class="o">+</span><span class="n">MQTTCFG</span><span class="p">:</span><span class="n">useSsl</span> <span class="o">&lt;</span><span class="n">ssl</span><span class="o">&gt;</span>
+<span class="o">//</span> <span class="n">Then</span> <span class="n">OK</span>
+<span class="o">+</span><span class="n">MQTTCFG</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTCFG</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id37">
+<h3>Parameter<a class="headerlink" href="#id37" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+</dl>
+<p>? / version / keepalive / session / timeout / will / ssl: Sub-commands.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“?”: Get the current parameters of &lt;con_id&gt; entity.</p></li>
+<li><p>“version”: Followed by &lt;version&gt;.</p></li>
+<li><p>“session”: Followed by &lt;session&gt;.</p></li>
+<li><p>“timeout”: Followed by &lt;timeout&gt;.</p></li>
+<li><p>“will”: Followed by &lt;will&gt; and its sub parameters.</p></li>
+<li><p>“ssl”: Followed by &lt;ssl&gt;.</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;version&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MQTT version.</p>
+<ul class="simple">
+<li><p>[3,4]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;keepalive&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Keepalive value.</p>
+<ul class="simple">
+<li><p>[1,3600]</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;session&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Session value.</p>
+<ul class="simple">
+<li><p>[0,1]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;timeout&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The timeout value in millisecond.</p>
+<ul class="simple">
+<li><p>[10000,60000]</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;will&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The will value.</p>
+<ul class="simple">
+<li><p>0 or 1.</p></li>
+<li><p>When it is 1, it is followed by &lt;qos&gt;, &lt;retain&gt;, &lt;topic&gt; and &lt;message&gt;.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;qos&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>QoS value for LWT message.</p>
+<ul class="simple">
+<li><p>[0,2]</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;retain&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Retain value for LWT message.</p>
+<ul class="simple">
+<li><p>[0,1]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;topic&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The LWT topic.</p>
+<ul class="simple">
+<li><p>A string.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;message&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The LWT message.</p>
+<ul class="simple">
+<li><p>A string.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;ssl&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>Whether support SSL.</p>
+<ul class="simple">
+<li><p>0: Not support SSL.</p></li>
+<li><p>1: Support SSL.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id38">
+<h3>Error Number<a class="headerlink" href="#id38" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Common error in software.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error parameters.</p>
+</dd>
+</dl>
+</section>
+<section id="id39">
+<h3>Example<a class="headerlink" href="#id39" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Create an MQTT entity with &lt;con_id&gt; = 1 at first.
+// Inquiry the current parameter.
+AT+MQTTCFG=1,?
++MQTTCFG:MQTTVersion 4
++MQTTCFG:keepAliveInterval 60
++MQTTCFG:cleansession 1
++MQTTCFG:command_timeout_ms 60000 (ms)
++MQTTCFG:willFlag 0
++MQTTCFG:useSsl 0
++MQTTCFG:OK
+// Then modify the timeout to 50000
+AT+MQTTCFG=1,timeout,50000
++MQTTCFG:OK
+// Inquiry new parameters.
+AT+MQTTCFG=1,?
++MQTTCFG:MQTTVersion 4
++MQTTCFG:keepAliveInterval 60
++MQTTCFG:cleansession 1
++MQTTCFG:command_timeout_ms 50000 (ms)
++MQTTCFG:willFlag 0
++MQTTCFG:useSsl 0
++MQTTCFG:OK
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-mqttreset">
+<span id="mqtt-at-mqttreset"></span><h2>AT+MQTTRESET<a class="headerlink" href="#at-mqttreset" title="Link to this heading"></a></h2>
+<section id="id40">
+<h3>Description<a class="headerlink" href="#id40" title="Link to this heading"></a></h3>
+<p>Reset all MQTT entities.</p>
+</section>
+<section id="id41">
+<h3>Command<a class="headerlink" href="#id41" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">MQTTRESET</span>
+</pre></div>
+</div>
+</section>
+<section id="id42">
+<h3>Response<a class="headerlink" href="#id42" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">MQTTRESET</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there are any running MQTT entities, there will be all disconnected and deleted right now.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wifi_at_command.html" class="btn btn-neutral float-left" title="Wi-Fi AT Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tcp_ip_at_command.html" class="btn btn-neutral float-right" title="TCP/IP AT Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

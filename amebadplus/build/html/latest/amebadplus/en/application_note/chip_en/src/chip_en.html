@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; ameba_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Boot Process" href="../../boot_process/src/index.html" />
+    <link rel="prev" title="CHIP Enable" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ameba_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">CHIP Enable</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#three-working-modes">Three Working Modes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#level-reset-mode">Level Reset Mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interrupt-reset-mode">Interrupt Reset Mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pulse-reset-mode">Pulse Reset Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-choose-work-mode">How to Choose Work Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chip-en-driver-apis">CHIP_EN Driver APIs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#chipen-workmode">CHIPEN_WorkMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#chipen-debounceset">CHIPEN_DebounceSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#chipen-thresholdset">CHIPEN_ThresHoldSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#chipen-acktimeset">CHIPEN_AckTimeSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#chipen-clearint">CHIPEN_ClearINT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#chipen-getint">CHIPEN_GetINT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ameba_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="index.html">CHIP Enable</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/amebadplus/en/application_note/chip_en/src/chip_en.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="chip-enable"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>The CHIP_EN (chip enable) is an external pin that can be used to control the reset status of the whole SoC. This pin can work in level reset mode, interrupt reset mode or pulse reset mode. By default, it works in level reset mode. This pin always has the function of resetting system no matter in which mode.</p>
+<p>In AmebaDPlus, the button with <code class="docutils literal notranslate"><span class="pre">CHIP_EN</span></code> is connected to the <code class="docutils literal notranslate"><span class="pre">CHIP_EN</span></code> pin, as <a class="reference internal" href="#clip-en-on-board"><span class="std std-ref">CHIP_EN on board</span></a> shows.</p>
+<figure class="align-center" id="clip-en-on-board">
+<a class="reference internal image-reference" href="../../../../../_images/clip_en_on_board.png"><img alt="../../../../../_images/clip_en_on_board.png" src="../../../../../_images/clip_en_on_board.png" style="width: 588.0px; height: 338.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">CHIP_EN on board</span><a class="headerlink" href="#clip-en-on-board" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="three-working-modes">
+<h1>Three Working Modes<a class="headerlink" href="#three-working-modes" title="Link to this heading"></a></h1>
+<p>There are three working modes of CHIP_EN for different usages.</p>
+<section id="level-reset-mode">
+<h2>Level Reset Mode<a class="headerlink" href="#level-reset-mode" title="Link to this heading"></a></h2>
+<p>Level reset mode is the default mode of CHIP_EN. In this mode, a low level on this pin longer than debounce time will trigger RESET directly and the SoC will reboot when this pin goes from low to high.</p>
+<p>User can reset the whole chip by simply pressing down and releasing the CHIP_EN button. When low level is detected longer than debounce time, the chip will be reset after the CHIP_EN button is released. So user can adjust the sensitivity of CHIP_EN by setting different debounce time from 100us to 16ms.</p>
+</section>
+<section id="interrupt-reset-mode">
+<h2>Interrupt Reset Mode<a class="headerlink" href="#interrupt-reset-mode" title="Link to this heading"></a></h2>
+<p>In interrupt reset mode, a low level on this pin longer than the sum of debounce and short press time can trigger an interrupt instead of resetting the system directly. Thus, software can handle the interrupt and choose whether to reset the system.</p>
+<p>The interrupt reset mode is mainly designed for the power save scenario. The CHIP_EN button just likes the power button of the smartphone: a short press will trigger the system to enter low power mode or wake up the system; a long press will trigger an interrupt to remind the user whether to reset the system. The reboot will happen if user chooses reboot or the system crashed.</p>
+</section>
+<section id="pulse-reset-mode">
+<h2>Pulse Reset Mode<a class="headerlink" href="#pulse-reset-mode" title="Link to this heading"></a></h2>
+<p>In pulse reset mode, a low level on this pin longer than debounce time will trigger RESET directly and the SoC will reboot immediately. User can read the status of the CHIPEN pin in boot code to distinguish short/long press. This mode usually can be found in router. Short press will cause the system cold boot; long press will cause the system code boot and restore factory settings.</p>
+<p>Once the chip is configured working in Pulse Reset Mode, software cannot change the mode anymore. Only power off will take the chip to Level Reset Mode.</p>
+</section>
+</section>
+<section id="how-to-choose-work-mode">
+<h1>How to Choose Work Mode<a class="headerlink" href="#how-to-choose-work-mode" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>For device does not need any control on this pin, tie this pin to <code class="docutils literal notranslate"><span class="pre">high</span></code>.</p></li>
+<li><p>For simply reset requirement, use the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">level</span> <span class="pre">reset</span> <span class="pre">mode</span></code>.</p></li>
+<li><p>If both reset and re-storage of factory settings are needed, use the <code class="docutils literal notranslate"><span class="pre">pulse</span> <span class="pre">reset</span> <span class="pre">mode</span></code>.</p></li>
+<li><p>For low power scenario, power control and reset are needed on a single pin, use the <code class="docutils literal notranslate"><span class="pre">interrupt</span> <span class="pre">reset</span> <span class="pre">mode</span></code>.</p></li>
+</ul>
+</section>
+<section id="chip-en-driver-apis">
+<h1>CHIP_EN Driver APIs<a class="headerlink" href="#chip-en-driver-apis" title="Link to this heading"></a></h1>
+<section id="chipen-workmode">
+<h2>CHIPEN_WorkMode<a class="headerlink" href="#chipen-workmode" title="Link to this heading"></a></h2>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Introduction</p></td>
+<td><p>Configure CHIP_EN work mode</p>
+<p>CHIP_EN works in HW reset mode by default.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>mode: new work mode of CHIPEN, which can be</p>
+<ul class="simple">
+<li><p>CHIPEN_HW_RESET_MODE</p></li>
+<li><p>CHIPEN_INT_RESET_MODE</p></li>
+<li><p>CHIPEN_PULSE_RESET_MODE</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Return</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chipen-debounceset">
+<h2>CHIPEN_DebounceSet<a class="headerlink" href="#chipen-debounceset" title="Link to this heading"></a></h2>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Introduction</p></td>
+<td><p>Set the CHIP_EN debounce Time, which works in all work mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>debounce: new debounce counter, which can be</p>
+<ul class="simple">
+<li><p>CHIPEN_DBC_0US</p></li>
+<li><p>CHIPEN_DBC_100US</p></li>
+<li><p>CHIPEN_DBC_500US</p></li>
+<li><p>CHIPEN_DBC_1MS</p></li>
+<li><p>CHIPEN_DBC_2MS</p></li>
+<li><p>CHIPEN_DBC_4MS</p></li>
+<li><p>CHIPEN_DBC_8MS</p></li>
+<li><p>CHIPEN_DBC_16MS</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Return</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chipen-thresholdset">
+<h2>CHIPEN_ThresHoldSet<a class="headerlink" href="#chipen-thresholdset" title="Link to this heading"></a></h2>
+<table class="longtable docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Introduction</p></td>
+<td><p>Set long press and short press threshold, which only works in interrupt reset mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><ul>
+<li><p>Thres_LP: long press threshold</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CHIPEN_LP_1S</p></li>
+<li><p>CHIPEN_LP_1P5S</p></li>
+<li><p>CHIPEN_LP_2S</p></li>
+<li><p>CHIPEN_LP_2P5S</p></li>
+<li><p>CHIPEN_LP_3S</p></li>
+<li><p>CHIPEN_LP_3P5S</p></li>
+<li><p>CHIPEN_LP_4S</p></li>
+<li><p>CHIPEN_LP_4P5S</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Thres_SP: short press threshold</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CHIPEN_SP_50MS</p></li>
+<li><p>CHIPEN_SP_100MS</p></li>
+<li><p>CHIPEN_SP_150MS</p></li>
+<li><p>CHIPEN_SP_200MS</p></li>
+<li><p>CHIPEN_SP_250MS</p></li>
+<li><p>CHIPEN_SP_300MS</p></li>
+<li><p>CHIPEN_SP_350MS</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Return</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chipen-acktimeset">
+<h2>CHIPEN_AckTimeSet<a class="headerlink" href="#chipen-acktimeset" title="Link to this heading"></a></h2>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Introduction</p></td>
+<td><p>Set the ACK threshold for long press interrupt.</p>
+<p>If long press interrupt can’t be cleared within Tack, the system will reboot</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>Tack:</p>
+<ul class="simple">
+<li><p>CHIPEN_ACK_50MS</p></li>
+<li><p>CHIPEN_ACK_100MS</p></li>
+<li><p>CHIPEN_ACK_200MS</p></li>
+<li><p>CHIPEN_ACK_400MS</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Return</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chipen-clearint">
+<h2>CHIPEN_ClearINT<a class="headerlink" href="#chipen-clearint" title="Link to this heading"></a></h2>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Introduction</p></td>
+<td><p>Clear CHIP_EN interrupt status</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>INTrBit: interrupt to be cleared</p></td>
+</tr>
+<tr class="row-even"><td><p>Return</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chipen-getint">
+<h2>CHIPEN_GetINT<a class="headerlink" href="#chipen-getint" title="Link to this heading"></a></h2>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Introduction</p></td>
+<td><p>Get CHIP_EN interrupt status</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Return</p></td>
+<td><p>Interrupt status</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="CHIP Enable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../boot_process/src/index.html" class="btn btn-neutral float-right" title="Boot Process" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

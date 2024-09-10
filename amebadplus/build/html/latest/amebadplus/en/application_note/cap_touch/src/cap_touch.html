@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; ameba_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Key-Scan" href="../../key_scan/src/index.html" />
+    <link rel="prev" title="Cap-Touch Controller (CTC)" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ameba_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cap-Touch Controller (CTC)</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cap-test-tool">Cap Test Tool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ctc-initialization">CTC Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ctc-calibration">CTC Calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ctc-wakeup">CTC Wakeup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ameba_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Cap-Touch Controller (CTC)</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/amebadplus/en/application_note/cap_touch/src/cap_touch.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="cap-touch-controller"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>The Cap-Touch Controller (CTC) provides 4 channels for capacitive sensing, which offers a wide range of capacitance detection. The sensitivity and threshold for each channel are configurable. For different applications and surroundings, you should tune parameters to achieve the best performance.</p>
+<p>This chapter introduces how to use Cap-Touch.</p>
+</section>
+<section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h1>
+<section id="cap-test-tool">
+<h2>Cap Test Tool<a class="headerlink" href="#cap-test-tool" title="Link to this heading"></a></h2>
+<p>Cap Test Tool is the official Cap-Touch calibration tool developed by Realtek, which can calibrate the general and channel-specific Cap-Touch configurations.</p>
+<p>We suggest doing CTC calibration by the Cap Test Tool directly and automatically. Refer to the application note of Cap Test Tool for more details about usage.</p>
+<p>Of course, users can tune the configuration parameters manually to meet special requirements according to section <a class="reference internal" href="#ctc-initialization"><span class="std std-ref">CTC Initialization</span></a> and <a class="reference internal" href="#ctc-calibration"><span class="std std-ref">CTC Calibration</span></a>.</p>
+</section>
+<section id="ctc-initialization">
+<span id="id1"></span><h2>CTC Initialization<a class="headerlink" href="#ctc-initialization" title="Link to this heading"></a></h2>
+<p>The CTC initialization is implemented by the following steps:</p>
+<ol class="arabic" id="ctc-initialization-step-1">
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">CapTouch_StructInit()</span></code> to initialize the configuration parameters of Cap-Touch, such as SampleCnt, ScanInterval, DiffThreshold, etc.</p></li>
+<li><p>Set configuration parameters in the following table and update configuration parameters of Cap-Touch in step <a class="reference internal" href="#ctc-initialization-step-1"><span class="std std-ref">1</span></a> with it, which include touch threshold, noise threshold, mbias current, and enable control for each channel. This method to tune parameters for each channel can be found in section <a class="reference internal" href="#ctc-calibration"><span class="std std-ref">CTC Calibration</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">CapTouch_CHInitTypeDef</span> <span class="n">ctc_ch_config</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span>
+<span class="p">{</span>
+<span class="o">/*</span><span class="n">DiffThreshold</span><span class="p">,</span> <span class="n">MbiasCurrent</span><span class="p">,</span> <span class="n">ETCNNoiseThr</span><span class="p">,</span> <span class="n">ETCPNoiseThr</span><span class="p">,</span> <span class="n">CHEnable</span><span class="o">*/</span>
+<span class="p">{</span><span class="mi">80</span><span class="p">,</span>      <span class="mh">0x0C</span><span class="p">,</span>      <span class="mi">40</span><span class="p">,</span>    <span class="mi">40</span><span class="p">,</span>    <span class="n">ENABLE</span><span class="p">},</span> <span class="o">/*</span> <span class="n">Channel</span> <span class="mi">0</span> <span class="o">*/</span>
+<span class="p">{</span><span class="mi">80</span><span class="p">,</span>      <span class="mh">0x0C</span><span class="p">,</span>      <span class="mi">40</span><span class="p">,</span>    <span class="mi">40</span><span class="p">,</span>    <span class="n">DISABLE</span><span class="p">},</span> <span class="o">/*</span> <span class="n">Channel</span> <span class="mi">1</span> <span class="o">*/</span>
+<span class="p">{</span><span class="mi">80</span><span class="p">,</span>      <span class="mh">0x0C</span><span class="p">,</span>      <span class="mi">40</span><span class="p">,</span>    <span class="mi">40</span><span class="p">,</span>    <span class="n">DISABLE</span><span class="p">},</span> <span class="o">/*</span> <span class="n">Channel</span> <span class="mi">2</span> <span class="o">*/</span>
+<span class="p">{</span><span class="mi">80</span><span class="p">,</span>      <span class="mh">0x0C</span><span class="p">,</span>      <span class="mi">40</span><span class="p">,</span>    <span class="mi">40</span><span class="p">,</span>    <span class="n">DISABLE</span><span class="p">},</span> <span class="o">/*</span> <span class="n">Channel</span> <span class="mi">3</span> <span class="o">*/</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The configuration parameters can be acquired in Cap Test Tool.</p>
+</div>
+</li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">CapTouch_Init()</span></code> to configure the Cap-Touch.</p></li>
+<li><p>Enable Cap-Touch by <code class="docutils literal notranslate"><span class="pre">CapTouch_Cmd()</span></code> and enable the interrupt by <code class="docutils literal notranslate"><span class="pre">CapTouch_INTConfig()</span></code>.</p></li>
+</ol>
+<p>After all this, the Cap-Touch will start to work.</p>
+</section>
+<section id="ctc-calibration">
+<span id="id2"></span><h2>CTC Calibration<a class="headerlink" href="#ctc-calibration" title="Link to this heading"></a></h2>
+<p>To achieve the best performance (sensitivity, reliability or response time), users need to tune touch threshold, noise threshold and mbias current during development.</p>
+<p>Mbias current needs to be considered during development, because different circuits (such as PCB layout) have different parasitic capacitance and sensitivity. When the circuit design is confirmed, the user can use Realtek cap test tool to initialize the Mbias. The calibration principle is to adjust Mbias so that the signal value of baseline is about 3300~3600 without touch.</p>
+<p>The recommended difference threshold is 80% of the difference threshold (baseline − touch signal), and 30%~40% for noise threshold. Users can increase or decrease the threshold value to meet the SNR requirement (SNR&gt;5).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>For operation instructions, please refer to Captesttool_manual.</p></li>
+<li><p>Too large mbias will cause the charging voltage to exceed the full range, which may cause damage to the circuit.</p></li>
+<li><p>When using Cap-Touch, to prevent leakage, the Cap-Touch pin should be configured as shutdown or configured as no-pull, at the same time input and output of the pad should be disabled.</p></li>
+</ul>
+</div>
+</section>
+<section id="ctc-wakeup">
+<h2>CTC Wakeup<a class="headerlink" href="#ctc-wakeup" title="Link to this heading"></a></h2>
+<p>When using CTC as a wakeup source, configure the CTC and system as follows:</p>
+<ol class="arabic simple">
+<li><p>Initialize CTC and enable its interrupt according to <a class="reference internal" href="#ctc-initialization"><span class="std std-ref">CTC Initialization</span></a>.</p></li>
+<li><p>Set the related wakeup source (<code class="docutils literal notranslate"><span class="pre">WAKE_SRC_CTOUCH</span></code>) in <code class="docutils literal notranslate"><span class="pre">sleep_wevent_config[]</span></code> to <code class="docutils literal notranslate"><span class="pre">WAKEUP_KM4</span></code> or <code class="docutils literal notranslate"><span class="pre">WAKEUP_KM0</span></code> (based on which CPU you want to wake). The interrupt should be registered on the same CPU selected by <code class="docutils literal notranslate"><span class="pre">sleep_wevent_config[]</span></code>.</p></li>
+<li><p>Switch CTC clock source to CTC IP clock before system enters sleep mode by <code class="docutils literal notranslate"><span class="pre">RCC_PeriphClockSource_CTC()</span></code>.</p></li>
+<li><p>Enter sleep mode by releasing the wakelock in KM4 (PMU_OS needs to be released since it is acquired by default when boot).</p></li>
+<li><p>Clear the CTC interrupt when wakeup and switching CTC clock source to LBUS clock by <code class="docutils literal notranslate"><span class="pre">RCC_PeriphClockSource_CTC()</span></code>.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Cap-Touch Controller (CTC)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../key_scan/src/index.html" class="btn btn-neutral float-right" title="Key-Scan" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

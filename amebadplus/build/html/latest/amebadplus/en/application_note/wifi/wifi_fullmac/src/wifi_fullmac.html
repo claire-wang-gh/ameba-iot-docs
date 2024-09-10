@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; ameba_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="Software Tools" href="../../../../../../ameba/en/software_tools/index.html" />
+    <link rel="prev" title="Wi-Fi FullMAC" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            ameba_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Wi-Fi</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_tunnel/src/index.html">Wi-Fi Tunnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_csi/src/index.html">Wi-Fi CSI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_bridge/src/index.html">Wi-Fi Bridge</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Wi-Fi FullMAC</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-tree">File Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#porting-guide">Porting Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#throughput">Throughput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#memory-size-requirement">Memory Size Requirement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">ameba_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Wi-Fi</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Wi-Fi FullMAC</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../../_sources/amebadplus/en/application_note/wifi/wifi_fullmac/src/wifi_fullmac.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="wifi-fullmac"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>The Wi-Fi FullMAC solution provides a standard wireless network interface for Linux host, allowing Wi-Fi applications (such as wpa_supplicant, TCP/IP stack, etc.) to run smoothly on the Linux system.</p>
+<p>The Wi-Fi FullMAC driver implements the following modules:</p>
+<ol class="arabic simple">
+<li><p>Provide a data transmission path between the host and the device based on a private transmission protocol via the SDIO/SPI interface</p></li>
+<li><p>Adapt the cfg80211 layer and register the wireless network interface (wlan0/1) in the kernel to enable network data packet interaction between the Linux kernel and the AmebaDPlus</p></li>
+<li><p>Provide commonly-used and proprietary commands to configure the parameters of Wi-Fi interface</p></li>
+</ol>
+<p>To clarify, in the following sections, the term <code class="docutils literal notranslate"><span class="pre">host</span></code> refers to the Linux PC acting as the host, and the term <code class="docutils literal notranslate"><span class="pre">device</span></code> refers to the AmebaDPlus serving as the device.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../../../../../_images/wifi_fullmac_architecture.svg"><img alt="../../../../../../_images/wifi_fullmac_architecture.svg" height="466" src="../../../../../../_images/wifi_fullmac_architecture.svg" width="375" /></a>
+<figcaption>
+<p><span class="caption-text">Wi-Fi FullMAC architecture</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="features">
+<h1>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h1>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Detail</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WiFi Mode</p></td>
+<td><ul class="simple">
+<li><p>STA</p></li>
+<li><p>SoftAP</p></li>
+<li><p>NAN</p></li>
+<li><p>P2P GO</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>The STA mode can coexist with any of the other three modes.</p></li>
+<li><p>The SoftAP mode and NAN mode cannot coexist with P2P GO mode.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Protocal</p></td>
+<td><p>802.11 b/g/n</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Security</p></td>
+<td><p>Open/WPA/WPA2/WPA3</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>Power Save</p></td>
+<td><p>Wowlan:</p>
+<ul class="simple">
+<li><p>Pattern Match Wakeup (TODO)</p></li>
+</ul>
+</td>
+<td><p>In the suspend state, the device can wake up to send and receive packets. The host will only be awakened when the device receives a packet that matches a predefined pattern, thereby achieving power saving.</p>
+<p>Some filtering conditions (patterns) can be customized as needed, for example, wakeup packet type, MAC address, IP address, or port, etc.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Proxy Offload:</p>
+<ul class="simple">
+<li><p>ARP Response</p></li>
+<li><p>mDNS</p></li>
+<li><p>ICMP Response (TODO)</p></li>
+<li><p>SNMP (TODO)</p></li>
+<li><p>LLMNR (TODO)</p></li>
+<li><p>SSDP/SLP/WSD/LLTD (TODO)</p></li>
+</ul>
+</td>
+<td><p>The host can offload some protocols to the device.</p>
+<p>In the suspend state, when the device receives an offloaded protocol request, it can handle the request autonomously and send a response without waking up the host, thereby saving power.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="file-tree">
+<h1>File Tree<a class="headerlink" href="#file-tree" title="Link to this heading"></a></h1>
+<p>The Linux driver in the SDK is located at: <code class="docutils literal notranslate"><span class="pre">{SDK}/component/wifi/cfg80211_fullmac/rtl8730e</span></code>. The main focus should be on the files within the red boxes below.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../../../../../_images/fullmac_driver_file_tree.svg"><img alt="../../../../../../_images/fullmac_driver_file_tree.svg" height="730" src="../../../../../../_images/fullmac_driver_file_tree.svg" width="581" /></a>
+<figcaption>
+<p><span class="caption-text">FullMAC driver file tree</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="porting-guide">
+<h1>Porting Guide<a class="headerlink" href="#porting-guide" title="Link to this heading"></a></h1>
+<section id="hardware-configuration">
+<h2>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h2>
+<section id="sdio">
+<h3>SDIO<a class="headerlink" href="#sdio" title="Link to this heading"></a></h3>
+<p>The SDIO FullMAC can be used on Linux PC with SDIO interface or Raspberry Pi. The following pins of AmebaDPlus are used for SDIO FullMAC function.</p>
+<table class="docutils align-default" id="sdio-fullmac-pins" style="width: 100%">
+<caption><span class="caption-text">SDIO FullMAC used pins</span><a class="headerlink" href="#sdio-fullmac-pins" title="Link to this table"></a></caption>
+<tbody>
+<tr class="row-odd"><td><p>AmebaDPlus pin</p></td>
+<td><p>Raspberry Pi pin</p></td>
+<td><p>Function</p></td>
+</tr>
+<tr class="row-even"><td><p>PB6</p></td>
+<td><p>GPIO 26</p></td>
+<td><p>SDIO_DAT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>PB7</p></td>
+<td><p>GPIO 27</p></td>
+<td><p>SDIO_DAT3</p></td>
+</tr>
+<tr class="row-even"><td><p>PB8</p></td>
+<td><p>GPIO 23</p></td>
+<td><p>SDIO_CMD</p></td>
+</tr>
+<tr class="row-odd"><td><p>PB9</p></td>
+<td><p>GPIO 22</p></td>
+<td><p>SDIO_CLK</p></td>
+</tr>
+<tr class="row-even"><td><p>PB13</p></td>
+<td><p>GPIO 24</p></td>
+<td><p>SDIO_DAT0</p></td>
+</tr>
+<tr class="row-odd"><td><p>PB14</p></td>
+<td><p>GPIO 25</p></td>
+<td><p>SDIO_DAT1</p></td>
+</tr>
+</tbody>
+</table>
+<section id="linux-pc">
+<h4>Linux PC<a class="headerlink" href="#linux-pc" title="Link to this heading"></a></h4>
+<p>For the Linux PC, an SDIO host peripheral is required. Please connect to AmebaDPlus with the corresponding pins according to <a class="reference internal" href="#sdio-fullmac-pins"><span class="std std-ref">SDIO FullMAC used pins</span></a>.</p>
+<p>The AmebaDPlus can also use a gold finger adapter to convert the SDIO pins into a standard SD card, as the following figure shows, and supports the hardware platform only with an SD card slot. Note that in this case, you need to contact us to modify the demo board circuit.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../../../../../_images/sdio_adapter_board.jpg"><img alt="../../../../../../_images/sdio_adapter_board.jpg" src="../../../../../../_images/sdio_adapter_board.jpg" style="width: 335.5px; height: 248.5px;" /></a>
+<figcaption>
+<p><span class="caption-text">AmebaDPlus SDIO adapter board</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="raspberry-pi">
+<h4>Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Link to this heading"></a></h4>
+<p>The pin location of AmebaDPlus demo board corresponds to the pin location of Raspberry Pi.
+In order to run at high speed, it’s strongly recommended to plug the demo board directly into Raspberry Pi, as the following figure shows.</p>
+<p>The pins used for SDIO FullMAC on Raspberry Pi are listed in <a class="reference internal" href="#sdio-fullmac-pins"><span class="std std-ref">SDIO FullMAC used pins</span></a>.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../../../../../../_images/connection_with_raspberry_pi.jpg"><img alt="../../../../../../_images/connection_with_raspberry_pi.jpg" src="../../../../../../_images/connection_with_raspberry_pi.jpg" style="width: 254.5px; height: 227.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">AmebaDPlus connection with Raspberry Pi</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="spi">
+<h3>SPI<a class="headerlink" href="#spi" title="Link to this heading"></a></h3>
+<p>The SPI FullMAC can be used on on platforms with SPI interface, such as Raspberry Pi. The following pins of AmebaDPlus and Raspberry Pi are used for SPI FullMAC function.</p>
+<table class="docutils align-default" id="id9" style="width: 100%">
+<caption><span class="caption-text">SPI FullMAC used pins</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<tbody>
+<tr class="row-odd"><td><p>AmebaDPlus pin</p></td>
+<td><p>Raspberry Pi pin</p></td>
+<td><p>Function</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>PB24</p></td>
+<td><p>GPIO 10</p></td>
+<td><p>SPI_MOSI</p></td>
+<td rowspan="4"><p>SPI pins</p></td>
+</tr>
+<tr class="row-odd"><td><p>PB25</p></td>
+<td><p>GPIO 9</p></td>
+<td><p>SPI_MISO</p></td>
+</tr>
+<tr class="row-even"><td><p>PB23</p></td>
+<td><p>GPIO 11</p></td>
+<td><p>SPI_CLK</p></td>
+</tr>
+<tr class="row-odd"><td><p>PB26</p></td>
+<td><p>GPIO 8</p></td>
+<td><p>SPI_CS</p></td>
+</tr>
+<tr class="row-even"><td><p>PB8</p></td>
+<td><p>GPIO 23</p></td>
+<td><p>DEV_TX_REQ</p></td>
+<td><p>This is an output pin for AmebaDPlus, used to indicate to host that it has a data packet to send with a rising edge.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PB9</p></td>
+<td><p>GPIO 22</p></td>
+<td><p>DEV_READY</p></td>
+<td><p>This is an output pin for AmebaDplus, used to indicate its readiness for SPI transcation to host.</p>
+<ul class="simple">
+<li><p>1: Device is ready.</p></li>
+<li><p>0: Device is busy.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="software-configuration">
+<h2>Software Configuration<a class="headerlink" href="#software-configuration" title="Link to this heading"></a></h2>
+<section id="device-driver">
+<h3>Device Driver<a class="headerlink" href="#device-driver" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Execute <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> under the path <code class="docutils literal notranslate"><span class="pre">{SDK}/amebadplus_gcc_project</span></code></p>
+<ol class="loweralpha">
+<li><p>Click <span class="menuselection">CONFIG Link Option &gt; IMG2(Application) running on FLASH or PSRAM?</span>, and select <span class="menuselection">PSRAM</span></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../../_images/sdio_config_flash_or_psram.png"><img alt="../../../../../../_images/sdio_config_flash_or_psram.png" src="../../../../../../_images/sdio_config_flash_or_psram.png" style="width: 920.8000000000001px; height: 264.0px;" /></a>
+</figure>
+</li>
+<li><p>Click <span class="menuselection">CONFIG WIFI &gt; INIC Mode</span>, select <span class="menuselection">SDIO_FULLMAC</span> for SDIO interface or <span class="menuselection">SPI_FULLMAC</span> for SPI interface, then select <code class="docutils literal notranslate"><span class="pre">KM0</span></code> as <code class="docutils literal notranslate"><span class="pre">WIFI</span> <span class="pre">Driver</span> <span class="pre">Location</span></code>. If you have any other special requirements, select <code class="docutils literal notranslate"><span class="pre">KM4</span></code> as <code class="docutils literal notranslate"><span class="pre">WIFI</span> <span class="pre">Driver</span> <span class="pre">Location</span></code>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../../_images/wifi_sdio_spi_selection.png"><img alt="../../../../../../_images/wifi_sdio_spi_selection.png" src="../../../../../../_images/wifi_sdio_spi_selection.png" style="width: 1260.0px; height: 237.0px;" /></a>
+</figure>
+</li>
+</ol>
+</li>
+<li><p>Execute the make command to generate <code class="file docutils literal notranslate"><span class="pre">km4_boot_all.bin</span></code> and <code class="file docutils literal notranslate"><span class="pre">km0_km4_app.bin</span></code> after the build is successfully complete.</p></li>
+<li><p>Use the Image Tool to flash the bin files to AmebaDPlus and restart the device.</p></li>
+</ol>
+</section>
+<section id="host-driver">
+<h3>Host Driver<a class="headerlink" href="#host-driver" title="Link to this heading"></a></h3>
+<p>The FullMAC driver has been tested and verified to work on Linux kernel versions 5.4 and 5.10. If you encounter any compilation errors on other kernel versions, please contact us.</p>
+<ol class="arabic">
+<li><p>Prerequisites: install the following software packages on Linux system.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>dhcpcd
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>hostapd
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>dhcpd
+</pre></div>
+</div>
+</li>
+<li><p>Enable the SDIO or SPI function.</p>
+<ul>
+<li><p>For Linux PC, skip this step.</p></li>
+<li><p>For Raspberry Pi:</p>
+<ul>
+<li><p>SDIO: Use <code class="docutils literal notranslate"><span class="pre">dtoverlay</span></code> command to configure SDIO. For the Raspberry Pi 4, type the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dtoverlay<span class="w"> </span>sdio<span class="w"> </span><span class="nv">poll_once</span><span class="o">=</span>off
+</pre></div>
+</div>
+</li>
+<li><p>SPI:</p>
+<ol class="lowerroman">
+<li><p>Enable SPI peripheral</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>raspi-config
+</pre></div>
+</div>
+</li>
+<li><p>Select <span class="menuselection">Interface Options &gt; SPI &gt; Yes</span></p></li>
+</ol>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../../_images/raspberry_pi_spi_config.png"><img alt="../../../../../../_images/raspberry_pi_spi_config.png" src="../../../../../../_images/raspberry_pi_spi_config.png" style="width: 640.0px; height: 268.0px;" /></a>
+</figure>
+</div></blockquote>
+<ol class="lowerroman simple" start="3">
+<li><p>Generate and apply Device Tree Overlay</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su
+<span class="nb">cd</span><span class="w"> </span><span class="o">{</span>driver_path<span class="o">}</span>/cfg80211_fullmac/rtl8730e/spi
+dtc<span class="w"> </span>-@<span class="w"> </span>-Hepapr<span class="w"> </span>-I<span class="w"> </span>dts<span class="w"> </span>-O<span class="w"> </span>dtb<span class="w"> </span>-o<span class="w"> </span>inic_spidev.dtbo<span class="w"> </span>spidev-overlay.dts
+cp<span class="w"> </span>inic_spidev.dtbo<span class="w"> </span>/boot/overlays/
+dtoverlay<span class="w"> </span>inic_spidev
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Build the module</p>
+<ol class="loweralpha">
+<li><p>In the path <code class="docutils literal notranslate"><span class="pre">/component/wifi/cfg80211_fullmac/rtl8730e</span></code>, execute the following script with an interface parameter to configure host driver.</p>
+<ul>
+<li><p>SDIO:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">fullmac_setup</span><span class="o">.</span><span class="n">sh</span> <span class="n">sdio</span>
+</pre></div>
+</div>
+</li>
+<li><p>SPI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">fullmac_setup</span><span class="o">.</span><span class="n">sh</span> <span class="n">spi</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Copy the folder of <code class="docutils literal notranslate"><span class="pre">cfg80211_fullmac</span></code> to the Linux system.</p></li>
+<li><p>Open the terminal and execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="p">{</span><span class="n">driver_path</span><span class="p">}</span><span class="o">/</span><span class="n">cfg80211_fullmac</span><span class="o">/</span><span class="n">rtl8730e</span><span class="p">;</span><span class="n">make</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<ol class="arabic" id="load-the-module-step-4" start="4">
+<li><p>Load the module.</p>
+<ul>
+<li><p>SDIO: <code class="file docutils literal notranslate"><span class="pre">fullmac_sdio.ko</span></code> is generated in <code class="docutils literal notranslate"><span class="pre">/cfg80211_fullmac/rtl8730e/sdio</span></code>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su
+cp<span class="w"> </span>sdio/fullmac_sdio.ko<span class="w"> </span>/lib/modules/XXX/
+depmod
+modprobe<span class="w"> </span>fullmac_sdio
+</pre></div>
+</div>
+</li>
+<li><p>SPI: <code class="file docutils literal notranslate"><span class="pre">fullmac_spi.ko</span></code> is generated in <code class="docutils literal notranslate"><span class="pre">/cfg80211_fullmac/rtl8730e/spi</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">su</span>
+<span class="n">cp</span> <span class="n">spi</span><span class="o">/</span><span class="n">fullmac_spi</span><span class="o">.</span><span class="n">ko</span> <span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">XXX</span><span class="o">/</span>
+<span class="n">depmod</span>
+<span class="n">modprobe</span> <span class="n">fullmac_spi</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>When loading module is successful, use <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> command to get the information of net device.
+The net device whose MAC address starts with <code class="docutils literal notranslate"><span class="pre">00:e0:4c</span></code> is STA, and the net device whose MAC address starts with <code class="docutils literal notranslate"><span class="pre">00:e1:4c</span> <span class="pre">is</span></code> softAP.</p>
+<p>The following is an example, in which <strong>wlan1</strong> is STA and <strong>wlan2</strong> is softAP.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../../_images/ifconfig_sta_softap.png"><img alt="../../../../../../_images/ifconfig_sta_softap.png" src="../../../../../../_images/ifconfig_sta_softap.png" style="width: 569.0px; height: 524.0px;" /></a>
+</figure>
+</li>
+<li><p>Connect to STA.</p>
+<ol class="loweralpha">
+<li><p>Create <code class="file docutils literal notranslate"><span class="pre">wpa_supplicant.conf</span></code> under the path <code class="docutils literal notranslate"><span class="pre">/etc/wpa_supplicant/</span></code> and add AP information.</p>
+<p>There is an example configuration for WPA2.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ctrl_interface</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">wpa_supplicant</span>
+<span class="n">network</span><span class="o">=</span><span class="p">{</span>
+         <span class="n">ssid</span><span class="o">=</span><span class="s2">&quot;HUAWEI-JX2UX5_HiLink_5G&quot;</span>
+         <span class="n">psk</span><span class="o">=</span><span class="s2">&quot;12345678&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Connect with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Wpa_supplicant</span> <span class="o">-</span><span class="n">D</span> <span class="n">nl80211</span> <span class="o">-</span><span class="n">i</span> <span class="n">wlanX</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">wpa_supplicant</span><span class="o">/</span><span class="n">wpa_supplicant</span><span class="o">.</span><span class="n">conf</span> <span class="o">-</span><span class="n">dd</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">wifi_log</span>
+</pre></div>
+</div>
+</li>
+<li><p>Obtain the IP address with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dhcpcd</span> <span class="n">wlanX</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p>The <em>wlanX</em> in the above command refers to the name of STA obtained from <a class="reference internal" href="#load-the-module-step-4"><span class="std std-ref">Step 4</span></a>.</p></li>
+<li><p>The configuration files of OPEN and WPA3 are different, please refer to the official supplicant documentation for details.</p></li>
+<li><p>For Ubuntu system, if you want to manually connect using command <code class="docutils literal notranslate"><span class="pre">wpa_supplicant</span></code> and obtain an IP address, first stop NetworkManager and DHCP service to avoid the influence of NetworkManager on <em>wpa_supplicant</em>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su
+systemctl<span class="w"> </span>stop<span class="w"> </span>NetworkManager
+systemctl<span class="w"> </span>disable<span class="w"> </span>NetworkManager
+systemctl<span class="w"> </span>stop<span class="w"> </span>dhcpcd.service
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li><p>Setup the softAP.</p>
+<ol class="loweralpha">
+<li><p>Create <code class="file docutils literal notranslate"><span class="pre">hostapd.conf</span></code> under the path <code class="docutils literal notranslate"><span class="pre">/etc/hostapd/</span></code> and add the configuration information.</p>
+<p>Take WPA2 as an example, you can add the following information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">driver</span><span class="o">=</span><span class="n">nl80211</span>
+
+<span class="n">logger_syslog</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">logger_syslog_level</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">logger_stdout</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">logger_stdout_level</span><span class="o">=</span><span class="mi">2</span>
+
+<span class="n">ctrl_interface</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">hostapd</span>
+
+<span class="n">hw_mode</span><span class="o">=</span><span class="n">g</span>
+<span class="n">channel</span><span class="o">=</span><span class="mi">6</span>
+<span class="n">ssid</span><span class="o">=</span><span class="n">aaa_test</span>
+<span class="n">beacon_int</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">dtim_period</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">max_num_sta</span><span class="o">=</span><span class="mi">8</span>
+<span class="n">rts_threshold</span><span class="o">=</span><span class="mi">2347</span>
+<span class="n">fragm_threshold</span><span class="o">=</span><span class="mi">2346</span>
+
+<span class="n">ieee80211n</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="n">erp_send_reauth_start</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="n">wpa</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">wpa_key_mgmt</span><span class="o">=</span><span class="n">WPA</span><span class="o">-</span><span class="n">PSK</span>
+<span class="n">wpa_pairwise</span><span class="o">=</span><span class="n">CCMP</span>
+<span class="n">wpa_passphrase</span><span class="o">=</span><span class="mi">12345678</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This configuration file is applicable for WPA2 softAP.
+If you want to use OPEN or WPA3, please refer to the official hostapd documentation to set the parameters.</p>
+</div>
+</li>
+<li><p>Create <code class="file docutils literal notranslate"><span class="pre">udhcpd_wlanX.conf</span></code> under the path <code class="docutils literal notranslate"><span class="pre">/etc/</span></code> and add the following information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The start and end of the IP lease block</span>
+<span class="n">start</span>          <span class="mf">192.168.43.20</span>
+<span class="n">end</span>            <span class="mf">192.168.43.254</span>
+
+<span class="c1"># The interface that udhcpd will use</span>
+<span class="n">interface</span>      <span class="n">wlanX</span>
+
+<span class="n">opt</span>    <span class="n">dns</span>     <span class="mf">192.168.43.1</span> <span class="mf">129.219.13.81</span>
+<span class="n">option</span> <span class="n">subnet</span>  <span class="mf">255.255.255.0</span>
+<span class="n">opt</span>    <span class="n">router</span>  <span class="mf">192.168.43.1</span>
+<span class="n">option</span> <span class="n">domain</span>  <span class="n">local</span>
+<span class="n">option</span> <span class="n">lease</span>   <span class="mi">864000</span>          <span class="c1"># default: 10 days</span>
+<span class="n">option</span> <span class="n">msstaticroutes</span>  <span class="mf">10.0.0.0</span><span class="o">/</span><span class="mi">8</span> <span class="mf">10.127.0.1</span>           <span class="c1"># single static route</span>
+<span class="n">option</span> <span class="n">staticroutes</span>    <span class="mf">10.0.0.0</span><span class="o">/</span><span class="mi">8</span> <span class="mf">10.127.0.1</span><span class="p">,</span> <span class="mf">10.11.12.0</span><span class="o">/</span><span class="mi">24</span> <span class="mf">10.11.12.1</span>
+<span class="n">option</span> <span class="mh">0x08</span>    <span class="mi">01020304</span>        <span class="c1"># option 8: &quot;cookie server IP addr: 1.2.3.4&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start the softAP.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hostapd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hostapd</span><span class="o">/</span><span class="n">hostapd</span><span class="o">.</span><span class="n">conf</span> <span class="o">-</span><span class="n">i</span> <span class="n">wlanX</span>
+</pre></div>
+</div>
+</li>
+<li><p>Set the IP address.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="n">wlanX</span> <span class="mf">192.168.43.1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start the DHCP server.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">udhcpd</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">udhcpd_wlanX</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>wlanX</em> in the above command refers to the name of softAP obtained from <a class="reference internal" href="#load-the-module-step-4"><span class="std std-ref">Step 4</span></a>.</p>
+</div>
+</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="throughput">
+<h1>Throughput<a class="headerlink" href="#throughput" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>SDIO<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Wi-Fi driver location</p></th>
+<th class="head"><p>Item</p></th>
+<th class="head"><p>BW 20M (Mbps)</p></th>
+<th class="head"><p>BW 40M (Mbps)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="4"><p>KM0</p></td>
+<td><p>TCP RX</p></td>
+<td><p>36</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP TX</p></td>
+<td><p>46</p></td>
+<td><p>54</p></td>
+</tr>
+<tr class="row-even"><td><p>UDP RX</p></td>
+<td><p>50</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-odd"><td><p>UDP TX</p></td>
+<td><p>55</p></td>
+<td><p>62</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><p>KM4 (331MHz)</p></td>
+<td><p>TCP RX</p></td>
+<td><p>41</p></td>
+<td><p>58</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP TX</p></td>
+<td><p>46</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-even"><td><p>UDP RX</p></td>
+<td><p>53</p></td>
+<td><p>74</p></td>
+</tr>
+<tr class="row-odd"><td><p>UDP TX</p></td>
+<td><p>53</p></td>
+<td><p>90</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The data above is the test result of device code running in PSRAM, host driver running on Dell Optiplex 3080 MT.</p>
+</div>
+</section>
+<section id="id2">
+<h2>SPI<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Wi-Fi driver location</p></th>
+<th class="head"><p>Item</p></th>
+<th class="head"><p>BW 20M (Mbps)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="3"><p>KM0</p></td>
+<td><p>TCP RX</p></td>
+<td><p>14.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP TX</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p>UDP RX
+UDP TX</p></td>
+<td><p>17.4
+17.8</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TThe data above is the test result of device code running in PSRAM, host driver running on Raspberry Pi 4.</p>
+</div>
+</section>
+</section>
+<section id="memory-size-requirement">
+<h1>Memory Size Requirement<a class="headerlink" href="#memory-size-requirement" title="Link to this heading"></a></h1>
+<section id="device">
+<h2>Device<a class="headerlink" href="#device" title="Link to this heading"></a></h2>
+<p>Take the Wi-Fi driver running on KM0 for an example:</p>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>KM0</p></th>
+<th class="head"><p>KM4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>txt</p></td>
+<td><p>270KB</p></td>
+<td><p>31KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>rodata</p></td>
+<td><p>51KB</p></td>
+<td><p>9KB</p></td>
+</tr>
+<tr class="row-even"><td><p>data+bss</p></td>
+<td><p>17KB</p></td>
+<td><p>4KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>heap</p></td>
+<td><p>~68KB</p></td>
+<td><p>~2.5KB</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="host">
+<h2>Host<a class="headerlink" href="#host" title="Link to this heading"></a></h2>
+<section id="id3">
+<h3>SDIO<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>fullmac_sdio.ko</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>txt</p></td>
+<td><p>88KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>data</p></td>
+<td><p>65KB</p></td>
+</tr>
+<tr class="row-even"><td><p>bss</p></td>
+<td><p>18KB</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h3>SPI<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>fullmac_spi.ko</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>txt</p></td>
+<td><p>73KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>data</p></td>
+<td><p>54KB</p></td>
+</tr>
+<tr class="row-even"><td><p>bss</p></td>
+<td><p>18KB</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Wi-Fi FullMAC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../../../../ameba/en/software_tools/index.html" class="btn btn-neutral float-right" title="Software Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Memory Layout" href="../../memory_layout/src/index.html" />
+    <link rel="prev" title="Flash Layout" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Flash and Memory Layout</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Flash Layout</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#memory-management-unit-mmu">Memory Management Unit (MMU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-modify-flash-layout">How to Modify Flash Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flash-protect-enable">Flash Protect Enable</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../memory_layout/src/index.html">Memory Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Flash and Memory Layout</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Flash Layout</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/application_note/flash_memory_layout/flash_layout/src/flash_layout.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="flash-layout">This chapter introduces the default Flash layout of AmebaDPlus and how to modify the Flash layout if needed.</p>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>The default Flash layout used in SDK is illustrated in the following figure and table. The layout takes the 8MB Flash as an example. The start address of boot manifest is fixed to 0x0800_0000, and other start addresses can be configured by users flexibly.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/flash_layout.svg"><img alt="../../../../_images/flash_layout.svg" height="466" src="../../../../_images/flash_layout.svg" width="820" /></a>
+<figcaption>
+<p><span class="caption-text">Flash layout</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default" id="id2" style="width: 100%">
+<caption><span class="caption-text">Flash layout</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Physical address</p></th>
+<th class="head"><p>Size (KB)</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Mandatory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>KM4 Bootloader manifest</p></td>
+<td><p>0x0800_0000</p></td>
+<td><p>4</p></td>
+<td><p>KM4 bootloader manifest</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM4 Bootloader</p></td>
+<td><p>0x0800_1000</p></td>
+<td><p>76</p></td>
+<td><p>KM4 bootloader (code/data), containing KM4 bootloader IMG, mapped to the virtual address 0x0F80_0000.</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>Key Certificate</p></td>
+<td><p>0x0801_4000</p></td>
+<td><p>4</p></td>
+<td><p>Public key hash information for other images.</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMG2 manifest</p></td>
+<td><p>0x0801_5000</p></td>
+<td><p>4</p></td>
+<td><p>KM0 &amp; KM4 Application &amp; KM4 IMG3 manifest</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM0 &amp; KM4 Application</p></td>
+<td><p>0x0801_6000</p></td>
+<td><p>1912</p></td>
+<td><p>Combines KM0 image, KM4 image2 and KM4 image3 (if exists)</p>
+<ul class="simple">
+<li><p>KM0_IMG: KM0 image (code/data), mapped to the virtual address 0x0C00_0000.</p></li>
+<li><p>KM4_IMG2: KM4 non-secure image (code/data), mapped to the virtual address 0x0E00_0000.</p></li>
+<li><p>KM4_IMG3<sup>[1]</sup>: secure image (code/data)</p></li>
+</ul>
+</td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM4 Bootloader manifest OTA2</p></td>
+<td><p>0x0820_0000</p></td>
+<td><p>4</p></td>
+<td><p>KM4 bootloader manifest</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM4 Bootloader OTA2</p></td>
+<td><p>0x0820_1000</p></td>
+<td><p>76</p></td>
+<td><p>KM4 bootloader (code/data), containing KM4 bootloader IMG, mapped to the virtual address 0x0F80_0000.</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>Key Certificate OTA2</p></td>
+<td><p>0x0821_4000</p></td>
+<td><p>4</p></td>
+<td><p>Public key hash information for other images.</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>IMG2 manifest OTA2</p></td>
+<td><p>0x0821_5000</p></td>
+<td><p>4</p></td>
+<td><p>KM0 &amp; KM4 Application &amp; KM4 IMG3 manifest</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM0 &amp; KM4 Application OTA2</p></td>
+<td><p>0x0821_6000</p></td>
+<td><p>1912</p></td>
+<td><p>Combines KM0 image, KM4 image2 and KM4 image3 (if exists)</p>
+<ul class="simple">
+<li><p>KM0_IMG: KM0 image (code/data), mapped to the virtual address 0x0C00_0000.</p></li>
+<li><p>KM4_IMG2: KM4 non-secure image (code/data), mapped to the virtual address 0x0E00_0000.</p></li>
+<li><p>KM4_IMG3<sup>[1]</sup>: secure image (code/data)</p></li>
+</ul>
+</td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>FTL</p></td>
+<td><p>0x0870_0000</p></td>
+<td><p>12</p></td>
+<td><p>For Bluetooth</p></td>
+<td><p>×</p></td>
+</tr>
+<tr class="row-odd"><td><p>VFS</p></td>
+<td><p>0x0870_3000</p></td>
+<td><p>128</p></td>
+<td><p>For file system</p></td>
+<td><p>×</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>[1] KM4_IMG3 only exists in the RTL8721Dx series.</p>
+</div>
+</section>
+<section id="memory-management-unit-mmu">
+<h1>Memory Management Unit (MMU)<a class="headerlink" href="#memory-management-unit-mmu" title="Link to this heading"></a></h1>
+<p>To achieve flexibility of image and for image encryption when RSIP is enabled (the fixed address is needed by IV when doing image encryption, refer to RSIP for more information), Flash MMU is applied by default. The default MMU layout used in SDK is illustrated in <a class="reference internal" href="#flash-mmu-layout"><span class="std std-ref">Flash MMU layout</span></a>.</p>
+<figure class="align-center" id="flash-mmu-layout">
+<a class="reference internal image-reference" href="../../../../_images/flash_mmu_layout.svg"><img alt="../../../../_images/flash_mmu_layout.svg" height="256" src="../../../../_images/flash_mmu_layout.svg" width="640" /></a>
+<figcaption>
+<p><span class="caption-text">Flash MMU layout</span><a class="headerlink" href="#flash-mmu-layout" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-to-modify-flash-layout">
+<h1>How to Modify Flash Layout<a class="headerlink" href="#how-to-modify-flash-layout" title="Link to this heading"></a></h1>
+<p>The following locations in the Flash can be modified:</p>
+<ul>
+<li><p>Bootloader OTA2 location</p></li>
+<li><p>APP location</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>APP OTA1</p></li>
+<li><p>APP OTA2</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>FTL/VFS Location</p></li>
+</ul>
+<section id="modifying-bootloader-ota2-location">
+<h2>Modifying Bootloader OTA2 Location<a class="headerlink" href="#modifying-bootloader-ota2-location" title="Link to this heading"></a></h2>
+<p>The location of Bootloader OTA2 can be modified but requires 4KB alignment. The Bootloader OTA2 is disabled by default. If you want to enable Bootloader OTA2, shift the start address of Bootloader OTA2 right by 12 bits, then burn it to the OTP 0x36C~0x36D.</p>
+<p>The method is to modify the address of <code class="docutils literal notranslate"><span class="pre">IMG_BOOT_OTA2</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c</span></code>. After burning the Bootloader OTA2 into Flash through OTA, Boot ROM will decide whether to use Bootloader OTA1 or Bootloader OTA2 according to the version number.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">* @brif Flash layout is set according to Flash Layout in User Manual</span>
+<span class="cm">*  In each entry, the first item is flash region type, the second item is start address, the third item is end address */</span>
+<span class="k">const</span><span class="w"> </span><span class="n">FlashLayoutInfo_TypeDef</span><span class="w"> </span><span class="n">Flash_Layout</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/*Region_Type,  [StartAddr, EndAddr]   */</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_BOOT</span><span class="p">,</span><span class="w">      </span><span class="mh">0x08000000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08013FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K)</span>
+<span class="w">    </span><span class="c1">//Users should modify below according to their own memory</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_APP_OTA1</span><span class="p">,</span><span class="w">  </span><span class="mh">0x08014000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x081F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KR4 &amp; KM4 Application OTA1 + Manifest(4K) + RDP IMG OTA1</span>
+
+<span class="hll"><span class="w">    </span><span class="p">{</span><span class="n">IMG_BOOT_OTA2</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08200000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08213FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K) OTA</span>
+</span><span class="w">    </span><span class="p">{</span><span class="n">IMG_APP_OTA2</span><span class="p">,</span><span class="w">  </span><span class="mh">0x08214000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x083F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KR4 &amp; KM4 Application OTA2 + Manifest(4K) + RDP IMG OTA2</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_DSP</span><span class="p">,</span><span class="w">       </span><span class="mh">0x08400000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x086FFFFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Manifest(4K) + DSP IMG, only one DSP region in layout</span>
+
+<span class="w">    </span><span class="p">{</span><span class="n">FTL</span><span class="p">,</span><span class="w">           </span><span class="mh">0x08700000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08702FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//FTL for BT(&gt;=12K), The start offset of flash pages which is allocated to FTL physical map</span>
+<span class="w">    </span><span class="p">{</span><span class="n">VFS1</span><span class="p">,</span><span class="w">          </span><span class="mh">0x08703000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08722FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//VFS region 1 (128K)</span>
+<span class="w">    </span><span class="p">{</span><span class="n">USER</span><span class="p">,</span><span class="w">          </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//reserve for user</span>
+
+<span class="w">    </span><span class="cm">/* End */</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="w">          </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>If the anti-rollback function is enabled to ensure that the version of the Bootloader can only be incrementing but cannot be rolled back, the version of the Bootloader needs to be changed before compiling. That is, <code class="docutils literal notranslate"><span class="pre">IMG_VER</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project\manifest.json</span></code> needs to be modified.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="w">     </span><span class="s">&quot;MANIFEST_VER&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+
+<span class="w">     </span><span class="s">&quot;boot&quot;</span><span class="o">:</span>
+<span class="w">     </span><span class="p">{</span>
+<span class="w">             </span><span class="s">&quot;IMG_ID&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">,</span>
+<span class="hll"><span class="w">             </span><span class="s">&quot;IMG_VER_MAJOR&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span class="hll"><span class="w">             </span><span class="s">&quot;IMG_VER_MINOR&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span>
+<span class="w">             </span><span class="s">&quot;SEC_EPOCH&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+
+<span class="w">             </span><span class="s">&quot;HASH_ALG&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;sha256&quot;</span><span class="p">,</span>
+
+<span class="w">             </span><span class="s">&quot;RSIP_IV&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;01020304050607080000000000000000&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="p">},</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The location of Bootloader OTA1 is fixed to 0x0800_0000, and cannot be modified.</p>
+</div>
+</section>
+<section id="modifying-app-location">
+<h2>Modifying APP Location<a class="headerlink" href="#modifying-app-location" title="Link to this heading"></a></h2>
+<section id="app-ota1">
+<span id="flash-layout-app-ota1"></span><h3>APP OTA1<a class="headerlink" href="#app-ota1" title="Link to this heading"></a></h3>
+<p>Follow the steps to modify the location of APP OTA1:</p>
+<ol class="arabic">
+<li><p>Modify the address of <code class="docutils literal notranslate"><span class="pre">IMG_APP_OTA1</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">FlashLayoutInfo_TypeDef</span><span class="w"> </span><span class="n">Flash_Layout</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/*Region_Type,  [StartAddr, EndAddr]   */</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_BOOT</span><span class="p">,</span><span class="w">      </span><span class="mh">0x08000000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08013FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K)</span>
+<span class="w">    </span><span class="c1">//Users should modify below according to their own memory</span>
+<span class="hll"><span class="w">    </span><span class="p">{</span><span class="n">IMG_APP_OTA1</span><span class="p">,</span><span class="w">  </span><span class="mh">0x08014000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x081F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KM4 Application OTA1 + Manifest(4K) + RDP IMG OTA1</span>
+</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_BOOT_OTA2</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08200000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08213FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K) OTA</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_APP_OTA2</span><span class="p">,</span><span class="w">  </span><span class="mh">0x08214000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x083F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KM4 Application OTA2 + Manifest(4K) + RDP IMG OTA2</span>
+
+<span class="w">    </span><span class="p">{</span><span class="n">FTL</span><span class="p">,</span><span class="w">           </span><span class="mh">0x08700000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08702FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//FTL for BT(&gt;=12K), The start offset of flash pages which is allocated to FTL physical map</span>
+<span class="w">    </span><span class="p">{</span><span class="n">VFS1</span><span class="p">,</span><span class="w">          </span><span class="mh">0x08703000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08722FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//VFS region 1 (128K)</span>
+<span class="w">    </span><span class="p">{</span><span class="n">USER</span><span class="p">,</span><span class="w">          </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//reserve for user</span>
+
+<span class="w">    </span><span class="cm">/* End */</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="w">          </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic simple" id="flash-layout-app-ota1-step2" start="2">
+<li><p>Re-build the project to generate the Bootloader and APP OTA1.</p></li>
+</ol>
+<ol class="arabic" id="flash-layout-app-ota1-step3" start="3">
+<li><p>Modify the address of <code class="docutils literal notranslate"><span class="pre">km0_km4_app.bin</span></code> if you update the location of APP OTA1 through ImageTool, and download the new Bootloader and APP OTA1.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/app_ota1_step3.png"><img alt="../../../../_images/app_ota1_step3.png" src="../../../../_images/app_ota1_step3.png" style="width: 679.0px; height: 222.5px;" /></a>
+</figure>
+</li>
+</ol>
+<p>After that, Bootloader will load the image from the new location of APP OTA1 if the version of APP OTA1 is bigger.</p>
+</section>
+<section id="app-ota2">
+<h3>APP OTA2<a class="headerlink" href="#app-ota2" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Modify the address of <code class="docutils literal notranslate"><span class="pre">IMG_APP_OTA2</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c</span></code>.</p></li>
+<li><p>Re-build and download the new Bootloader and APP OTA2 as described in section <a class="reference internal" href="#flash-layout-app-ota1"><span class="std std-ref">APP OTA1</span></a> step <a class="reference internal" href="#flash-layout-app-ota1-step2"><span class="std std-ref">2</span></a> ~ <a class="reference internal" href="#flash-layout-app-ota1-step3"><span class="std std-ref">3</span></a>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">* @brif Flash layout is set according to Flash Layout in User Manual</span>
+<span class="cm">*  In each entry, the first item is flash region type, the second item is start address, the third item is end address */</span>
+<span class="k">const</span><span class="w"> </span><span class="n">FlashLayoutInfo_TypeDef</span><span class="w"> </span><span class="n">Flash_Layout</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/*Region_Type,  [StartAddr, EndAddr]   */</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_BOOT</span><span class="p">,</span><span class="w">      </span><span class="mh">0x08000000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08013FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K)</span>
+<span class="w">    </span><span class="c1">//Users should modify below according to their own memory</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_APP_OTA1</span><span class="p">,</span><span class="w">  </span><span class="mh">0x08014000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x081F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KR4 &amp; KM4 Application OTA1 + Manifest(4K) + RDP IMG OTA1</span>
+
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_BOOT_OTA2</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08200000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08213FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K) OTA</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_APP_OTA2</span><span class="p">,</span><span class="w">  </span><span class="mh">0x08214000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x083F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KR4 &amp; KM4 Application OTA2 + Manifest(4K) + RDP IMG OTA2</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_DSP</span><span class="p">,</span><span class="w">       </span><span class="mh">0x08400000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x086FFFFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Manifest(4K) + DSP IMG, only one DSP region in layout</span>
+
+<span class="w">    </span><span class="p">{</span><span class="n">FTL</span><span class="p">,</span><span class="w">           </span><span class="mh">0x08700000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08702FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//FTL for BT(&gt;=12K), The start offset of flash pages which is allocated to FTL physical map</span>
+<span class="w">    </span><span class="p">{</span><span class="n">VFS1</span><span class="p">,</span><span class="w">          </span><span class="mh">0x08703000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08722FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//VFS region 1 (128K)</span>
+<span class="w">    </span><span class="p">{</span><span class="n">USER</span><span class="p">,</span><span class="w">          </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//reserve for user</span>
+
+<span class="w">    </span><span class="cm">/* End */</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="w">          </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>After burning the APP OTA2 into Flash through OTA, Bootloader will load the image from the new location of APP OTA2 if the version of APP OTA2 is bigger.</p>
+</section>
+</section>
+<section id="modifying-ftl-vfs-location">
+<h2>Modifying FTL/VFS Location<a class="headerlink" href="#modifying-ftl-vfs-location" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Modify the addresses of FTL and VFS1 in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c</span></code>.</p></li>
+<li><p>Update the application image.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">* @brif Flash layout is set according to Flash Layout in User Manual</span>
+<span class="cm">*  In each entry, the first item is flash region type, the second item is start address, the third item is end address */</span>
+<span class="k">const</span><span class="w"> </span><span class="n">FlashLayoutInfo_TypeDef</span><span class="w"> </span><span class="n">Flash_Layout</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/*Region_Type,  [StartAddr, EndAddr]   */</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_BOOT</span><span class="p">,</span><span class="w">      </span><span class="mh">0x08000000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08013FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K)</span>
+<span class="w">    </span><span class="c1">//Users should modify below according to their own memory</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_APP_OTA1</span><span class="p">,</span><span class="w">  </span><span class="mh">0x08014000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x081F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KR4 &amp; KM4 Application OTA1 + Manifest(4K) + RDP IMG OTA1</span>
+
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_BOOT_OTA2</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08200000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08213FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K) OTA</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_APP_OTA2</span><span class="p">,</span><span class="w">  </span><span class="mh">0x08214000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x083F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KR4 &amp; KM4 Application OTA2 + Manifest(4K) + RDP IMG OTA2</span>
+<span class="w">    </span><span class="p">{</span><span class="n">IMG_DSP</span><span class="p">,</span><span class="w">       </span><span class="mh">0x08400000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x086FFFFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Manifest(4K) + DSP IMG, only one DSP region in layout</span>
+
+<span class="hll"><span class="w">    </span><span class="p">{</span><span class="n">FTL</span><span class="p">,</span><span class="w">           </span><span class="mh">0x08700000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08702FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//FTL for BT(&gt;=12K), The start offset of flash pages which is allocated to FTL physical map</span>
+</span><span class="hll"><span class="w">    </span><span class="p">{</span><span class="n">VFS1</span><span class="p">,</span><span class="w">          </span><span class="mh">0x08703000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08722FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//VFS region 1 (128K)</span>
+</span><span class="w">    </span><span class="p">{</span><span class="n">USER</span><span class="p">,</span><span class="w">          </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//reserve for user</span>
+
+<span class="w">    </span><span class="cm">/* End */</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="w">          </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="flash-protect-enable">
+<h1>Flash Protect Enable<a class="headerlink" href="#flash-protect-enable" title="Link to this heading"></a></h1>
+<p>Before loading APP IMG, the Bootloader will read the Status Register from Flash. If only Quad Enable (QE) Bit is set in the output of bitwise AND between Status Register of Flash and status_mask in Flash_AVL (<code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c</span></code>), do nothing, or the output of bitwise AND will be written to the Flash Status Register.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, setting the QE bit will unlock all the Block Protect Bits. To avoid this operation, set Block Protect bits corresponding to <code class="docutils literal notranslate"><span class="pre">Status_mask</span></code> in <code class="docutils literal notranslate"><span class="pre">Flash_AVL</span></code> to 0. For example, change the <code class="docutils literal notranslate"><span class="pre">Status_mask</span></code> of Winbond in the <code class="docutils literal notranslate"><span class="pre">Flash_AVL</span></code> to 0x000043C0.</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/flash_protect_enable.png"><img alt="../../../../_images/flash_protect_enable.png" src="../../../../_images/flash_protect_enable.png" style="width: 676.8px; height: 363.59999999999997px;" /></a>
+</figure>
+<p>In order to avoid the image being damaged due to improper operation when using LittleFS to write user data, it is recommended to modify the location of FTL/LittleFS to the last 64KB area of Flash, and set the Block Protect Bit in the Status Register of Flash at the same time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Only the last 64KB area of Flash can be modified, and the other areas are protected. Remember to unlock the Flash during OTA upgrade, and keep it locked when OTA is completed.</p></li>
+<li><p>For some Flashes, you cannot set the Flash to allow only the last block to be modified through Block Protect Bit. In this case, it is recommended to enable the Flash block protection of the first half part.</p></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Flash Layout" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../memory_layout/src/index.html" class="btn btn-neutral float-right" title="Memory Layout" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

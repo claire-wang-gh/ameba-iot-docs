@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="General Purpose Input/Output (GPIO)" href="../../gpio/gpio/src/index.html" />
+    <link rel="prev" title="Pseudo-Static Random Access Memory (PSRAM)" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Pseudo-Static Random Access Memory (PSRAM)</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#throughput">Throughput</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boot-from-psram">Boot from PSRAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#psram-cache-write-back-policy">PSRAM Cache “Write Back” Policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#row-hammer">Row Hammer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notice">Notice</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tcem-setting">TCEM Setting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#winbond">Winbond</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apm">APM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/application_note/psram/src/psram.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="psram"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>Pseudo-Static Random Access Memory (PSRAM) is used for high-speed transmission of the data stream. The AmebaDPlus communicates with PSRAM via PSRAM controller (PSRAMC). PSRAM can be accessed by KM4 and KM0, and supports execution on PSRAM.</p>
+<p>The features of PSRAM are:</p>
+<ul class="simple">
+<li><p>Clock rate: up to 200MHz</p></li>
+<li><p>Double Data Rate (DDR)</p></li>
+<li><p>Read-Write Data Strobe (DQS)</p></li>
+<li><p>Supports Half sleep and deep power-down mode</p></li>
+<li><p>Programmable drive strength</p></li>
+<li><p>Temperature Compensated Refresh</p></li>
+<li><p>16/32/64/128 bytes wrap burst access</p></li>
+<li><p>Distributed refresh interval varies with temperature</p></li>
+<li><p>Address mapping: 0x6000_0000~0x6040_0000</p></li>
+</ul>
+</section>
+<section id="throughput">
+<h1>Throughput<a class="headerlink" href="#throughput" title="Link to this heading"></a></h1>
+<p>PSRAM supports direct access and DMA access. The throughput of PSRAM is listed in the following table.</p>
+<table class="docutils align-default" id="id1" style="width: 100%">
+<caption><span class="caption-text">Throughput of PSRAM (200MHz)</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<tbody>
+<tr class="row-odd"><td rowspan="2"><p>Access mode</p></td>
+<td colspan="2"><p>Writing 32 bytes</p></td>
+<td colspan="2"><p>Reading 32 bytes</p></td>
+</tr>
+<tr class="row-even"><td><p>Theory</p></td>
+<td><p>Test on the KM4</p></td>
+<td><p>Theory</p></td>
+<td><p>Test on the KM4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direct access</p>
+<p>(write back)</p>
+</td>
+<td><p>1523.81Mbps</p></td>
+<td><p>(32*8)/(199.68ns)=1282.05Mbps</p></td>
+<td><p>1454.55Mbps</p></td>
+<td><p>(32*8)/(212.16ns)=1204.14Mbps</p></td>
+</tr>
+<tr class="row-even"><td><p>DMA access</p></td>
+<td><p>2206.9Mbps</p></td>
+<td><p>1641.03Mbps</p></td>
+<td><p>2133.33Mbps</p></td>
+<td><p>1172.16Mbps</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p>Throughput theoretical calculation:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The test data above takes variable initial latency, so there will be 1 or 2 times initial latency depending on RWDS.</p></li>
+<li><p>The header overlaps with delay by 1T.</p></li>
+<li><p>Since it is DDR PSRAM, 16T is used to transmit 32 bytes.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Direct access:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>By default, we will assign the cache attribute to PSRAM. Therefore, when testing the access performance of PSRAM, we need to consider the cache attribute comprehensively.</p></li>
+<li><p>In the operation of reading 4 bytes, if read hit (that is, the address data is stored in the cache), the CPU directly reads 4bytes from the cache. If read miss (the address data is not in the cache), it needs to read a cache line size data from PSRAM to the cache.</p></li>
+<li><p>In the operation of writing 4 bytes, if write hit (the address data exists in the cache), the content of the address in the cache will be updated, and then a cacheline size will be updated to PSRAM when the cache flush. If write miss ( the address to be written is not in the cache), based on the write allocate policy, the CPU will first read a cacheline size data from PSRAM to the cache, and then update the content in the cache.</p></li>
+<li><p>The read / write throughput data in the table is measured based on read miss / cache flush, which requires access to PSRAM. TP of write allocate is equal to TP of read miss.</p></li>
+<li><p>Instruction execution time also needs to be taken into consideration.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<table class="docutils align-default" id="id2" style="width: 100%">
+<caption><span class="caption-text">PSRAM throughput theoretical calculation</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Writing 32 bits</p></th>
+<th class="head"><p>Reading 32 bits</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Header + delay</p></td>
+<td><p>[3 +22] * 4ns = 100ns</p></td>
+<td><p>[3 + 23] * 4ns = 104ns</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data transmit period</p></td>
+<td><p>2 * 4ns =8ns</p></td>
+<td><p>16 * 4ns = 64ns</p></td>
+</tr>
+<tr class="row-even"><td><p>Hardware hold</p></td>
+<td><p>1 * 4ns =4ns</p></td>
+<td><p>2 * 4ns = 8ns</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total without considering instruction execution time</p></td>
+<td><p>100ns + 8ns + 4ns = 112ns</p></td>
+<td><p>104ns + 64ns + 8ns = 176ns</p></td>
+</tr>
+<tr class="row-even"><td><p>Throughput theoretical value</p></td>
+<td><p>32/112ns = 285.71Mbps</p></td>
+<td><p>(32x8)/176ns = 1454.55Mbps</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="boot-from-psram">
+<h1>Boot from PSRAM<a class="headerlink" href="#boot-from-psram" title="Link to this heading"></a></h1>
+<p>If the PSRAM is embedded in the chip, follow these steps to boot from PSRAM in the SDK.</p>
+<ol class="arabic simple">
+<li><p>Enable the power supply of PSRAM in the bootloader</p></li>
+<li><p>Initialize the PSRAM controller and PSRAM device to synchronize the relevant parameters</p></li>
+<li><p>Calibrate the PSRAM</p></li>
+</ol>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">RCC_PeriphClockCmd</span><span class="p">(</span><span class="n">APBPeriph_PSRAM</span><span class="p">,</span><span class="w"> </span><span class="n">APBPeriph_PSRAM_CLOCK</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span>
+<span class="n">DBG_PRINT</span><span class="p">(</span><span class="n">MODULE_BOOT</span><span class="p">,</span><span class="w"> </span><span class="n">LEVEL_INFO</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Init PSRAM</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="n">BOOT_PSRAM_Init</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="psram-cache-write-back-policy">
+<h1>PSRAM Cache “Write Back” Policy<a class="headerlink" href="#psram-cache-write-back-policy" title="Link to this heading"></a></h1>
+<p>When a cache hit occurs on a store access, the data is only written to the cache. Data in the cache can therefore be more up-to-date than data in memory. Any such data is written back to memory when the cache line is cleaned or reallocated. Another common term for a write-back cache is a copy-back cache.</p>
+<section id="row-hammer">
+<h2>Row Hammer<a class="headerlink" href="#row-hammer" title="Link to this heading"></a></h2>
+<p>With the increasing density of DRAM, its memory cells become smaller and smaller, and the stored charge decreases. As a result, the noise tolerance between memory cells is reduced, resulting in the interaction of charges between two independent memory cells. Row hammer is caused by this defect in the design of memory hardware chip. Its principle is to repeatedly read and write the peer address in DRAM memory unit, so that the charge leakage occurs in adjacent rows, and the bit reversal phenomenon occurs in adjacent rows, that is, 0 is reversed to 1, and 1 is reversed to 0.</p>
+<p>Therefore, when a large number of accesses are made to PSRAM in a short time, if the refresh frequency is not enough, the MEM space of every 2K (i.e. two rows) will affect each other. When we perform a large number of continuous write operations on a line, the charges of adjacent lines will be affected and the value will change.</p>
+</section>
+<section id="notice">
+<h2>Notice<a class="headerlink" href="#notice" title="Link to this heading"></a></h2>
+<section id="cache-operation">
+<h3>Cache Operation<a class="headerlink" href="#cache-operation" title="Link to this heading"></a></h3>
+<p>On the “Write Back” policy, the synchronization operations need to be taken between cache and PSRAM to keep content consistency, especially for multiple access by different sources, e.g. CPU, serial ports and peripherals.</p>
+<p>As the cache line of KM4/KM0 cache is 32 bytes, and cache operations are all based on the cache line. So the buffer size and buffer starting address are recommended to be 32/64 bytes aligned to avoid synchronization issues.</p>
+</section>
+<section id="dma-operation">
+<h3>DMA Operation<a class="headerlink" href="#dma-operation" title="Link to this heading"></a></h3>
+<p>The following steps should be added when executing DMA Rx/Tx.</p>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Step</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DMA Rx</p></td>
+<td><ol class="arabic">
+<li><p>Prepare Rx buffer</p></li>
+<li><p>Do <code class="docutils literal notranslate"><span class="pre">DCache_CleanInvalidate()</span></code> to avoid cache data write back during DMA Rx</p></li>
+<li><p>Do DMA Rx config</p></li>
+<li><p>Trigger DMA Rx interrupt</p></li>
+<li><p>Do <code class="docutils literal notranslate"><span class="pre">DCache_Invalidate()</span></code> in Rx Done Handler to clean the old data</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>During GDMA transmission, it is forbidden to write or cache flush DST buffer. (Taking {SDK}/component/example/peripheral/raw/uart/uart_dma_stream/src/main.c for example, uart_recv_string_done is DMA Rx Done Interrupt Handler)</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">u32</span><span class="w"> </span><span class="nf">uart_recv_string_done</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="n">UNUSED</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="w">   </span><span class="cm">/* To solve the cache consistency problem, DMA mode needs it */</span>
+<span class="w">   </span><span class="n">DCache_Invalidate</span><span class="p">((</span><span class="n">u32</span><span class="p">)</span><span class="n">rx_buf</span><span class="p">,</span><span class="w"> </span><span class="n">SRX_BUF_SZ</span><span class="p">);</span>
+<span class="w">   </span><span class="n">dma_free</span><span class="p">();</span>
+<span class="w">   </span><span class="n">rx_done</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>CPU reads Rx Buffer</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>DMA Tx</p></td>
+<td><ol class="arabic simple">
+<li><p>CPU prepares Tx buffer data</p></li>
+<li><p>Do <code class="docutils literal notranslate"><span class="pre">DCache_CleanInvalidate()</span></code> for Tx buffer to synchronize the data</p></li>
+<li><p>Do DMA Tx configuration</p></li>
+<li><p>Trigger DMA Tx interrupt</p></li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<p>In SDK, only the example of one-time xxx_GDMA_Init one-time transmission is illustrated. Step 2 is included in <code class="docutils literal notranslate"><span class="pre">xxx_GDMA_Init</span></code> by default.</p>
+<p>If you need multi-time DMA Tx/Rx with only one-time xxx_GDMA_Init, <code class="docutils literal notranslate"><span class="pre">DCache_CleanInvalidate()</span></code> should be called every time before DMA transmission starts.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/UART_TXGDMA_Init1.png"><img alt="../../../_images/UART_TXGDMA_Init1.png" src="../../../_images/UART_TXGDMA_Init1.png" style="width: 348.8px; height: 209.60000000000002px;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/UART_TXGDMA_Init2.png"><img alt="../../../_images/UART_TXGDMA_Init2.png" src="../../../_images/UART_TXGDMA_Init2.png" style="width: 348.0px; height: 227.20000000000002px;" /></a>
+</figure>
+</section>
+</section>
+</section>
+<section id="tcem-setting">
+<h1>TCEM Setting<a class="headerlink" href="#tcem-setting" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">TPR0[24:31]</span></code> (CS_TCEM) provides the function that when the CSN low pulse width is equal to <cite>(CS_TCEM * 32)*busclk</cite>, the SPI Flash Controller will automatically chop the current transmission and pull CS up.</p>
+<section id="winbond">
+<h2>Winbond<a class="headerlink" href="#winbond" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>When the temperature is less than 85°C, PSRAM refresh the intern cell array using normal rate (4us).</p></li>
+<li><p>When the temperature is greater than 85°C and less than 125°C, PSRAM refresh the internal cell array using faster rate (1us). This sets an upper limit on the length of read and write transactions so that the automatic distributed refresh operation can be done between transactions. This limit is called the CS# low maximum time (tCSM) and the tCSM will be equal to the maximum distributed refresh interval.</p></li>
+</ul>
+<p>So when the temperature is less than 85°C, for higher performance, we recommend that <code class="docutils literal notranslate"><span class="pre">CS_TCEM</span></code> should be equal to <cite>4us/busclk/32</cite>. When the temperature is greater than 85°C, the value should be equal to <cite>1us/busclk/32</cite>.</p>
+</section>
+<section id="apm">
+<h2>APM<a class="headerlink" href="#apm" title="Link to this heading"></a></h2>
+<p>APM is in extended mode by default, so it always keeps fast refresh (1us). Here, <code class="docutils literal notranslate"><span class="pre">CS_TCEM</span></code> is recommended equal to <cite>1us/busclk/32</cite>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Pseudo-Static Random Access Memory (PSRAM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../gpio/gpio/src/index.html" class="btn btn-neutral float-right" title="General Purpose Input/Output (GPIO)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

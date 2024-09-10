@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power-Saving Mode &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Wakeup Source" href="power_save.html" />
+    <link rel="prev" title="Power Saving" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Power Saving</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Power-Saving Mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="power_save.html">Wakeup Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power_save.html#entering-sleep-mode">Entering Sleep Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power_save.html#entering-deep-sleep-mode">Entering Deep-Sleep Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power_save.html#power-saving-configuration">Power-Saving Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power_save.html#power-saving-related-apis">Power-Saving Related APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power_save.html#wi-fi-power-saving">Wi-Fi Power Saving</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Power Saving</a></li>
+      <li class="breadcrumb-item active">Power-Saving Mode</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/application_note/power_save/src/summary.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="power-saving-mode">
+<span id="power-saving"></span><h1>Power-Saving Mode<a class="headerlink" href="#power-saving-mode" title="Link to this heading"></a></h1>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>The AmebaDPlus has an advanced Power Management Controller (PMC), which can flexibly power up different power domains of the chip, to achieve the best balance between chip performance and power consumption. AON, SYSON, SOC are three main power domains in digital system. Functions in different power domains will be turned off differently in different power-saving modes.</p>
+<figure class="align-center" id="id1">
+<img alt="../../../_images/different_power_domains.png" src="../../../_images/different_power_domains.png" />
+<figcaption>
+<p><span class="caption-text">Different power domains</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>To simplify the power management for typical scenarios, the AmebaDPlus supports two low-power modes, which are sleep mode and deep-sleep mode.
+Tickless is a FreeRTOS low power feature, which just gates the CPU (no clock or power be turned off) when it has nothing to do.
+Sleep mode flow and deep-sleep mode flow are based on Tickless.
+The following table explains power-saving related terms.</p>
+<table class="docutils align-default" id="id2" style="width: 100%">
+<caption><span class="caption-text">Power-saving mode</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>AON domain</p></th>
+<th class="head"><p>SYSON domain</p></th>
+<th class="head"><p>SOC domain</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tickless</p></td>
+<td><p>ON</p></td>
+<td><p>ON</p></td>
+<td><p>ON</p></td>
+<td><ul class="simple">
+<li><p>FreeRTOS low power feature</p></li>
+<li><p>CPU periodically enters WFI, and exits WFI when interrupts happen.</p></li>
+<li><p>Radio status can be configured off/periodically on/always on, which depends on the application.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Sleep</p></td>
+<td><p>ON</p></td>
+<td><p>ON</p></td>
+<td><p>Clock-gated or power-gated</p></td>
+<td><ul class="simple">
+<li><p>A power saving mode on chip level, including clock-gating mode and power-gating mode.</p></li>
+<li><p>CPU can restore stack status when the system exits from sleep mode.</p></li>
+<li><p>The system RAM will be retained, and the data in system RAM will not be lost.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Deep-sleep</p></td>
+<td><p>ON</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><ul class="simple">
+<li><p>A more power-saving mode on chip-level.</p></li>
+<li><p>CPU cannot restore stack status. When the system exits from deep-sleep mode, the CPU follows the reboot process.</p></li>
+<li><p>The system RAM will not be retained.</p></li>
+<li><p>The retention SRAM will not be power off.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Peripherals are also divided into different power domains in order to achieve better power consumption.</p>
+<ul class="simple">
+<li><p>SOC power domain: including peripherals such as GDMA, SPI, I2C, SDIO, PWM, QSPI, PPE, LEDC, etc.</p></li>
+<li><p>SYSON power domain: mainly including peripherals which support wakeup, such as Basic Timer, GPIO, UART, Key-Scan, Cap-Touch, etc.</p></li>
+</ul>
+<p>For peripherals in SOC domain, note that they need to be reinitialized after wakeup from PG since the power domain they are on has been power gated during sleep.</p>
+<p>FreeRTOS supports a low-power feature called tickless. It is implemented in an idle task which has the lowest priority.
+That is, it is invoked when there is no other task under running. Note that unlike the original FreeRTOS, the AmebaDPlus does not wake up based on the <cite>xEpectedIdleTime</cite>.</p>
+<figure class="align-center" id="id3">
+<img alt="../../../_images/freertos_tickless_in_an_idle_task.png" src="../../../_images/freertos_tickless_in_an_idle_task.png" />
+<figcaption>
+<p><span class="caption-text">FreeRTOS tickless in an idle task</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The  figure above shows idle task code flow. In idle task, it will check sleep conditions (wakelock, sysactive_time, details in Section <a class="reference internal" href="power_save.html#power-saving-wakelock-apis"><span class="std std-ref">Wakelock APIs</span></a> and <a class="reference internal" href="power_save.html#pmu-set-sysactive-time"><span class="std std-ref">pmu_set_sysactive_time</span></a>) to determine whether needs to enter sleep mode or not.</p>
+<ul class="simple">
+<li><p>If not, the CPU will execute an ARM instruction <strong>WFI</strong> (wait for interrupt) which makes the CPU suspend until the interrupt happens. Normally systick interrupt resumes it. This is the software tickless.</p></li>
+<li><p>If yes, it will execute the function <code class="xref py py-func docutils literal notranslate"><span class="pre">freertos_pre_sleep_processing()</span></code> to enter sleep mode or deep-sleep mode.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Even FreeRTOS time control like software timer or <cite>vTaskDelay</cite> is set, it still enters the sleep mode if meeting the requirement as long as the idle task is executed.</p></li>
+<li><p><cite>configUSE_TICKLESS_IDLE</cite> must be enabled for power-saving application because sleep mode flow is based on tickless.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Power Saving" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="power_save.html" class="btn btn-neutral float-right" title="Wakeup Source" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

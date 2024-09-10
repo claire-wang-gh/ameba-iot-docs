@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; ameba_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Flash and Memory Layout" href="../../flash_memory_layout/index.html" />
+    <link rel="prev" title="SDK Examples" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ameba_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">SDK Examples</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#application-example">Application Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peripheral-example">Peripheral Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ameba_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="index.html">SDK Examples</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/amebadplus/en/application_note/sdk_example/src/sdk_example.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="sdk-example"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>There are two kinds of examples in the SDK of AmebaDPlus:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>application examples</p></li>
+<li><p>peripheral examples</p></li>
+</ul>
+</div></blockquote>
+<p>This chapter illustrates the contents of examples and how to build example source code. The path and description of SDK examples are listed in following table.</p>
+<table class="docutils align-default" id="id1" style="width: 100%">
+<caption><span class="caption-text">Examples in SDK</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Application example</p></td>
+<td><p>{SDK}\component\example</p></td>
+<td><p>xml, ssl, …</p></td>
+</tr>
+<tr class="row-odd"><td><p>Peripheral example</p></td>
+<td><p>{SDK}\component\example\peripheral</p></td>
+<td><p>ADC, UART, I2C, SPI, Timer, …</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="application-example">
+<h1>Application Example<a class="headerlink" href="#application-example" title="Link to this heading"></a></h1>
+<p>In each folder of application example, there are C source files, header files and <code class="docutils literal notranslate"><span class="pre">README.txt</span></code>.
+You should check for detailed configurations of the example according to <code class="docutils literal notranslate"><span class="pre">README.txt</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The application examples are shared by all Realtek SoC, so you need to refer to <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> for detailed information of AmebaDPlus.</p>
+</div>
+<p>The application examples normally run on KM4. The entry function of application example is <em>app_example()</em> in <code class="docutils literal notranslate"><span class="pre">main.c</span></code> under <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project\project_km4\src</span></code>.
+Each application example has its own <em>app_example()</em>, and the <em>app_example()</em> in <code class="docutils literal notranslate"><span class="pre">main.c</span></code> will be replaced automatically when the application example is built.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../../../_images/entry_function_of_application_example.png"><img alt="../../../../../_images/entry_function_of_application_example.png" src="../../../../../_images/entry_function_of_application_example.png" style="width: 289.2px; height: 181.2px;" /></a>
+<figcaption>
+<p><span class="caption-text">Entry function of application example</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>To run application example, you only need to:</p>
+<ol class="arabic simple">
+<li><p>Check software and hardware settings in <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> of the example.</p></li>
+<li><p>Add compile options <code class="docutils literal notranslate"><span class="pre">EXAMPLE={examplefolder</span> <span class="pre">name}</span></code> when building the project, and replace <code class="docutils literal notranslate"><span class="pre">{example</span> <span class="pre">folder</span> <span class="pre">name}</span></code> with the specific folder name of this example.</p></li>
+</ol>
+<p>For example, if you want to build xml example to start an xml example thread, you need to set the macro in SDK according to <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\example\xml</span></code>, then enter <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">EXAMPLE=xml</span></code> for KM4 on MSYS2 MinGW 64-bit (Windows) or terminal (Linux).</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../../../../_images/building_xml_application_example.png"><img alt="../../../../../_images/building_xml_application_example.png" src="../../../../../_images/building_xml_application_example.png" style="width: 804.6px; height: 372.6px;" /></a>
+<figcaption>
+<p><span class="caption-text">Building XML application example</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="peripheral-example">
+<h1>Peripheral Example<a class="headerlink" href="#peripheral-example" title="Link to this heading"></a></h1>
+<p>The peripheral examples are demos of peripherals. Most examples consist of raw and mbed folders, you can choose raw or mbed demos as you like.</p>
+<table class="docutils align-default" id="id4" style="width: 100%">
+<caption><span class="caption-text">Comparison of raw and mbed examples</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mbed</p></td>
+<td><p>{SDK}\component\example\peripheral\{peripheral}\mbed</p></td>
+<td><p>mbed APIs are used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>raw</p></td>
+<td><p>{SDK}\component\example\peripheral\{peripheral}\raw</p></td>
+<td><p>Low-level driver APIs are used.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each example folder has <code class="docutils literal notranslate"><span class="pre">main.c</span></code> and <code class="docutils literal notranslate"><span class="pre">README.txt</span></code>. There are example descriptions, required components, HW connection and expected behavior in <code class="docutils literal notranslate"><span class="pre">README.txt</span></code>.</p>
+<p>The peripheral examples normally run on KM4. To run peripheral examples, you only need to:</p>
+<ol class="arabic simple">
+<li><p>Check software and hardware settings in <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> of the example.</p></li>
+<li><p>Replace the original <code class="docutils literal notranslate"><span class="pre">main.c</span></code> under <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project\project_km4\src</span></code> with <code class="docutils literal notranslate"><span class="pre">main.c</span></code> in the example directory.</p></li>
+<li><p>(Optional) Copy other header files that are depicted in the <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> to <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project\project_km4\src</span></code> if needed.</p></li>
+<li><p>Re-build the project by command <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="SDK Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../flash_memory_layout/index.html" class="btn btn-neutral float-right" title="Flash and Memory Layout" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
