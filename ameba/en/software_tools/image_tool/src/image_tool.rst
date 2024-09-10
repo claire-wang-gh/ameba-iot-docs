@@ -359,7 +359,6 @@ Additionally, user can check the :menuselection:`Remember the choice of follow-u
 
 .. include:: flash_read_internal.rst
 
-
 .. include:: efuse_access_internal.rst  
 
 

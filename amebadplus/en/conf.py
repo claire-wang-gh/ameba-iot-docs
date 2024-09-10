@@ -47,7 +47,7 @@ for ign in exclude_patterns:
 # Settings by project
 # 项目设置
 language = "en" if en_or_cn == "en" else "cn"
-project = "ameba_docs"
+project = "amebadplus_docs"
 copyright = "2024, Realsil"
 author = "Realsil"
 
