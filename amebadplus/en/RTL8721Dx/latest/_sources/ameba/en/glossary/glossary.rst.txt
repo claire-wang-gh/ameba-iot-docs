@@ -1,0 +1,18 @@
+.. _glossary:
+
+Introduction
+--------------
+All glossary for Ameba series.
+
+.. glossary::
+   :sorted:
+
+   ADC
+      Analog-to-Digital Converter
+
+   DAC
+      Digital-to-Analog Converter
+
+   SoC
+      System on chip
+

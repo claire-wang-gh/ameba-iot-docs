@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 flash_mmu_layout.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.56869in" height="2.23641in"
+		viewBox="0 0 400.946 161.022" xml:space="preserve" color-interpolation-filters="sRGB" class="st16">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#404040;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st2 {fill:#bdd0e9;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st3 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st5 {fill:#000000;font-family:Calibri;font-size:0.583328em}
+		.st6 {fill:#dae2f3;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st7 {fill:#e2efd9;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st8 {stroke:#00b050;stroke-dasharray:1,2;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st9 {stroke:#ff0000;stroke-dasharray:1,2;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st10 {fill:#fee599;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st11 {fill:#dbdbdb;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st12 {stroke:#bf9000;stroke-dasharray:1,2;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st13 {fill:none;stroke:none;stroke-width:0.25}
+		.st14 {fill:#ff0000;font-family:Calibri;font-size:0.666664em}
+		.st15 {font-size:1em}
+		.st16 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="流程图" v:index="0"/>
+		<g id="shape74-1" v:mID="74" v:groupContext="shape" v:layerMember="0" transform="translate(1.13583,-0.125)">
+			<title>流程.74</title>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
+						v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="ProcessNumber" v:lbl="进程编号" v:prompt="" v:type="2" v:format="" v:sortKey="" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="Owner" v:lbl="所有者" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+						v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="Function" v:lbl="函数" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+						v:langID="2052" v:cal="0" v:val="VT4()"/>
+				<v:cp v:nameU="StartDate" v:lbl="开始日期" v:prompt="" v:type="5" v:format="" v:sortKey="" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="EndDate" v:lbl="结束日期" v:prompt="" v:type="5" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+						v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="Status" v:lbl="状态" v:prompt="" v:type="4" v:format=";未开始;进行中;已完成;已推迟;正在等待输入" v:sortKey=""
+						v:invis="false" v:ask="false" v:langID="2052" v:cal="0" v:val="VT4()"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(14):26"/>
+				<v:ud v:nameU="DefaultWidth" v:prompt="" v:val="VT0(0.98425196850394):24"/>
+				<v:ud v:nameU="DefaultHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
+				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<rect x="0" y="0.250006" width="399.685" height="160.772" class="st1"/>
+		</g>
+		<g id="shape75-3" v:mID="75" v:groupContext="shape" v:layerMember="0" transform="translate(280.88,-105.295)">
+			<title>进程.75</title>
+			<desc>KM0 logical address</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="140.032" width="113.39" height="41.9797"/>
+			<rect x="0" y="119.042" width="113.386" height="41.9797" class="st2"/>
+			<text x="24.37" y="142.43" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>KM0 logical address</text>		</g>
+		<g id="shape76-6" v:mID="76" v:groupContext="shape" transform="translate(232.566,-137.155)">
+			<title>工作表.76</title>
+			<desc>0x0C00_0000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="24.0417" cy="156.77" width="48.09" height="8.50394"/>
+			<rect x="0" y="152.518" width="48.0835" height="8.50394" class="st4"/>
+			<text x="5.45" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0C00_0000</text>		</g>
+		<g id="shape77-9" v:mID="77" v:groupContext="shape" v:layerMember="0" transform="translate(280.88,-61.913)">
+			<title>进程.77</title>
+			<desc>KM4 logical address</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="140.032" width="113.39" height="41.9797"/>
+			<rect x="0" y="119.042" width="113.386" height="41.9797" class="st6"/>
+			<text x="24.37" y="142.43" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>KM4 logical address</text>		</g>
+		<g id="shape78-12" v:mID="78" v:groupContext="shape" transform="translate(232.566,-98.9971)">
+			<title>工作表.78</title>
+			<desc>0x0E00_0000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="24.0417" cy="156.77" width="48.09" height="8.50394"/>
+			<rect x="0" y="152.518" width="48.0835" height="8.50394" class="st4"/>
+			<text x="5.77" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0E00_0000</text>		</g>
+		<g id="shape79-15" v:mID="79" v:groupContext="shape" v:layerMember="0" transform="translate(280.88,-17.9671)">
+			<title>进程.79</title>
+			<desc>Bootloader logical address</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="153.357" width="113.39" height="15.3295"/>
+			<rect x="0" y="145.692" width="113.386" height="15.3295" class="st7"/>
+			<text x="13.73" y="155.76" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Bootloader logical address</text>		</g>
+		<g id="shape80-18" v:mID="80" v:groupContext="shape" transform="translate(232.566,-28.2908)">
+			<title>工作表.80</title>
+			<desc>0x0F80_0000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="24.0417" cy="156.77" width="48.09" height="8.50394"/>
+			<rect x="0" y="152.518" width="48.0835" height="8.50394" class="st4"/>
+			<text x="5.97" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0F80_0000</text>		</g>
+		<g id="shape81-21" v:mID="81" v:groupContext="shape" v:layerMember="0" transform="translate(47.6493,-50.622)">
+			<title>进程.81</title>
+			<desc>KM0 IMG</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="140.032" width="113.39" height="41.9797"/>
+			<rect x="0" y="119.042" width="113.386" height="41.9797" class="st2"/>
+			<text x="41.31" y="142.43" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>KM0 IMG</text>		</g>
+		<g id="shape82-24" v:mID="82" v:groupContext="shape" transform="translate(0.125,-100.173)">
+			<title>工作表.82</title>
+			<desc>0x0801_5000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.5144" cy="156.77" width="47.03" height="8.50394"/>
+			<rect x="0" y="152.518" width="47.0288" height="8.50394" class="st4"/>
+			<text x="4.58" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0801_5000</text>		</g>
+		<g id="shape83-27" v:mID="83" v:groupContext="shape" v:layerMember="0" transform="translate(47.6493,-132.173)">
+			<title>进程.83</title>
+			<desc>KM4 Bootloader (24KB)</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="153.357" width="113.39" height="15.3295"/>
+			<rect x="0" y="145.692" width="113.386" height="15.3295" class="st6"/>
+			<text x="18.46" y="155.76" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>KM4 Bootloader (24KB)</text>		</g>
+		<g id="shape84-30" v:mID="84" v:groupContext="shape" transform="translate(0.125,-125)">
+			<title>工作表.84</title>
+			<desc>0x0800_7000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.5144" cy="156.77" width="47.03" height="8.50394"/>
+			<rect x="0" y="152.518" width="47.0288" height="8.50394" class="st4"/>
+			<text x="4.58" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0800_7000</text>		</g>
+		<g id="shape85-33" v:mID="85" v:groupContext="shape" transform="translate(0.125,-141.175)">
+			<title>工作表.85</title>
+			<desc>0x0800_1000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.5144" cy="156.77" width="47.03" height="8.50394"/>
+			<rect x="0" y="152.518" width="47.0288" height="8.50394" class="st4"/>
+			<text x="4.58" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0800_1000</text>		</g>
+		<g id="shape86-36" v:mID="86" v:groupContext="shape" transform="translate(272.349,-102.22) rotate(43.7812)">
+			<title>工作表.86</title>
+			<path d="M0 161.02 L165.54 161.02" class="st8"/>
+		</g>
+		<g id="shape87-39" v:mID="87" v:groupContext="shape" transform="translate(272.526,-88.1331) rotate(43.8201)">
+			<title>工作表.87</title>
+			<path d="M0 161.02 L166.1 161.02" class="st8"/>
+		</g>
+		<g id="shape88-42" v:mID="88" v:groupContext="shape" transform="translate(93.8281,-77.4101) rotate(-24.6692)">
+			<title>工作表.88</title>
+			<path d="M0 161.02 L131.83 161.02" class="st9"/>
+		</g>
+		<g id="shape89-45" v:mID="89" v:groupContext="shape" transform="translate(94.2033,-36.0977) rotate(-24.5224)">
+			<title>工作表.89</title>
+			<path d="M0 161.02 L131.73 161.02" class="st9"/>
+		</g>
+		<g id="shape90-48" v:mID="90" v:groupContext="shape" v:layerMember="0" transform="translate(47.6493,-7.08535)">
+			<title>进程.90</title>
+			<desc>KM4 IMG2</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="140.032" width="113.39" height="41.9797"/>
+			<rect x="0" y="119.042" width="113.386" height="41.9797" class="st6"/>
+			<text x="39.28" y="142.43" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>KM4 IMG2</text>		</g>
+		<g id="shape91-51" v:mID="91" v:groupContext="shape" v:layerMember="0" transform="translate(47.6493,-106.466)">
+			<title>进程.91</title>
+			<desc>Key Certification</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="154.042" width="113.39" height="13.9598"/>
+			<rect x="0" y="147.062" width="113.386" height="13.9598" class="st10"/>
+			<text x="29.92" y="156.44" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Key Certification</text>		</g>
+		<g id="shape92-54" v:mID="92" v:groupContext="shape" v:layerMember="0" transform="translate(47.6493,-92.5537)">
+			<title>进程.92</title>
+			<desc>IMG2 Manifest</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="154.042" width="113.39" height="13.9598"/>
+			<rect x="0" y="147.062" width="113.386" height="13.9598" class="st11"/>
+			<text x="32.34" y="156.44" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>IMG2 Manifest</text>		</g>
+		<g id="shape93-57" v:mID="93" v:groupContext="shape" transform="translate(0.125,-112.321)">
+			<title>工作表.93</title>
+			<desc>0x0801_4000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.5144" cy="156.77" width="47.03" height="8.50394"/>
+			<rect x="0" y="152.518" width="47.0288" height="8.50394" class="st4"/>
+			<text x="4.58" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0801_4000</text>		</g>
+		<g id="shape94-60" v:mID="94" v:groupContext="shape" transform="translate(0.125,-88.7341)">
+			<title>工作表.94</title>
+			<desc>0x0801_6000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.5144" cy="156.77" width="47.03" height="8.50394"/>
+			<rect x="0" y="152.518" width="47.0288" height="8.50394" class="st4"/>
+			<text x="4.58" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0801_6000</text>		</g>
+		<g id="shape95-63" v:mID="95" v:groupContext="shape" transform="translate(94.0469,-34.4693) rotate(-24.5836)">
+			<title>工作表.95</title>
+			<path d="M0 161.02 L131.79 161.02" class="st12"/>
+		</g>
+		<g id="shape96-66" v:mID="96" v:groupContext="shape" transform="translate(94.3721,7.04063) rotate(-24.4564)">
+			<title>工作表.96</title>
+			<path d="M0 161.02 L131.66 161.02" class="st12"/>
+		</g>
+		<g id="shape97-69" v:mID="97" v:groupContext="shape" transform="translate(63.1386,-150.097)">
+			<title>工作表.97</title>
+			<desc>Physical memory</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="39.685" cy="156.77" width="79.38" height="8.50394"/>
+			<rect x="0" y="152.518" width="79.3701" height="8.50394" class="st13"/>
+			<text x="12.1" y="159.17" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Physical <tspan
+						class="st15" v:langID="1033">m</tspan>emory</text>		</g>
+		<g id="shape98-73" v:mID="98" v:groupContext="shape" transform="translate(298.515,-150.097)">
+			<title>工作表.98</title>
+			<desc>Logical memory</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="39.685" cy="156.77" width="79.38" height="8.50394"/>
+			<rect x="0" y="152.518" width="79.3701" height="8.50394" class="st13"/>
+			<text x="13.97" y="159.17" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Logical <tspan
+						class="st15" v:langID="1033">m</tspan>emory</text>		</g>
+		<g id="shape104-77" v:mID="104" v:groupContext="shape" transform="translate(0.125,-3.02547)">
+			<title>工作表.104</title>
+			<desc>0x0804_0000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.5144" cy="156.77" width="47.03" height="8.50394"/>
+			<rect x="0" y="152.518" width="47.0288" height="8.50394" class="st4"/>
+			<text x="4.58" y="158.87" class="st5" v:langID="2052"><v:paragraph v:horizAlign="2"/><v:tabList/>0x0804_0000</text>		</g>
+	</g>
+</svg>

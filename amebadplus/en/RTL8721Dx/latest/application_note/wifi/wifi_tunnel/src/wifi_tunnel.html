@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wi-Fi Tunnel Topology &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Wi-Fi CSI" href="../../wifi_csi/src/index.html" />
+    <link rel="prev" title="Wi-Fi Tunnel" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../product_overview/src/index.html">Product Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quick_start/src/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Wi-Fi</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Wi-Fi Tunnel</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Wi-Fi Tunnel Topology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wi-fi-tunnel-advantage">Wi-Fi Tunnel Advantage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wi-fi-tunnel-data-flow">Wi-Fi Tunnel Data Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wi-fi-tunnel-capacity">Wi-Fi Tunnel Capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wi-fi-tunnel-throughput-tbd">Wi-Fi Tunnel Throughput (TBD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wi-fi-tunnel-demo-tool">Wi-Fi Tunnel Demo Tool</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_csi/src/index.html">Wi-Fi CSI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_bridge/src/index.html">Wi-Fi Bridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../wifi_fullmac/src/index.html">Wi-Fi FullMAC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/glossary/index.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/rst_syntax/src/template_rst_syntax.html">reStructuredText</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Wi-Fi</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Wi-Fi Tunnel</a></li>
+      <li class="breadcrumb-item active">Wi-Fi Tunnel Topology</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/application_note/wifi/wifi_tunnel/src/wifi_tunnel.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wi-fi-tunnel-topology">
+<span id="wifi-tunnel"></span><h1>Wi-Fi Tunnel Topology<a class="headerlink" href="#wi-fi-tunnel-topology" title="Link to this heading"></a></h1>
+<p>As shown in the figure below, Wi-Fi Tunnel is a mesh network with tree topology used to extend the transmission distance of Wi-Fi, allowing stations that are relatively far from the AP to maintain a stable online status.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/wifi_tunnel_topology_capacity.svg"><img alt="../../../../_images/wifi_tunnel_topology_capacity.svg" height="540" src="../../../../_images/wifi_tunnel_topology_capacity.svg" width="624" /></a>
+<figcaption>
+<p><span class="caption-text">Wi-Fi Tunnel topology</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="wi-fi-tunnel-advantage">
+<h1>Wi-Fi Tunnel Advantage<a class="headerlink" href="#wi-fi-tunnel-advantage" title="Link to this heading"></a></h1>
+<p>The well-designed Wi-Fi Tunnel has the following advantages:</p>
+<ul>
+<li><p>A software-unsensible mesh network:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Wi-Fi Tunnel is implemented entirely through the Wi-Fi driver. Whether it’s a root node or its child node, each node regards itself as a regular station connected to the AP.</p></li>
+<li><p>It is no need to upgrade configuration programs or connection programs, and each node can be configured and connected as a regular station.</p></li>
+<li><p>The application development of each station has no difference with that of a regular station, and the application does not need to be concerned with routing information.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Rapid networking:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>With an optimized algorithm, nodes can quickly form a mesh network.</p></li>
+<li><p>In the event of a parent node fault (power down or crash), child nodes can quickly switch to a new parent node with nearly no impact on their data communication.</p></li>
+<li><p>Child nodes can also quickly switch to an appropriate parent node as a group, without each child node switching individually.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>High througput for child nodes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Data forwarding is directly implemented through the Wi-Fi driver, utilizing less RAM and CPU resources.</p></li>
+<li><p>Compared to a traditional mesh network, Wi-Fi Tunnel requires minimal software processing, so even nodes several hops away can achieve a good throughput.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Network stability:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Due to minimal software processing and the upper layer not needing to be concerned with routing, the entire mesh network is highly stable.</p></li>
+<li><p>Common mesh network issues like loops do not occur.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="wi-fi-tunnel-data-flow">
+<h1>Wi-Fi Tunnel Data Flow<a class="headerlink" href="#wi-fi-tunnel-data-flow" title="Link to this heading"></a></h1>
+<p>In traditional mesh network, data forwarding typically passes through the application or TCP/IP stack.
+In contrast, Wi-Fi Tunnel handles data forwarding directly via the Wi-Fi driver, requiring minimal software-processing flow, which can significantly save computing power and RAM resources.</p>
+<p>As a result of minimal software-processing flow, the software-processing time is also greatly reduced. Consequently, even nodes several hops away communicating with the AP can achieve good throughput.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="../../../../_images/wifi_traditional_data_flow.svg"><img alt="../../../../_images/wifi_traditional_data_flow.svg" src="../../../../_images/wifi_traditional_data_flow.svg" width="450px" /></a>
+</td>
+<td><a class="reference internal image-reference" href="../../../../_images/wifi_tunnel_data_flow.svg"><img alt="../../../../_images/wifi_tunnel_data_flow.svg" src="../../../../_images/wifi_tunnel_data_flow.svg" width="450px" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><p>Wi-Fi traditional data flow</p></td>
+<td><p>Wi-Fi Tunnel data flow</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wi-fi-tunnel-capacity">
+<h1>Wi-Fi Tunnel Capacity<a class="headerlink" href="#wi-fi-tunnel-capacity" title="Link to this heading"></a></h1>
+<p>Wi-Fi Tunnel capacity refers to the number of child nodes that each root node connected to the AP can accommodate. Note that it is the total number of child nodes across all layers, regardless of the number of the layer.</p>
+<p>The diagram below illustrates an example where the capacity is 4.</p>
+<ul class="simple">
+<li><p>Topology 0: All four nodes are directly connected to the root node</p></li>
+<li><p>Topology 3: The four nodes form a 4-hop network</p></li>
+<li><p>Can also be any intermediate topology between Topology 0 and Topology 3</p></li>
+</ul>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/wifi_tunnel_topology_capacity.svg"><img alt="../../../../_images/wifi_tunnel_topology_capacity.svg" height="540" src="../../../../_images/wifi_tunnel_topology_capacity.svg" width="624" /></a>
+<figcaption>
+<p><span class="caption-text">Wi-Fi Tunnel capacity</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="wi-fi-tunnel-throughput-tbd">
+<h1>Wi-Fi Tunnel Throughput (TBD)<a class="headerlink" href="#wi-fi-tunnel-throughput-tbd" title="Link to this heading"></a></h1>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Station</p></th>
+<th class="head"><p>UDP Tx</p></th>
+<th class="head"><p>UDP Rx</p></th>
+<th class="head"><p>TCP Tx</p></th>
+<th class="head"><p>TCP Rx</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Root Station</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Layer1 Station</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Layer2 Station</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Layer3 Station</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Layer4 Station</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wi-fi-tunnel-demo-tool">
+<h1>Wi-Fi Tunnel Demo Tool<a class="headerlink" href="#wi-fi-tunnel-demo-tool" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>To effectively test and demonstrate Wi-Fi Tunnel, we have specifically developed a software tool.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/wifi_tunnel_demo_tool.png"><img alt="../../../../_images/wifi_tunnel_demo_tool.png" src="../../../../_images/wifi_tunnel_demo_tool.png" style="width: 481.5px; height: 411.3px;" /></a>
+<figcaption>
+<p><span class="caption-text">Wi-Fi Tunnel demo tool</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The main features of this tool are as follows:</p>
+<ul class="simple">
+<li><p>Users can freely drag each node’s position, and the program can change the signal attenuation between nodes based on their relative distance (with an adjustable scale) to simulate the real-world relationship between distance and signal attenuation.</p></li>
+<li><p>When the signal strength between a child node and its parent node does not meet the conditions for efficient communication, the node can quickly switch the topology relationship.</p></li>
+<li><p>Users can forcely delete a node (the node will be reset), simulating node fault to test the switching efficiency of its child nodes.</p></li>
+<li><p>Users can also add walls in the UI to simulate signal attenuation in real-world application scenarios.</p></li>
+</ul>
+</section>
+<section id="user-guide-tbd">
+<h2>User Guide (TBD)<a class="headerlink" href="#user-guide-tbd" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Wi-Fi Tunnel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../wifi_csi/src/index.html" class="btn btn-neutral float-right" title="Wi-Fi CSI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
