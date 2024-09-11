@@ -52,7 +52,7 @@ copyright = "2024, Realsil"
 author = "Realsil"
 
 # 宏替换
-CHIP_NAME = 'AmebaDPlus'
+CHIP_NAME = 'RTL8721Dx'
 VERSION = '1.0.0'
 
 rst_prolog = """

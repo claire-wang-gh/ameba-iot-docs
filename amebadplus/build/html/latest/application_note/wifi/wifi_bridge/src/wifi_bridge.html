@@ -246,7 +246,7 @@
 <h1>Porting Guide<a class="headerlink" href="#porting-guide" title="Link to this heading"></a></h1>
 <section id="hardware-configuration">
 <h2>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h2>
-<p>Please connect AmebaDPlus to host with jumper cables as mentioned below.</p>
+<p>Please connect RTL8721Dx to host with jumper cables as mentioned below.</p>
 <table class="docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Pin name</p></th>
@@ -274,18 +274,18 @@
 </tr>
 </tbody>
 </table>
-<p>The AmebaDPlus can also convert to a standard SD card through the designed PCB board, as shown below. Some changes are nedded on AmebaDPlus demo board, please contact us about how to modify the demo board.</p>
+<p>The RTL8721Dx can also convert to a standard SD card through the designed PCB board, as shown below. Some changes are nedded on RTL8721Dx demo board, please contact us about how to modify the demo board.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../../../_images/sdio_adapter_board.jpg"><img alt="../../../../_images/sdio_adapter_board.jpg" src="../../../../_images/sdio_adapter_board.jpg" style="width: 335.5px; height: 248.5px;" /></a>
 <figcaption>
-<p><span class="caption-text">AmebaDPlus SDIO adapter board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-text">RTL8721Dx SDIO adapter board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The pin layout of AmebaDPlus demo board refers the pin layout of Raspberry Pi and can be directly plugged into the Raspberry Pi demo board.</p>
+<p>The pin layout of RTL8721Dx demo board refers the pin layout of Raspberry Pi and can be directly plugged into the Raspberry Pi demo board.</p>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/connection_with_raspberry_pi.jpg"><img alt="../../../../_images/connection_with_raspberry_pi.jpg" src="../../../../_images/connection_with_raspberry_pi.jpg" style="width: 254.5px; height: 227.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">AmebaDPlus connection with Raspberry Pi</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-text">RTL8721Dx connection with Raspberry Pi</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -333,7 +333,7 @@
 </section>
 </section>
 <section id="software-configuration-at-chip-name">
-<h3>Software Configuration at AmebaDPlus<a class="headerlink" href="#software-configuration-at-chip-name" title="Link to this heading"></a></h3>
+<h3>Software Configuration at RTL8721Dx<a class="headerlink" href="#software-configuration-at-chip-name" title="Link to this heading"></a></h3>
 <p>In order to build SDIO bridge image, choose <span class="guilabel">SDIO_BRIDGE</span> in menuconfig according to the following steps:</p>
 <ol class="arabic">
 <li><p>Enter menuconfig and select <span class="guilabel">CONFIG WIFI</span></p>
@@ -415,7 +415,7 @@
 </pre></div>
 </div>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">./bridge</span> <span class="pre">wifi_connect</span> <span class="pre">xiaomi_esther</span> <span class="pre">12345678</span></code> means connect to an AP whose SSID is <code class="docutils literal notranslate"><span class="pre">xiaomi_esther</span></code> and password is <code class="docutils literal notranslate"><span class="pre">12345678</span></code>, as shown in Figure <a class="reference internal" href="#bridge-testapp-control-flow"><span class="std std-ref">testapp control flow</span></a>.</p>
-<p>After Wi-Fi connect command executed, the <code class="docutils literal notranslate"><span class="pre">eth_sta0</span></code> interface can be shown by command <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code>, the IP address will also be configured automatically, and this IP address will be the same IP address in AmebaDPlus, as shown in Figure <a class="reference internal" href="#bridge-ifconfig-result"><span class="std std-ref">ifconfig result</span></a>.</p>
+<p>After Wi-Fi connect command executed, the <code class="docutils literal notranslate"><span class="pre">eth_sta0</span></code> interface can be shown by command <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code>, the IP address will also be configured automatically, and this IP address will be the same IP address in RTL8721Dx, as shown in Figure <a class="reference internal" href="#bridge-ifconfig-result"><span class="std std-ref">ifconfig result</span></a>.</p>
 <figure class="align-center" id="bridge-testapp-control-flow">
 <a class="reference internal image-reference" href="../../../../_images/bridge_testapp_control_flow.png"><img alt="../../../../_images/bridge_testapp_control_flow.png" src="../../../../_images/bridge_testapp_control_flow.png" style="width: 382.2px; height: 276.0px;" /></a>
 <figcaption>

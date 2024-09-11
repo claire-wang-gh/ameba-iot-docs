@@ -155,7 +155,7 @@
              
   <section id="introduction">
 <span id="ota-firmware-update"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
-<p>Over-the-air (OTA) programming provides a methodology of updating device firmware remotely via TCP/IP network. For OTA via TCP/IP network, the AmebaDPlus provides solutions to implement OTA firmware upgrade from local server or cloud.</p>
+<p>Over-the-air (OTA) programming provides a methodology of updating device firmware remotely via TCP/IP network. For OTA via TCP/IP network, the RTL8721Dx provides solutions to implement OTA firmware upgrade from local server or cloud.</p>
 <section id="image-slot">
 <span id="id1"></span><h2>Image Slot<a class="headerlink" href="#image-slot" title="Link to this heading"></a></h2>
 <p>There are two slots for all the images in the Flash layout as shown in below, which named OTA1 and OTA2 respectively. Each image can be chosen to boot from OTA1 or OTA2.</p>
@@ -421,17 +421,17 @@
 <tr class="row-odd"><td><p>Header Number</p></td>
 <td><p>0x04</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The number of OTA Header. For AmebaDPlus, this value can be 1, 2</p></td>
+<td><p>The number of OTA Header. For RTL8721Dx, this value can be 1, 2</p></td>
 </tr>
 <tr class="row-even"><td><p>Signature</p></td>
 <td><p>0x08</p></td>
 <td><p>4 bytes</p></td>
-<td><p>OTA Signature is string. For AmebaDPlus, this value is “OTA”</p></td>
+<td><p>OTA Signature is string. For RTL8721Dx, this value is “OTA”</p></td>
 </tr>
 <tr class="row-odd"><td><p>Header Length</p></td>
 <td><p>0x0C</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The length of OTA header. For AmebaDPlus, this value is 0x18</p></td>
+<td><p>The length of OTA header. For RTL8721Dx, this value is 0x18</p></td>
 </tr>
 <tr class="row-even"><td><p>Checksum</p></td>
 <td><p>0x10</p></td>

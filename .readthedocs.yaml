@@ -20,7 +20,7 @@ build:
     - echo "Checking Sphinx version..."
     - sphinx-build --version  # Check if sphinx-build is available
     - echo "Building Sphinx documentation..."
-    - sphinx-build -b html amebadplus/en/ $READTHEDOCS_OUTPUT/html
+    - sphinx-build -b html amebadplus/en/ $READTHEDOCS_OUTPUT/html -t RTL8721D -t FreeRTOS
 
 # Optional but recommended, declare the Python requirements required
 # to build your documentation
@@ -37,3 +37,4 @@ sphinx:
 formats:
   - pdf
 #  - epub
+

@@ -312,7 +312,7 @@ pacman -S mingw-w64-x86_64-gcc-libs
 <h2>Windows<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <p>This section introduces the steps to prepare the toolchain environment.</p>
 <ol class="arabic simple">
-<li><p>Acquire the zip files of AmebaDPlus toolchain from Realtek.</p></li>
+<li><p>Acquire the zip files of RTL8721Dx toolchain from Realtek.</p></li>
 </ol>
 <ol class="arabic" id="windows-installing-toolchain-step-2" start="2">
 <li><p>Create a new directory <code class="docutils literal notranslate"><span class="pre">rtk-toolchain</span></code> under the path <code class="docutils literal notranslate"><span class="pre">{MSYS2_path}\opt</span></code>.</p>
@@ -340,7 +340,7 @@ pacman -S mingw-w64-x86_64-gcc-libs
 <h2>Linux<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>This section introduces the steps to prepare the toolchain environment.</p>
 <ol class="arabic">
-<li><p>Acquire the zip files of AmebaDPlus toolchain from Realtek.</p></li>
+<li><p>Acquire the zip files of RTL8721Dx toolchain from Realtek.</p></li>
 <li><p>Create a new directory <code class="docutils literal notranslate"><span class="pre">rtk-toolchain</span></code> under the path <code class="docutils literal notranslate"><span class="pre">/opt</span></code>.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../_images/linux_rtk_toolchain_1.png"><img alt="../../../_images/linux_rtk_toolchain_1.png" src="../../../_images/linux_rtk_toolchain_1.png" style="width: 672.8000000000001px; height: 47.2px;" /></a>
@@ -488,12 +488,12 @@ pacman -S mingw-w64-x86_64-gcc-libs
 <span id="id5"></span><h1>Setting Debugger<a class="headerlink" href="#setting-debugger" title="Link to this heading"></a></h1>
 <section id="j-link">
 <h2>J-Link<a class="headerlink" href="#j-link" title="Link to this heading"></a></h2>
-<p>The AmebaDPlus supports J-Link debugger. Before setting J-Link debugger, you need to do some hardware configuration and download images to the AmebaDPlus device first.</p>
+<p>The RTL8721Dx supports J-Link debugger. Before setting J-Link debugger, you need to do some hardware configuration and download images to the RTL8721Dx device first.</p>
 <ol class="arabic">
-<li><p>Connect J-Link to the SWD of AmebaDPlus.</p>
+<li><p>Connect J-Link to the SWD of RTL8721Dx.</p>
 <ol class="loweralpha">
-<li><p>Refer to the following figure to connect SWCLK pin of J-Link to SWD CLK pin of AmebaDPlus, and SWDIO pin of J-Link to SWD DATA pin of AmebaDPlus.</p></li>
-<li><p>Connect the AmebaDPlus device to PC after finishing these configurations.</p>
+<li><p>Refer to the following figure to connect SWCLK pin of J-Link to SWD CLK pin of RTL8721Dx, and SWDIO pin of J-Link to SWD DATA pin of RTL8721Dx.</p></li>
+<li><p>Connect the RTL8721Dx device to PC after finishing these configurations.</p>
 <figure class="align-center" id="id12">
 <a class="reference internal image-reference" href="../../../_images/connecting_jlink_to_swd.svg"><img alt="../../../_images/connecting_jlink_to_swd.svg" height="210" src="../../../_images/connecting_jlink_to_swd.svg" width="614" /></a>
 <figcaption>
@@ -504,11 +504,11 @@ pacman -S mingw-w64-x86_64-gcc-libs
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For AmebaDPlus, the J-Link version must be v9 or higher.
+<p>For RTL8721Dx, the J-Link version must be v9 or higher.
 If Virtual Machine (VM) is used as your platform, make sure that the USB connection setting between VM host and client is correct, so that the VM host can detect the device.</p>
 </div>
 </li>
-<li><p>Download images to the AmebaDPlus device via ImageTool.</p>
+<li><p>Download images to the RTL8721Dx device via ImageTool.</p>
 <p>ImageTool is a software tool provided by Realtek. For more information, refer to <a class="reference internal" href="../../../ameba/en/software_tools/image_tool/src/image_tool.html#image-tool"><span class="std std-ref">Image Tool</span></a>.</p>
 </li>
 </ol>

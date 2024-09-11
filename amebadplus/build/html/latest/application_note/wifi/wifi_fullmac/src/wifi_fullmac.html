@@ -172,10 +172,10 @@
 <p>The Wi-Fi FullMAC driver implements the following modules:</p>
 <ul class="simple">
 <li><p>Provide a data transmission path between the host and the device based on a private transmission protocol via the SDIO/SPI interface</p></li>
-<li><p>Adapt the cfg80211 layer and register the wireless network interface (wlan0/1) in the kernel to enable network data packet interaction between the Linux kernel and the AmebaDPlus</p></li>
+<li><p>Adapt the cfg80211 layer and register the wireless network interface (wlan0/1) in the kernel to enable network data packet interaction between the Linux kernel and the RTL8721Dx</p></li>
 <li><p>Provide commonly-used and proprietary commands to configure the parameters of Wi-Fi interface</p></li>
 </ul>
-<p>To clarify, in the following sections, the term <code class="docutils literal notranslate"><span class="pre">host</span></code> refers to the Linux PC acting as the host, and the term <code class="docutils literal notranslate"><span class="pre">device</span></code> refers to the AmebaDPlus serving as the device.</p>
+<p>To clarify, in the following sections, the term <code class="docutils literal notranslate"><span class="pre">host</span></code> refers to the Linux PC acting as the host, and the term <code class="docutils literal notranslate"><span class="pre">device</span></code> refers to the RTL8721Dx serving as the device.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/wifi_fullmac_architecture.svg"><img alt="../../../../_images/wifi_fullmac_architecture.svg" height="466" src="../../../../_images/wifi_fullmac_architecture.svg" width="375" /></a>
 <figcaption>
@@ -263,11 +263,11 @@
 <h2>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h2>
 <section id="sdio">
 <h3>SDIO<a class="headerlink" href="#sdio" title="Link to this heading"></a></h3>
-<p>The SDIO FullMAC can be used on Linux PC with SDIO interface or Raspberry Pi. The following pins of AmebaDPlus are used for SDIO FullMAC function.</p>
+<p>The SDIO FullMAC can be used on Linux PC with SDIO interface or Raspberry Pi. The following pins of RTL8721Dx are used for SDIO FullMAC function.</p>
 <table class="docutils align-default" id="sdio-fullmac-pins" style="width: 100%">
 <caption><span class="caption-text">SDIO FullMAC used pins</span><a class="headerlink" href="#sdio-fullmac-pins" title="Link to this table"></a></caption>
 <tbody>
-<tr class="row-odd"><td><p>AmebaDPlus pin</p></td>
+<tr class="row-odd"><td><p>RTL8721Dx pin</p></td>
 <td><p>Raspberry Pi pin</p></td>
 <td><p>Function</p></td>
 </tr>
@@ -299,36 +299,36 @@
 </table>
 <section id="linux-pc">
 <h4>Linux PC<a class="headerlink" href="#linux-pc" title="Link to this heading"></a></h4>
-<p>For the Linux PC, an SDIO host peripheral is required. Please connect to AmebaDPlus with the corresponding pins according to <a class="reference internal" href="#sdio-fullmac-pins"><span class="std std-ref">SDIO FullMAC used pins</span></a>.</p>
-<p>The AmebaDPlus can also use a gold finger adapter to convert the SDIO pins into a standard SD card, as the following figure shows, and supports the hardware platform only with an SD card slot.
+<p>For the Linux PC, an SDIO host peripheral is required. Please connect to RTL8721Dx with the corresponding pins according to <a class="reference internal" href="#sdio-fullmac-pins"><span class="std std-ref">SDIO FullMAC used pins</span></a>.</p>
+<p>The RTL8721Dx can also use a gold finger adapter to convert the SDIO pins into a standard SD card, as the following figure shows, and supports the hardware platform only with an SD card slot.
 Note that in this case, you need to contact us to modify the demo board circuit.</p>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/sdio_adapter_board.jpg"><img alt="../../../../_images/sdio_adapter_board.jpg" src="../../../../_images/sdio_adapter_board.jpg" style="width: 335.5px; height: 248.5px;" /></a>
 <figcaption>
-<p><span class="caption-text">AmebaDPlus SDIO adapter board</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-text">RTL8721Dx SDIO adapter board</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="raspberry-pi">
 <h4>Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Link to this heading"></a></h4>
-<p>The pin location of AmebaDPlus demo board corresponds to the pin location of Raspberry Pi.
+<p>The pin location of RTL8721Dx demo board corresponds to the pin location of Raspberry Pi.
 In order to run at high speed, it’s strongly recommended to plug the demo board directly into Raspberry Pi, as the following figure shows.</p>
 <p>The pins used for SDIO FullMAC on Raspberry Pi are listed in <a class="reference internal" href="#sdio-fullmac-pins"><span class="std std-ref">SDIO FullMAC used pins</span></a>.</p>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/connection_with_raspberry_pi.jpg"><img alt="../../../../_images/connection_with_raspberry_pi.jpg" src="../../../../_images/connection_with_raspberry_pi.jpg" style="width: 254.5px; height: 227.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">AmebaDPlus connection with Raspberry Pi</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-text">RTL8721Dx connection with Raspberry Pi</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="spi">
 <h3>SPI<a class="headerlink" href="#spi" title="Link to this heading"></a></h3>
-<p>The SPI FullMAC can be used on on platforms with SPI interface, such as Raspberry Pi. The following pins of AmebaDPlus and Raspberry Pi are used for SPI FullMAC function.</p>
+<p>The SPI FullMAC can be used on on platforms with SPI interface, such as Raspberry Pi. The following pins of RTL8721Dx and Raspberry Pi are used for SPI FullMAC function.</p>
 <table class="docutils align-default" id="id5" style="width: 100%">
 <caption><span class="caption-text">SPI FullMAC used pins</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <tbody>
-<tr class="row-odd"><td><p>AmebaDPlus pin</p></td>
+<tr class="row-odd"><td><p>RTL8721Dx pin</p></td>
 <td><p>Raspberry Pi pin</p></td>
 <td><p>Function</p></td>
 <td><p>Description</p></td>
@@ -354,7 +354,7 @@ In order to run at high speed, it’s strongly recommended to plug the demo boar
 <td><p>GPIO 23</p></td>
 <td><p>DEV_TX_REQ</p></td>
 <td><div class="line-block">
-<div class="line">An output pin for AmebaDPlus, used to indicate</div>
+<div class="line">An output pin for RTL8721Dx, used to indicate</div>
 <div class="line">to host that it has a data packet to send with a rising edge.</div>
 </div>
 </td>
@@ -363,7 +363,7 @@ In order to run at high speed, it’s strongly recommended to plug the demo boar
 <td><p>GPIO 22</p></td>
 <td><p>DEV_READY</p></td>
 <td><div class="line-block">
-<div class="line">An output pin for AmebaDPlus, used to indicate</div>
+<div class="line">An output pin for RTL8721Dx, used to indicate</div>
 <div class="line">its readiness for SPI transcation to host.</div>
 </div>
 <ul class="simple">
@@ -396,7 +396,7 @@ In order to run at high speed, it’s strongly recommended to plug the demo boar
 </ol>
 </li>
 <li><p>Execute the make command to generate <code class="file docutils literal notranslate"><span class="pre">km4_boot_all.bin</span></code> and <code class="file docutils literal notranslate"><span class="pre">km0_km4_app.bin</span></code> after the build is successfully complete.</p></li>
-<li><p>Use the Image Tool to flash the bin files to AmebaDPlus and restart the device.</p></li>
+<li><p>Use the Image Tool to flash the bin files to RTL8721Dx and restart the device.</p></li>
 </ol>
 </section>
 <section id="host-driver">

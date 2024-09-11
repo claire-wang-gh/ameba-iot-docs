@@ -165,7 +165,7 @@
 </section>
 <section id="pin-description">
 <h1>Pin Description<a class="headerlink" href="#pin-description" title="Link to this heading"></a></h1>
-<p>The AmebaDPlus supports ISP via LOGUART (<code class="docutils literal notranslate"><span class="pre">PB4</span></code> and <code class="docutils literal notranslate"><span class="pre">PB5</span></code>). The ISP mode is determined by the state of <code class="docutils literal notranslate"><span class="pre">PB5</span></code> when boot.</p>
+<p>The RTL8721Dx supports ISP via LOGUART (<code class="docutils literal notranslate"><span class="pre">PB4</span></code> and <code class="docutils literal notranslate"><span class="pre">PB5</span></code>). The ISP mode is determined by the state of <code class="docutils literal notranslate"><span class="pre">PB5</span></code> when boot.</p>
 <table class="docutils align-default" id="id2" style="width: 100%">
 <caption><span class="caption-text">ISP mode</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
 <thead>
@@ -188,7 +188,7 @@
 </section>
 <section id="boot-flow">
 <h1>Boot Flow<a class="headerlink" href="#boot-flow" title="Link to this heading"></a></h1>
-<p>The boot flow of AmebaDPlus is illustrated below. After a power-up or hardware reset, the hardware will boot KM4 at 150MHz. The boot process is handled by the on-chip boot ROM and is always executed by the KM4. After the KM4 bootloader code, the KM4 will set up the environment for the KM0.</p>
+<p>The boot flow of RTL8721Dx is illustrated below. After a power-up or hardware reset, the hardware will boot KM4 at 150MHz. The boot process is handled by the on-chip boot ROM and is always executed by the KM4. After the KM4 bootloader code, the KM4 will set up the environment for the KM0.</p>
 <ul class="simple">
 <li><p>KM4 boots ROM</p></li>
 <li><p>KM4 secure boot (optional)</p></li>

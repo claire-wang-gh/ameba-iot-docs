@@ -138,14 +138,14 @@
 <span id="power-saving"></span><h1>Power-Saving Mode<a class="headerlink" href="#power-saving-mode" title="Link to this heading"></a></h1>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
-<p>The AmebaDPlus has an advanced Power Management Controller (PMC), which can flexibly power up different power domains of the chip, to achieve the best balance between chip performance and power consumption. AON, SYSON, SOC are three main power domains in digital system. Functions in different power domains will be turned off differently in different power-saving modes.</p>
+<p>The RTL8721Dx has an advanced Power Management Controller (PMC), which can flexibly power up different power domains of the chip, to achieve the best balance between chip performance and power consumption. AON, SYSON, SOC are three main power domains in digital system. Functions in different power domains will be turned off differently in different power-saving modes.</p>
 <figure class="align-center" id="id1">
 <img alt="../../../_images/different_power_domains.png" src="../../../_images/different_power_domains.png" />
 <figcaption>
 <p><span class="caption-text">Different power domains</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>To simplify the power management for typical scenarios, the AmebaDPlus supports two low-power modes, which are sleep mode and deep-sleep mode.
+<p>To simplify the power management for typical scenarios, the RTL8721Dx supports two low-power modes, which are sleep mode and deep-sleep mode.
 Tickless is a FreeRTOS low power feature, which just gates the CPU (no clock or power be turned off) when it has nothing to do.
 Sleep mode flow and deep-sleep mode flow are based on Tickless.
 The following table explains power-saving related terms.</p>
@@ -203,7 +203,7 @@ The following table explains power-saving related terms.</p>
 </ul>
 <p>For peripherals in SOC domain, note that they need to be reinitialized after wakeup from PG since the power domain they are on has been power gated during sleep.</p>
 <p>FreeRTOS supports a low-power feature called tickless. It is implemented in an idle task which has the lowest priority.
-That is, it is invoked when there is no other task under running. Note that unlike the original FreeRTOS, the AmebaDPlus does not wake up based on the <cite>xEpectedIdleTime</cite>.</p>
+That is, it is invoked when there is no other task under running. Note that unlike the original FreeRTOS, the RTL8721Dx does not wake up based on the <cite>xEpectedIdleTime</cite>.</p>
 <figure class="align-center" id="id3">
 <img alt="../../../_images/freertos_tickless_in_an_idle_task.png" src="../../../_images/freertos_tickless_in_an_idle_task.png" />
 <figcaption>
