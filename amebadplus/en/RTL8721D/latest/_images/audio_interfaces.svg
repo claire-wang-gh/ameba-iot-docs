@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 audio_interfaces.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.37795in" height="2.33858in"
+		viewBox="0 0 459.213 168.378" xml:space="preserve" color-interpolation-filters="sRGB" class="st6">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#f2f2f2;stroke:#000000;stroke-width:0.25}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {fill:none;stroke:#000000;stroke-width:0.25}
+		.st4 {fill:#000000;font-family:Calibri;font-size:0.833336em;font-weight:bold}
+		.st5 {fill:#d8d8d8;stroke:#000000;stroke-width:0.75}
+		.st6 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(153.845,-121.567)">
+			<title>矩形.24</title>
+			<desc>RTAudioTrack</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="11.58" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RTAudioTrack</text>		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(0.25,-115.123)">
+			<title>矩形.25</title>
+			<desc>Audio Framework APIs</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+			<v:textRect cx="216.017" cy="145.701" width="432.04" height="45.3543"/>
+			<rect x="0" y="123.024" width="432.033" height="45.3543" class="st3"/>
+			<text x="4" y="136.02" class="st4" v:langID="2052"><v:paragraph/><v:tabList/>Audio Framework APIs</text>		</g>
+		<g id="shape3-7" v:mID="3" v:groupContext="shape" transform="translate(225.742,-121.567)">
+			<title>矩形.3</title>
+			<desc>RTAudioRecord</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="8.89" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RTAudioRecord</text>		</g>
+		<g id="shape4-10" v:mID="4" v:groupContext="shape" transform="translate(297.638,-121.567)">
+			<title>矩形.4</title>
+			<desc>RTAudioControl</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="8.24" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RTAudioControl</text>		</g>
+		<g id="shape5-13" v:mID="5" v:groupContext="shape" transform="translate(63.4961,-67.6678)">
+			<title>矩形.39</title>
+			<desc>AudioHwManager</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="4.5" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AudioHwManager</text>		</g>
+		<g id="shape6-16" v:mID="6" v:groupContext="shape" transform="translate(0.25,-61.2236)">
+			<title>矩形.40</title>
+			<desc>Audio HAL APIs</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+			<v:textRect cx="216.017" cy="145.701" width="432.04" height="45.3543"/>
+			<rect x="0" y="123.024" width="432.033" height="45.3543" class="st3"/>
+			<text x="4" y="136.02" class="st4" v:langID="2052"><v:paragraph/><v:tabList/>Audio HAL APIs</text>		</g>
+		<g id="shape7-19" v:mID="7" v:groupContext="shape" transform="translate(135.496,-67.6678)">
+			<title>矩形.41</title>
+			<desc>AudioHwCard</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="11.57" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AudioHwCard</text>		</g>
+		<g id="shape8-22" v:mID="8" v:groupContext="shape" transform="translate(358.299,-67.6678)">
+			<title>矩形.42</title>
+			<desc>AudioHwStreamIn</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="4.34" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AudioHwStreamIn</text>		</g>
+		<g id="shape9-25" v:mID="9" v:groupContext="shape" transform="translate(279.496,-67.6678)">
+			<title>矩形.43</title>
+			<desc>AudioHwStreamOut</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="37.4173" cy="157.039" width="74.84" height="22.6772"/>
+			<rect x="0" y="145.701" width="74.8346" height="22.6772" class="st1"/>
+			<text x="4.76" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AudioHwStreamOut</text>		</g>
+		<g id="shape10-28" v:mID="10" v:groupContext="shape" transform="translate(614.834,7.59729) rotate(90.138)">
+			<title>普通箭头</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ArrowType" v:prompt="" v:val="VT0(2):26"/>
+			</v:userDefs>
+			<path d="M0 168.38 L11.34 163.84 L11.34 166.11 L153.63 166.11 L153.63 168.38 L153.63 170.65 L11.34 170.65 L11.34 172.91
+						 L0 168.38 Z" class="st5"/>
+		</g>
+		<g id="shape11-30" v:mID="11" v:groupContext="shape" transform="translate(207.496,-67.6678)">
+			<title>矩形.15</title>
+			<desc>AudioHwControl</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="7.01" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AudioHwControl</text>		</g>
+		<g id="shape12-33" v:mID="12" v:groupContext="shape" transform="translate(190.402,-14.0029)">
+			<title>矩形.12</title>
+			<desc>AUDIO_SP</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="17.12" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AUDIO_SP</text>		</g>
+		<g id="shape13-36" v:mID="13" v:groupContext="shape" transform="translate(0.48039,-7.55861)">
+			<title>Rectangle.13</title>
+			<desc>Audio Driver APIs</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+			<v:textRect cx="216.017" cy="145.701" width="432.04" height="45.3543"/>
+			<rect x="0" y="123.024" width="432.033" height="45.3543" class="st3"/>
+			<text x="4" y="136.02" class="st4" v:langID="2052"><v:paragraph/><v:tabList/>Audio Driver APIs</text>		</g>
+		<g id="shape14-39" v:mID="14" v:groupContext="shape" transform="translate(264.03,-14.0029)">
+			<title>矩形.14</title>
+			<desc>AUDIO_CODEC</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.0157" cy="157.039" width="68.04" height="22.6772"/>
+			<rect x="0" y="145.701" width="68.0315" height="22.6772" class="st1"/>
+			<text x="9.7" y="159.44" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AUDIO_CODEC</text>		</g>
+	</g>
+</svg>

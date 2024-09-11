@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 Microsoft_Visio___1.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.99814in" height="3.14688in"
+		viewBox="0 0 431.866 226.576" xml:space="preserve" color-interpolation-filters="sRGB" class="st6">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#f2f2f2;stroke:#000000;stroke-width:0.5}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.583328em}
+		.st3 {font-size:1em}
+		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st5 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st6 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group12-1" transform="translate(0.5,-29.3358)" v:mID="12" v:groupContext="group">
+			<title>工作表.12</title>
+			<g id="shape13-2" v:mID="13" v:groupContext="shape" transform="translate(107.758,-45.0042)">
+				<title>矩形.106</title>
+				<desc>Major Version (2-byte)</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="26.9291" cy="215.237" width="53.86" height="22.6772"/>
+				<rect x="0" y="203.898" width="53.8583" height="22.6772" class="st1"/>
+				<text x="5.97" y="213.14" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Major  Version <tspan
+							x="15.62" dy="1.2em" class="st3">(</tspan>2-byte)</text>			</g>
+			<g id="shape14-6" v:mID="14" v:groupContext="shape" transform="translate(0,-44.9613)">
+				<title>矩形.99</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<rect x="0" y="203.898" width="107.717" height="22.6772" class="st1"/>
+			</g>
+			<g id="shape15-8" v:mID="15" v:groupContext="shape">
+				<title>矩形.142</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<rect x="0" y="181.511" width="430.866" height="45.0645" class="st1"/>
+			</g>
+			<g id="shape16-10" v:mID="16" v:groupContext="shape" transform="translate(215.433,-44.858)">
+				<title>矩形.148</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<rect x="0" y="181.221" width="215.433" height="45.3543" class="st1"/>
+			</g>
+			<g id="shape17-12" v:mID="17" v:groupContext="shape" transform="translate(0,-67.5352)">
+				<title>矩形.149</title>
+				<desc>Image Pattern (8-byte)</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="107.717" cy="215.237" width="215.44" height="22.6772"/>
+				<rect x="0" y="203.898" width="215.433" height="22.6772" class="st1"/>
+				<text x="75.46" y="217.34" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Image Pattern (8-byte)</text>			</g>
+			<g id="shape18-15" v:mID="18" v:groupContext="shape" transform="translate(161.575,-45.0042)">
+				<title>矩形.22</title>
+				<desc>Minor Version (2-byte)</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="26.9291" cy="215.237" width="53.86" height="22.6772"/>
+				<rect x="0" y="203.898" width="53.8583" height="22.6772" class="st1"/>
+				<text x="6.63" y="213.14" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Minor Version <tspan
+							x="15.62" dy="1.2em" class="st3">(</tspan>2-byte)</text>			</g>
+		</g>
+		<g id="shape19-19" v:mID="19" v:groupContext="shape" transform="translate(177.707,-18.7639)">
+			<title>工作表.19</title>
+			<desc>(b) Manifest</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="39.685" cy="221.538" width="79.38" height="10.0755"/>
+			<rect x="0" y="216.5" width="79.3701" height="10.0755" class="st4"/>
+			<text x="19.78" y="223.94" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>(b) Manifest</text>		</g>
+		<g id="group9-22" transform="translate(0.5,-135.863)" v:mID="9" v:groupContext="group">
+			<title>工作表.9</title>
+			<g id="shape1-23" v:mID="1" v:groupContext="shape" transform="translate(107.758,-45.0042)">
+				<title>矩形.106</title>
+				<desc>Major Version (2-byte)</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="26.9291" cy="215.237" width="53.86" height="22.6772"/>
+				<rect x="0" y="203.898" width="53.8583" height="22.6772" class="st1"/>
+				<text x="5.97" y="213.14" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Major  Version <tspan
+							x="15.62" dy="1.2em" class="st3">(</tspan>2-byte)</text>			</g>
+			<g id="shape2-27" v:mID="2" v:groupContext="shape" transform="translate(0,-44.9613)">
+				<title>矩形.99</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<rect x="0" y="203.898" width="107.717" height="22.6772" class="st1"/>
+			</g>
+			<g id="shape3-29" v:mID="3" v:groupContext="shape">
+				<title>矩形.142</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<rect x="0" y="181.511" width="430.866" height="45.0645" class="st1"/>
+			</g>
+			<g id="shape4-31" v:mID="4" v:groupContext="shape" transform="translate(215.433,-44.858)">
+				<title>矩形.148</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<rect x="0" y="181.221" width="215.433" height="45.3543" class="st1"/>
+			</g>
+			<g id="shape5-33" v:mID="5" v:groupContext="shape" transform="translate(0,-67.5352)">
+				<title>矩形.149</title>
+				<desc>Image Pattern (8-byte)</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="107.717" cy="215.237" width="215.44" height="22.6772"/>
+				<rect x="0" y="203.898" width="215.433" height="22.6772" class="st1"/>
+				<text x="75.46" y="217.34" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Image Pattern (8-byte)</text>			</g>
+			<g id="shape6-36" v:mID="6" v:groupContext="shape" transform="translate(161.575,-45.0042)">
+				<title>矩形.22</title>
+				<desc>Minor Version (2-byte)</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="26.9291" cy="215.237" width="53.86" height="22.6772"/>
+				<rect x="0" y="203.898" width="53.8583" height="22.6772" class="st1"/>
+				<text x="6.63" y="213.14" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Minor Version <tspan
+							x="15.62" dy="1.2em" class="st3">(</tspan>2-byte)</text>			</g>
+		</g>
+		<g id="shape10-40" v:mID="10" v:groupContext="shape" transform="translate(177.707,-125.291)">
+			<title>工作表.10</title>
+			<desc>(a) Certificate</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="39.685" cy="221.538" width="79.38" height="10.0755"/>
+			<rect x="0" y="216.5" width="79.3701" height="10.0755" class="st4"/>
+			<text x="17.59" y="223.94" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>(a) Certificate</text>		</g>
+	</g>
+</svg>

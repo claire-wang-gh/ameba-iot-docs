@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="OTA Firmware Update" href="../../ota/src/index.html" />
+    <link rel="prev" title="MP Image" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../product_overview/src/index.html">Product Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start/src/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">MP Image</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-build-mp-image">How to Build MP Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-combine-images">How to Combine Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boot-flow">Boot Flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-switch-image">How to Switch Image</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/glossary/index.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/rst_syntax/src/template_rst_syntax.html">reStructuredText</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="index.html">MP Image</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/application_note/mp_image/src/mp_image.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="mp-image"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>The MP image is used for Wi-Fi &amp; BT performance verification and Wi-Fi &amp; BT parameters calibration in massive production. This chapter mainly illustrates how to build and use the MP image.</p>
+<p>Refer to the MP document for more details about MP flow.</p>
+</section>
+<section id="how-to-build-mp-image">
+<span id="id1"></span><h1>How to Build MP Image<a class="headerlink" href="#how-to-build-mp-image" title="Link to this heading"></a></h1>
+<p>The steps of building MP image are depcited below:</p>
+<ol class="arabic">
+<li><p>Navigate to work directory <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code>.</p></li>
+<li><p>Use command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> to modify the configurations.</p>
+<ol class="loweralpha">
+<li><p>Enable MP</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/enable_mp.svg"><img alt="../../../_images/enable_mp.svg" height="99" src="../../../_images/enable_mp.svg" width="755" /></a>
+</figure>
+</li>
+<li><p>Enable Wi-Fi, and configure KM4 as AP core and KM0 as NP core.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/enable_wifi.svg"><img alt="../../../_images/enable_wifi.svg" height="76" src="../../../_images/enable_wifi.svg" width="755" /></a>
+</figure>
+</li>
+<li><p>Enable BT.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/enable_bt.svg"><img alt="../../../_images/enable_bt.svg" height="61" src="../../../_images/enable_bt.svg" width="568" /></a>
+</figure>
+</li>
+<li><p>Save and exit the menuconfig.</p></li>
+</ol>
+</li>
+<li><p>Use command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code> to rebuild the projects of KM0 and KM4. The MP image <code class="docutils literal notranslate"><span class="pre">km0_km4_app_mp.bin</span></code> will be generated in <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code> and all the images releated to the MP image can be found in the paths below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">SDK</span><span class="p">}</span>\<span class="n">amebadplus_gcc_project</span>\<span class="n">project_km4</span>\<span class="n">asdk</span>\<span class="n">image_mp</span>
+<span class="p">{</span><span class="n">SDK</span><span class="p">}</span>\<span class="n">amebadplus_gcc_project</span>\<span class="n">project_km0</span>\<span class="n">asdk</span>\<span class="n">image_mp</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="how-to-combine-images">
+<span id="id2"></span><h1>How to Combine Images<a class="headerlink" href="#how-to-combine-images" title="Link to this heading"></a></h1>
+<p>Before downloading images into the chip, the MP image needs to be combined with normal image. In massive production, the MP image is used to calibrate the parameters first. After calibration, you can use the command illustrated in <a class="reference internal" href="#how-to-switch-image"><span class="std std-ref">How to Switch Image</span></a> to switch to the normal image and boot from it. Since the chip boots from OTA1 by default when both OTA1 and OTA2 images are valid and with the same version number, the MP image should be located in the OTA1 field.</p>
+<p>The steps of combining images are depcited below:</p>
+<ol class="arabic">
+<li><p>Check if both the normal image and MP image are valid.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">Ameba_1-10_MP_ImageTool_Linux</span></code> to combine all the images, including <code class="docutils literal notranslate"><span class="pre">km4_boot_all.bin</span></code>, <code class="docutils literal notranslate"><span class="pre">km0_km4_app_mp.bin</span></code> and <code class="docutils literal notranslate"><span class="pre">km0_km4_app.bin</span></code>, which are located in <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code>.</p>
+<ol class="loweralpha">
+<li><p>Set the highlight image offsets according to the Flash layout, which can be found in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/*</span>
+<span class="linenos"> 2</span><span class="cm">* @brif        Flash layout is set according to Flash Layout in User Manual</span>
+<span class="linenos"> 3</span><span class="cm">*  In each entry, the first item is flash regoin type, the second item is start address, the second item is end address */</span>
+<span class="linenos"> 4</span><span class="k">const</span><span class="w"> </span><span class="n">FlashLayoutInfo_TypeDef</span><span class="w"> </span><span class="n">Flash_Layout</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="cm">/*Region_Type,      [StartAddr,     EndAddr]                */</span>
+<span class="hll"><span class="linenos"> 6</span><span class="w">   </span><span class="p">{</span><span class="n">IMG_BOOT</span><span class="p">,</span><span class="w">          </span><span class="mh">0x08000000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08013FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K)</span>
+</span><span class="linenos"> 7</span><span class="w">   </span><span class="c1">//Users should modify below according to their own memory</span>
+<span class="hll"><span class="linenos"> 8</span><span class="w">   </span><span class="p">{</span><span class="n">IMG_APP_OTA1</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08014000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x081F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KM4 Application OTA1 + Manifest(4K) + RDP IMG OTA1</span>
+</span><span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">   </span><span class="p">{</span><span class="n">IMG_BOOT_OTA2</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08200000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08213FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Boot Manifest(4K) + KM4 Bootloader(76K) OTA</span>
+<span class="hll"><span class="linenos">11</span><span class="w">   </span><span class="p">{</span><span class="n">IMG_APP_OTA2</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08214000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x083F3FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//Certificate(4K) + Manifest(4K) + KM4 Application OTA2 + Manifest(4K) + RDP IMG OTA2</span>
+</span><span class="linenos">12</span>
+<span class="linenos">13</span><span class="w">   </span><span class="p">{</span><span class="n">FTL</span><span class="p">,</span><span class="w">                       </span><span class="mh">0x08700000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08702FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//FTL for BT(&gt;=12K), The start offset of flash pages which is allocated to FTL physical map.</span>
+<span class="linenos">14</span><span class="w">   </span><span class="p">{</span><span class="n">VFS1</span><span class="p">,</span><span class="w">                      </span><span class="mh">0x08703000</span><span class="p">,</span><span class="w"> </span><span class="mh">0x08722FFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//VFS region 1 (128K)</span>
+<span class="linenos">15</span><span class="w">   </span><span class="p">{</span><span class="n">USER</span><span class="p">,</span><span class="w">                      </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span><span class="w"> </span><span class="c1">//reserve for user</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">   </span><span class="cm">/* End */</span>
+<span class="linenos">18</span><span class="w">   </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="w">                      </span><span class="mh">0xFFFFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFFFFFFFF</span><span class="p">},</span>
+<span class="linenos">19</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">km0_km4_app_mp.bin</span></code> in <code class="docutils literal notranslate"><span class="pre">IMG_APP_OTA1</span></code> section</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">km0_km4_app.bin</span></code> in <code class="docutils literal notranslate"><span class="pre">IMG_APP_OTA2</span></code> section</p></li>
+</ul>
+</li>
+<li><p>Execute the command and save the combined image named <code class="docutils literal notranslate"><span class="pre">Image_All.bin</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">Ameba_1</span><span class="o">-</span><span class="mi">10</span><span class="n">_MP_ImageTool_Linux</span> <span class="o">-</span><span class="n">combine</span> <span class="n">km4_boot_all</span><span class="o">.</span><span class="n">bin</span> <span class="mh">0x0000</span> <span class="n">km0_km4_app_mp</span><span class="o">.</span><span class="n">bin</span> <span class="mh">0x14000</span> <span class="n">km0_km4_app</span><span class="o">.</span><span class="n">bin</span> <span class="mh">0x214000</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p>Download the <code class="docutils literal notranslate"><span class="pre">Image_All.bin</span></code> into the device after the combination is finished.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The normal image <code class="docutils literal notranslate"><span class="pre">km0_km4_app.bin</span></code> is built with MP disabled. Check the normal image in <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code>. All the images related to normal image can be found in paths below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">SDK</span><span class="p">}</span>\<span class="n">amebadplus_gcc_project</span>\<span class="n">project_km4</span>\<span class="n">asdk</span>\<span class="n">image</span>
+<span class="p">{</span><span class="n">SDK</span><span class="p">}</span>\<span class="n">amebadplus_gcc_project</span>\<span class="n">project_km0</span>\<span class="n">asdk</span>\<span class="n">image</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="boot-flow">
+<h1>Boot Flow<a class="headerlink" href="#boot-flow" title="Link to this heading"></a></h1>
+<ol class="arabic">
+<li><p>Reset the device after downloading image is finished.</p></li>
+<li><p>Check if the device boots from MP image successfully.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/boot_flow_1.png"><img alt="../../../_images/boot_flow_1.png" src="../../../_images/boot_flow_1.png" style="width: 615.0px; height: 436.2px;" /></a>
+</figure>
+</li>
+<li><p>Start the massive production flow if the device boots from MP image successfully.</p></li>
+</ol>
+</section>
+<section id="how-to-switch-image">
+<span id="id3"></span><h1>How to Switch Image<a class="headerlink" href="#how-to-switch-image" title="Link to this heading"></a></h1>
+<p>When MP is finished, you need to switch the image from MP image to the normal image to verify the application.</p>
+<ol class="arabic">
+<li><p>Use command <code class="docutils literal notranslate"><span class="pre">ATSC</span></code> from serial terminal to clear the signature of MP image in order to assign the MP image invalid.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/boot_flow_2.png"><img alt="../../../_images/boot_flow_2.png" src="../../../_images/boot_flow_2.png" style="width: 747.0px; height: 70.2px;" /></a>
+</figure>
+</li>
+<li><p>Reset the device, then the device will boot from the normal image located in OTA2 field.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/boot_flow_3.png"><img alt="../../../_images/boot_flow_3.png" src="../../../_images/boot_flow_3.png" style="width: 484.2px; height: 154.2px;" /></a>
+</figure>
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="MP Image" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../ota/src/index.html" class="btn btn-neutral float-right" title="OTA Firmware Update" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
