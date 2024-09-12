@@ -5,4 +5,4 @@
 - MP Tools
 
 
-https://claire-wang-gh.github.io/ameba-iot-docs/amebadplus/en/RTL8711Dx/latest/
+AmebaDplus: https://claire-wang-gh.github.io/ameba-iot-docs/amebadplus/en/RTL8711Dx/latest/
