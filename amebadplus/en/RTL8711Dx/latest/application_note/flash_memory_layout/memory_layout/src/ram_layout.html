@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="How to Modify Memory Layout" href="how_to_modify_memory_layout.html" />
+    <link rel="prev" title="Memory Layout" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Flash and Memory Layout</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../flash_layout/src/index.html">Flash Layout</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Memory Layout</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ram-layout">RAM Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="how_to_modify_memory_layout.html">How to Modify Memory Layout</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ledc/src/index.html">Light Emitting Diode Controller (LEDC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Flash and Memory Layout</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Memory Layout</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/application_note/flash_memory_layout/memory_layout/src/ram_layout.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="memory-layout"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>This chapter introduces the default memory layout of AmebaDPlus and how to modify the memory layout if needed.</p>
+</section>
+<section id="ram-layout">
+<h1>RAM Layout<a class="headerlink" href="#ram-layout" title="Link to this heading"></a></h1>
+<p>In total, there are 512KB SRAM on chip, and the size of PSRAM can be 0MB/4MB/8MB/16MB…, which is decided by users. The RAM layout is illustrated below.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/ram_layout.svg"><img alt="../../../../_images/ram_layout.svg" height="153" src="../../../../_images/ram_layout.svg" width="471" /></a>
+<figcaption>
+<p><span class="caption-text">RAM layout</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="sram0-first-40kb-layout">
+<h2>SRAM0 (First 40KB) Layout<a class="headerlink" href="#sram0-first-40kb-layout" title="Link to this heading"></a></h2>
+<p>The first 40KB SRAM0 layout is illustrated in the following figure and table. It is the same for all situations.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/sram0_layout.svg"><img alt="../../../../_images/sram0_layout.svg" height="191" src="../../../../_images/sram0_layout.svg" width="631" /></a>
+<figcaption>
+<p><span class="caption-text">SRAM0 (first 40KB) layout</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default" id="id4" style="width: 100%">
+<caption><span class="caption-text">SRAM0 (first 40KB) layout</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Items</p></th>
+<th class="head"><p>Start address</p></th>
+<th class="head"><p>Size</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Mandatory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>KM0_ROM_BSS_RAM</p></td>
+<td><p>0x2000_0000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM0 ROM BSS</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM0_MSP_RAM</p></td>
+<td><p>0x2000_1000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM0 Main Stack Pointer</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM0_STDLIB_HEAP_NS</p></td>
+<td><p>0x2000_2000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM0 ROM STDLIB heap</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM4_MSP_NS</p></td>
+<td><p>0x2000_3000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM4 non-secure Main Stack Pointer</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM4_ROM_BSS_COMMON</p></td>
+<td><p>0x2000_4000</p></td>
+<td><p>3.25KB</p></td>
+<td><p>KM4 ROM secure and non-secure common BSS</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM0_BOOT_RAM</p></td>
+<td><p>0x2000_4D00</p></td>
+<td><p>64B</p></td>
+<td><p>KM0 IMG2 entry</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM0_IPC_RAM</p></td>
+<td><p>0x2000_4E00</p></td>
+<td><p>512B</p></td>
+<td><p>Exchange messages between cores</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM4_ROM_BSS_NS</p></td>
+<td><p>0x2000_5000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM4 ROM non-secure common BSS</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM4_STDLIB_HEAP_NS</p></td>
+<td><p>0x2000_6000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM4 ROM non-secure STDLIB heap</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM4_ROM_BSS_S</p></td>
+<td><p>0x3000_7000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM4 ROM secure-only BSS</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM0_RTOS_STATIC_0_NS</p></td>
+<td><p>0x2000_8000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM0 RTOS static pool position</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM4_MSP_S</p></td>
+<td><p>0x3000_9000</p></td>
+<td><p>4KB</p></td>
+<td><p>KM4 secure Main Stack Pointer</p></td>
+<td><p>√</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id1">
+<h2>RAM &amp; PSRAM Layout<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>There are 352KB SRAM for KM4 and 96KB SRAM for KM0, which can be used for Power Management Controller (PMC) code and performance-cared text and data.
+The following figure and table illustrate the RAM layout with PSRAM.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../../../_images/ram_layout_with_psram2.svg"><img alt="../../../../_images/ram_layout_with_psram2.svg" height="383" src="../../../../_images/ram_layout_with_psram2.svg" width="567" /></a>
+<figcaption>
+<p><span class="caption-text">RAM layout (with PSRAM)</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default" id="id8" style="width: 100%">
+<caption><span class="caption-text">RAM layout (with PSRAM)</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Start address</p></th>
+<th class="head"><p>Size (KB)</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Mandatory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SRAM0</p></td>
+<td><p>0x2000_0000</p></td>
+<td><p>40</p></td>
+<td><p>For ROM BSS, MSP, …</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM4 Bootloader</p></td>
+<td><p>0x3000_A000</p></td>
+<td><p>24</p></td>
+<td><p>KM4 secure bootloader, including code and data</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM4 BD RAM</p></td>
+<td><p>0x2001_0000</p></td>
+<td><p>352</p></td>
+<td><p>KM4 BDRAM data, BSS and heap</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM0 BD RAM</p></td>
+<td><p>0x2004_0000</p></td>
+<td><p>96</p></td>
+<td><p>KM0 BDRAM data, BSS and heap</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM4 PSRAM</p></td>
+<td><p>0x6000_0000</p></td>
+<td><p>3220</p></td>
+<td><p>KM4 PSRAM code, can be empty</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM0 PSRAM</p></td>
+<td><p>0x6032_5000</p></td>
+<td><p>876</p></td>
+<td><p>KM0 PSRAM code, can be empty</p></td>
+<td><p>√</p></td>
+</tr>
+<tr class="row-even"><td><p>KM4 HEAP EXT</p></td>
+<td><p>0x6FFF_FFFF</p></td>
+<td><p>0</p></td>
+<td><p>If KM4 heap is not enough, it can be used to extend the heap size</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>KM0 HEAP EXT</p></td>
+<td><p>0x6FFF_FFFF</p></td>
+<td><p>0</p></td>
+<td><p>If KM0 heap is not enough, it can be used to extend the heap size</p></td>
+<td><p>x</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Memory Layout" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_modify_memory_layout.html" class="btn btn-neutral float-right" title="How to Modify Memory Layout" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

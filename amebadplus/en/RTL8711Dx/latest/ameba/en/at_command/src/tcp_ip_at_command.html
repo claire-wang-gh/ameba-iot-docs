@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCP/IP AT Commands &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Bluetooth AT Commands" href="bluetooth_at_command.html" />
+    <link rel="prev" title="MQTT AT Commands" href="mqtt_at_command.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">AT Command</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_at_command.html">Common AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wifi_at_command.html">Wi-Fi AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt_at_command.html">MQTT AT Commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TCP/IP AT Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#at-sktserver">AT+SKTSERVER</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#response">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameter">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#error-number">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-sktclient">AT+SKTCLIENT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-sktdel">AT+SKTDEL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-skttt">AT+SKTTT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-sktsend">AT+SKTSEND</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-sktread">AT+SKTREAD</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id27">Error Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-sktrecvcfg">AT+SKTRECVCFG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id29">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id31">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id32">Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id33">Error Number</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-sktstate">AT+SKTSTATE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id34">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id35">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id36">Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id37">Parameter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bluetooth_at_command.html">Bluetooth AT Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../application_note/index.html">Application Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">AT Command</a></li>
+      <li class="breadcrumb-item active">TCP/IP AT Commands</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/ameba/en/at_command/src/tcp_ip_at_command.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tcp-ip-at-commands">
+<span id="id1"></span><h1>TCP/IP AT Commands<a class="headerlink" href="#tcp-ip-at-commands" title="Link to this heading"></a></h1>
+<section id="at-sktserver">
+<span id="tcp-ip-at-sktserver"></span><h2>AT+SKTSERVER<a class="headerlink" href="#at-sktserver" title="Link to this heading"></a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h3>
+<p>Start as a socket server.</p>
+</section>
+<section id="command">
+<h3>Command<a class="headerlink" href="#command" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">SKTSERVER</span><span class="o">=&lt;</span><span class="n">mode</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">loc_port</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="response">
+<h3>Response<a class="headerlink" href="#response" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTSERVER</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">+</span><span class="n">SKTSERVER</span><span class="p">:</span><span class="n">con_id</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTSERVER</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="parameter">
+<h3>Parameter<a class="headerlink" href="#parameter" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;mode&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The server mode.</p>
+<ul class="simple">
+<li><p>0: TCP.</p></li>
+<li><p>1: UDP.</p></li>
+<li><p>2: SSL. The value 2 maybe not supported, depending on release version.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;loc_port&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The local port value.</p>
+<ul class="simple">
+<li><p>[1, 65535]</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="error-number">
+<h3>Error Number<a class="headerlink" href="#error-number" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error parameter number.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Local port error.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Create con_id error.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Create server task error.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Create socket error.</p>
+</dd>
+<dt class="field-even">6<span class="colon">:</span></dt>
+<dd class="field-even"><p>Set socket option error.</p>
+</dd>
+<dt class="field-odd">7<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Bind error.</p>
+</dd>
+<dt class="field-even">8<span class="colon">:</span></dt>
+<dd class="field-even"><p>Listen error.</p>
+</dd>
+<dt class="field-odd">9<span class="colon">:</span></dt>
+<dd class="field-odd"><p>TCP server already exists error.</p>
+</dd>
+<dt class="field-even">10<span class="colon">:</span></dt>
+<dd class="field-even"><p>Accept error.</p>
+</dd>
+<dt class="field-odd">11<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Create con_id for seed error.</p>
+</dd>
+<dt class="field-even">12<span class="colon">:</span></dt>
+<dd class="field-even"><p>UDP server already exists error.</p>
+</dd>
+<dt class="field-odd">13<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Server can’t start under TT (transparent transmission) mode.</p>
+</dd>
+<dt class="field-even">14<span class="colon">:</span></dt>
+<dd class="field-even"><p>Connection type is unknown (SSL isn’t supported).</p>
+</dd>
+<dt class="field-odd">15<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Listening socket on bind_ip: port failed for SSL server.</p>
+</dd>
+<dt class="field-even">16<span class="colon">:</span></dt>
+<dd class="field-even"><p>Malloc failed for server certificate.</p>
+</dd>
+<dt class="field-odd">17<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Malloc failed for server key.</p>
+</dd>
+<dt class="field-even">18<span class="colon">:</span></dt>
+<dd class="field-even"><p>x509_crt_parse failed for server certificate.</p>
+</dd>
+<dt class="field-odd">19<span class="colon">:</span></dt>
+<dd class="field-odd"><p>x509_crt_parse failed for server ca list.</p>
+</dd>
+<dt class="field-even">20<span class="colon">:</span></dt>
+<dd class="field-even"><p>pk_parse_key failed for server key.</p>
+</dd>
+<dt class="field-odd">21<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hang node failed for SSL server.</p>
+</dd>
+<dt class="field-even">22<span class="colon">:</span></dt>
+<dd class="field-even"><p>Accept error for SSL server.</p>
+</dd>
+<dt class="field-odd">23<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Malloc failed for SSL seed.</p>
+</dd>
+<dt class="field-even">24<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initialization failed for SSL context.</p>
+</dd>
+<dt class="field-odd">25<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ssl_set_own_cert error.</p>
+</dd>
+<dt class="field-even">26<span class="colon">:</span></dt>
+<dd class="field-even"><p>SSL handshake failed for SSL seed.</p>
+</dd>
+<dt class="field-odd">27<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Create node failed for SSL seed.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-sktclient">
+<span id="tcp-ip-at-sktclient"></span><h2>AT+SKTCLIENT<a class="headerlink" href="#at-sktclient" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>Description<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Start as a socket client.</p>
+</section>
+<section id="id3">
+<h3>Command<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">SKTCLIENT</span><span class="o">=&lt;</span><span class="n">mode</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">rmt_host</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">rmt_port</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">loc_port</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Response<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTCLIENT</span><span class="p">:</span><span class="n">OK</span>
+<span class="o">+</span><span class="n">SKTCLIENT</span><span class="p">:</span><span class="n">con_id</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTCLIENT</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>Parameter<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;mode&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The client mode.</p>
+<ul class="simple">
+<li><p>0: TCP.</p></li>
+<li><p>1: UDP.</p></li>
+<li><p>2: SSL. The value 2 maybe not supported, depending on release version.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;rmt_host&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The address of remote host.</p>
+<ul class="simple">
+<li><p>A hexadecimal data string of IP address, or web address.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;rmt_port&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The port of remote host.</p>
+<ul class="simple">
+<li><p>[1,65535]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;loc_port&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The port of local client.</p>
+<ul class="simple">
+<li><p>[1,65535]</p></li>
+<li><p>Only valid in UDP mode.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>Error Number<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error parameter number.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Can not find the host.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error remote port.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Create con_id error.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Create task error.</p>
+</dd>
+<dt class="field-even">6<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error remote address.</p>
+</dd>
+<dt class="field-odd">7<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Create socket error.</p>
+</dd>
+<dt class="field-even">8<span class="colon">:</span></dt>
+<dd class="field-even"><p>Hang node error for TCP client.</p>
+</dd>
+<dt class="field-odd">9<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Connect error for TCP client.</p>
+</dd>
+<dt class="field-even">10<span class="colon">:</span></dt>
+<dd class="field-even"><p>Hang node error for UDP client.</p>
+</dd>
+<dt class="field-odd">11<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Local port should be 1~65535.</p>
+</dd>
+<dt class="field-even">12<span class="colon">:</span></dt>
+<dd class="field-even"><p>Bind local port error.</p>
+</dd>
+<dt class="field-odd">13<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Connection already exists for TT (transparent transmission) mode.</p>
+</dd>
+<dt class="field-even">14<span class="colon">:</span></dt>
+<dd class="field-even"><p>Set broadcast on socket failed.</p>
+</dd>
+<dt class="field-odd">15<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Set multicast add membership on socket failed.</p>
+</dd>
+<dt class="field-even">16<span class="colon">:</span></dt>
+<dd class="field-even"><p>Set multicast interface failed.</p>
+</dd>
+<dt class="field-odd">17<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Connection type is unknown (SSL isn’t supported).</p>
+</dd>
+<dt class="field-even">18<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initiate a TCP connection with host: port failed for SSL client.</p>
+</dd>
+<dt class="field-odd">19<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Memory allocation failed for SSL context structure.</p>
+</dd>
+<dt class="field-even">20<span class="colon">:</span></dt>
+<dd class="field-even"><p>SSL context initialization failed.</p>
+</dd>
+<dt class="field-odd">21<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SSL handshake failed.</p>
+</dd>
+<dt class="field-even">22<span class="colon">:</span></dt>
+<dd class="field-even"><p>Hang node failed for SSL client.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-sktdel">
+<span id="tcp-ip-at-sktdel"></span><h2>AT+SKTDEL<a class="headerlink" href="#at-sktdel" title="Link to this heading"></a></h2>
+<section id="id7">
+<h3>Description<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>Stop a (all) socket server(s) or client(s).</p>
+</section>
+<section id="id8">
+<h3>Command<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">SKTDEL</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>Response<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTDEL</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTDEL</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3>Parameter<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The entity connect id to be deleted.</p>
+<ul class="simple">
+<li><p>[0,9]</p></li>
+<li><p>The value 0 means to delete all &lt;con_id&gt;s.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id11">
+<h3>Error Number<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error input parameter.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="at-skttt">
+<span id="tcp-ip-at-skttt"></span><h2>AT+SKTTT<a class="headerlink" href="#at-skttt" title="Link to this heading"></a></h2>
+<section id="id12">
+<h3>Description<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<p>Enable transparent transfer mode.</p>
+</section>
+<section id="id13">
+<h3>Command<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">SKTTT</span><span class="o">=&lt;</span><span class="n">enable</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h3>Response<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTTT</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTTT</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id15">
+<h3>Parameter<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;enable&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Enable transparent transfer mode.</p>
+<ul class="simple">
+<li><p>1: Enable.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id16">
+<h3>Error Number<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error input parameter.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>No connection found when try to enter TT mode.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Can not enter TT mode if it’s server connection.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>More than one connection when try to enter TT mode.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Start TT task failed.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once enter transparent transfer mode successfully, you can enter 4 consecutive hyphens “—-” to leave transparent transfer mode, but not by another AT command.</p>
+</div>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// create TCP client, single connection
+AT+SKTCLIENT=0,192.168.99.101,5001
++SKTCLIENT:OK
+[AT+SKTCLIENT] con_id=1
+// Enable TT mode
+AT+SKTTT=1
++SKTTT:OK
+// Input the data for transparent transfer, then press ENTER
+Hello world!
+// Input &quot;----&quot; to exit TT mode
+----
+// Return to command mode now
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-sktsend">
+<span id="tcp-ip-at-sktsend"></span><h2>AT+SKTSEND<a class="headerlink" href="#at-sktsend" title="Link to this heading"></a></h2>
+<section id="id17">
+<h3>Description<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<p>Send socket message.</p>
+</section>
+<section id="id18">
+<h3>Command<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">SKTSEND</span><span class="o">=&lt;</span><span class="n">data_size</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">dst_ip</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">dst_port</span><span class="o">&gt;</span><span class="p">]:</span><span class="o">&lt;</span><span class="n">data</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id19">
+<h3>Response<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTSEND</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTSEND</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id20">
+<h3>Parameter<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;data_size&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sent data length in bytes.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The connect id of client.</p>
+<ul class="simple">
+<li><p>[1,9]</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;dst_ip&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The destination IP address.</p>
+<ul class="simple">
+<li><p>IP address format.</p></li>
+<li><p>Only valid in UDP mode.</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;dst_port&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The destination port.</p>
+<ul class="simple">
+<li><p>[1,65535]</p></li>
+<li><p>Only valid in UDP mode.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">&lt;data&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Followed by a colon.</p>
+<ul class="simple">
+<li><p>This is a string. After the colon delimiter, any input will be consider as part of &lt;data&gt;.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id21">
+<h3>Error Number<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error input parameter.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error buffer size.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&lt;con_id&gt; is not found.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>Error UDP server.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sendto error for UDP server.</p>
+</dd>
+<dt class="field-even">6<span class="colon">:</span></dt>
+<dd class="field-even"><p>sendto error for UDP client.</p>
+</dd>
+<dt class="field-odd">7<span class="colon">:</span></dt>
+<dd class="field-odd"><p>TCP server should send data to the seed.</p>
+</dd>
+<dt class="field-even">8<span class="colon">:</span></dt>
+<dd class="field-even"><p>Write error for TCP client/server.</p>
+</dd>
+</dl>
+</section>
+<section id="id22">
+<h3>Example<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// query connection information
+AT+SKTSTATE
+con_id:1,server,tcp,address:192.168.99.143,port:5001,socket:0
+con_id:2,seed,tcp,address:192.168.99.185,port:64089,socket:1
+con_id:3,server,udp,address:192.168.99.143,port:5002,socket:2
+con_id:4,client,tcp,address:192.168.99.185,port:5001,socket:3
+con_id:5,client,udp,address:64.233.189.104,port:8080,socket:4
++SKTSTATE:OK
+// send data to TCP client(Seed) (con_id 2)
+AT+ SKTSEND=14,2:Hello_World!
++SKTSEND:OK,2
+// send data to UDP Server via UDP client(con_id 5)
+AT+ SKTSEND=14,5:Hello_China!
++ SKTSEND:OK,5
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-sktread">
+<span id="tcp-ip-at-sktread"></span><h2>AT+SKTREAD<a class="headerlink" href="#at-sktread" title="Link to this heading"></a></h2>
+<section id="id23">
+<h3>Description<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<p>Receive socket message.</p>
+</section>
+<section id="id24">
+<h3>Command<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">SKTREAD</span><span class="o">=&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">buff_size</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id25">
+<h3>Response<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTREAD</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTREAD</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id26">
+<h3>Parameter<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;con_id&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connect entity id.</p>
+<ul class="simple">
+<li><p>[0,3]</p></li>
+</ul>
+</dd>
+<dt class="field-even">&lt;buff_size&gt;<span class="colon">:</span></dt>
+<dd class="field-even"><p>The data length in bytes.</p>
+<ul class="simple">
+<li><p>A positive number.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id27">
+<h3>Error Number<a class="headerlink" href="#id27" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error input parameter.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Buffer Size error.</p>
+</dd>
+<dt class="field-odd">3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&lt;con_id&gt; is not found.</p>
+</dd>
+<dt class="field-even">4<span class="colon">:</span></dt>
+<dd class="field-even"><p>recvfrom error for UDP server.</p>
+</dd>
+<dt class="field-odd">5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>recvfrom error for UDP client/seed.</p>
+</dd>
+<dt class="field-even">6<span class="colon">:</span></dt>
+<dd class="field-even"><p>TCP server should receive from seed.</p>
+</dd>
+<dt class="field-odd">7<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Connection lost.</p>
+</dd>
+<dt class="field-even">8<span class="colon">:</span></dt>
+<dd class="field-even"><p>read error for TCP con_id.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The &lt;dst_ip&gt;, &lt;dst_port&gt; will append only if receive data via UDP server created at localhost.</p>
+</div>
+</section>
+<section id="id28">
+<h3>Example<a class="headerlink" href="#id28" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// query connection information
+AT+SKTSTATE
+con_id:1,server,tcp,address:192.168.99.143,port:5001,socket:0
+con_id:2,seed,tcp,address:192.168.99.185,port:64089,socket:1
+con_id:3,server,udp,address:192.168.99.143,port:5002,socket:2
+con_id:4,client,tcp,address:192.168.99.185,port:5001,socket:3
+con_id:5,client,udp,address:64.233.189.104,port:8080,socket:4
++SKTSTATE:OK
+// receive data “12345678” via TCP seed (con_id 2)
+AT+ SKTREAD=2,1500
++SKTREAD:OK,8,2:12345678
+// receive data “12345678” via UDP server(con_id 3)
+AT+SKTREAD=3,1500
++SKTREAD:OK,8,3,192.168.99.185,52795:12345678
+// receive data “12345678” via TCP client(con_id 4)
+AT+SKTREAD=4,1500
++SKTREAD:OK,8,4:12345678
+</pre></div>
+</div>
+</section>
+</section>
+<section id="at-sktrecvcfg">
+<span id="tcp-ip-at-sktrecvcfg"></span><h2>AT+SKTRECVCFG<a class="headerlink" href="#at-sktrecvcfg" title="Link to this heading"></a></h2>
+<section id="id29">
+<h3>Description<a class="headerlink" href="#id29" title="Link to this heading"></a></h3>
+<p>Configure socket receiving.</p>
+</section>
+<section id="id30">
+<h3>Command<a class="headerlink" href="#id30" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">SKTRECVCFG</span><span class="o">=&lt;</span><span class="n">enable</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id31">
+<h3>Response<a class="headerlink" href="#id31" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTRECVCFG</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+<p>Or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">SKTRECVCFG</span><span class="p">:</span><span class="n">ERROR</span><span class="p">:</span><span class="o">&lt;</span><span class="n">error_no</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id32">
+<h3>Parameter<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">&lt;enable&gt;<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Enable or disable auto-receive data mode.</p>
+<ul class="simple">
+<li><p>0: Disable auto-receive data mode.</p></li>
+<li><p>1: Enable auto-receive data mode.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id33">
+<h3>Error Number<a class="headerlink" href="#id33" title="Link to this heading"></a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Error input parameter.</p>
+</dd>
+<dt class="field-even">2<span class="colon">:</span></dt>
+<dd class="field-even"><p>Failed to start task.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once the auto receive mode is enabled, any packet received on any connection will return to host automatically in the same format as AT+SKTREAD (refer to AT+SKTREAD, response of command AT+SKTREAD) in normal transmission mode. But if under transparent transmission mode, received data will return to host without any information in the head.</p>
+</div>
+</section>
+</section>
+<section id="at-sktstate">
+<span id="tcp-ip-at-sktstate"></span><h2>AT+SKTSTATE<a class="headerlink" href="#at-sktstate" title="Link to this heading"></a></h2>
+<section id="id34">
+<h3>Description<a class="headerlink" href="#id34" title="Link to this heading"></a></h3>
+<p>Get the socket state currently.</p>
+</section>
+<section id="id35">
+<h3>Command<a class="headerlink" href="#id35" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">SKTSTATE</span>
+</pre></div>
+</div>
+</section>
+<section id="id36">
+<h3>Response<a class="headerlink" href="#id36" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">con_id</span><span class="p">:</span><span class="o">&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">server</span><span class="o">/</span><span class="n">seed</span><span class="p">(</span><span class="n">TCP_client</span><span class="p">)</span><span class="o">/</span><span class="n">client</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">tcp</span><span class="o">/</span><span class="n">udp</span><span class="o">&gt;</span><span class="p">,</span><span class="n">address</span><span class="p">:</span><span class="o">&lt;</span><span class="n">IP_ADDRESS</span><span class="o">&gt;</span><span class="p">,</span><span class="n">port</span><span class="p">:</span><span class="o">&lt;</span><span class="n">PORT</span><span class="o">&gt;</span><span class="p">,</span><span class="n">socket</span><span class="p">:</span><span class="o">&lt;</span><span class="n">socket</span> <span class="nb">id</span><span class="o">&gt;</span>
+<span class="o">//</span> <span class="n">Any</span> <span class="n">other</span> <span class="o">&lt;</span><span class="n">con_id</span><span class="o">&gt;</span><span class="n">s</span> <span class="k">if</span> <span class="n">exist</span><span class="o">.</span>
+<span class="o">+</span><span class="n">SKTSTATE</span><span class="p">:</span><span class="n">OK</span>
+</pre></div>
+</div>
+</section>
+<section id="id37">
+<h3>Parameter<a class="headerlink" href="#id37" title="Link to this heading"></a></h3>
+<p>None</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mqtt_at_command.html" class="btn btn-neutral float-left" title="MQTT AT Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bluetooth_at_command.html" class="btn btn-neutral float-right" title="Bluetooth AT Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

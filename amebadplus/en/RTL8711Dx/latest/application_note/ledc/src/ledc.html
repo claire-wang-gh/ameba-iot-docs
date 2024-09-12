@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="True Random Number Generator (TRNG)" href="../../trng/src/index.html" />
+    <link rel="prev" title="Light Emitting Diode Controller (LEDC)" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Application Note</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_build_environment/src/index.html">GCC Build Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_architecture/src/index.html">SDK Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gcc_makefile/src/index.html">GCC Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdk_example/src/index.html">SDK Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../flash_memory_layout/index.html">Flash and Memory Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mpu_cache/src/index.html">MPU and Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_system/src/index.html">Virtual File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mp_image/src/index.html">MP Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ota/src/index.html">OTA Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chip_en/src/index.html">CHIP Enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boot_process/src/index.html">Boot Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_config/src/index.html">User Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_crypto_engine/src/index.html">Hardware Crypto Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otpc/src/index.html">One-time Programmable Controller (OTPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../power_save/src/index.html">Power Saving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ipc/src/index.html">Inter-Processor Communication (IPC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dmac/src/index.html">Direct Memory Access Controller (DMAC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../psram/src/index.html">Pseudo-Static Random Access Memory (PSRAM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/gpio/src/index.html">General Purpose Input/Output (GPIO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpio/pinctrl/src/index.html">Pin Controller (Pinctrl)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pinmux/src/index.html">Pin Multiplexing Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rtc_io/src/index.html">RTC_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ir/src/index.html">Infrared Radiation (IR)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Light Emitting Diode Controller (LEDC)</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ledc-control-application">LEDC Control Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operation-flow">Operation Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../trng/src/index.html">True Random Number Generator (TRNG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/src/index.html">Analog-to-Digital Converter (ADC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cap_touch/src/index.html">Cap-Touch Controller (CTC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../key_scan/src/index.html">Key-Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../audio/src/index.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usb_otg/src/index.html">USB OTG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi/index.html">Wi-Fi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Application Note</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Light Emitting Diode Controller (LEDC)</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/application_note/ledc/src/ledc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="ledc"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>The LEDC is used to drive external smart LEDs, like <em>WS2812B</em>.
+The LEDC supports DMA mode and interrupt mode, with 32 * 24 bits LEDC FIFO, and also supports RGB888 display mode and configurable refresh time.</p>
+</section>
+<section id="ledc-control-application">
+<h1>LEDC Control Application<a class="headerlink" href="#ledc-control-application" title="Link to this heading"></a></h1>
+<p>Taking <em>WS2812C-2020</em> LED for example, before using this LED, we have to configure the logical character <code class="docutils literal notranslate"><span class="pre">0</span></code> and character <code class="docutils literal notranslate"><span class="pre">1</span></code> according to the LEDC data input code of typical LED datasheet, as shown below.</p>
+<table class="docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Modulate code</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Time range</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T0H</p></td>
+<td><p>Digital 0 code, high-level time</p></td>
+<td><p>220 ~ 380</p></td>
+<td><p>ns</p></td>
+</tr>
+<tr class="row-odd"><td><p>T0L</p></td>
+<td><p>Digital 0 code, low-level time</p></td>
+<td><p>580 ~ 1000</p></td>
+<td><p>ns</p></td>
+</tr>
+<tr class="row-even"><td><p>T1H</p></td>
+<td><p>Digital 1 code, high-level time</p></td>
+<td><p>580 ~ 1000</p></td>
+<td><p>ns</p></td>
+</tr>
+<tr class="row-odd"><td><p>T1L</p></td>
+<td><p>Digital 1 code, low-level time</p></td>
+<td><p>220 ~ 420</p></td>
+<td><p>ns</p></td>
+</tr>
+<tr class="row-even"><td><p>RESET</p></td>
+<td><p>Frame unit, low-level time</p></td>
+<td><p>&gt; 280</p></td>
+<td><p>μs</p></td>
+</tr>
+</tbody>
+</table>
+<p>Logical <code class="docutils literal notranslate"><span class="pre">0</span></code> coding time is T0-code: 800ns ~ 1980ns, and logical <code class="docutils literal notranslate"><span class="pre">1</span></code> coding time is T1-code: 800ns ~ 2020ns.</p>
+<p>The supported LED number is：</p>
+<div class="math notranslate nohighlight">
+\begin{gather*}
+LED\_NUM = \frac{\frac{1}{LED\,fresh\,rate(\frac{frame}{s})} - 280μs}{(logical\,0\,or\,1\,coding\,time) * 24}
+\end{gather*}</div><ul class="simple">
+<li><p>When LED’s refresh rate is 30 frames/s, the supported LED number is 681 to 1023.</p></li>
+<li><p>When LED’s refresh rate is 60 frames/s, the supported LED number is 337 to 853.</p></li>
+</ul>
+<p>The related registers of LED setting are <em>LED_T0&amp;T1_TIMING_CTRL_REG</em>, <em>LEDC_DATA_FINISH_CNT_REG</em>, <em>LED_RESET_TIMING_CTRL_REG</em>, <em>LEDC_WAIT_TIME_CTRL_REG</em>, <em>LEDC_DMA_CTRL_REG</em>, and <em>LEDC_INTERRUPT_CTRL_REG</em>.</p>
+<p>The WS2812 serious LED data transfer protocol uses a single NRZ (non-return zero) communication mode.
+After the LED power-on reset, the DI port receives data from the controller, the first LED collects initial 24-bit data then sends 24-bit data to the internal data latch,
+the other data reshaping by the internal signal reshaping amplification circuit sent to the next cascade pixel through the DO port. After transmission of each pixel,
+the signal reduces 24 bits. Pixel adopts auto reshaping transmit technology, making the pixel cascade number is not limited by the signal transmission, only depending on the speed of signal transmission.</p>
+</section>
+<section id="operation-flow">
+<h1>Operation Flow<a class="headerlink" href="#operation-flow" title="Link to this heading"></a></h1>
+<p>The flow of LEDC normal configuration process is shown below.</p>
+<ol class="arabic simple" id="ledc-operation-flow-step-1">
+<li><p>Configure LEDC data mode through <em>LED_RGB_MODE</em> field, <em>LED_MSB_TOP</em> bit, <em>LED_MSB_BYTE2</em> bit, <em>LED_MSB_BYTE1</em> bit and <em>LED_MSB_BYTE0</em> bit in the <em>LEDC_CTRL_REG</em> register.</p></li>
+<li><p>Configure LEDC control mode through the registers: <em>LED_T01_TIMING_CTRL_REG</em>, <em>LEDC_DATA_FINISH_CNT_REG</em>, <em>LED_RESET_TIMING_CTRL_REG</em>, <em>LEDC_WAIT_TIME0_CTRL_REG</em>, <em>LEDC_WAIT_TIME1_CTRL_REG</em>, <em>LEDC_DMA_CTRL_REG</em> and <em>LEDC_INTERRUPT_CTRL_REG</em>.</p></li>
+<li><p>Enable the LEDC by writing 1 to the LEDC_EN bit in <em>LEDC_CTRL_REG</em> register.</p></li>
+<li><p>If <em>LEDC_DMA_EN</em> bit in <em>LEDC_DMA_CTRL_REG</em> register is set to 1, go to <a class="reference internal" href="#ledc-operation-flow-step-5"><span class="std std-ref">Step 5</span></a>. If not, go to <a class="reference internal" href="#ledc-operation-flow-step-7"><span class="std std-ref">Step 7</span></a>.</p></li>
+</ol>
+<ol class="arabic simple" id="ledc-operation-flow-step-5" start="5">
+<li><p>The LEDC sends <em>dma_req</em> to DMAC.</p></li>
+<li><p>The DMAC transfers data from memory to LEDC FIFO by APB bus and sends dma_ack signal following the last data. Go to <a class="reference internal" href="#ledc-operation-flow-step-8"><span class="std std-ref">Step 8</span></a>.</p></li>
+</ol>
+<ol class="arabic simple" id="ledc-operation-flow-step-7" start="7">
+<li><p>The LEDC sends CPU_REQ_INT signal to CPU. DMAC is required to transfer data from memory to LEDC. Go to <a class="reference internal" href="#ledc-operation-flow-step-8"><span class="std std-ref">Step 8</span></a>.</p></li>
+</ol>
+<ol class="arabic simple" id="ledc-operation-flow-step-8" start="8">
+<li><p>The LEDC transfers data from LEDC FIFO to LED lamps.</p></li>
+<li><p>When <em>LED_DATA_FINISH_CNT</em> field in <em>LEDC_DATA_FINISH_CNT_REG</em> register equals <em>TOTAL_DATA_LENGTH</em> which is set in <em>LEDC_CTRL_REG</em> register, <em>LED_TRANS_FINISH_INT</em> interrupt is generated, and hardware resets LEDC_EN to 0.</p></li>
+<li><p>Clear <em>LED_TRANS_FINISH_INT</em> interrupt by software.</p></li>
+<li><p>It is suggested that asserting <em>LEDC_SOFT_RESET</em> bit in <em>LEDC_CTRL_REG</em> register to clear all interrupt status registers.</p></li>
+<li><p>If software wants to scan LED lamps again, go to <a class="reference internal" href="#ledc-operation-flow-step-1"><span class="std std-ref">Step 1</span></a>.</p></li>
+</ol>
+<figure class="align-center" id="ledc-normal-configuration-process">
+<a class="reference internal image-reference" href="../../../_images/ledc_normal_configuration_process.svg"><img alt="../../../_images/ledc_normal_configuration_process.svg" height="336" src="../../../_images/ledc_normal_configuration_process.svg" width="470" /></a>
+<figcaption>
+<p><span class="caption-text">LEDC normal configuration process</span><a class="headerlink" href="#ledc-normal-configuration-process" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more details, refer to the document of mbed APIs.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Light Emitting Diode Controller (LEDC)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../trng/src/index.html" class="btn btn-neutral float-right" title="True Random Number Generator (TRNG)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

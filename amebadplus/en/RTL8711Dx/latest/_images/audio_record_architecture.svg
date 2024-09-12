@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 audio_record_architecture.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.59055in" height="5.03937in"
+		viewBox="0 0 402.52 362.835" xml:space="preserve" color-interpolation-filters="sRGB" class="st8">
+	<v:documentProperties v:langID="2052" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#d8d8d8;stroke:#000000;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Arial;font-size:0.833336em}
+		.st3 {fill:none;stroke:#000000;stroke-width:0.25}
+		.st4 {fill:#000000;font-family:Arial;font-size:1.00001em}
+		.st5 {marker-end:url(#mrkr4-27);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st6 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st7 {fill:none;stroke:none;stroke-width:0.25}
+		.st8 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-27" class="st6" v:arrowType="4" v:arrowSize="2" v:setback="7.04" refX="-7.04" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="连接线" v:index="0"/>
+		<g id="shape173-1" v:mID="173" v:groupContext="shape" transform="translate(156.708,-108.425)">
+			<title>矩形.18</title>
+			<desc>AudioHwStreamIn</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="47.3308" cy="343.346" width="94.67" height="38.9764"/>
+			<rect x="0" y="323.858" width="94.6615" height="38.9764" class="st1"/>
+			<text x="7.04" y="346.35" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AudioHwStreamIn</text>		</g>
+		<g id="shape174-4" v:mID="174" v:groupContext="shape" transform="translate(111.913,-102.548)">
+			<title>矩形.19</title>
+			<desc>Audio HAL</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+			<v:textRect cx="92.126" cy="327.402" width="184.26" height="70.8661"/>
+			<rect x="0" y="291.969" width="184.252" height="70.8661" class="st3"/>
+			<text x="4" y="306.77" class="st4" v:langID="2052"><v:paragraph/><v:tabList/>Audio HAL</text>		</g>
+		<g id="shape176-7" v:mID="176" v:groupContext="shape" transform="translate(48.1337,-293.032)">
+			<title>矩形.24</title>
+			<desc>Speech App</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="43.937" cy="343.346" width="87.88" height="38.9764"/>
+			<rect x="0" y="323.858" width="87.874" height="38.9764" class="st1"/>
+			<text x="16.69" y="346.35" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Speech App</text>		</g>
+		<g id="shape177-10" v:mID="177" v:groupContext="shape" transform="translate(34.0157,-184.961)">
+			<title>矩形.25</title>
+			<desc>Audio Apps</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+			<v:textRect cx="167.244" cy="278.927" width="334.49" height="167.816"/>
+			<rect x="0" y="195.019" width="334.488" height="167.816" class="st3"/>
+			<text x="136.56" y="209.82" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Audio Apps</text>		</g>
+		<g id="shape178-13" v:mID="178" v:groupContext="shape" transform="translate(264.275,-293.032)">
+			<title>矩形.26</title>
+			<desc>Voice-Call App</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="43.937" cy="343.346" width="87.88" height="38.9764"/>
+			<rect x="0" y="323.858" width="87.874" height="38.9764" class="st1"/>
+			<text x="10.87" y="346.35" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Voice-Call App</text>		</g>
+		<g id="shape193-16" v:mID="193" v:groupContext="shape" transform="translate(160.102,-20.1969)">
+			<title>矩形.65</title>
+			<desc>CODEC/SPORT</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="43.937" cy="343.346" width="87.88" height="38.9764"/>
+			<rect x="0" y="323.858" width="87.874" height="38.9764" class="st1"/>
+			<text x="7.27" y="346.35" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>CODEC/SPORT</text>		</g>
+		<g id="shape194-19" v:mID="194" v:groupContext="shape" transform="translate(111.913,-9.96927)">
+			<title>矩形.66</title>
+			<desc>Audio Driver</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+			<v:textRect cx="92.126" cy="327.402" width="184.26" height="70.8661"/>
+			<rect x="0" y="291.969" width="184.252" height="70.8661" class="st3"/>
+			<text x="4" y="306.77" class="st4" v:langID="2052"><v:paragraph/><v:tabList/>Audio Driver</text>		</g>
+		<g id="shape197-22" v:mID="197" v:groupContext="shape" v:layerMember="0" transform="translate(196.953,-108.425)">
+			<title>动态连接线.70</title>
+			<path d="M7.09 362.83 L7.09 405.05" class="st5"/>
+		</g>
+		<g id="shape204-28" v:mID="204" v:groupContext="shape" transform="translate(160.102,-207.992)">
+			<title>矩形.204</title>
+			<desc>RTAudioRecord</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="43.937" cy="343.346" width="87.88" height="38.9764"/>
+			<rect x="0" y="323.858" width="87.874" height="38.9764" class="st1"/>
+			<text x="8.37" y="346.35" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RTAudioRecord</text>		</g>
+		<g id="shape206-31" v:mID="206" v:groupContext="shape" transform="translate(111.913,-199.134)">
+			<title>矩形.206</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="286.583" width="184.252" height="76.252" class="st3"/>
+		</g>
+		<g id="shape208-33" v:mID="208" v:groupContext="shape" transform="translate(151.882,-255.827)">
+			<title>工作表.208</title>
+			<desc>Audio Interfaces</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="52.1575" cy="353.197" width="104.32" height="19.2756"/>
+			<rect x="0" y="343.559" width="104.315" height="19.2756" class="st7"/>
+			<text x="8.8" y="356.8" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Audio Interfaces</text>		</g>
+		<g id="shape210-36" v:mID="210" v:groupContext="shape" v:layerMember="0" transform="translate(136.008,-312.52)">
+			<title>动态连接线.210</title>
+			<path d="M0 362.83 L68.03 362.83 L68.03 392.93" class="st5"/>
+		</g>
+		<g id="shape211-41" v:mID="211" v:groupContext="shape" v:layerMember="0" transform="translate(264.275,-312.52)">
+			<title>动态连接线.211</title>
+			<path d="M0 362.83 L-60.24 362.83 L-60.24 392.93" class="st5"/>
+		</g>
+		<g id="shape212-46" v:mID="212" v:groupContext="shape" v:layerMember="0" transform="translate(211.126,-207.992)">
+			<title>动态连接线.212</title>
+			<path d="M-7.09 362.83 L-7.09 416.39" class="st5"/>
+		</g>
+	</g>
+</svg>

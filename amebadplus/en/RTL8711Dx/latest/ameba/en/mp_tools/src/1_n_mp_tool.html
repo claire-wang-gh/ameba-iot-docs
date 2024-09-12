@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="prev" title="1-N MP Tool" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../at_command/src/index.html">AT Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../application_note/index.html">Application Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MP Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-setup">Environment Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-setup">Software Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#image-download">Image Download</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gui-mode">GUI Mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#download-flow">Download Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-functions">Optional Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-mode">Command Line Mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Download Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Optional Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#common-config">Common Config</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#show-detail-log">Show Detail Log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-progress-display">Download Progress Display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-image-to-sram">Download image to sram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download-fail">Download Fail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flash-write-protected">Flash Write Protected</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power-off-accident">Power-off Accident</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">1-N MP Tool</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/ameba/en/mp_tools/src/1_n_mp_tool.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="n-mp-tool"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>This document introduces how to use Ameba 1-N MP ImageTool to download images for several boards simultaneously.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../../../../_images/ameba_1_n_mp_imagetool.png"><img alt="../../../../_images/ameba_1_n_mp_imagetool.png" src="../../../../_images/ameba_1_n_mp_imagetool.png" style="width: 515.7px; height: 527.4px;" /></a>
+<figcaption>
+<p><span class="caption-text">Ameba 1-N MP ImageTool UI</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The tool will first download the flashloader code into SRAM, then the flashloader will handle the subsequent image download to Ameba Flash.</p>
+</section>
+<section id="environment-setup">
+<span id="n-mp-tool-environment-setup"></span><h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Link to this heading"></a></h1>
+<section id="hardware-setup">
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>To download images for several boards simultaneously, the equipments listed below are necessary.</p>
+<ul class="simple">
+<li><p>DUT (Ameba device with <span class="guilabel">LOGUART</span> interface and <span class="guilabel">UART_DOWNLOAD</span> button)</p></li>
+<li><p>USB hub &amp; micro USB cable</p></li>
+<li><p>PC with 1-N MP ImageTool installed</p></li>
+</ul>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../../../../_images/hardware_setup.png"><img alt="../../../../_images/hardware_setup.png" src="../../../../_images/hardware_setup.png" style="width: 525.6px; height: 382.8px;" /></a>
+<figcaption>
+<p><span class="caption-text">Hardware setup</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If using external UART to download images, USB to UART dongle must be used.</p>
+</div>
+</section>
+<section id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Environment requirements: EX. Winows XP, Winows 7 higher, Microsoft .NET Framework 3.5</p></li>
+<li><p>Software location:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">Ameba_1-N_MP_ImageTool.exe</span></code>: <code class="docutils literal notranslate"><span class="pre">{SDK}/tools/ameba/MP_ImageTool_1_N/Ameba_1-N_MP_ImageTool.exe</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">DeviceProfiles</span></code>: <code class="docutils literal notranslate"><span class="pre">{SDK}/tools/ameba/DeviceProfiles</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>To download images through UART interface, the host driver for USB to UART adapter (e.g. PL2303GC) on the board shall be installed first, please find the exact driver from the official website of corresponding vendor of the USB to UART adapter.</p></li>
+<li><p>Do not modify or delete <code class="file docutils literal notranslate"><span class="pre">floader_amebaxxx.bin</span></code> files, because they are flashloader binary files.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For WinXP or Win7 only, install the following USB driver if there is a need to download images through USB interface: <code class="docutils literal notranslate"><span class="pre">{SDK}/tools/ameba/MP_ImageTool_1_N/RtkUsbCdcAcmSetup.INF</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="image-download">
+<span id="n-mp-tool-image-download"></span><h1>Image Download<a class="headerlink" href="#image-download" title="Link to this heading"></a></h1>
+<p>This tool can work in Windows Form Mode and Command Line Mode. The following sections introduce each mode.</p>
+<p>Before image download, DUT must enter <strong>UART_DOWNLOAD</strong> mode. The method is:</p>
+<ol class="arabic simple">
+<li><p>Connect <code class="docutils literal notranslate"><span class="pre">LOGUART</span> <span class="pre">Tx</span></code> pin to GND. If <span class="guilabel">UART_DOWNLOAD</span> button exists, push it down and keep it pressed.</p></li>
+<li><p>Power on the board again, or press the <span class="guilabel">Reset</span> button.</p></li>
+<li><p>Connect the <code class="docutils literal notranslate"><span class="pre">LOGUART</span> <span class="pre">Tx</span></code> pin back, or release the <span class="guilabel">UART_DOWNLOAD</span> button.</p></li>
+</ol>
+<p>Now, DUT gets into <strong>UART_DOWNLOAD</strong>  mode, and you can use this tool to download images.</p>
+<section id="gui-mode">
+<h2>GUI Mode<a class="headerlink" href="#gui-mode" title="Link to this heading"></a></h2>
+<section id="download-flow">
+<h3>Download Flow<a class="headerlink" href="#download-flow" title="Link to this heading"></a></h3>
+<p>The steps to download images in normal mode are as follows:</p>
+<ol class="arabic simple">
+<li><p>Double click <code class="file docutils literal notranslate"><span class="pre">Ameba_1-N_MP_ImageTool.exe</span></code>.</p></li>
+<li><p>Click <span class="menuselection">Chip Select</span> to select DUT type.</p></li>
+<li><p>Set the Configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Baudrate<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Select the baudrate for image download, default value is 1500000.</p>
+</dd>
+<dt class="field-even">Image<span class="colon">:</span></dt>
+<dd class="field-even"><p>Click <span class="guilabel">Browse</span> button to choose the target image file.</p>
+</dd>
+<dt class="field-odd">Addr(hex)<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Input the destination address to download.</p>
+</dd>
+<dt class="field-even">Leg(hex)<span class="colon">:</span></dt>
+<dd class="field-even"><p>Input image length to download, and it will fill when selected target image file.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once the chip is selected, some button/checkbox is gray and unable to be accessed, it means that the function is not supported for the selected IC.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Click <span class="guilabel">Scan Device</span> button, the detected devices are listed in the box.</p>
+<ul class="simple">
+<li><p>If <span class="guilabel">USB Download</span> is checked, the devices detected and shown in the box are <code class="docutils literal notranslate"><span class="pre">USB</span> <span class="pre">COMs</span></code>.</p></li>
+<li><p>If <span class="guilabel">USB Download</span> is not checked, the devices detected and shown in the box are <code class="docutils literal notranslate"><span class="pre">LOGUART</span> <span class="pre">COMs</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If some devices are not present immediately, check if the driver is still installing and wait until the installation is finished. This situation is usually encountered when DUT is plugged into PC the first time.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Tick in the checkbox to select the target devices.</p></li>
+<li><p>Get the DUTs into <strong>UART_DOWNLOAD</strong> mode.</p></li>
+<li><p>Click <span class="guilabel">Download</span> button.</p></li>
+</ol>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../../../../_images/ameba_1_n_mp_imagetool_operation.png"><img alt="../../../../_images/ameba_1_n_mp_imagetool_operation.png" src="../../../../_images/ameba_1_n_mp_imagetool_operation.png" style="width: 510.3px; height: 519.3000000000001px;" /></a>
+<figcaption>
+<p><span class="caption-text">Ameba 1-N MP ImageTool operation</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once click <span class="guilabel">Download</span> button, image download starts.</p>
+<ul>
+<li><p>If the image download is in process, as the following figures show, a light bulb shows up at the end of each progress bar, and a stopwatch measures the elapsed time. When image download is finished, a green tick shows up.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/image_download_ok_1.png"><img alt="../../../../_images/image_download_ok_1.png" src="../../../../_images/image_download_ok_1.png" style="width: 503.1px; height: 519.3000000000001px;" /></a>
+</figure>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../../../../_images/image_download_ok_2.png"><img alt="../../../../_images/image_download_ok_2.png" src="../../../../_images/image_download_ok_2.png" style="width: 507.6px; height: 523.8000000000001px;" /></a>
+<figcaption>
+<p><span class="caption-text">Image download is ok</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>If some typical troubleshootings occur, refer to Section <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> for help.</p></li>
+</ul>
+</section>
+<section id="optional-functions">
+<h3>Optional Functions<a class="headerlink" href="#optional-functions" title="Link to this heading"></a></h3>
+<section id="factory-mode">
+<h4>Factory Mode<a class="headerlink" href="#factory-mode" title="Link to this heading"></a></h4>
+<p>If Factory Mode is enabled, the UI disables some functions. The configuration parameters are saved to <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code> and reloaded when the tool restarts the next time.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../../../../_images/factory_mode.png"><img alt="../../../../_images/factory_mode.png" src="../../../../_images/factory_mode.png" style="width: 511.2px; height: 523.8000000000001px;" /></a>
+<figcaption>
+<p><span class="caption-text">Factory Mode</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>There are two ways to exit the factory mode:</p>
+<ol class="arabic simple">
+<li><p>Close the tool.</p>
+<ol class="loweralpha simple">
+<li><p>Delete <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code>.</p></li>
+<li><p>Edit <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code> and modify <code class="docutils literal notranslate"><span class="pre">FactoryMode</span></code> parameter value to <strong>False</strong>.</p></li>
+</ol>
+</li>
+<li><p>Open the tool again, and the modified parameters will be restored to normal mode.</p></li>
+</ol>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="../../../../_images/parameters_modification.png"><img alt="../../../../_images/parameters_modification.png" src="../../../../_images/parameters_modification.png" style="width: 438.2px; height: 289.09999999999997px;" /></a>
+<figcaption>
+<p><span class="caption-text">Parameters modification</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="verification">
+<h4>Verification<a class="headerlink" href="#verification" title="Link to this heading"></a></h4>
+<p>This option means whether to examine the checksum after download finished.</p>
+<ul class="simple">
+<li><p>Instruction: Select checkbox Verification in step 3 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p></li>
+</ul>
+</section>
+<section id="chiperase">
+<h4>ChipErase<a class="headerlink" href="#chiperase" title="Link to this heading"></a></h4>
+<p>This option means whether to erase chip before download.</p>
+<ul class="simple">
+<li><p>Instruction: Select checkbox ChipErase in step 3 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p></li>
+</ul>
+</section>
+<section id="skip-system">
+<h4>Skip System<a class="headerlink" href="#skip-system" title="Link to this heading"></a></h4>
+<p>This option means whether to skip system data area or not when downloading image.</p>
+<ul class="simple">
+<li><p>Instruction: Select checkbox Skip System in step 3 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p></li>
+</ul>
+</section>
+<section id="usb-download">
+<h4>USB Download<a class="headerlink" href="#usb-download" title="Link to this heading"></a></h4>
+<p>This option means whether to download image through USB for NAND flash.</p>
+<ul class="simple">
+<li><p>Instruction Select checkbox USB Download in step 3 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p></li>
+</ul>
+<p>If this option is selected, click <span class="guilabel">Profile Browse</span> button to choose the target profile file.</p>
+</section>
+<section id="skip-wi-fi-calibration">
+<h4>Skip Wi-Fi Calibration<a class="headerlink" href="#skip-wi-fi-calibration" title="Link to this heading"></a></h4>
+<p>This option means whether to skip Wi-Fi calibration when downloading images.</p>
+<ul class="simple">
+<li><p>Instruction: Select checkbox Skip Wifi calibration in step 3 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p></li>
+</ul>
+</section>
+<section id="support-for-16mb-flash-download">
+<h4>Support for &gt;16MB Flash Download<a class="headerlink" href="#support-for-16mb-flash-download" title="Link to this heading"></a></h4>
+<p>This option means whether support for &gt;16MB Flash download. This function will help users program OTP bit to enable 4-byte mode to access the Flash.</p>
+<ul class="simple">
+<li><p>Instruction: Select Option -&gt; Support for &gt;16MB Flash Download in step 3 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p></li>
+</ul>
+</section>
+<section id="remember-flash-protection-process-for-erase-download">
+<h4>Remember Flash Protection Process for Erase/Download<a class="headerlink" href="#remember-flash-protection-process-for-erase-download" title="Link to this heading"></a></h4>
+<p>When downloading images, it may occurred that the flash protection bit is programmed for protect flash areas, user can select this option function to clear flash protection bit to erase/program flash, and after that finished, tool will revert flash protection bit to origin as they are.</p>
+<ul class="simple">
+<li><p>Instruction: Select Option -&gt; Remember Flash Protection process for erase/download in step 3 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="command-line-mode">
+<h2>Command Line Mode<a class="headerlink" href="#command-line-mode" title="Link to this heading"></a></h2>
+<section id="id1">
+<span id="id2"></span><h3>Download Flow<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>This tool can also work in command line mode. Start <code class="file docutils literal notranslate"><span class="pre">cmd.exe</span></code> in Windows and execute <code class="file docutils literal notranslate"><span class="pre">Ameba_1-N_MP_ImageTool.exe</span></code> with defined parameters, and the command line mode supports multi-parameters input with one command after v2.5.11.</p>
+<p>The steps to download images in command line mode are as follows:</p>
+<ol class="arabic">
+<li><p>Select chip type</p></li>
+<li><p>Set the configuration</p>
+<ol class="loweralpha">
+<li><p>Set the chip type</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">-c/--chip</span> <span class="pre">[amebaz|amebad|amebaz2|amebasmart|amebalite|amebadplus]</span></code> as parameters for target chip set.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -c amebaxxx
+CHIP:            AMEBAXXX
+</pre></div>
+</div>
+</li>
+<li><p>Set the baudrate</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">-b/--baudrate</span> <span class="pre">&lt;value&gt;</span></code> as parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -b 1500000
+BAUDRATE:            1500000
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The value of baudrate only can be set as 115200, 128000, 153600, 230400, 380400, 460800, 500000, 921600, 1000000, 1382400, 1444400, and 1500000.</p>
+</div>
+</li>
+<li><p>Set target image path</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">-i/--image</span> <span class="pre">&lt;image_path&gt;</span></code> as parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -i E:\test\image_path\image_all.bin
+FILE PATH:            e:\test\image_path\image_all.bin
+</pre></div>
+</div>
+</li>
+<li><p>Set download start address</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">-a/--address</span> <span class="pre">&lt;value&gt;</span></code> as parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -a 0x08000000
+ADDRESS:            0x08000000
+</pre></div>
+</div>
+</li>
+<li><p>Set image length</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">-l/--length</span> <span class="pre">&lt;value&gt;</span></code> as parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -l 0xa500
+LENGTH:  0XA500
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p>Double check settings to download</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--show</span> <span class="pre">setting</span></code> as parameters to check the tool configuration.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe --show setting
+CHIP:            AMEBAZ
+BAUDRATE:       1500000
+IMAGE:           e:\test\image_path\image_all.bin
+ADDRESS:        0x08000000
+SKIP SYSTEM:     False
+LENGTH:          0x0
+ProcessFlashBPsForErase:    0
+ProcessFlashBPsForDownload:    0
+VERIFICATION:    True
+SAVELOG:         True
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The configurations need to be done only once before mass production (MP). These parameters would be saved into Setting.ini. When MP starts, the factory can download directly.</p>
+</div>
+</li>
+<li><p>Download images</p>
+<p>After configuration is finished, use <code class="docutils literal notranslate"><span class="pre">-d/--download</span> <span class="pre">&lt;dev1&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">-d/--download</span> <span class="pre">added</span></code> to download images for devices.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d/--download</span> <span class="pre">added</span></code> is used to download images for all devices specified by <code class="docutils literal notranslate"><span class="pre">--add</span> <span class="pre">device</span></code> commands.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -d added
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d/--download</span> <span class="pre">&lt;dev1&gt;</span></code> is used to download images for a specified device without modifying the device list.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -d COM4 COM5
+1  COM4 SUCCESS
+2  COM5 SUCCESS
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After v2.5.11, the command line mode supports multi-parameters input when download starts.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -c amebad -b 1500000 -a 0x08000000 -l 0xa500 -i e:\test\image_path\image_all.bin -s true -d COM4 COM5
+1  COM4 SUCCESS
+2  COM5 SUCCESS
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<p>If the print message shows that the download procedure is failed, check the log file located at /log to get the fail reason.</p>
+</section>
+<section id="id3">
+<h3>Optional Functions<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<section id="id4">
+<h4>USB Download<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<p>USB download is supported for NAND Flash image download. Set this option function in step 2 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+<p>To select whether to use USB download or not, use <code class="docutils literal notranslate"><span class="pre">-u/--usbdownload</span> <span class="pre">[true|false]</span></code> as parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe –u true
+USBDOWNLOAD:    True
+</pre></div>
+</div>
+</div></blockquote>
+<p>If USB download is selected, the profile should be set well, use <code class="docutils literal notranslate"><span class="pre">-p/--profile</span> <span class="pre">&lt;path&gt;</span></code> as parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe –p E:\MP_Image_Tool\image_all.rdev
+PROFILE:  e:\mp_image_Tool\image_all.rdev
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="scan-device">
+<h4>Scan Device<a class="headerlink" href="#scan-device" title="Link to this heading"></a></h4>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--scan</span> <span class="pre">device</span></code> as parameters to check serial ports connected to PC.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe --scan device
+USB Serial Port (COM4)
+USB Serial Port (COM5)
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="add-remove-show-device">
+<h4>Add/Remove/Show Device<a class="headerlink" href="#add-remove-show-device" title="Link to this heading"></a></h4>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--add</span> <span class="pre">&lt;dev&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">--remove</span> <span class="pre">&lt;dev&gt;</span></code> to specify the devices that are needed to download to, and <code class="docutils literal notranslate"><span class="pre">--show</span> <span class="pre">device</span></code> to list the specified device names.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe --add COM4 COM5
+COM4 added!
+COM5 added!
+$Ameba_1-N_MP_ImageTool.exe --show device
+COM4
+COM5
+$Ameba_1-N_MP_ImageTool.exe --remove COM5
+COM5 removed!
+$Ameba_1-N_MP_ImageTool.exe --show device
+COM4
+</pre></div>
+</div>
+</div></blockquote>
+<p>If devices are added, the command to download is specified in step 4 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+</section>
+<section id="id5">
+<h4>Verification<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<p>To select whether to examine the checksum after download is finished, use <code class="docutils literal notranslate"><span class="pre">-v/--verify</span> <span class="pre">[true|false]</span></code> as parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe –v true
+VERIFICATION:  True
+</pre></div>
+</div>
+</div></blockquote>
+<p>This option function should be set in step 2 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+</section>
+<section id="chip-erase">
+<h4>Chip Erase<a class="headerlink" href="#chip-erase" title="Link to this heading"></a></h4>
+<p>To select whether to erase full chip before download, use <code class="docutils literal notranslate"><span class="pre">-e/--chiperase</span> <span class="pre">[true|false]</span></code> as parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe –e true
+CHIPERASE:  True
+</pre></div>
+</div>
+</div></blockquote>
+<p>This option function should be set in step 2 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+</section>
+<section id="dtrrtsconfig">
+<h4>DtrRtsConfig<a class="headerlink" href="#dtrrtsconfig" title="Link to this heading"></a></h4>
+<p>If the device supports configuring DtrRts to enter UART download mode automatically, this option will help you. Use <code class="docutils literal notranslate"><span class="pre">-g/--dtrrtsconfig</span> <span class="pre">[true|false]</span></code> as parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe –g true
+DtrRtsConfig:  True
+</pre></div>
+</div>
+</div></blockquote>
+<p>This option function should be set in step 2 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+</section>
+<section id="id6">
+<h4>Remember Flash Protection Process for Erase/Download<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<p>To select whether to remember Flash protection process for erase/download after erase/download is finished, use <code class="docutils literal notranslate"><span class="pre">-f/--processflashbpsforerase</span> <span class="pre">|</span> <span class="pre">-n/--processflashbpsfordownload</span> <span class="pre">&lt;value&gt;</span></code> as parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe –f 1
+ProcessFlashForErase:  1
+$Ameba_1-N_MP_ImageTool.exe –n 1
+ProcessFlashForDownload:  1
+</pre></div>
+</div>
+</div></blockquote>
+<p>This option function should be set in step 2 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+</section>
+<section id="save-log">
+<h4>Save Log<a class="headerlink" href="#save-log" title="Link to this heading"></a></h4>
+<p>To select whether to save log or not, use <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">[true|false]</span></code> as parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe –s true
+SAVELOG:    True
+</pre></div>
+</div>
+</div></blockquote>
+<p>This option function should be set in step 2 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+</section>
+<section id="gpio-pwm-indication">
+<h4>GPIO/PWM Indication<a class="headerlink" href="#gpio-pwm-indication" title="Link to this heading"></a></h4>
+<p>The tool supports downloading image through USB for NAND Flash. Since the device and USB port do not have a unique correspondence, the download failed devices cannot be well identified on the production line. If you need to download image through USB, the GPIO/PWM indication function can be used to indicate which devices have successfully downloaded the images, so as to redo the download processes for the failed devices.</p>
+<p>According to the configuration parameters, the tool will send the corresponding query to the device, and the device will output high or low level through GPIO or output PWM through PWM channel.</p>
+<p>The configuration methods are shown below:</p>
+<ol class="arabic">
+<li><p>Turn off the running tool first.</p></li>
+<li><p>Open the <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code> file in the tool directory and configure the <code class="docutils literal notranslate"><span class="pre">ProgramConfig</span></code> (default: 0).</p>
+<p>Refer to as following table for bit field description of <code class="docutils literal notranslate"><span class="pre">ProgramConfig</span></code>.</p>
+</li>
+</ol>
+<table class="longtable docutils align-default" id="id14" style="width: 100%">
+<caption><span class="caption-text">Bit field description of ProgramConfig</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>[63:32]</p></td>
+<td><p>Download indication configuration:</p>
+<ul>
+<li><p>For GPIO indication</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Bit[63:33]: Reserved</p></li>
+<li><p>Bit[32]: GPIO output level</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>For PWM indication</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Bit[63:57]: PWM duty cycle (0~100, unit: percent)</p></li>
+<li><p>Bit[56:32]: PWM period (unit: us)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>[31:30]</p></td>
+<td><p>Download indication strategy:</p>
+<ul class="simple">
+<li><p>0: Disable</p></li>
+<li><p>1: GPIO indication after download success</p></li>
+<li><p>2: PWM indication after download success</p></li>
+<li><p>3: Reserved</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>[29:16]</p></td>
+<td><p>Download indication PIN name, refer to the SoC-specific definition of PinName for MBED API</p>
+<ul class="simple">
+<li><p>GPIO: all GPIO pins can be selected</p></li>
+<li><p>PWM: PWM channels can be selected</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>[15:2]</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>[1:0]</p></td>
+<td><p>NAND Flash bit flip fail level:</p>
+<ul class="simple">
+<li><p>2/3: Reserved</p></li>
+<li><p>1: Fail at fatal bit flip error, i.e. bit flip count &gt; ECC level</p></li>
+<li><p>0: Fail at bit flip error, i.e. bit flip count &gt;= ECC level</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="3">
+<li><p>Save <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code> and reopen the tool to download.</p></li>
+</ol>
+</section>
+<section id="read-mac">
+<h4>Read MAC<a class="headerlink" href="#read-mac" title="Link to this heading"></a></h4>
+<p>Read the MAC of the devices through the command <code class="docutils literal notranslate"><span class="pre">-r/--readmac</span></code>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe -r COM4
+COM4  FF-FF-FF-FF-FF-FF
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="combine-images">
+<h4>Combine Images<a class="headerlink" href="#combine-images" title="Link to this heading"></a></h4>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--combine</span> <span class="pre">&quot;&lt;image1_path&gt;;&lt;image2_path&gt;&quot;</span> <span class="pre">--offset</span> <span class="pre">&quot;&lt;image1_offset&gt;&lt;image2_offset&gt;&quot;</span> <span class="pre">[--output</span> <span class="pre">&quot;&lt;image_all_output&gt;&quot;]</span></code> to combine the images together.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe --combine &quot;E:\image1.bin;E:\image2.bin&quot; --offset &quot;0x00000000;0x00004000&quot; --output E:\image_all.bin
+Offset0: 0x00000000, Image0: E:\image1.bin
+Offset1: 0x00004000, Image1: E:\image2.bin
+Images have been combined successfully, size: 12KB, path: E:\image_all.bin
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="erase">
+<h4>Erase<a class="headerlink" href="#erase" title="Link to this heading"></a></h4>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--erase</span> <span class="pre">&lt;address&gt;</span> <span class="pre">&lt;value&gt;</span> <span class="pre">[length]</span> <span class="pre">&lt;value&gt;(KB)</span> <span class="pre">&lt;dev1&gt;</span> <span class="pre">&lt;dev2&gt;</span></code> to erase the Flash in CLI mode.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe --erase 0x08000000 1024 COM56
+Flash erase done!
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before erasing the Flash, you should set up the device, such as setting the images, the baudrate, and so on.</p>
+</div>
+</section>
+<section id="cli-help">
+<h4>CLI Help<a class="headerlink" href="#cli-help" title="Link to this heading"></a></h4>
+<p>The supported parameters can be achieved by typing <code class="docutils literal notranslate"><span class="pre">--help</span></code>.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$Ameba_1-N_MP_ImageTool.exe --help
+Ameba 1-N MP ImageTool 2.5.13.0
+Copyright ?  2016
+-a ADDRESS, --address=ADDRESS                         Set start download address
+-b BAUDRATE, --baudrate=BAUDRATE                     Set download baudrate
+-c CHIP, --chip=CHIP                                    Set target chip
+-d [COMx COMy COMn|added], --download=[COMx COMy COMn|added]  Target device to download
+-e TRUE|FASLE, --chiperase=TRUE|FASLE               Erase chip or not before download
+-f PROCESSFLASHBPSFORERASE, --processflashbpsforerase=PROCESSFLASHBPSFORERASE  Process flash BPs for erase or not when download
+-g TRUE|FASLE, --dtrrtsconfig=TRUE|FASLE            Set Dtr/Rts config or not
+-h FLASHPIN, --flashpin=FLASHPIN                      Set flashpin for download
+-i IMAGE, --image=IMAGE                                 Set target image path
+-k TRUE|FASLE, --skipsys=TRUE|FASLE                  Skipsys or not when download
+-l LENGTH, --length=LENGTH                             Set target image length
+-m TRUE|FASLE, --support4bytesaddrmode=TRUE|FASLE          Support 4-byte address mode or not when download
+-n PROCESSFLASHBPSFORDOWNLOAD, --processflashbpsfordownload=PROCESSFLASHBPSFORDOWNLO AD      Process flash BPs for download or not when download
+-p PROFILE, --profile=PROFILE               Set target device profile path for download
+-r [COMx COMy COMn|added], --readmac=[COMx COMy COMn|added]  Target device to read mac
+-s TRUE|FASLE, --savelog=TRUE|FASLE                         Save log or not when download
+-t CheckFlashAddrModeTimeoutSecond, --checkflashaddrmodetimeoutsecond=CheckFlashAddr ModeTimeoutSecond     Timeout(unit:s) used to pop confirm window for check flash address mode
+-u TRUE|FASLE, --usbdownload=TRUE|FASLE       Select usb download or not
+-v TRUE|FASLE, --verify=TRUE|FASLE         Set verification or not when download
+-w TRUE|FASLE, --skipwifi=TRUE|FASLE       Skip wifi for AmebaZ2
+--add=COMx COMy COMn                          Add target device
+--remove=COMx                                  Remove target device
+--combine=IMAGE1;IMAGE2;IMAGEx             Combine images together
+--offset=OFFSET1;OFFSET2;OFFSET3           Images&#39; offset to combine
+--output=OUTPUT                                Combined images output path
+--erase=addr length COMx COMy COMn         Erase target device at addr with length(KB)
+--show=setting|device                         Show setting or device
+--scan=device                                  Scan devices
+--help                                           Display this help screen
+--version                                       Display version information
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="common-config">
+<h2>Common Config<a class="headerlink" href="#common-config" title="Link to this heading"></a></h2>
+<p>You can change the configuration in <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Close the tool first before changing the configuration below.</p>
+</div>
+<section id="show-detail-log">
+<h3>Show Detail Log<a class="headerlink" href="#show-detail-log" title="Link to this heading"></a></h3>
+<p>This option aims to show the detailed logs for users. You can change the configuration in <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code> to select whether to show the detailed logs or not.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ShowDetailLog</span>           <span class="o">=</span><span class="kc">True</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>This option function should be set in step 2 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+</section>
+<section id="download-progress-display">
+<h3>Download Progress Display<a class="headerlink" href="#download-progress-display" title="Link to this heading"></a></h3>
+<p>You can set the configuration in <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code> to select whether to show progress Bar in console when downloading in CLI mode.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DownloadProgressDisplay</span>           <span class="o">=</span><span class="kc">True</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>This option function should be set in step 2 in <a class="reference internal" href="#id1"><span class="std std-ref">Download Flow</span></a>.</p>
+</section>
+<section id="download-image-to-sram">
+<h3>Download image to sram<a class="headerlink" href="#download-image-to-sram" title="Link to this heading"></a></h3>
+<p>After v2.5.24, Ameba 1-N MP ImageTool supports to download to sram with mp shrink image. The system will reboot automatically after download successfully and it can response to command through serial port without hard reboot.</p>
+<p>And the mp image layout in sram is:</p>
+<table class="docutils align-default" id="id15" style="width: 100%">
+<caption><span class="caption-text">MP Shrink Image Layout in Sram</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>IC</p></th>
+<th class="head"><p>ImageType</p></th>
+<th class="head"><p>StartAddress</p></th>
+<th class="head"><p>EndAddress</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AmebaDplus</p></td>
+<td><p>km4_boot_all.bin</p></td>
+<td><p>0x20012000</p></td>
+<td><p>0x2001A000</p></td>
+</tr>
+<tr class="row-odd"><td><p>AmebaDplus</p></td>
+<td><p>km0_km4_app.bin</p></td>
+<td><p>0x2001A000</p></td>
+<td><p>0x20080000</p></td>
+</tr>
+<tr class="row-even"><td><p>AmebaLite</p></td>
+<td><p>km4_boot_all.bin</p></td>
+<td><p>0x20012000</p></td>
+<td><p>0x2001A000</p></td>
+</tr>
+<tr class="row-odd"><td><p>AmebaLite</p></td>
+<td><p>kr4_km4_app.bin</p></td>
+<td><p>0x2001A000</p></td>
+<td><p>0x20080000</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="../../../../_images/mp_shrink_image_address_setting.png"><img alt="../../../../_images/mp_shrink_image_address_setting.png" src="../../../../_images/mp_shrink_image_address_setting.png" style="width: 642.6px; height: 662.4px;" /></a>
+<figcaption>
+<p><span class="caption-text">MP Shrink Image Address Setting</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: This function only supports AmebaLite and AmebaDplus.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="troubleshooting">
+<span id="id7"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h1>
+<section id="download-fail">
+<h2>Download Fail<a class="headerlink" href="#download-fail" title="Link to this heading"></a></h2>
+<p>If image download is failed, enter the <code class="docutils literal notranslate"><span class="pre">UART_DOWNLOAD</span></code> mode to try again.</p>
+<p>When transmission interrupts or verification fails, a red error sign shows up, you need to check the error log and try again. There are two ways to get the error messages:</p>
+<ul class="simple">
+<li><p>Hover the mouse cursor over the sign, the error message shows up, as following figure shows.</p></li>
+</ul>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="../../../../_images/download_is_fail.png"><img alt="../../../../_images/download_is_fail.png" src="../../../../_images/download_is_fail.png" style="width: 540.0px; height: 527.4px;" /></a>
+<figcaption>
+<p><span class="caption-text">Download is fail</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>Check the log file which locates at <code class="docutils literal notranslate"><span class="pre">/log/</span></code> to get more detailed error messages.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Start</span> <span class="n">Tool</span> <span class="kn">from</span> <span class="nn">UI</span>
+<span class="n">Scan</span> <span class="n">Device</span> <span class="n">Start</span>
+<span class="n">Scan</span> <span class="n">Device</span> <span class="n">End</span>
+<span class="n">Start</span> <span class="n">to</span> <span class="n">Download</span><span class="o">...</span>
+<span class="n">COM56</span> <span class="n">Open</span> <span class="n">COM</span> <span class="n">error</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enable save log function first before download starts.</p>
+</div>
+</section>
+<section id="flash-write-protected">
+<h2>Flash Write Protected<a class="headerlink" href="#flash-write-protected" title="Link to this heading"></a></h2>
+<p>If Flash is write protected by Flash BPs, that is to say, when Flash block protection is detected during image download or Flash erase, a pop up dialog will guide user to choose the follow-up actions.</p>
+<ul class="simple">
+<li><p>You can process Flash BPs for download as needed, as following figure shows.</p></li>
+</ul>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="../../../../_images/flash_block_protection_detected.png"><img alt="../../../../_images/flash_block_protection_detected.png" src="../../../../_images/flash_block_protection_detected.png" style="width: 507.6px; height: 521.1px;" /></a>
+<figcaption>
+<p><span class="caption-text">Flash block protection detected</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Or set <code class="docutils literal notranslate"><span class="pre">ProcessFlashBPsForErase</span></code> and <code class="docutils literal notranslate"><span class="pre">ProcessFlashBPsForDownload</span></code> to process Flash block protection bits in <code class="file docutils literal notranslate"><span class="pre">Setting.ini</span></code> to avoid download blocked error.</p></li>
+</ul>
+<p>The values of <code class="docutils literal notranslate"><span class="pre">ProcessFlashBPsForErase</span></code> and <code class="docutils literal notranslate"><span class="pre">ProcessFlashBPsForDownload</span></code> are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0: When detect Flash block protection, tool pops new window to ask the customer what to do next when erase/download.</p></li>
+<li><p>1: Tool will remove the Flash protection and restore the Flash protection when erase/download.</p></li>
+<li><p>2: Tool will abort erase/download when detect Flash block protection.</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="../../../../_images/setting_ini.png"><img alt="../../../../_images/setting_ini.png" src="../../../../_images/setting_ini.png" style="width: 379.2px; height: 249.6px;" /></a>
+<figcaption>
+<p><span class="caption-text">Setting.ini</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="power-off-accident">
+<h2>Power-off Accident<a class="headerlink" href="#power-off-accident" title="Link to this heading"></a></h2>
+<p>If accidents happen when transmission is in progress such as DUT powers off by accident, which cause the download failed, try to enter the <strong>UART_DOWNLOAD</strong> mode and download again.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="1-N MP Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

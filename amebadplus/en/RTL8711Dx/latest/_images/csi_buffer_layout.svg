@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 csi_buffer_layout.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="2.37887in" height="1.33466in"
+		viewBox="0 0 171.279 96.0954" xml:space="preserve" color-interpolation-filters="sRGB" class="st6">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#99ccff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {font-size:1em}
+		.st4 {fill:#ffccff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2}
+		.st5 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st6 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.6,-41.8772)">
+			<title>工作表.1</title>
+			<desc>CSI header info (Defualt: 41 bytes) (Indicated by hdr_len + 3)</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="85.0394" cy="75.4569" width="170.08" height="41.2772"/>
+			<rect x="0" y="54.8183" width="170.079" height="41.2772" class="st1"/>
+			<text x="60.41" y="68.26" class="st2" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>CSI<tspan class="st3"
+						v:langID="2052"> </tspan><tspan class="st3" v:langID="2052">header info<v:newlineChar/></tspan><tspan
+						x="54.93" dy="1.2em" class="st3" v:langID="1028">(</tspan>D<tspan class="st3" v:langID="2052">efualt</tspan><tspan
+						class="st3" v:langID="2052">: </tspan><tspan class="st3" v:langID="1028">4</tspan><tspan class="st3"
+						v:langID="2052">1</tspan><tspan class="st3" v:langID="1028"> </tspan>b<tspan class="st3" v:langID="1028">ytes</tspan><tspan
+						class="st3" v:langID="1028">)<v:newlineChar/></tspan><tspan x="43.3" dy="1.2em" class="st3" v:langID="1028">(</tspan><tspan
+						class="st3" v:langID="1028">Indicate</tspan>d<tspan class="st3" v:langID="1028"> </tspan><tspan class="st3"
+						v:langID="1028">by </tspan><tspan class="st3" v:langID="2052">hdr</tspan><tspan class="st3" v:langID="2052">_</tspan><tspan
+						class="st3" v:langID="2052">len </tspan><tspan class="st3" v:langID="2052">+ </tspan><tspan class="st3"
+						v:langID="2052">3</tspan><tspan class="st3" v:langID="1028">)</tspan></text>		</g>
+		<g id="shape2-24" v:mID="2" v:groupContext="shape" transform="translate(0.6,-0.6)">
+			<title>工作表.2</title>
+			<desc>CSI raw data (Indicated by csi_data_length)</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="85.0394" cy="75.4569" width="170.08" height="41.2772"/>
+			<rect x="0" y="54.8183" width="170.079" height="41.2772" class="st4"/>
+			<text x="64.81" y="73.06" class="st2" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>CSI<tspan class="st3"
+						v:langID="2052"> </tspan><tspan class="st3" v:langID="2052">raw data<v:newlineChar/></tspan><tspan
+						x="35.96" dy="1.2em" class="st3" v:langID="1028">(</tspan><tspan class="st3" v:langID="1028">Indicate</tspan>d<tspan
+						class="st3" v:langID="1028"> </tspan><tspan class="st3" v:langID="1028">by </tspan><tspan class="st3"
+						v:langID="2052">csi</tspan><tspan class="st3" v:langID="2052">_</tspan><tspan class="st3" v:langID="2052">data</tspan><tspan
+						class="st3" v:langID="2052">_</tspan><tspan class="st3" v:langID="2052">length</tspan><tspan class="st3"
+						v:langID="1028">)</tspan></text>		</g>
+		<g id="shape3-39" v:mID="3" v:groupContext="shape" transform="translate(0.6,-83.1543)">
+			<title>工作表.3</title>
+			<desc>CSI Buffer Layout</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="85.0394" cy="89.8049" width="170.08" height="12.5811"/>
+			<rect x="0" y="83.5143" width="170.079" height="12.5811" class="st5"/>
+			<text x="57.19" y="92.2" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>CSI<tspan class="st3"
+						v:langID="1033"> </tspan><tspan class="st3" v:langID="1028">B</tspan><tspan class="st3" v:langID="1033">uffer</tspan><tspan
+						class="st3" v:langID="1028"> </tspan><tspan class="st3" v:langID="1028">Layout</tspan></text>		</g>
+	</g>
+</svg>
