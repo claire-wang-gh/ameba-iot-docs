@@ -7,6 +7,7 @@
   <title>Introduction &mdash; amebadplus_docs  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
 
   
@@ -20,6 +21,12 @@
         <script src="../../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -83,7 +90,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#application">Application</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id3">OTA Image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">OTA Select Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ota-selection-flow">OTA Selection Flow</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#building-ota-image">Building OTA Image</a><ul>
@@ -127,8 +134,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/software_tools/index.html">Software Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/mp_tools/src/index.html">MP Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/glossary/index.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ameba/en/rst_syntax/src/template_rst_syntax.html">reStructuredText</a></li>
 </ul>
 
         </div>
@@ -163,26 +168,27 @@
 <section id="image-slot">
 <span id="id1"></span><h2>Image Slot<a class="headerlink" href="#image-slot" title="Link to this heading"></a></h2>
 <p>There are two slots for all the images in the Flash layout as shown in below, which named OTA1 and OTA2 respectively. Each image can be chosen to boot from OTA1 or OTA2.</p>
-<figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="../../../_images/ota1_and_ota2_position.svg"><img alt="../../../_images/ota1_and_ota2_position.svg" height="170" src="../../../_images/ota1_and_ota2_position.svg" width="126" /></a>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../../_images/ota1_and_ota2_position.svg"><img alt="../../../_images/ota1_and_ota2_position.svg" height="238" src="../../../_images/ota1_and_ota2_position.svg" width="176" /></a>
 <figcaption>
-<p><span class="caption-text">OTA1 and OTA2 position</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-text">OTA1 and OTA2 position</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="version-number">
 <span id="id2"></span><h2>Version Number<a class="headerlink" href="#version-number" title="Link to this heading"></a></h2>
-<p>The device boot from OTA1 or OTA2 mainly depends on the version number in certificate and manifest. As shown in <a class="reference internal" href="#major-and-minor-version"><span class="std std-ref">Major and minor version</span></a>, there is a 2-byte major version and 2-byte minor version in manifest and certificate.</p>
+<p>The device boot from OTA1 or OTA2 mainly depends on the version number in certificate and manifest.
+As shown in the figure below, there is a 2-byte major version and 2-byte minor version in manifest and certificate.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../../_images/major_and_minor_version.svg"><img alt="../../../_images/major_and_minor_version.svg" height="387" src="../../../_images/major_and_minor_version.svg" width="805" /></a>
+<figcaption>
+<p><span class="caption-text">Major and minor version</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The combination of major version and minor version is the 4-byte version number. OTA select flow checks the whole version number.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Version</span> <span class="n">number</span> <span class="o">=</span> <span class="p">(</span><span class="n">Major</span> <span class="n">version</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">|</span> <span class="n">Minor</span> <span class="n">version</span>
 </pre></div>
 </div>
-<figure class="align-center" id="major-and-minor-version">
-<a class="reference internal image-reference" href="../../../_images/major_and_minor_version.svg"><img alt="../../../_images/major_and_minor_version.svg" height="302" src="../../../_images/major_and_minor_version.svg" width="575" /></a>
-<figcaption>
-<p><span class="caption-text">Major and minor version</span><a class="headerlink" href="#major-and-minor-version" title="Link to this image"></a></p>
-</figcaption>
-</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -205,9 +211,9 @@
 <li><p>If both OTA1 and OTA2 are valid but with the same version number, the device will boot from OTA1.</p></li>
 </ul>
 <figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="../../../_images/ota_select_diagram.svg"><img alt="../../../_images/ota_select_diagram.svg" height="166" src="../../../_images/ota_select_diagram.svg" width="446" /></a>
+<a class="reference internal image-reference" href="../../../_images/ota_select_diagram.svg"><img alt="../../../_images/ota_select_diagram.svg" height="249" src="../../../_images/ota_select_diagram.svg" width="669" /></a>
 <figcaption>
-<p><span class="caption-text">OTA select diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-text">OTA selection diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -215,10 +221,16 @@
 </section>
 <section id="anti-rollback">
 <h2>Anti-rollback<a class="headerlink" href="#anti-rollback" title="Link to this heading"></a></h2>
-<p>Anti-rollback is the function to prevent version rollback attack. When the anti-rollback is enabled, the version number in certificate or manifest must not be smaller than the anti-rollback version stored in OTP. Otherwise, this image will be regarded as invalid and the chip will not boot from invalid image. Normally, if OTA update is security-related, user can program a bigger anti-rollback version number in OTP and update image with a bigger major version at the same time to prevent rollback attack.</p>
-<p>The anti-rollback flow is shown as following. Once the anti-rollback is enabled, the device will compare the major version numbers got from OTA1 and OTA2 images respectively with the anti-rollback version number in OTP. If the major version number in the image is smaller than the anti-rollback version number, this image will be regarded as invalid.</p>
+<p>Anti-rollback is the function to prevent version rollback attack.
+When the anti-rollback is enabled, the version number in certificate or manifest must not be smaller than the anti-rollback version stored in OTP.
+Otherwise, this image will be regarded as invalid and the chip will not boot from invalid image.
+Normally, if OTA update is security-related, user can program a bigger anti-rollback version number in OTP and
+update image with a bigger major version at the same time to prevent rollback attack.</p>
+<p>The anti-rollback flow is shown below.
+Once the anti-rollback is enabled, the device will compare the major version numbers got from OTA1 and OTA2 images respectively with the anti-rollback version number in OTP.
+If the major version number in the image is smaller than the anti-rollback version number, this image will be regarded as invalid.</p>
 <figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="../../../_images/anti_rollback_flow.svg"><img alt="../../../_images/anti_rollback_flow.svg" height="233" src="../../../_images/anti_rollback_flow.svg" width="508" /></a>
+<a class="reference internal image-reference" href="../../../_images/anti_rollback_flow.svg"><img alt="../../../_images/anti_rollback_flow.svg" height="302" src="../../../_images/anti_rollback_flow.svg" width="660" /></a>
 <figcaption>
 <p><span class="caption-text">Anti-rollback flow</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
@@ -229,9 +241,10 @@
 <h1>Bootloader<a class="headerlink" href="#bootloader" title="Link to this heading"></a></h1>
 <section id="ota-image">
 <h2>OTA Image<a class="headerlink" href="#ota-image" title="Link to this heading"></a></h2>
-<p>The KM4 bootloader image named km4_boot_all.bin can be updated through OTA, which can be chosen to boot from OTA1 or OTA2. The layout of KM4 bootloader image is illustrated in below.</p>
+<p>The KM4 bootloader image named <code class="file docutils literal notranslate"><span class="pre">km4_boot_all.bin</span></code> can be updated through OTA, which can be chosen to boot from OTA1 or OTA2.
+The layout of KM4 bootloader image is illustrated below.</p>
 <figure class="align-center" id="id8">
-<a class="reference internal image-reference" href="../../../_images/layout_of_km4_bootloader_image.svg"><img alt="../../../_images/layout_of_km4_bootloader_image.svg" height="99" src="../../../_images/layout_of_km4_bootloader_image.svg" width="280" /></a>
+<a class="reference internal image-reference" href="../../../_images/layout_of_km4_bootloader_image.svg"><img alt="../../../_images/layout_of_km4_bootloader_image.svg" height="66" src="../../../_images/layout_of_km4_bootloader_image.svg" width="301" /></a>
 <figcaption>
 <p><span class="caption-text">Layout of KM4 bootloader image</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
@@ -241,9 +254,9 @@
 <h2>OTA Select Flow<a class="headerlink" href="#ota-select-flow" title="Link to this heading"></a></h2>
 <p>The KM4 ROM will select OTA image according to the image version number in bootloader manifest.</p>
 <figure class="align-center" id="id9">
-<a class="reference internal image-reference" href="../../../_images/km4_bootloader_ota_select_flow.svg"><img alt="../../../_images/km4_bootloader_ota_select_flow.svg" height="737" src="../../../_images/km4_bootloader_ota_select_flow.svg" width="713" /></a>
+<a class="reference internal image-reference" href="../../../_images/km4_bootloader_ota_select_flow.svg"><img alt="../../../_images/km4_bootloader_ota_select_flow.svg" height="958" src="../../../_images/km4_bootloader_ota_select_flow.svg" width="926" /></a>
 <figcaption>
-<p><span class="caption-text">KM4 bootloader OTA select flow</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+<p><span class="caption-text">KM4 bootloader OTA selection flow</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -252,21 +265,22 @@
 <h1>Application<a class="headerlink" href="#application" title="Link to this heading"></a></h1>
 <section id="id3">
 <h2>OTA Image<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
-<p>The application image named km0_km4_app.bin, including KM0, KM4 non-secure application image and KM4 secure image, can be updated through OTA, which can be chosen to boot from OTA1 or OTA2. The layout of the whole application image is illustrated in below.</p>
+<p>The application image named <code class="file docutils literal notranslate"><span class="pre">km0_km4_app.bin</span></code>, including KM0, KM4 non-secure application image and KM4 secure image, can be updated through OTA,
+which can be chosen to boot from OTA1 or OTA2. The layout of the whole application image is illustrated below.</p>
 <figure class="align-center" id="id10">
-<a class="reference internal image-reference" href="../../../_images/layout_of_application_image.svg"><img alt="../../../_images/layout_of_application_image.svg" height="89" src="../../../_images/layout_of_application_image.svg" width="232" /></a>
+<a class="reference internal image-reference" href="../../../_images/layout_of_application_image.svg"><img alt="../../../_images/layout_of_application_image.svg" height="115" src="../../../_images/layout_of_application_image.svg" width="301" /></a>
 <figcaption>
 <p><span class="caption-text">Layout of application image</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="id4">
-<h2>OTA Select Flow<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
-<p>The application image OTA select flow is illustrated in below.</p>
+<section id="ota-selection-flow">
+<h2>OTA Selection Flow<a class="headerlink" href="#ota-selection-flow" title="Link to this heading"></a></h2>
+<p>The application image OTA selection flow is illustrated below.</p>
 <figure class="align-center" id="id11">
-<a class="reference internal image-reference" href="../../../_images/application_image_ota_select_flow.svg"><img alt="../../../_images/application_image_ota_select_flow.svg" height="588" src="../../../_images/application_image_ota_select_flow.svg" width="716" /></a>
+<a class="reference internal image-reference" href="../../../_images/application_image_ota_select_flow.svg"><img alt="../../../_images/application_image_ota_select_flow.svg" height="764" src="../../../_images/application_image_ota_select_flow.svg" width="930" /></a>
 <figcaption>
-<p><span class="caption-text">Application image OTA select flow</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+<p><span class="caption-text">Application image OTA selection flow</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -274,40 +288,58 @@
 <section id="building-ota-image">
 <h1>Building OTA Image<a class="headerlink" href="#building-ota-image" title="Link to this heading"></a></h1>
 <section id="modifying-configurations">
-<h2>Modifying Configurations<a class="headerlink" href="#modifying-configurations" title="Link to this heading"></a></h2>
+<span id="ota-modifying-configurations"></span><h2>Modifying Configurations<a class="headerlink" href="#modifying-configurations" title="Link to this heading"></a></h2>
 <ol class="arabic">
-<li><p>Modify the version number in configuration file: <code class="docutils literal notranslate"><span class="pre">manifest.json</span></code>.</p>
-<table class="docutils align-center" style="width: 100%">
+<li><p>Modify the version number in configuration file <code class="file docutils literal notranslate"><span class="pre">manifest.json</span></code> under <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code>.</p>
+<table class="docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>File</p></th>
 <th class="head"><p>Tag</p></th>
 <th class="head"><p>Description</p></th>
-<th class="head"><p>Path</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>manifest.json</p></td>
+<tr class="row-even"><td rowspan="2"><p>manifest.json</p></td>
 <td><p>boot</p></td>
 <td><p>Configure major and minor version for KM4 bootloader</p></td>
-<td><p>{SDK}\amebadplus_gcc_project</p></td>
 </tr>
-<tr class="row-odd"><td><p>manifest.json</p></td>
-<td><p>app</p></td>
+<tr class="row-odd"><td><p>app</p></td>
 <td><p>Configure major and minor version for certificate and application</p></td>
-<td><p>{SDK}\amebadplus_gcc_project</p></td>
 </tr>
 </tbody>
 </table>
 <ol class="loweralpha">
 <li><p>Modify the version number for bootloader.</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../_images/modify_config_1.png"><img alt="../../../_images/modify_config_1.png" src="../../../_images/modify_config_1.png" style="width: 384.0px; height: 175.0px;" /></a>
-</figure>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;boot&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">           </span><span class="nt">&quot;IMG_ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="hll"><span class="w">           </span><span class="nt">&quot;IMG_VER_MAJOR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span class="hll"><span class="w">           </span><span class="nt">&quot;IMG_VER_MINOR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span>
+<span class="w">           </span><span class="nt">&quot;SEC_EPOCH&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+
+<span class="w">           </span><span class="nt">&quot;HASH_ALG&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sha256&quot;</span><span class="p">,</span>
+
+<span class="w">           </span><span class="nt">&quot;RSIP_IV&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;01020304050607080000000000000000&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+</pre></div>
+</div>
 </li>
 <li><p>Modify the version number for certificate and application.</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../_images/modify_config_2.png"><img alt="../../../_images/modify_config_2.png" src="../../../_images/modify_config_2.png" style="width: 372.0px; height: 179.0px;" /></a>
-</figure>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;app&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">           </span><span class="nt">&quot;IMG_ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="hll"><span class="w">           </span><span class="nt">&quot;IMG_VER_MAJOR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span class="hll"><span class="w">           </span><span class="nt">&quot;IMG_VER_MINOR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span>
+<span class="w">           </span><span class="nt">&quot;SEC_EPOCH&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+
+<span class="w">           </span><span class="nt">&quot;HASH_ALG&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sha256&quot;</span><span class="p">,</span>
+
+<span class="w">           </span><span class="nt">&quot;RSIP_IV&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;213253647586a7b80000000000000000&quot;</span>
+<span class="w">   </span><span class="p">},</span>
+</pre></div>
+</div>
 </li>
 </ol>
 </li>
@@ -315,7 +347,7 @@
 <ol class="loweralpha">
 <li><p>Change the bootloader version of anti-rollback</p>
 <p>By default, all images use the same anti-rollback version in OTP as threshold to prevent anti-rollback attack.</p>
-<table class="docutils align-center" style="width: 100%">
+<table class="docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>OTP address</p></th>
@@ -327,11 +359,14 @@
 <tr class="row-even"><td><p>BOOTLOADER_VERSION</p></td>
 <td><p>Physical 0x36E~0x36F</p></td>
 <td><p>16 bits</p></td>
-<td><p>The bootloader version of anti-rollback</p></td>
+<td><p>Bootloader version of anti-rollback</p></td>
 </tr>
 </tbody>
 </table>
-<p>The bootloader version of anti-rollback is 0 by default. Users can change the number of ‘0’ bit to enlarge the bootloader version. For example, users can program the bootloader version of anti-rollback to 1 by the following command:</p>
+<dl class="simple">
+<dt>The bootloader version of anti-rollback is 0 by default. Users can change the number of ‘0’ bit to enlarge the bootloader version.</dt><dd><p>For example, users can program the bootloader version of anti-rollback to 1 by the following command:</p>
+</dd>
+</dl>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EFUSE</span> <span class="n">wraw</span> <span class="mi">36</span><span class="n">E</span> <span class="mi">2</span> <span class="n">FFFE</span>
 </pre></div>
 </div>
@@ -347,11 +382,11 @@
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>Once anti-rollback is enabled, it cannot be disabled.</p></li>
-<li><p>If bootloader and application do not use the same anti-rollback version, modify BOOT_OTA_GetCertRollbackVer() in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\bootloader\boot_ota_km4.c</span></code> and define another anti-rollback version in OTP for the application.</p></li>
+<li><p>If bootloader and application do not use the same anti-rollback version, modify <code class="xref py py-func docutils literal notranslate"><span class="pre">BOOT_OTA_GetCertRollbackVer()</span></code> in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\bootloader\boot_ota_km4.c</span></code> and define another anti-rollback version in OTP for the application.</p></li>
 </ul>
 </div>
 </li>
-<li><p>Write the bootloader OTA2 address into OTP if users need to upgrade the bootloader, which sets the bootloader OTA2 address according to Flash_Layout in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c</span></code>, refer to <a class="reference internal" href="#ota-user-configuration"><span class="std std-ref">User Configuration</span></a>.</p>
+<li><p>Write the bootloader OTA2 address into OTP if users need to upgrade the bootloader, which sets the bootloader OTA2 address according to <em>Flash_Layout</em> in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\usrcfg\ameba_flashcfg.c</span></code>, refer to <a class="reference internal" href="#ota-user-configuration"><span class="std std-ref">User Configuration</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EFUSE</span> <span class="n">wraw</span> <span class="mi">36</span><span class="n">C</span> <span class="mi">2</span> <span class="mi">6082</span>
 </pre></div>
 </div>
@@ -366,9 +401,15 @@
 </li>
 <li><p>Rebuild the project using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code> command to generate the signed images.</p></li>
 <li><p>Download the images into Flash, and reset the board.</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../_images/modify_config_3.png"><img alt="../../../_images/modify_config_3.png" src="../../../_images/modify_config_3.png" style="width: 384.59999999999997px; height: 82.8px;" /></a>
-</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">MODULE_BOOT</span><span class="o">-</span><span class="n">LEVEL_INFO</span><span class="p">]:</span> <span class="n">KM0</span> <span class="n">PSRAM</span><span class="p">[</span><span class="mi">0</span><span class="n">c051b60</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">MODULE_BOOT</span><span class="o">-</span><span class="n">LEVEL_INFO</span><span class="p">]:</span> <span class="n">KM0</span> <span class="n">BOOT</span><span class="p">[</span><span class="mi">20004</span><span class="n">d00</span><span class="p">:</span><span class="mi">40</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">MODULE_BOOT</span><span class="o">-</span><span class="n">LEVEL_INFO</span><span class="p">]:</span> <span class="n">KM4</span> <span class="n">XIP</span> <span class="n">IMG</span><span class="p">[</span><span class="mf">0e000000</span><span class="p">:</span><span class="mi">5</span><span class="n">ad80</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">MODULE_BOOT</span><span class="o">-</span><span class="n">LEVEL_INFO</span><span class="p">]:</span> <span class="n">KM4</span> <span class="n">SRAM</span><span class="p">[</span><span class="mi">20010000</span><span class="p">:</span><span class="mi">13</span><span class="n">c0</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">MODULE_BOOT</span><span class="o">-</span><span class="n">LEVEL_INFO</span><span class="p">]:</span> <span class="n">KM4</span> <span class="n">PSRAM</span><span class="p">[</span><span class="mf">0e05</span><span class="n">c140</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="hll">    <span class="p">[</span><span class="n">MODULE_BOOT</span><span class="o">-</span><span class="n">LEVEL_INFO</span><span class="p">]:</span> <span class="n">IMG2</span> <span class="n">BOOT</span> <span class="kn">from</span> <span class="nn">OTA</span> <span class="mi">1</span>
+</span>    <span class="p">[</span><span class="n">MODULE_BOOT</span><span class="o">-</span><span class="n">LEVEL_INFO</span><span class="p">]:</span> <span class="n">Start</span> <span class="n">NonSecure</span> <span class="o">@</span> <span class="mh">0xe001715</span> <span class="o">...</span>
+</pre></div>
+</div>
 </li>
 </ol>
 </section>
@@ -376,38 +417,43 @@
 <h2>Generating OTA Image Automatically<a class="headerlink" href="#generating-ota-image-automatically" title="Link to this heading"></a></h2>
 <p>The OTA image will be generated automatically when building the project.</p>
 <ol class="arabic simple">
-<li><p>km0_km4_app.bin is included in ota_all.bin by default.</p></li>
+<li><p>The <code class="file docutils literal notranslate"><span class="pre">km0_km4_app.bin</span></code> is included in <code class="file docutils literal notranslate"><span class="pre">ota_all.bin</span></code> by default.</p></li>
 <li><p>If the bootloader is needed to be upgraded,</p>
 <ol class="loweralpha simple">
-<li><p>Type command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> under <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code> and choose: CONFIG OTA OPTION -&gt; Upgrade Bootloader, save and exit.</p></li>
-<li><p>Modify the bootloader related configurations as described in 1.4.1.</p></li>
+<li><p>Type command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> under <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code> and choose <span class="menuselection">CONFIG OTA OPTION -&gt; Upgrade Bootloader</span>, save and exit.</p></li>
+<li><p>Modify the bootloader related configurations as described in Section <a class="reference internal" href="#ota-modifying-configurations"><span class="std std-ref">Modifying Configurations</span></a>.</p></li>
 </ol>
 </li>
-<li><p>Rebuild the project by command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code> under <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code>. The OTA image file called <code class="docutils literal notranslate"><span class="pre">ota_all.bin</span></code> will be generated in <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code>.</p></li>
+<li><p>Rebuild the project by command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code> under <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code>. The OTA image file called <code class="file docutils literal notranslate"><span class="pre">ota_all.bin</span></code> will be generated under <code class="docutils literal notranslate"><span class="pre">{SDK}\amebadplus_gcc_project</span></code>.</p></li>
 </ol>
 </section>
 </section>
 <section id="updating-from-local-server">
 <h1>Updating from Local Server<a class="headerlink" href="#updating-from-local-server" title="Link to this heading"></a></h1>
-<p>This section introduces the design principles and usage of OTA from local server. It has well-transportability to porting to OTA applications from cloud.</p>
-<p>The OTA from local server shows how the device updates the image from a local download server. The local download server sends the image to the device based on the network socket, as following figure shows.</p>
-<p>Make sure both the device and the PC are connecting to the same local network.</p>
+<p>This section introduces the design principles and usage of OTA from local server.
+It has well-transportability to porting to OTA applications from cloud.</p>
+<p>The OTA from local server shows how the device updates the image from a local download server.
+The local download server sends the image to the device based on the network socket, as the following figure illustrates.</p>
 <figure class="align-center" id="id12">
-<a class="reference internal image-reference" href="../../../_images/ota_update_diagram_via_network.svg"><img alt="../../../_images/ota_update_diagram_via_network.svg" height="172" src="../../../_images/ota_update_diagram_via_network.svg" width="680" /></a>
+<a class="reference internal image-reference" href="../../../_images/ota_update_diagram_via_network.svg"><img alt="../../../_images/ota_update_diagram_via_network.svg" height="161" src="../../../_images/ota_update_diagram_via_network.svg" width="821" /></a>
 <figcaption>
 <p><span class="caption-text">OTA update diagram via network</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure both the device and the PC are connecting to the same local network.</p>
+</div>
 <section id="firmware-format">
 <h2>Firmware Format<a class="headerlink" href="#firmware-format" title="Link to this heading"></a></h2>
-<p>The firmware format is illustrated in below.</p>
+<p>The firmware format is illustrated below.</p>
 <figure class="align-center" id="id13">
-<a class="reference internal image-reference" href="../../../_images/firmware_format.svg"><img alt="../../../_images/firmware_format.svg" height="204" src="../../../_images/firmware_format.svg" width="768" /></a>
+<a class="reference internal image-reference" href="../../../_images/firmware_format.svg"><img alt="../../../_images/firmware_format.svg" height="285" src="../../../_images/firmware_format.svg" width="1075" /></a>
 <figcaption>
 <p><span class="caption-text">Firmware format</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<table class="docutils align-center" id="id14" style="width: 100%">
+<table class="docutils align-default" id="id14" style="width: 100%">
 <caption><span class="caption-text">Firmware header</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Items</p></th>
@@ -420,42 +466,42 @@
 <tr class="row-even"><td><p>Version</p></td>
 <td><p>0x00</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The version of OTA Header, default 0xFFFFFFFF</p></td>
+<td><p>Version of OTA Header, default is 0xFFFFFFFF.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Header Number</p></td>
 <td><p>0x04</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The number of OTA Header. For AmebaDPlus, this value can be 1, 2</p></td>
+<td><p>Number of OTA Header. For AmebaDPlus, this value can be 1, 2.</p></td>
 </tr>
 <tr class="row-even"><td><p>Signature</p></td>
 <td><p>0x08</p></td>
 <td><p>4 bytes</p></td>
-<td><p>OTA Signature is string. For AmebaDPlus, this value is “OTA”</p></td>
+<td><p>OTA signature is string. For AmebaDPlus, this value is <code class="docutils literal notranslate"><span class="pre">OTA</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Header Length</p></td>
 <td><p>0x0C</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The length of OTA header. For AmebaDPlus, this value is 0x18</p></td>
+<td><p>Length of OTA header. For AmebaDPlus, this value is 0x18.</p></td>
 </tr>
 <tr class="row-even"><td><p>Checksum</p></td>
 <td><p>0x10</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The checksum of OTA image</p></td>
+<td><p>Checksum of OTA image</p></td>
 </tr>
 <tr class="row-odd"><td><p>Image Length</p></td>
 <td><p>0x14</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The size of OTA image</p></td>
+<td><p>Size of OTA image</p></td>
 </tr>
 <tr class="row-even"><td><p>Offset</p></td>
 <td><p>0x18</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The start position of OTA image in current image</p></td>
+<td><p>Start position of OTA image in current image</p></td>
 </tr>
 <tr class="row-odd"><td><p>Image ID</p></td>
 <td><p>0x1C</p></td>
 <td><p>4 bytes</p></td>
-<td><p>The image ID of current image</p>
+<td><p>Image ID of current image</p>
 <ul class="simple">
 <li><p>OTA_IMGID_BOOT: 0x0</p></li>
 <li><p>OTA_IMGID_APP: 0x1</p></li>
@@ -467,24 +513,28 @@
 </section>
 <section id="ota-flow">
 <h2>OTA Flow<a class="headerlink" href="#ota-flow" title="Link to this heading"></a></h2>
-<p>The OTA demo locates in <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\misc\ameba_ota.c</span></code>. The image upgrade is implemented in the following steps:</p>
+<p>The OTA demo is located at <code class="docutils literal notranslate"><span class="pre">{SDK}\component\soc\amebadplus\misc\ameba_ota.c</span></code>.
+The image upgrade is implemented in the following steps:</p>
 <ol class="arabic">
 <li><p>Connect to the server. The IP address, port and OTA type are needed.</p></li>
-<li><p>Acquire the older firmware address to be upgraded according to the MMU setting. If the address is re-mapping to OTA1 space by MMU, the OTA2 address would be selected to upgrade. Otherwise, the OTA1 address would be selected.</p></li>
+<li><p>Acquire the older firmware address to be upgraded according to the MMU setting.</p>
+<p>If the address is re-mapping to OTA1 space by MMU, the OTA2 address would be selected to upgrade. Otherwise, the OTA1 address would be selected.</p>
+</li>
 <li><p>Receive the firmware file header to get the target OTA image information, such as image number, image length and image ID.</p></li>
 <li><p>Download the new firmware from server.</p></li>
 <li><p>Erase the Flash space for new firmware and write it into Flash except Manifest structure.</p></li>
-<li><p>Verify the checksum. If the checksum is error, OTA fails.</p></li>
+<li><p>Verify the checksum.</p>
+<p>If the checksum is error, OTA fails.</p>
+</li>
 <li><p>If the checksum is ok, write Manifest structure to the upgraded firmware region to indicate boot from a new firmware next time.</p></li>
-<li><p>OTA is finished and reset the device. Then it would boot from the new firmware.</p>
+<li><p>OTA is finished. Reset the device, and it would boot from the new firmware.</p></li>
+</ol>
 <figure class="align-center" id="id15">
-<a class="reference internal image-reference" href="../../../_images/ota_operation_flow.svg"><img alt="../../../_images/ota_operation_flow.svg" height="680" src="../../../_images/ota_operation_flow.svg" width="653" /></a>
+<a class="reference internal image-reference" href="../../../_images/ota_operation_flow.svg"><img alt="../../../_images/ota_operation_flow.svg" height="884" src="../../../_images/ota_operation_flow.svg" width="847" /></a>
 <figcaption>
 <p><span class="caption-text">OTA operation flow</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</li>
-</ol>
 </section>
 </section>
 <section id="ota-demo">
@@ -500,21 +550,23 @@
 </pre></div>
 </div>
 </li>
-<li><p>Edit the OTA type to OTA_LOCAL.</p>
+<li><p>Edit the OTA type to <code class="docutils literal notranslate"><span class="pre">OTA_LOCAL</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ret</span> <span class="o">=</span> <span class="n">ota_update_init</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="n">host</span><span class="p">,</span> <span class="n">PORT</span><span class="p">,</span> <span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="n">resource</span><span class="p">,</span> <span class="n">OTA_LOCAL</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 </ol>
 </li>
+</ol>
+<ol class="arabic" id="ota-demo-step-2" start="2">
 <li><p>Rebuild the project with the command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span> <span class="pre">EXAMPLE=ota</span></code> and download the images to the device.</p></li>
 <li><p>Modify the major and minor version number in Manifest to a bigger version as described in <a class="reference internal" href="#version-number"><span class="std std-ref">Version Number</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The bootloader will select OTA image with a bigger version number by default. If users don’t want to modify the version number, modify OTA_CLEAR_PATTERN to 1 defined in ameba_ota.h before step (2). It should only be used in the development stage.</p>
+<p>The bootloader will select OTA image with a bigger version number by default. If users don’t want to modify the version number, modify <em>OTA_CLEAR_PATTERN</em> to 1 defined in <code class="file docutils literal notranslate"><span class="pre">ameba_ota.h</span></code> before <a class="reference internal" href="#ota-demo-step-2"><span class="std std-ref">Step 2</span></a>. It should only be used in the development stage.</p>
 </div>
 </li>
-<li><p>Rebuild the project and copy <code class="docutils literal notranslate"><span class="pre">ota_all.bin</span></code> into the folder <code class="docutils literal notranslate"><span class="pre">{SDK}\tools\DownloadServer</span></code>.</p></li>
+<li><p>Rebuild the project and copy <code class="docutils literal notranslate"><span class="pre">ota_all.bin</span></code> into <code class="docutils literal notranslate"><span class="pre">{SDK}\tools\DownloadServer</span></code>.</p></li>
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">{SDK}\tools\DownloadServer\start.bat</span></code>.</p>
 <ul class="simple">
 <li><p>port = 8082</p></li>
@@ -526,16 +578,16 @@
 </pre></div>
 </div>
 </li>
-<li><p>Click the <code class="docutils literal notranslate"><span class="pre">start.bat</span></code>, and start the download server program.</p></li>
-<li><p>Reboot the DUT and connect the device to the AP which the OTA Server in.</p></li>
-<li><p>Reboot DUT to execute the new firmware after finishing image download.</p></li>
+<li><p>Click <code class="file docutils literal notranslate"><span class="pre">start.bat</span></code>, and start the download server program.</p></li>
+<li><p>Reboot the DUT and connect the device to the AP which the OTA server is in.</p></li>
+<li><p>Reboot the DUT to execute the new firmware after finishing image download.</p></li>
 </ol>
 </section>
 <section id="ota-firmware-swap">
 <h1>OTA Firmware Swap<a class="headerlink" href="#ota-firmware-swap" title="Link to this heading"></a></h1>
 <p>The following figure shows the firmware swap procedure after OTA upgrade.</p>
 <figure class="align-center" id="id16">
-<a class="reference internal image-reference" href="../../../_images/ota_firmware_swap_procedure.svg"><img alt="../../../_images/ota_firmware_swap_procedure.svg" height="413" src="../../../_images/ota_firmware_swap_procedure.svg" width="597" /></a>
+<a class="reference internal image-reference" href="../../../_images/ota_firmware_swap_procedure.svg"><img alt="../../../_images/ota_firmware_swap_procedure.svg" height="474" src="../../../_images/ota_firmware_swap_procedure.svg" width="713" /></a>
 <figcaption>
 <p><span class="caption-text">OTA firmware swap procedure</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
 </figcaption>

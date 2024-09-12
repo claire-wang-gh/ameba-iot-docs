@@ -188,8 +188,9 @@ The SPI FullMAC can be used on on platforms with SPI interface, such as Raspberr
    | PB8             | GPIO 23          | DEV_TX_REQ    | | An output pin for |CHIP_NAME|, used to indicate               |
    |                 |                  |               | | to host that it has a data packet to send with a rising edge. |
    +-----------------+------------------+---------------+-----------------------------------------------------------------+
-   | PB9             | GPIO 22          | DEV_READY     | | An output pin for |CHIP_NAME|, used to indicate               |
-   |                 |                  |               | | its readiness for SPI transcation to host.                    |
+   | PB9             | GPIO 22          | DEV_READY     | | An output pin for |CHIP_NAME|, used to indicate its readiness |
+   |                 |                  |               | | for SPI transcation to host.                                  |
+   |                 |                  |               |                                                                 |   
    |                 |                  |               | - 1: Device is ready.                                           |
    |                 |                  |               | - 0: Device is busy.                                            |
    +-----------------+------------------+---------------+-----------------------------------------------------------------+

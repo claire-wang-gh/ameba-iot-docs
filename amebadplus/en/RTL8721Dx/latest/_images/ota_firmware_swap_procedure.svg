@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- 由 Microsoft Visio, SVG Export 生成 fig15_ota_firmware_swap_procedure.svg 页-1 -->
+<!-- 由 Microsoft Visio, SVG Export 生成 ota_firmware_swap_procedure.svg 页-1 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
-		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.22483in" height="4.31206in"
-		viewBox="0 0 448.188 310.469" xml:space="preserve" color-interpolation-filters="sRGB" class="st25">
-	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.72483in" height="3.81206in"
+		viewBox="0 0 412.188 274.469" xml:space="preserve" color-interpolation-filters="sRGB" class="st25">
+	<v:documentProperties v:langID="2052" v:viewMarkup="false"/>
 
 	<style type="text/css">
 	<![CDATA[
@@ -91,7 +91,7 @@
 				v:shadowOffsetY="-8.50394"/>
 		<v:layer v:name="连接线" v:index="0"/>
 		<v:layer v:name="流程图" v:index="1"/>
-		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(19.0394,-18.125)">
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(1.0394,-0.125)">
 			<title>工作表.1</title>
 			<desc>OTA Firmware Swap</desc>
 			<v:userDefs>
@@ -99,26 +99,26 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
-			<v:textRect cx="205.512" cy="173.359" width="411.03" height="274.219"/>
-			<rect x="0" y="36.25" width="411.024" height="274.219" class="st1"/>
-			<text x="163.27" y="49.25" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA Firmware Swap</text>		</g>
-		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(56.4201,-217.578)">
+			<v:textRect cx="205.512" cy="137.359" width="411.03" height="274.219"/>
+			<rect x="0" y="0.25" width="411.024" height="274.219" class="st1"/>
+			<text x="163.27" y="13.25" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA Firmware Swap</text>		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(38.4201,-199.578)">
 			<title>工作表.2</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="244.906" width="114.544" height="65.5625" class="st3"/>
+			<rect x="0" y="208.906" width="114.544" height="65.5625" class="st3"/>
 		</g>
-		<g id="shape3-8" v:mID="3" v:groupContext="shape" transform="translate(110.956,-220.318)">
+		<g id="shape3-8" v:mID="3" v:groupContext="shape" transform="translate(92.9561,-202.318)">
 			<title>工作表.3</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="250.582" width="53.0149" height="59.887" class="st3"/>
+			<rect x="0" y="214.582" width="53.0149" height="59.887" class="st3"/>
 		</g>
-		<g id="shape4-11" v:mID="4" v:groupContext="shape" transform="translate(112.765,-247.65)">
+		<g id="shape4-11" v:mID="4" v:groupContext="shape" transform="translate(94.7652,-229.65)">
 			<title>工作表.4</title>
 			<desc>OTA1</desc>
 			<v:userDefs>
@@ -126,10 +126,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="24.4684" cy="299.855" width="48.94" height="21.2269"/>
-			<rect x="0" y="289.242" width="48.9368" height="21.2269" class="st4"/>
-			<text x="15.53" y="302.26" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA1</text>		</g>
-		<g id="shape5-16" v:mID="5" v:groupContext="shape" transform="translate(112.765,-225.243)">
+			<v:textRect cx="24.4684" cy="263.855" width="48.94" height="21.2269"/>
+			<rect x="0" y="253.242" width="48.9368" height="21.2269" class="st4"/>
+			<text x="15.53" y="266.26" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA1</text>		</g>
+		<g id="shape5-16" v:mID="5" v:groupContext="shape" transform="translate(94.7652,-207.243)">
 			<title>工作表.5</title>
 			<desc>OTA2</desc>
 			<v:userDefs>
@@ -137,10 +137,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="24.4684" cy="299.855" width="48.94" height="21.2269"/>
-			<rect x="0" y="289.242" width="48.9368" height="21.2269" class="st6"/>
-			<text x="15.53" y="302.26" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA2</text>		</g>
-		<g id="shape6-21" v:mID="6" v:groupContext="shape" transform="translate(118.203,-270.827)">
+			<v:textRect cx="24.4684" cy="263.855" width="48.94" height="21.2269"/>
+			<rect x="0" y="253.242" width="48.9368" height="21.2269" class="st6"/>
+			<text x="15.53" y="266.26" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA2</text>		</g>
+		<g id="shape6-21" v:mID="6" v:groupContext="shape" transform="translate(100.203,-252.827)">
 			<title>工作表.6</title>
 			<desc>...</desc>
 			<v:userDefs>
@@ -148,10 +148,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="17.6716" cy="308.11" width="35.35" height="4.71709"/>
-			<rect x="0" y="305.751" width="35.3433" height="4.71709" class="st7"/>
-			<text x="14.64" y="310.51" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
-		<g id="shape7-24" v:mID="7" v:groupContext="shape" transform="translate(118.203,-221.482)">
+			<v:textRect cx="17.6716" cy="272.11" width="35.35" height="4.71709"/>
+			<rect x="0" y="269.751" width="35.3433" height="4.71709" class="st7"/>
+			<text x="14.64" y="274.51" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
+		<g id="shape7-24" v:mID="7" v:groupContext="shape" transform="translate(100.203,-203.482)">
 			<title>工作表.7</title>
 			<desc>...</desc>
 			<v:userDefs>
@@ -159,10 +159,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="17.6716" cy="308.11" width="35.35" height="4.71709"/>
-			<rect x="0" y="305.751" width="35.3433" height="4.71709" class="st7"/>
-			<text x="14.64" y="310.51" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
-		<g id="shape8-27" v:mID="8" v:groupContext="shape" transform="translate(107.798,-262.323)">
+			<v:textRect cx="17.6716" cy="272.11" width="35.35" height="4.71709"/>
+			<rect x="0" y="269.751" width="35.3433" height="4.71709" class="st7"/>
+			<text x="14.64" y="274.51" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
+		<g id="shape8-27" v:mID="8" v:groupContext="shape" transform="translate(89.7977,-244.323)">
 			<title>工作表.8</title>
 			<desc>running</desc>
 			<v:userDefs>
@@ -170,19 +170,19 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.8719" cy="307.502" width="57.75" height="5.934"/>
-			<rect x="0" y="304.535" width="57.7437" height="5.934" class="st7"/>
-			<text x="15.93" y="309.9" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>running</text>		</g>
-		<g id="shape9-30" v:mID="9" v:groupContext="shape" transform="translate(374.232,-236.114)">
+			<v:textRect cx="28.8719" cy="271.502" width="57.75" height="5.934"/>
+			<rect x="0" y="268.535" width="57.7437" height="5.934" class="st7"/>
+			<text x="15.93" y="273.9" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>running</text>		</g>
+		<g id="shape9-30" v:mID="9" v:groupContext="shape" transform="translate(356.232,-218.114)">
 			<title>矩形.1081</title>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="304.415" width="47.9424" height="6.05399" class="st3"/>
+			<rect x="0" y="268.415" width="47.9424" height="6.05399" class="st3"/>
 		</g>
-		<g id="shape10-33" v:mID="10" v:groupContext="shape" transform="translate(374.232,-242.168)">
+		<g id="shape10-33" v:mID="10" v:groupContext="shape" transform="translate(356.232,-224.168)">
 			<title>矩形.1082</title>
 			<desc>Server</desc>
 			<v:userDefs>
@@ -191,10 +191,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="23.9712" cy="294.577" width="47.95" height="31.7835"/>
-			<rect x="0" y="278.685" width="47.9424" height="31.7835" class="st3"/>
-			<text x="13.56" y="296.98" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server</text>		</g>
-		<g id="shape11-37" v:mID="11" v:groupContext="shape" transform="translate(264.287,-251.478)">
+			<v:textRect cx="23.9712" cy="258.577" width="47.95" height="31.7835"/>
+			<rect x="0" y="242.685" width="47.9424" height="31.7835" class="st3"/>
+			<text x="13.56" y="260.98" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server</text>		</g>
+		<g id="shape11-37" v:mID="11" v:groupContext="shape" transform="translate(246.287,-233.478)">
 			<title>工作表.11</title>
 			<desc>OTA.bin</desc>
 			<v:userDefs>
@@ -202,10 +202,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="40.3685" cy="305.415" width="80.74" height="10.1077"/>
-			<path d="M0 310.47 L80.74 310.47 L80.74 300.36 L0 300.36 L0 310.47 Z" class="st9"/>
-			<text x="27.33" y="307.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA.bin</text>		</g>
-		<g id="shape12-40" v:mID="12" v:groupContext="shape" transform="translate(116.822,-274.539)">
+			<v:textRect cx="40.3685" cy="269.415" width="80.74" height="10.1077"/>
+			<path d="M0 274.47 L80.74 274.47 L80.74 264.36 L0 264.36 L0 274.47 Z" class="st9"/>
+			<text x="27.33" y="271.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA.bin</text>		</g>
+		<g id="shape12-40" v:mID="12" v:groupContext="shape" transform="translate(98.8215,-256.539)">
 			<title>工作表.12</title>
 			<desc>Flash</desc>
 			<v:userDefs>
@@ -213,18 +213,18 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="20.3036" cy="308.511" width="40.61" height="3.91418"/>
-			<rect x="0" y="306.554" width="40.6071" height="3.91418" class="st7"/>
-			<text x="11.97" y="310.91" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Flash</text>		</g>
-		<g id="shape13-43" v:mID="13" v:groupContext="shape" transform="translate(322.692,366.682) rotate(172.331)">
+			<v:textRect cx="20.3036" cy="272.511" width="40.61" height="3.91418"/>
+			<rect x="0" y="270.554" width="40.6071" height="3.91418" class="st7"/>
+			<text x="11.97" y="274.91" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Flash</text>		</g>
+		<g id="shape13-43" v:mID="13" v:groupContext="shape" transform="translate(299.887,313.004) rotate(172.331)">
 			<title>工作表.13</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L108.54 310.47" class="st11"/>
+			<path d="M0 274.47 L108.54 274.47" class="st11"/>
 		</g>
-		<g id="shape14-50" v:mID="14" v:groupContext="shape" transform="translate(138.117,-216.002) rotate(-10)">
+		<g id="shape14-50" v:mID="14" v:groupContext="shape" transform="translate(126.368,-198.549) rotate(-10)">
 			<title>工作表.14</title>
 			<desc>Downloading new firmware</desc>
 			<v:userDefs>
@@ -232,10 +232,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="49.2673" cy="303.07" width="98.54" height="14.7974"/>
-			<rect x="0" y="295.671" width="98.5347" height="14.7974" class="st7"/>
-			<text x="4.14" y="305.07" class="st5" v:langID="2052"><v:paragraph v:spLine="-1" v:horizAlign="1"/><v:tabList/>Downloading new firmware</text>		</g>
-		<g id="shape15-53" v:mID="15" v:groupContext="shape" transform="translate(55.7702,-240.574)">
+			<v:textRect cx="49.2673" cy="267.07" width="98.54" height="14.7974"/>
+			<rect x="0" y="259.671" width="98.5347" height="14.7974" class="st7"/>
+			<text x="4.14" y="269.07" class="st5" v:langID="2052"><v:paragraph v:spLine="-1" v:horizAlign="1"/><v:tabList/>Downloading new firmware</text>		</g>
+		<g id="shape15-53" v:mID="15" v:groupContext="shape" transform="translate(37.7702,-222.574)">
 			<title>工作表.15</title>
 			<desc>Client</desc>
 			<v:userDefs>
@@ -243,18 +243,18 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.1994" cy="299.215" width="56.4" height="22.5065"/>
-			<rect x="0" y="287.962" width="56.3988" height="22.5065" class="st7"/>
-			<text x="18.8" y="301.62" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client</text>		</g>
-		<g id="shape16-56" v:mID="16" v:groupContext="shape" transform="translate(420.217,173.438) rotate(90)">
+			<v:textRect cx="28.1994" cy="263.215" width="56.4" height="22.5065"/>
+			<rect x="0" y="251.962" width="56.3988" height="22.5065" class="st7"/>
+			<text x="18.8" y="265.62" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client</text>		</g>
+		<g id="shape16-56" v:mID="16" v:groupContext="shape" transform="translate(366.217,155.438) rotate(90)">
 			<title>工作表.16</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L8.75 310.47" class="st13"/>
+			<path d="M0 274.47 L8.75 274.47" class="st13"/>
 		</g>
-		<g id="shape17-63" v:mID="17" v:groupContext="shape" transform="translate(98.7188,-205.532)">
+		<g id="shape17-63" v:mID="17" v:groupContext="shape" transform="translate(80.7188,-187.532)">
 			<title>工作表.17</title>
 			<desc>Reboot</desc>
 			<v:userDefs>
@@ -262,26 +262,26 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="40.6071" cy="305.508" width="81.22" height="9.92126"/>
-			<rect x="0" y="300.547" width="81.2143" height="9.92126" class="st7"/>
-			<text x="28.51" y="307.91" class="st15" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Reboot</text>		</g>
-		<g id="shape18-66" v:mID="18" v:groupContext="shape" transform="translate(55.8898,-137.788)">
+			<v:textRect cx="40.6071" cy="269.508" width="81.22" height="9.92126"/>
+			<rect x="0" y="264.547" width="81.2143" height="9.92126" class="st7"/>
+			<text x="28.51" y="271.91" class="st15" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Reboot</text>		</g>
+		<g id="shape18-66" v:mID="18" v:groupContext="shape" transform="translate(37.8898,-119.788)">
 			<title>工作表.18</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="245.272" width="114.544" height="65.1969" class="st3"/>
+			<rect x="0" y="209.272" width="114.544" height="65.1969" class="st3"/>
 		</g>
-		<g id="shape19-69" v:mID="19" v:groupContext="shape" transform="translate(110.392,-140.513)">
+		<g id="shape19-69" v:mID="19" v:groupContext="shape" transform="translate(92.3921,-122.513)">
 			<title>工作表.19</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="250.916" width="53.0149" height="59.5529" class="st3"/>
+			<rect x="0" y="214.916" width="53.0149" height="59.5529" class="st3"/>
 		</g>
-		<g id="shape20-72" v:mID="20" v:groupContext="shape" transform="translate(112.201,-167.692)">
+		<g id="shape20-72" v:mID="20" v:groupContext="shape" transform="translate(94.2012,-149.692)">
 			<title>工作表.20</title>
 			<desc>OTA1</desc>
 			<v:userDefs>
@@ -289,10 +289,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="24.4684" cy="299.914" width="48.94" height="21.1085"/>
-			<rect x="0" y="289.36" width="48.9368" height="21.1085" class="st16"/>
-			<text x="15.53" y="302.31" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA1</text>		</g>
-		<g id="shape21-77" v:mID="21" v:groupContext="shape" transform="translate(112.201,-145.411)">
+			<v:textRect cx="24.4684" cy="263.914" width="48.94" height="21.1085"/>
+			<rect x="0" y="253.36" width="48.9368" height="21.1085" class="st16"/>
+			<text x="15.53" y="266.31" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA1</text>		</g>
+		<g id="shape21-77" v:mID="21" v:groupContext="shape" transform="translate(94.2012,-127.411)">
 			<title>工作表.21</title>
 			<desc>OTA2</desc>
 			<v:userDefs>
@@ -300,10 +300,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="24.4684" cy="299.914" width="48.94" height="21.1085"/>
-			<rect x="0" y="289.36" width="48.9368" height="21.1085" class="st6"/>
-			<text x="15.53" y="302.31" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA2</text>		</g>
-		<g id="shape22-81" v:mID="22" v:groupContext="shape" transform="translate(117.639,-191.002)">
+			<v:textRect cx="24.4684" cy="263.914" width="48.94" height="21.1085"/>
+			<rect x="0" y="253.36" width="48.9368" height="21.1085" class="st6"/>
+			<text x="15.53" y="266.31" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA2</text>		</g>
+		<g id="shape22-81" v:mID="22" v:groupContext="shape" transform="translate(99.6386,-173.002)">
 			<title>工作表.22</title>
 			<desc>...</desc>
 			<v:userDefs>
@@ -311,10 +311,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="17.6716" cy="308.123" width="35.35" height="4.69078"/>
-			<rect x="0" y="305.778" width="35.3433" height="4.69078" class="st7"/>
-			<text x="14.64" y="310.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
-		<g id="shape23-84" v:mID="23" v:groupContext="shape" transform="translate(117.639,-141.671)">
+			<v:textRect cx="17.6716" cy="272.123" width="35.35" height="4.69078"/>
+			<rect x="0" y="269.778" width="35.3433" height="4.69078" class="st7"/>
+			<text x="14.64" y="274.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
+		<g id="shape23-84" v:mID="23" v:groupContext="shape" transform="translate(99.6386,-123.671)">
 			<title>工作表.23</title>
 			<desc>...</desc>
 			<v:userDefs>
@@ -322,10 +322,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="17.6716" cy="308.123" width="35.35" height="4.69078"/>
-			<rect x="0" y="305.778" width="35.3433" height="4.69078" class="st7"/>
-			<text x="14.64" y="310.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
-		<g id="shape24-87" v:mID="24" v:groupContext="shape" transform="translate(116.258,-194.236)">
+			<v:textRect cx="17.6716" cy="272.123" width="35.35" height="4.69078"/>
+			<rect x="0" y="269.778" width="35.3433" height="4.69078" class="st7"/>
+			<text x="14.64" y="274.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
+		<g id="shape24-87" v:mID="24" v:groupContext="shape" transform="translate(98.2576,-176.236)">
 			<title>工作表.24</title>
 			<desc>Flash</desc>
 			<v:userDefs>
@@ -333,10 +333,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="20.3036" cy="308.522" width="40.61" height="3.89235"/>
-			<rect x="0" y="306.576" width="40.6071" height="3.89235" class="st7"/>
-			<text x="11.97" y="310.92" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Flash</text>		</g>
-		<g id="shape25-90" v:mID="25" v:groupContext="shape" transform="translate(55.2062,-160.656)">
+			<v:textRect cx="20.3036" cy="272.522" width="40.61" height="3.89235"/>
+			<rect x="0" y="270.576" width="40.6071" height="3.89235" class="st7"/>
+			<text x="11.97" y="274.92" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Flash</text>		</g>
+		<g id="shape25-90" v:mID="25" v:groupContext="shape" transform="translate(37.2062,-142.656)">
 			<title>工作表.25</title>
 			<desc>Client</desc>
 			<v:userDefs>
@@ -344,10 +344,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.1994" cy="299.278" width="56.4" height="22.381"/>
-			<rect x="0" y="288.088" width="56.3988" height="22.381" class="st7"/>
-			<text x="18.8" y="301.68" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client</text>		</g>
-		<g id="shape26-93" v:mID="26" v:groupContext="shape" transform="translate(106.755,-160.234)">
+			<v:textRect cx="28.1994" cy="263.278" width="56.4" height="22.381"/>
+			<rect x="0" y="252.088" width="56.3988" height="22.381" class="st7"/>
+			<text x="18.8" y="265.68" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client</text>		</g>
+		<g id="shape26-93" v:mID="26" v:groupContext="shape" transform="translate(88.755,-142.234)">
 			<title>工作表.26</title>
 			<desc>running</desc>
 			<v:userDefs>
@@ -355,26 +355,26 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.8719" cy="307.518" width="57.75" height="5.9009"/>
-			<rect x="0" y="304.568" width="57.7437" height="5.9009" class="st7"/>
-			<text x="15.93" y="309.92" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>running</text>		</g>
-		<g id="shape27-96" v:mID="27" v:groupContext="shape" transform="translate(301.103,438.576) rotate(176.333)">
+			<v:textRect cx="28.8719" cy="271.518" width="57.75" height="5.9009"/>
+			<rect x="0" y="268.568" width="57.7437" height="5.9009" class="st7"/>
+			<text x="15.93" y="273.92" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>running</text>		</g>
+		<g id="shape27-96" v:mID="27" v:groupContext="shape" transform="translate(280.801,384.65) rotate(176.333)">
 			<title>工作表.27</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L107.52 310.47" class="st17"/>
+			<path d="M0 274.47 L107.52 274.47" class="st17"/>
 		</g>
-		<g id="shape28-103" v:mID="28" v:groupContext="shape" transform="translate(25.1952,-210.067)">
+		<g id="shape28-103" v:mID="28" v:groupContext="shape" transform="translate(7.19519,-192.067)">
 			<title>工作表.28</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L397.78 310.47" class="st19"/>
+			<path d="M0 274.47 L397.78 274.47" class="st19"/>
 		</g>
-		<g id="shape29-107" v:mID="29" v:groupContext="shape" transform="translate(98.7188,-48.2086)">
+		<g id="shape29-107" v:mID="29" v:groupContext="shape" transform="translate(80.7188,-30.2086)">
 			<title>工作表.29</title>
 			<desc>Reboot</desc>
 			<v:userDefs>
@@ -382,26 +382,26 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="40.6071" cy="305.508" width="81.22" height="9.92126"/>
-			<rect x="0" y="300.547" width="81.2143" height="9.92126" class="st7"/>
-			<text x="28.51" y="307.91" class="st15" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Reboot</text>		</g>
-		<g id="shape30-110" v:mID="30" v:groupContext="shape" transform="translate(55.8898,-57.3411)">
+			<v:textRect cx="40.6071" cy="269.508" width="81.22" height="9.92126"/>
+			<rect x="0" y="264.547" width="81.2143" height="9.92126" class="st7"/>
+			<text x="28.51" y="271.91" class="st15" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Reboot</text>		</g>
+		<g id="shape30-110" v:mID="30" v:groupContext="shape" transform="translate(37.8898,-39.3411)">
 			<title>工作表.30</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="245.272" width="114.544" height="65.1969" class="st3"/>
+			<rect x="0" y="209.272" width="114.544" height="65.1969" class="st3"/>
 		</g>
-		<g id="shape31-113" v:mID="31" v:groupContext="shape" transform="translate(110.392,-60.0657)">
+		<g id="shape31-113" v:mID="31" v:groupContext="shape" transform="translate(92.3921,-42.0657)">
 			<title>工作表.31</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="250.916" width="53.0149" height="59.5529" class="st3"/>
+			<rect x="0" y="214.916" width="53.0149" height="59.5529" class="st3"/>
 		</g>
-		<g id="shape32-116" v:mID="32" v:groupContext="shape" transform="translate(112.201,-87.2448)">
+		<g id="shape32-116" v:mID="32" v:groupContext="shape" transform="translate(94.2012,-69.2448)">
 			<title>工作表.32</title>
 			<desc>OTA1</desc>
 			<v:userDefs>
@@ -409,10 +409,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="24.4684" cy="299.914" width="48.94" height="21.1085"/>
-			<rect x="0" y="289.36" width="48.9368" height="21.1085" class="st16"/>
-			<text x="15.53" y="302.31" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA1</text>		</g>
-		<g id="shape33-120" v:mID="33" v:groupContext="shape" transform="translate(112.201,-64.9636)">
+			<v:textRect cx="24.4684" cy="263.914" width="48.94" height="21.1085"/>
+			<rect x="0" y="253.36" width="48.9368" height="21.1085" class="st16"/>
+			<text x="15.53" y="266.31" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA1</text>		</g>
+		<g id="shape33-120" v:mID="33" v:groupContext="shape" transform="translate(94.2012,-46.9636)">
 			<title>工作表.33</title>
 			<desc>OTA2</desc>
 			<v:userDefs>
@@ -420,10 +420,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="24.4684" cy="299.914" width="48.94" height="21.1085"/>
-			<rect x="0" y="289.36" width="48.9368" height="21.1085" class="st6"/>
-			<text x="15.53" y="302.31" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA2</text>		</g>
-		<g id="shape34-124" v:mID="34" v:groupContext="shape" transform="translate(117.639,-111.285)">
+			<v:textRect cx="24.4684" cy="263.914" width="48.94" height="21.1085"/>
+			<rect x="0" y="253.36" width="48.9368" height="21.1085" class="st6"/>
+			<text x="15.53" y="266.31" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA2</text>		</g>
+		<g id="shape34-124" v:mID="34" v:groupContext="shape" transform="translate(99.6386,-93.285)">
 			<title>工作表.34</title>
 			<desc>...</desc>
 			<v:userDefs>
@@ -431,10 +431,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="17.6716" cy="308.123" width="35.35" height="4.69078"/>
-			<rect x="0" y="305.778" width="35.3433" height="4.69078" class="st7"/>
-			<text x="14.64" y="310.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
-		<g id="shape35-127" v:mID="35" v:groupContext="shape" transform="translate(117.639,-61.2234)">
+			<v:textRect cx="17.6716" cy="272.123" width="35.35" height="4.69078"/>
+			<rect x="0" y="269.778" width="35.3433" height="4.69078" class="st7"/>
+			<text x="14.64" y="274.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
+		<g id="shape35-127" v:mID="35" v:groupContext="shape" transform="translate(99.6386,-43.2234)">
 			<title>工作表.35</title>
 			<desc>...</desc>
 			<v:userDefs>
@@ -442,10 +442,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="17.6716" cy="308.123" width="35.35" height="4.69078"/>
-			<rect x="0" y="305.778" width="35.3433" height="4.69078" class="st7"/>
-			<text x="14.64" y="310.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
-		<g id="shape36-130" v:mID="36" v:groupContext="shape" transform="translate(116.258,-114.948)">
+			<v:textRect cx="17.6716" cy="272.123" width="35.35" height="4.69078"/>
+			<rect x="0" y="269.778" width="35.3433" height="4.69078" class="st7"/>
+			<text x="14.64" y="274.52" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
+		<g id="shape36-130" v:mID="36" v:groupContext="shape" transform="translate(98.2576,-96.9478)">
 			<title>工作表.36</title>
 			<desc>Flash</desc>
 			<v:userDefs>
@@ -453,10 +453,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="20.3036" cy="308.522" width="40.61" height="3.89235"/>
-			<rect x="0" y="306.576" width="40.6071" height="3.89235" class="st7"/>
-			<text x="11.97" y="310.92" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Flash</text>		</g>
-		<g id="shape37-133" v:mID="37" v:groupContext="shape" transform="translate(55.2062,-80.2086)">
+			<v:textRect cx="20.3036" cy="272.522" width="40.61" height="3.89235"/>
+			<rect x="0" y="270.576" width="40.6071" height="3.89235" class="st7"/>
+			<text x="11.97" y="274.92" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Flash</text>		</g>
+		<g id="shape37-133" v:mID="37" v:groupContext="shape" transform="translate(37.2062,-62.2086)">
 			<title>工作表.37</title>
 			<desc>Client</desc>
 			<v:userDefs>
@@ -464,18 +464,18 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.1994" cy="299.278" width="56.4" height="22.381"/>
-			<rect x="0" y="288.088" width="56.3988" height="22.381" class="st7"/>
-			<text x="18.8" y="301.68" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client</text>		</g>
-		<g id="shape38-136" v:mID="38" v:groupContext="shape" transform="translate(23.5346,-52.6122)">
+			<v:textRect cx="28.1994" cy="263.278" width="56.4" height="22.381"/>
+			<rect x="0" y="252.088" width="56.3988" height="22.381" class="st7"/>
+			<text x="18.8" y="265.68" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client</text>		</g>
+		<g id="shape38-136" v:mID="38" v:groupContext="shape" transform="translate(5.53462,-34.6122)">
 			<title>工作表.38</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L397.78 310.47" class="st19"/>
+			<path d="M0 274.47 L397.78 274.47" class="st19"/>
 		</g>
-		<g id="shape39-140" v:mID="39" v:groupContext="shape" transform="translate(108.373,-102.072)">
+		<g id="shape39-140" v:mID="39" v:groupContext="shape" transform="translate(90.3726,-84.0719)">
 			<title>工作表.39</title>
 			<desc>running</desc>
 			<v:userDefs>
@@ -483,26 +483,26 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.8719" cy="307.518" width="57.75" height="5.9009"/>
-			<rect x="0" y="304.568" width="57.7437" height="5.9009" class="st7"/>
-			<text x="15.93" y="309.92" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>running</text>		</g>
-		<g id="shape40-143" v:mID="40" v:groupContext="shape" transform="translate(421.393,93.4707) rotate(90)">
+			<v:textRect cx="28.8719" cy="271.518" width="57.75" height="5.9009"/>
+			<rect x="0" y="268.568" width="57.7437" height="5.9009" class="st7"/>
+			<text x="15.93" y="273.92" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>running</text>		</g>
+		<g id="shape40-143" v:mID="40" v:groupContext="shape" transform="translate(367.393,75.4707) rotate(90)">
 			<title>工作表.40</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L7.85 310.47" class="st13"/>
+			<path d="M0 274.47 L7.85 274.47" class="st13"/>
 		</g>
-		<g id="shape41-149" v:mID="41" v:groupContext="shape" transform="translate(418.924,253.127) rotate(90)">
+		<g id="shape41-149" v:mID="41" v:groupContext="shape" transform="translate(364.924,235.127) rotate(90)">
 			<title>工作表.41</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L7.68 310.47" class="st13"/>
+			<path d="M0 274.47 L7.68 274.47" class="st13"/>
 		</g>
-		<g id="shape42-155" v:mID="42" v:groupContext="shape" transform="translate(18.125,-28.4907)">
+		<g id="shape42-155" v:mID="42" v:groupContext="shape" transform="translate(0.125,-10.4907)">
 			<title>工作表.42</title>
 			<desc>. . .</desc>
 			<v:userDefs>
@@ -510,11 +510,11 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="16.9196" cy="305.845" width="33.84" height="9.24778"/>
-			<rect x="0" y="301.221" width="33.8393" height="9.24778" class="st7"/>
-			<text x="16.12" y="300.45" class="st20" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.<v:newlineChar/><tspan
+			<v:textRect cx="16.9196" cy="269.845" width="33.84" height="9.24778"/>
+			<rect x="0" y="265.221" width="33.8393" height="9.24778" class="st7"/>
+			<text x="16.12" y="264.45" class="st20" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.<v:newlineChar/><tspan
 						x="16.12" dy="1.2em" class="st21">.<v:newlineChar/></tspan><tspan x="16.12" dy="1.2em" class="st21">.</tspan></text>		</g>
-		<g id="shape43-160" v:mID="43" v:groupContext="shape" transform="translate(91.6243,-28.2463)">
+		<g id="shape43-160" v:mID="43" v:groupContext="shape" transform="translate(73.6243,-10.2463)">
 			<title>工作表.43</title>
 			<desc>. . .</desc>
 			<v:userDefs>
@@ -522,11 +522,11 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="16.9196" cy="305.845" width="33.84" height="9.24778"/>
-			<rect x="0" y="301.221" width="33.8393" height="9.24778" class="st7"/>
-			<text x="16.12" y="300.45" class="st20" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.<v:newlineChar/><tspan
+			<v:textRect cx="16.9196" cy="269.845" width="33.84" height="9.24778"/>
+			<rect x="0" y="265.221" width="33.8393" height="9.24778" class="st7"/>
+			<text x="16.12" y="264.45" class="st20" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.<v:newlineChar/><tspan
 						x="16.12" dy="1.2em" class="st21">.<v:newlineChar/></tspan><tspan x="16.12" dy="1.2em" class="st21">.</tspan></text>		</g>
-		<g id="shape44-165" v:mID="44" v:groupContext="shape" transform="translate(284.706,-28.4473)">
+		<g id="shape44-165" v:mID="44" v:groupContext="shape" transform="translate(266.706,-10.4473)">
 			<title>工作表.44</title>
 			<desc>. . .</desc>
 			<v:userDefs>
@@ -534,11 +534,11 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="16.9196" cy="305.845" width="33.84" height="9.24778"/>
-			<rect x="0" y="301.221" width="33.8393" height="9.24778" class="st7"/>
-			<text x="16.12" y="300.45" class="st20" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.<v:newlineChar/><tspan
+			<v:textRect cx="16.9196" cy="269.845" width="33.84" height="9.24778"/>
+			<rect x="0" y="265.221" width="33.8393" height="9.24778" class="st7"/>
+			<text x="16.12" y="264.45" class="st20" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.<v:newlineChar/><tspan
 						x="16.12" dy="1.2em" class="st21">.<v:newlineChar/></tspan><tspan x="16.12" dy="1.2em" class="st21">.</tspan></text>		</g>
-		<g id="shape46-170" v:mID="46" v:groupContext="shape" transform="translate(99.0906,-125.487)">
+		<g id="shape46-170" v:mID="46" v:groupContext="shape" transform="translate(81.0906,-107.487)">
 			<title>工作表.46</title>
 			<desc>Reboot</desc>
 			<v:userDefs>
@@ -546,18 +546,18 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="40.6071" cy="305.508" width="81.22" height="9.92126"/>
-			<rect x="0" y="300.547" width="81.2143" height="9.92126" class="st7"/>
-			<text x="28.51" y="307.91" class="st15" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Reboot</text>		</g>
-		<g id="shape47-173" v:mID="47" v:groupContext="shape" transform="translate(21.874,-130.033)">
+			<v:textRect cx="40.6071" cy="269.508" width="81.22" height="9.92126"/>
+			<rect x="0" y="264.547" width="81.2143" height="9.92126" class="st7"/>
+			<text x="28.51" y="271.91" class="st15" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Reboot</text>		</g>
+		<g id="shape47-173" v:mID="47" v:groupContext="shape" transform="translate(3.87405,-112.033)">
 			<title>工作表.47</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L397.78 310.47" class="st19"/>
+			<path d="M0 274.47 L397.78 274.47" class="st19"/>
 		</g>
-		<g id="shape48-177" v:mID="48" v:groupContext="shape" transform="translate(183.491,-251.478)">
+		<g id="shape48-177" v:mID="48" v:groupContext="shape" transform="translate(165.491,-233.478)">
 			<title>工作表.48</title>
 			<desc>Firmware file header</desc>
 			<v:userDefs>
@@ -565,18 +565,18 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="39.0176" cy="305.415" width="78.04" height="10.1077"/>
-			<path d="M0 310.47 L78.04 310.47 L78.04 300.36 L0 300.36 L0 310.47 Z" class="st9"/>
-			<text x="5.16" y="307.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Firmware file header</text>		</g>
-		<g id="shape49-180" v:mID="49" v:groupContext="shape" transform="translate(373.838,364.482) rotate(180)">
+			<v:textRect cx="39.0176" cy="269.415" width="78.04" height="10.1077"/>
+			<path d="M0 274.47 L78.04 274.47 L78.04 264.36 L0 264.36 L0 274.47 Z" class="st9"/>
+			<text x="5.16" y="271.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Firmware file header</text>		</g>
+		<g id="shape49-180" v:mID="49" v:groupContext="shape" transform="translate(355.838,310.482) rotate(180)">
 			<title>工作表.49</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L27.76 310.47" class="st22"/>
+			<path d="M0 274.47 L27.76 274.47" class="st22"/>
 		</g>
-		<g id="shape50-187" v:mID="50" v:groupContext="shape" transform="translate(342.106,-260.424)">
+		<g id="shape50-187" v:mID="50" v:groupContext="shape" transform="translate(324.106,-242.424)">
 			<title>工作表.50</title>
 			<desc>Send</desc>
 			<v:userDefs>
@@ -584,19 +584,19 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="19.1756" cy="307.634" width="38.36" height="5.66929"/>
-			<rect x="0" y="304.799" width="38.3512" height="5.66929" class="st7"/>
-			<text x="11.14" y="310.03" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Send</text>		</g>
-		<g id="shape51-190" v:mID="51" v:groupContext="shape" transform="translate(375.034,-166.362)">
+			<v:textRect cx="19.1756" cy="271.634" width="38.36" height="5.66929"/>
+			<rect x="0" y="268.799" width="38.3512" height="5.66929" class="st7"/>
+			<text x="11.14" y="274.03" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Send</text>		</g>
+		<g id="shape51-190" v:mID="51" v:groupContext="shape" transform="translate(357.034,-148.362)">
 			<title>矩形.66</title>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="304.415" width="47.9424" height="6.05399" class="st3"/>
+			<rect x="0" y="268.415" width="47.9424" height="6.05399" class="st3"/>
 		</g>
-		<g id="shape52-193" v:mID="52" v:groupContext="shape" transform="translate(375.034,-172.416)">
+		<g id="shape52-193" v:mID="52" v:groupContext="shape" transform="translate(357.034,-154.416)">
 			<title>矩形.67</title>
 			<desc>Server</desc>
 			<v:userDefs>
@@ -605,10 +605,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="23.9712" cy="294.577" width="47.95" height="31.7835"/>
-			<rect x="0" y="278.685" width="47.9424" height="31.7835" class="st3"/>
-			<text x="13.56" y="296.98" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server</text>		</g>
-		<g id="shape53-197" v:mID="53" v:groupContext="shape" transform="translate(264.287,-181.725)">
+			<v:textRect cx="23.9712" cy="258.577" width="47.95" height="31.7835"/>
+			<rect x="0" y="242.685" width="47.9424" height="31.7835" class="st3"/>
+			<text x="13.56" y="260.98" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server</text>		</g>
+		<g id="shape53-197" v:mID="53" v:groupContext="shape" transform="translate(246.287,-163.725)">
 			<title>工作表.53</title>
 			<desc>OTA.bin</desc>
 			<v:userDefs>
@@ -616,10 +616,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="40.3685" cy="305.415" width="80.74" height="10.1077"/>
-			<path d="M0 310.47 L80.74 310.47 L80.74 300.36 L0 300.36 L0 310.47 Z" class="st9"/>
-			<text x="27.33" y="307.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA.bin</text>		</g>
-		<g id="shape54-200" v:mID="54" v:groupContext="shape" transform="translate(144.987,-144.601) rotate(-10)">
+			<v:textRect cx="40.3685" cy="269.415" width="80.74" height="10.1077"/>
+			<path d="M0 274.47 L80.74 274.47 L80.74 264.36 L0 264.36 L0 274.47 Z" class="st9"/>
+			<text x="27.33" y="271.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA.bin</text>		</g>
+		<g id="shape54-200" v:mID="54" v:groupContext="shape" transform="translate(133.238,-127.148) rotate(-10)">
 			<title>工作表.54</title>
 			<desc>Downloading new firmware</desc>
 			<v:userDefs>
@@ -627,10 +627,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="49.2673" cy="303.07" width="98.54" height="14.7974"/>
-			<rect x="0" y="295.671" width="98.5347" height="14.7974" class="st7"/>
-			<text x="4.14" y="305.07" class="st5" v:langID="2052"><v:paragraph v:spLine="-1" v:horizAlign="1"/><v:tabList/>Downloading new firmware</text>		</g>
-		<g id="shape55-203" v:mID="55" v:groupContext="shape" transform="translate(183.491,-181.725)">
+			<v:textRect cx="49.2673" cy="267.07" width="98.54" height="14.7974"/>
+			<rect x="0" y="259.671" width="98.5347" height="14.7974" class="st7"/>
+			<text x="4.14" y="269.07" class="st5" v:langID="2052"><v:paragraph v:spLine="-1" v:horizAlign="1"/><v:tabList/>Downloading new firmware</text>		</g>
+		<g id="shape55-203" v:mID="55" v:groupContext="shape" transform="translate(165.491,-163.725)">
 			<title>工作表.55</title>
 			<desc>Firmware file header</desc>
 			<v:userDefs>
@@ -638,18 +638,18 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="39.0176" cy="305.415" width="78.04" height="10.1077"/>
-			<path d="M0 310.47 L78.04 310.47 L78.04 300.36 L0 300.36 L0 310.47 Z" class="st9"/>
-			<text x="5.16" y="307.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Firmware file header</text>		</g>
-		<g id="shape56-206" v:mID="56" v:groupContext="shape" transform="translate(375.36,434.234) rotate(180)">
+			<v:textRect cx="39.0176" cy="269.415" width="78.04" height="10.1077"/>
+			<path d="M0 274.47 L78.04 274.47 L78.04 264.36 L0 264.36 L0 274.47 Z" class="st9"/>
+			<text x="5.16" y="271.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Firmware file header</text>		</g>
+		<g id="shape56-206" v:mID="56" v:groupContext="shape" transform="translate(357.36,380.234) rotate(180)">
 			<title>工作表.56</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L29.29 310.47" class="st22"/>
+			<path d="M0 274.47 L29.29 274.47" class="st22"/>
 		</g>
-		<g id="shape57-212" v:mID="57" v:groupContext="shape" transform="translate(342.106,-191.238)">
+		<g id="shape57-212" v:mID="57" v:groupContext="shape" transform="translate(324.106,-173.238)">
 			<title>工作表.57</title>
 			<desc>Send</desc>
 			<v:userDefs>
@@ -657,19 +657,19 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="19.1756" cy="307.634" width="38.36" height="5.66929"/>
-			<rect x="0" y="304.799" width="38.3512" height="5.66929" class="st7"/>
-			<text x="11.14" y="310.03" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Send</text>		</g>
-		<g id="shape59-215" v:mID="59" v:groupContext="shape" transform="translate(374.921,-74.5759)">
+			<v:textRect cx="19.1756" cy="271.634" width="38.36" height="5.66929"/>
+			<rect x="0" y="268.799" width="38.3512" height="5.66929" class="st7"/>
+			<text x="11.14" y="274.03" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Send</text>		</g>
+		<g id="shape59-215" v:mID="59" v:groupContext="shape" transform="translate(356.921,-56.5759)">
 			<title>矩形.1136</title>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<rect x="0" y="304.415" width="47.9424" height="6.05399" class="st3"/>
+			<rect x="0" y="268.415" width="47.9424" height="6.05399" class="st3"/>
 		</g>
-		<g id="shape60-218" v:mID="60" v:groupContext="shape" transform="translate(374.921,-80.6299)">
+		<g id="shape60-218" v:mID="60" v:groupContext="shape" transform="translate(356.921,-62.6299)">
 			<title>矩形.1137</title>
 			<desc>Server</desc>
 			<v:userDefs>
@@ -678,10 +678,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="23.9712" cy="294.577" width="47.95" height="31.7835"/>
-			<rect x="0" y="278.685" width="47.9424" height="31.7835" class="st3"/>
-			<text x="13.56" y="296.98" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server</text>		</g>
-		<g id="shape61-222" v:mID="61" v:groupContext="shape" transform="translate(144.987,-54.9796) rotate(-10)">
+			<v:textRect cx="23.9712" cy="258.577" width="47.95" height="31.7835"/>
+			<rect x="0" y="242.685" width="47.9424" height="31.7835" class="st3"/>
+			<text x="13.56" y="260.98" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server</text>		</g>
+		<g id="shape61-222" v:mID="61" v:groupContext="shape" transform="translate(133.238,-37.5266) rotate(-10)">
 			<title>工作表.61</title>
 			<desc>Downloading new firmware</desc>
 			<v:userDefs>
@@ -689,34 +689,34 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="49.2673" cy="303.07" width="98.54" height="14.7974"/>
-			<rect x="0" y="295.671" width="98.5347" height="14.7974" class="st7"/>
-			<text x="4.14" y="305.07" class="st5" v:langID="2052"><v:paragraph v:spLine="-1" v:horizAlign="1"/><v:tabList/>Downloading new firmware</text>		</g>
-		<g id="shape62-225" v:mID="62" v:groupContext="shape" transform="translate(311.344,528.397) rotate(173.121)">
+			<v:textRect cx="49.2673" cy="267.07" width="98.54" height="14.7974"/>
+			<rect x="0" y="259.671" width="98.5347" height="14.7974" class="st7"/>
+			<text x="4.14" y="269.07" class="st5" v:langID="2052"><v:paragraph v:spLine="-1" v:horizAlign="1"/><v:tabList/>Downloading new firmware</text>		</g>
+		<g id="shape62-225" v:mID="62" v:groupContext="shape" transform="translate(289.032,474.656) rotate(173.121)">
 			<title>工作表.62</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L101.74 310.47" class="st11"/>
+			<path d="M0 274.47 L101.74 274.47" class="st11"/>
 		</g>
-		<g id="shape63-231" v:mID="63" v:groupContext="shape" transform="translate(183.491,434.234) rotate(180)">
+		<g id="shape63-231" v:mID="63" v:groupContext="shape" transform="translate(165.491,380.234) rotate(180)">
 			<title>工作表.63</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L12.67 310.47" class="st22"/>
+			<path d="M0 274.47 L12.67 274.47" class="st22"/>
 		</g>
-		<g id="shape64-237" v:mID="64" v:groupContext="shape" transform="translate(183.491,363.915) rotate(180)">
+		<g id="shape64-237" v:mID="64" v:groupContext="shape" transform="translate(165.491,309.915) rotate(180)">
 			<title>工作表.64</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L11.9 310.47" class="st22"/>
+			<path d="M0 274.47 L11.9 274.47" class="st22"/>
 		</g>
-		<g id="shape65-243" v:mID="65" v:groupContext="shape" v:layerMember="0;1" transform="translate(23.2914,-238.359)">
+		<g id="shape65-243" v:mID="65" v:groupContext="shape" v:layerMember="0;1" transform="translate(5.29137,-220.359)">
 			<title>页面内引用.1101</title>
 			<desc>1</desc>
 			<v:userDefs>
@@ -725,10 +725,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="297.713" width="25.52" height="25.5118"/>
-			<path d="M0 297.71 A12.7559 12.7559 0 0 1 25.51 297.71 A12.7559 12.7559 0 1 1 0 297.71 Z" class="st24"/>
-			<text x="10.73" y="300.11" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>1</text>		</g>
-		<g id="shape66-248" v:mID="66" v:groupContext="shape" v:layerMember="0;1" transform="translate(23.2914,-161.038)">
+			<v:textRect cx="12.7559" cy="261.713" width="25.52" height="25.5118"/>
+			<path d="M0 261.71 A12.7559 12.7559 0 0 1 25.51 261.71 A12.7559 12.7559 0 1 1 0 261.71 Z" class="st24"/>
+			<text x="10.73" y="264.11" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>1</text>		</g>
+		<g id="shape66-248" v:mID="66" v:groupContext="shape" v:layerMember="0;1" transform="translate(5.29137,-143.038)">
 			<title>页面内引用.1102</title>
 			<desc>2</desc>
 			<v:userDefs>
@@ -737,10 +737,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="297.713" width="25.52" height="25.5118"/>
-			<path d="M0 297.71 A12.7559 12.7559 0 0 1 25.51 297.71 A12.7559 12.7559 0 1 1 0 297.71 Z" class="st24"/>
-			<text x="10.73" y="300.11" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2</text>		</g>
-		<g id="shape67-252" v:mID="67" v:groupContext="shape" v:layerMember="0;1" transform="translate(23.2914,-79.5389)">
+			<v:textRect cx="12.7559" cy="261.713" width="25.52" height="25.5118"/>
+			<path d="M0 261.71 A12.7559 12.7559 0 0 1 25.51 261.71 A12.7559 12.7559 0 1 1 0 261.71 Z" class="st24"/>
+			<text x="10.73" y="264.11" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2</text>		</g>
+		<g id="shape67-252" v:mID="67" v:groupContext="shape" v:layerMember="0;1" transform="translate(5.29137,-61.5389)">
 			<title>页面内引用.1112</title>
 			<desc>3</desc>
 			<v:userDefs>
@@ -749,10 +749,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="297.713" width="25.52" height="25.5118"/>
-			<path d="M0 297.71 A12.7559 12.7559 0 0 1 25.51 297.71 A12.7559 12.7559 0 1 1 0 297.71 Z" class="st24"/>
-			<text x="10.73" y="300.11" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>3</text>		</g>
-		<g id="shape68-256" v:mID="68" v:groupContext="shape" transform="translate(263.583,-90.3052)">
+			<v:textRect cx="12.7559" cy="261.713" width="25.52" height="25.5118"/>
+			<path d="M0 261.71 A12.7559 12.7559 0 0 1 25.51 261.71 A12.7559 12.7559 0 1 1 0 261.71 Z" class="st24"/>
+			<text x="10.73" y="264.11" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>3</text>		</g>
+		<g id="shape68-256" v:mID="68" v:groupContext="shape" transform="translate(245.583,-72.3052)">
 			<title>工作表.68</title>
 			<desc>OTA.bin</desc>
 			<v:userDefs>
@@ -760,10 +760,10 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="40.3685" cy="305.415" width="80.74" height="10.1077"/>
-			<path d="M0 310.47 L80.74 310.47 L80.74 300.36 L0 300.36 L0 310.47 Z" class="st9"/>
-			<text x="27.33" y="307.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA.bin</text>		</g>
-		<g id="shape69-259" v:mID="69" v:groupContext="shape" transform="translate(182.713,-90.3052)">
+			<v:textRect cx="40.3685" cy="269.415" width="80.74" height="10.1077"/>
+			<path d="M0 274.47 L80.74 274.47 L80.74 264.36 L0 264.36 L0 274.47 Z" class="st9"/>
+			<text x="27.33" y="271.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>OTA.bin</text>		</g>
+		<g id="shape69-259" v:mID="69" v:groupContext="shape" transform="translate(164.713,-72.3052)">
 			<title>工作表.69</title>
 			<desc>Firmware file header</desc>
 			<v:userDefs>
@@ -771,18 +771,18 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="39.0176" cy="305.415" width="78.04" height="10.1077"/>
-			<path d="M0 310.47 L78.04 310.47 L78.04 300.36 L0 300.36 L0 310.47 Z" class="st9"/>
-			<text x="5.16" y="307.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Firmware file header</text>		</g>
-		<g id="shape70-262" v:mID="70" v:groupContext="shape" transform="translate(375.146,525.654) rotate(180)">
+			<v:textRect cx="39.0176" cy="269.415" width="78.04" height="10.1077"/>
+			<path d="M0 274.47 L78.04 274.47 L78.04 264.36 L0 264.36 L0 274.47 Z" class="st9"/>
+			<text x="5.16" y="271.81" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Firmware file header</text>		</g>
+		<g id="shape70-262" v:mID="70" v:groupContext="shape" transform="translate(357.146,471.654) rotate(180)">
 			<title>工作表.70</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L30.12 310.47" class="st22"/>
+			<path d="M0 274.47 L30.12 274.47" class="st22"/>
 		</g>
-		<g id="shape71-268" v:mID="71" v:groupContext="shape" transform="translate(341.327,-99.2513)">
+		<g id="shape71-268" v:mID="71" v:groupContext="shape" transform="translate(323.327,-81.2513)">
 			<title>工作表.71</title>
 			<desc>Send</desc>
 			<v:userDefs>
@@ -790,16 +790,16 @@
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="19.1756" cy="307.634" width="38.36" height="5.66929"/>
-			<rect x="0" y="304.799" width="38.3512" height="5.66929" class="st7"/>
-			<text x="11.14" y="310.03" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Send</text>		</g>
-		<g id="shape72-271" v:mID="72" v:groupContext="shape" transform="translate(182.713,525.087) rotate(180)">
+			<v:textRect cx="19.1756" cy="271.634" width="38.36" height="5.66929"/>
+			<rect x="0" y="268.799" width="38.3512" height="5.66929" class="st7"/>
+			<text x="11.14" y="274.03" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Send</text>		</g>
+		<g id="shape72-271" v:mID="72" v:groupContext="shape" transform="translate(164.713,471.087) rotate(180)">
 			<title>工作表.72</title>
 			<v:userDefs>
 				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
 				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
 			</v:userDefs>
-			<path d="M0 310.47 L11.9 310.47" class="st22"/>
+			<path d="M0 274.47 L11.9 274.47" class="st22"/>
 		</g>
 	</g>
 </svg>
