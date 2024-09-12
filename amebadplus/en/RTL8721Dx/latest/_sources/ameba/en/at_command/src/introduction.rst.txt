@@ -33,14 +33,14 @@ You can run ``make menuconfig`` to choose UART mode or LOGUART mode. The procedu
    // The chip type you choose, e.g. amebasmart
    cd source/<ameba_type>
    make menuconfig
-   // ...
+   // ……
 
 .. figure:: ../figures/general_config.png
    :scale: 60%
    :align: center
    :name: general_config
 
-   Mode selection
+   Choice mode
 
 Some hardwares are inquired at first.
 
@@ -57,7 +57,7 @@ Some hardwares are inquired at first.
 
 In case of LOGUART mode, the input and response of AT commands are shown in the same port.
 
-.. figure:: ../figures/loguart_mode.svg
+.. figure:: ../figures/loguart.png
    :scale: 90%
    :align: center
 
@@ -66,7 +66,7 @@ In case of LOGUART mode, the input and response of AT commands are shown in the 
 
 In case of UART mode, the input and response of AT commands can be separated from the debug log, through the UART port, making it easier for users to view the execution results of AT commands more intuitively.
 
-.. figure:: ../figures/uart_mode.svg
+.. figure:: ../figures/uart.png
    :scale: 90%
    :align: center
 
@@ -81,7 +81,7 @@ For different ICs, the default UART input and output ports are listed below.
    +-------------+---------+---------+-------------------+
    | IC          | UART TX | UART RX | Default baud rate |
    +=============+=========+=========+===================+
-   | AmebaSmart  | PA 3    | PA_2    | 38400             |
+   | AmebaSmart  | PA_3    | PA_2    | 38400             |
    +-------------+---------+---------+-------------------+
    | AmebaLite   | PA_28   | PA_29   | 38400             |
    +-------------+---------+---------+-------------------+
@@ -91,7 +91,7 @@ For different ICs, the default UART input and output ports are listed below.
    +-------------+---------+---------+-------------------+
 
 
-You can modify these values in :file:`{sdk}/source/component/at_cmd/at_intf_uart.h`.
+You can modify these values in :file:`work/ameba_sdk/source/component/at_cmd/at_intf_uart.h`.
 
 1. Modify the baud rate
 
@@ -120,7 +120,7 @@ You can modify these values in :file:`{sdk}/source/component/at_cmd/at_intf_uart
 
 Command Description
 --------------------------------------
-Command Format
+Command format
 ~~~~~~~~~~~~~~
 
 The current format of the supported AT command set starts with two capital letters ``AT`` (abbreviation of attention), called the start characters, followed by a ``+``, then by the command name.
@@ -166,7 +166,7 @@ For example:
 
 In this command, the 1st parameter named *param1* is mandatory, the 2nd parameter named *param2*, and the 3rd parameter named *param3* are optional.
 
-Escapes Character
+Escapes character
 ~~~~~~~~~~~~~~~~~~
 Especially, in several AT commands, if you really need let one or more comma(s) be part(s) of a parameter, it is recommended to use escapes character ``\`` instead.
 Furthermore, the backslash itself is expressed in escapes character ``\\``.
@@ -181,7 +181,7 @@ For example:
 In this command, there are 3 parameters at all, the 2nd parameter is a string *head,tail* which includes a comma.
 In this case, the comma inside *head,tail* will not be considered as a segmentation of parameters, but as a part of string.
 And, the 3rd parameter is a string *head\\tail* including a backslash. Single backslash is illegal here, in other words, single backslash must be followed by a comma or another backslash in these AT commands.
-For the other AT commands which do not need use escapes character, the comma will always be considered as a segmentation, and single backslash is allowed as a common character.
+For the other AT commands not need use escapes character, the comma will always be considered as a segmentation, and single backslash is allowed as a common character.
 
 
 .. table:: Commands with escapes character
@@ -189,7 +189,7 @@ For the other AT commands which do not need use escapes character, the comma wil
    :widths: auto
 
    +--------------+-------------------------------------+
-   | AT command   | Parameter(s) with escapes character |
+   | AT COMMAND   | Parameter(s) with escapes character |
    +==============+=====================================+
    | AT+MQTTSUB   | <topic>                             |
    +--------------+-------------------------------------+
@@ -200,8 +200,8 @@ For the other AT commands which do not need use escapes character, the comma wil
    | AT+SKTSEND   | <data>                              |
    +--------------+-------------------------------------+
 
-Command Length
-~~~~~~~~~~~~~~~
+Command length
+~~~~~~~~~~~~~~
 
 Each AT command must not exceed a length limit, otherwise, the excess part will be ignored.
 
@@ -314,7 +314,7 @@ The AT commands supported now are listed in the following table.
    +------------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------+
 
 
-Building Image
+Build image
 ----------------------
 Preparation
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -337,7 +337,7 @@ If somehow failed, type ``$make clean`` to clean, then redo the make procedure.
 
 After building successfully, the image files can be found at ``{ameba_type}`` directory.
 
-Downloading Image
+Download image
 ----------------------------
 There are two ways to download image to Flash:
 
