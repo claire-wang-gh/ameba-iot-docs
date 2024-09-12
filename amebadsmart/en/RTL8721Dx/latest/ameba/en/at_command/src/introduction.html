@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; amebadplus_docs  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/toggleprompt.js?v=d7ede5d2"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Common AT Commands" href="common_at_command.html" />
+    <link rel="prev" title="AT Command" href="index.html" />  
+     
+  <script type="text/javascript" src="../../../../_static/js/selector.js"></script>
+<style>
+      .wy-nav-content {
+      max-width: 1000px; /* 设置最大宽度 */
+      }
+</style>
+
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            amebadplus_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">AT Command</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-description">Command Description</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#command-format">Command format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#escapes-character">Escapes character</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command-length">Command length</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#at-command-list">AT Command List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-image">Build image</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preparation">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building">Building</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#download-image">Download image</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common_at_command.html">Common AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wifi_at_command.html">Wi-Fi AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mqtt_at_command.html">MQTT AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcp_ip_at_command.html">TCP/IP AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bluetooth_at_command.html">Bluetooth AT Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../application_note/index.html">Application Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_tools/index.html">Software Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mp_tools/src/index.html">MP Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">amebadplus_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">AT Command</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/ameba/en/at_command/src/introduction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="at-command"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>This article describes the role, usage, version information, of AT command.
+Users can perform some basic IoT applications, such as Wi-Fi, Bluetooth, TCP/IP, MQTT and other operations, with AT command.</p>
+<p>We set the module as the slave, and the PC as the master. The master can send AT commands to the slave.
+While receiving the AT command, the slave recognizes the validity of the command. If it is a valid command, it returns the corresponding AT response.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Regarding the different chips in slave module, we commonly call them AmebaLite, AmebaGreen2, AmebaSmart, and AmebaDPlus.
+For their usages, the hardware connections are generally similar, but the interfaces used are slightly different.</p>
+<p>There are two currently used AT command input and response methods, which can be called LOGUART mode and UART mode.</p>
+<ul class="simple">
+<li><p>In LOGUART mode, the log of the program is in the same window with the input and response of the AT command, but the connection of the device is relatively simple, the module can be directly connected to the PC by USB cable.</p></li>
+<li><p>In UART mode, the log of program, input and response of AT commands, are presented in their respective windows, so that the results of AT commands can be displayed to the user more clearly, which can facilitate some automated testing.</p></li>
+</ul>
+<p>However, the device connection is relatively complicated, it requires an additional designated UART port to be connected to the PC through USB2TTL cable.</p>
+<p>You can run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> to choose UART mode or LOGUART mode. The procedure is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Your SDK direction
+cd $&lt;sdk&gt;
+// The chip type you choose, e.g. amebasmart
+cd source/&lt;ameba_type&gt;
+make menuconfig
+// ……
+</pre></div>
+</div>
+<figure class="align-center" id="general-config">
+<a class="reference internal image-reference" href="../../../../_images/general_config.png"><img alt="../../../../_images/general_config.png" src="../../../../_images/general_config.png" style="width: 348.59999999999997px; height: 251.39999999999998px;" /></a>
+<figcaption>
+<p><span class="caption-text">Choice mode</span><a class="headerlink" href="#general-config" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Some hardwares are inquired at first.</p>
+<ul class="simple">
+<li><p>Ameba board: As a slave module.</p></li>
+<li><p>PC (or other master device): Download image, input AT commands, observe the response of AT commands.</p></li>
+<li><p>USB cables of type-C: Connect module to PC (or other master device).</p></li>
+<li><p>Several dupont lines: Connect module to USB2TTL in case of UART mode.</p></li>
+<li><p>USB2TTL: Used in case of UART mode, convert the USB signal into TTL signal, or vice versa.</p></li>
+</ul>
+<p>In case of LOGUART mode, the input and response of AT commands are shown in the same port.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/loguart.png"><img alt="../../../../_images/loguart.png" src="../../../../_images/loguart.png" style="width: 579.6px; height: 128.70000000000002px;" /></a>
+<figcaption>
+<p><span class="caption-text">LOGUART mode</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>In case of UART mode, the input and response of AT commands can be separated from the debug log, through the UART port, making it easier for users to view the execution results of AT commands more intuitively.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/uart.png"><img alt="../../../../_images/uart.png" src="../../../../_images/uart.png" style="width: 594.9px; height: 270.90000000000003px;" /></a>
+<figcaption>
+<p><span class="caption-text">UART mode</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>For different ICs, the default UART input and output ports are listed below.</p>
+<table class="docutils align-default" id="id3" style="width: 100%">
+<caption><span class="caption-text">Default UART port and baud rates for chips</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>IC</p></th>
+<th class="head"><p>UART TX</p></th>
+<th class="head"><p>UART RX</p></th>
+<th class="head"><p>Default baud rate</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AmebaSmart</p></td>
+<td><p>PA_3</p></td>
+<td><p>PA_2</p></td>
+<td><p>38400</p></td>
+</tr>
+<tr class="row-odd"><td><p>AmebaLite</p></td>
+<td><p>PA_28</p></td>
+<td><p>PA_29</p></td>
+<td><p>38400</p></td>
+</tr>
+<tr class="row-even"><td><p>AmebaDPlus</p></td>
+<td><p>PA_26</p></td>
+<td><p>PA_27</p></td>
+<td><p>38400</p></td>
+</tr>
+<tr class="row-odd"><td><p>AmebaGreen2</p></td>
+<td><p>PA_4</p></td>
+<td><p>PA_5</p></td>
+<td><p>38400</p></td>
+</tr>
+</tbody>
+</table>
+<p>You can modify these values in <code class="file docutils literal notranslate"><span class="pre">work/ameba_sdk/source/component/at_cmd/at_intf_uart.h</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Modify the baud rate</p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define UART_BAUD   38400</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Modify the UART ports for chips</p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#if defined (CONFIG_AMEBASMART)</span>
+<span class="cp">#define UART_TX     _PA_3 </span><span class="c1">// UART0 TX</span>
+<span class="cp">#define UART_RX     _PA_2 </span><span class="c1">// UART0 RX</span>
+<span class="cp">#elif defined (CONFIG_AMEBALITE)</span>
+<span class="cp">#define UART_TX     _PA_28 </span><span class="c1">// UART TX</span>
+<span class="cp">#define UART_RX     _PA_29 </span><span class="c1">// UART RX</span>
+<span class="cp">#elif defined (CONFIG_AMEBADPLUS)</span>
+<span class="cp">#define UART_TX     _PA_26 </span><span class="c1">// UART TX</span>
+<span class="cp">#define UART_RX     _PA_27 </span><span class="c1">// UART RX</span>
+<span class="cp">#elif defined (CONFIG_AMEBAGREEN2)</span>
+<span class="cp">#define UART_TX     _PA_4 </span><span class="c1">// UART TX</span>
+<span class="cp">#define UART_RX     _PA_5 </span><span class="c1">// UART RX</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+<section id="command-description">
+<h2>Command Description<a class="headerlink" href="#command-description" title="Link to this heading"></a></h2>
+<section id="command-format">
+<h3>Command format<a class="headerlink" href="#command-format" title="Link to this heading"></a></h3>
+<p>The current format of the supported AT command set starts with two capital letters <code class="docutils literal notranslate"><span class="pre">AT</span></code> (abbreviation of attention), called the start characters, followed by a <code class="docutils literal notranslate"><span class="pre">+</span></code>, then by the command name.
+If there are several parameters more, it will be followed by an <code class="docutils literal notranslate"><span class="pre">=</span></code>, then by a parameter list. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">COMMAND</span><span class="o">=</span><span class="n">parameter1</span><span class="p">,</span> <span class="n">parameter2</span>
+</pre></div>
+</div>
+<p>In this case, the first two letters <code class="docutils literal notranslate"><span class="pre">AT</span></code> are the start characters, indicating that the current string can be recognized as AT command, and <code class="docutils literal notranslate"><span class="pre">+</span></code> is used to separate the start characters and subsequent commands.
+<code class="docutils literal notranslate"><span class="pre">COMMAND</span></code> is the specific command name, to be executed right now.
+This command requires some parameters. It contains two parameters in this example: <em>parameter1</em> and <em>parameter2</em>. After entering this AT command, continue to press Enter (means newline) to start executing this AT command.</p>
+<p>After receiving the AT command, the slave judges whether it is a valid command at first.
+If it is considered as an invalid command (not in the AT command set), nothing will be performed.
+Otherwise, it will be executed based on the input command and its parameters, if present.
+When the command is successfully executed, the command name plus an <strong>OK</strong> mark will generally be returned.
+When the command execution fails, the command name plus an <strong>ERROR</strong> mark will generally be returned, followed by an error code.</p>
+<p>As in the above example, after the command executed, you can observe the result on the host side. If you see <strong>OK</strong> returned, it means the command has been executed successfully.
+therwise, <strong>ERROR</strong> is returned, based on the subsequent error code, you can inquiry the error code corresponding to each command to find out what it means.</p>
+<p>Sometimes, several parameters in AT command may be ignored, in this case, one or more comma(s) should be input inside parameters.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">COMMAND</span><span class="o">=</span><span class="n">parameter1</span><span class="p">,</span> <span class="p">,</span> <span class="n">parameter3</span>
+</pre></div>
+</div>
+<p>In this command above, there is an invisible <em>parameter2</em> between two commas, in this case, the <em>parameter2</em> is considered as a null string whose length equals to zero byte.
+In this text, when introducing the parameter list of a certain AT command, angle brackets <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> are added to indicate the name of the parameter, and square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> are added to indicate that the parameter is optional.
+Different parameters are separated by commas.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">COMMAND</span><span class="o">=&lt;</span><span class="n">param1</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">param2</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">param3</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this command, the 1st parameter named <em>param1</em> is mandatory, the 2nd parameter named <em>param2</em>, and the 3rd parameter named <em>param3</em> are optional.</p>
+</section>
+<section id="escapes-character">
+<h3>Escapes character<a class="headerlink" href="#escapes-character" title="Link to this heading"></a></h3>
+<p>Especially, in several AT commands, if you really need let one or more comma(s) be part(s) of a parameter, it is recommended to use escapes character <code class="docutils literal notranslate"><span class="pre">\</span></code> instead.
+Furthermore, the backslash itself is expressed in escapes character <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+</span><span class="n">COMMAND</span><span class="o">=</span><span class="n">parameter1</span><span class="p">,</span><span class="n">head</span>\<span class="p">,</span><span class="n">tail</span><span class="p">,</span><span class="n">head</span>\\<span class="n">tail</span>
+</pre></div>
+</div>
+<p>In this command, there are 3 parameters at all, the 2nd parameter is a string <em>head,tail</em> which includes a comma.
+In this case, the comma inside <em>head,tail</em> will not be considered as a segmentation of parameters, but as a part of string.
+And, the 3rd parameter is a string <em>head\tail</em> including a backslash. Single backslash is illegal here, in other words, single backslash must be followed by a comma or another backslash in these AT commands.
+For the other AT commands not need use escapes character, the comma will always be considered as a segmentation, and single backslash is allowed as a common character.</p>
+<table class="docutils align-default" id="id4" style="width: 100%">
+<caption><span class="caption-text">Commands with escapes character</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>AT COMMAND</p></th>
+<th class="head"><p>Parameter(s) with escapes character</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AT+MQTTSUB</p></td>
+<td><p>&lt;topic&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+MQTTUNSUB</p></td>
+<td><p>&lt;topic&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+MQTTPUB</p></td>
+<td><p>&lt;topic&gt;,&lt;msg&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+SKTSEND</p></td>
+<td><p>&lt;data&gt;</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="command-length">
+<h3>Command length<a class="headerlink" href="#command-length" title="Link to this heading"></a></h3>
+<p>Each AT command must not exceed a length limit, otherwise, the excess part will be ignored.</p>
+<p>There are 2 types of length limit. When longer command format is enabled, the length limit is 511 bytes, otherwise (shorter command format), the length limit is 126 bytes.
+When the AT command using escapes character, the escapes characters such as ‘<code class="docutils literal notranslate"><span class="pre">\</span></code> or <code class="docutils literal notranslate"><span class="pre">\\</span></code> should be regarded as 2 bytes.
+Especially, the longer command format is not available for AmebaGreen2 yet.</p>
+<p>You can modify the length limit by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> when compiling the SDK. If you select the option <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">Longer</span> <span class="pre">CMD</span></code>, the length limit will be larger.</p>
+</section>
+</section>
+<section id="at-command-list">
+<h2>AT Command List<a class="headerlink" href="#at-command-list" title="Link to this heading"></a></h2>
+<p>The AT commands supported now are listed in the following table.</p>
+<table class="docutils align-default" id="id5" style="width: 100%">
+<caption><span class="caption-text">AT commands list</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>AT Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="11"><p><a class="reference internal" href="common_at_command.html#common-at-commands"><span class="std std-ref">Common AT Commands</span></a></p></td>
+<td><p><a class="reference internal" href="common_at_command.html#common-at-test"><span class="std std-ref">AT+TEST</span></a></p></td>
+<td><p>Test AT command ready</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="common_at_command.html#common-at-list"><span class="std std-ref">AT+LIST</span></a></p></td>
+<td><p>Print all AT commands</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="common_at_command.html#common-at-otaclear"><span class="std std-ref">AT+OTACLEAR</span></a></p></td>
+<td><p>Clear the APP image OTA2 signature</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="common_at_command.html#common-at-otarecover"><span class="std std-ref">AT+OTARECOVER</span></a></p></td>
+<td><p>Recover the APP image OTA2 signature</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="common_at_command.html#common-at-cpuload"><span class="std std-ref">AT+CPULOAD</span></a></p></td>
+<td><p>Get the CPU load periodically</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="common_at_command.html#common-at-rst"><span class="std std-ref">AT+RST</span></a></p></td>
+<td><p>Restart the module</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="common_at_command.html#common-at-state"><span class="std std-ref">AT+STATE</span></a></p></td>
+<td><p>List all running tasks, and current heap</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="common_at_command.html#common-at-gmr"><span class="std std-ref">AT+GMR</span></a></p></td>
+<td><p>Show the release version and date</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="common_at_command.html#common-at-log"><span class="std std-ref">AT+LOG</span></a></p></td>
+<td><p>Get set or clear the log level</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="common_at_command.html#common-at-rreg"><span class="std std-ref">AT+RREG</span></a></p></td>
+<td><p>Read the common register value</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="common_at_command.html#common-at-wreg"><span class="std std-ref">AT+WREG</span></a></p></td>
+<td><p>Write data into register</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="16"><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-commands"><span class="std std-ref">Wi-Fi AT Commands</span></a></p></td>
+<td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlconn"><span class="std std-ref">AT+WLCONN</span></a></p></td>
+<td><p>Connect to AP (STA mode)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wldisconn"><span class="std std-ref">AT+WLDISCONN</span></a></p></td>
+<td><p>Disconnect from AP</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlstaticip"><span class="std std-ref">AT+WLSTATICIP</span></a></p></td>
+<td><p>Set static IP for station</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-ping"><span class="std std-ref">AT+PING</span></a></p></td>
+<td><p>PING a domain or IP address</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-iperf"><span class="std std-ref">AT+IPERF</span></a></p></td>
+<td><p>IPERF test for TCP or UDP</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-iperf3"><span class="std std-ref">AT+IPERF3</span></a></p></td>
+<td><p>IPERF3 test for TCP</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlscan"><span class="std std-ref">AT+WLSCAN</span></a></p></td>
+<td><p>Scan the Wi-Fi</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlrssi"><span class="std std-ref">AT+WLRSSI</span></a></p></td>
+<td><p>Get the RSSI of connected AP currently</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlstartap"><span class="std std-ref">AT+WLSTARTAP</span></a></p></td>
+<td><p>Start this module as a Wi-Fi AP</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlstopap"><span class="std std-ref">AT+WLSTOPAP</span></a></p></td>
+<td><p>Stop this module as a Wi-Fi AP</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlstate"><span class="std std-ref">AT+WLSTATE</span></a></p></td>
+<td><p>Get the Wi-Fi state of module, maybe as an AP or a device</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlreconn"><span class="std std-ref">AT+WLRECONN</span></a></p></td>
+<td><p>Enable or disable Wi-Fi auto-connection</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlpromisc"><span class="std std-ref">AT+WLPROMISC</span></a></p></td>
+<td><p>Enable or disable Wi-Fi promisc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wldbg"><span class="std std-ref">AT+WLDBG</span></a></p></td>
+<td><p>Test Wi-Fi iwpriv command</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlwps"><span class="std std-ref">AT+WLWPS</span></a></p></td>
+<td><p>Test Wi-Fi wps command</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="wifi_at_command.html#wi-fi-at-wlps"><span class="std std-ref">AT+WLPS</span></a></p></td>
+<td><p>Enable or disable lps, ips</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="9"><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-commands"><span class="std std-ref">MQTT AT Commands</span></a></p></td>
+<td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttopen"><span class="std std-ref">AT+MQTTOPEN</span></a></p></td>
+<td><p>Create an MQTT entity</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttclose"><span class="std std-ref">AT+MQTTCLOSE</span></a></p></td>
+<td><p>Delete an MQTT entity</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttconn"><span class="std std-ref">AT+MQTTCONN</span></a></p></td>
+<td><p>Connect to host server</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttdisconn"><span class="std std-ref">AT+MQTTDISCONN</span></a></p></td>
+<td><p>Disconnect from host server</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttsub"><span class="std std-ref">AT+MQTTSUB</span></a></p></td>
+<td><p>Subscribe a topic from host server</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttunsub"><span class="std std-ref">AT+MQTTUNSUB</span></a></p></td>
+<td><p>Unsubscribe a topic from host server</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttpub"><span class="std std-ref">AT+MQTTPUB</span></a></p></td>
+<td><p>Publish a message for specific topic</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttcfg"><span class="std std-ref">AT+MQTTCFG</span></a></p></td>
+<td><p>Configure the parameters of MQTT entity</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mqtt_at_command.html#mqtt-at-mqttreset"><span class="std std-ref">AT+MQTTRESET</span></a></p></td>
+<td><p>Reset all MQTT entities</p></td>
+</tr>
+<tr class="row-even"><td rowspan="8"><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-commands"><span class="std std-ref">TCP/IP AT Commands</span></a></p></td>
+<td><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-sktserver"><span class="std std-ref">AT+SKTSERVER</span></a></p></td>
+<td><p>Start as a socket server</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-sktclient"><span class="std std-ref">AT+SKTCLIENT</span></a></p></td>
+<td><p>Start as a socket client</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-sktdel"><span class="std std-ref">AT+SKTDEL</span></a></p></td>
+<td><p>Stop a (all) socket server(s) or client(s)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-skttt"><span class="std std-ref">AT+SKTTT</span></a></p></td>
+<td><p>Enable transparent transfer mode</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-sktsend"><span class="std std-ref">AT+SKTSEND</span></a></p></td>
+<td><p>Send socket message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-sktread"><span class="std std-ref">AT+SKTREAD</span></a></p></td>
+<td><p>Receive socket message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-sktrecvcfg"><span class="std std-ref">AT+SKTRECVCFG</span></a></p></td>
+<td><p>Configure socket receiving</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="tcp_ip_at_command.html#tcp-ip-at-sktstate"><span class="std std-ref">AT+SKTSTATE</span></a></p></td>
+<td><p>Get the socket state currently</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bluetooth_at_command.html#bluetooth-at-commands"><span class="std std-ref">Bluetooth AT Commands</span></a></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="build-image">
+<h2>Build image<a class="headerlink" href="#build-image" title="Link to this heading"></a></h2>
+<section id="preparation">
+<h3>Preparation<a class="headerlink" href="#preparation" title="Link to this heading"></a></h3>
+<p>Users can also build images with <code class="docutils literal notranslate"><span class="pre">{sdk}</span></code> by self. For detailed building procedure, please refer to the AN documents for different type of chips.</p>
+</section>
+<section id="building">
+<h3>Building<a class="headerlink" href="#building" title="Link to this heading"></a></h3>
+<p>After preparations above, user can build images in the <code class="docutils literal notranslate"><span class="pre">{sdk}</span></code> directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ${sdk}
+// The &lt;ameba_type&gt; is different for chips
+cd source/&lt;ameba_type&gt;
+// make menuconfig is optional, if you need modify some options
+make menuconfig
+make all
+</pre></div>
+</div>
+<p>If somehow failed, type <code class="docutils literal notranslate"><span class="pre">$make</span> <span class="pre">clean</span></code> to clean, then redo the make procedure.</p>
+<p>After building successfully, the image files can be found at <code class="docutils literal notranslate"><span class="pre">{ameba_type}</span></code> directory.</p>
+</section>
+</section>
+<section id="download-image">
+<h2>Download image<a class="headerlink" href="#download-image" title="Link to this heading"></a></h2>
+<p>There are two ways to download image to Flash:</p>
+<ol class="arabic simple">
+<li><p>Image Tool, a software provided by Realtek (recommended).</p></li>
+<li><p>GDB Server, mainly used for GDB debug user case.</p></li>
+</ol>
+<p>In this section, we will introduce the first one.</p>
+<p>The Image Tool is the official image download tool developed by Realtek for Ameba series SoC. It can be used to download images to the Flash of device through the UART download interface.</p>
+<p>When you open the image tool, it is shown as the following figure.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/Download_image.png"><img alt="../../../../_images/Download_image.png" src="../../../../_images/Download_image.png" style="width: 663.5999999999999px; height: 555.8px;" /></a>
+<figcaption>
+<p><span class="caption-text">Image Tool</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Device profiles provide the necessary device information required for image download, with the naming rules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">SoC</span> <span class="n">name</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">OS</span> <span class="nb">type</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">Flash</span> <span class="nb">type</span><span class="o">&gt;</span><span class="p">[</span><span class="n">_</span><span class="o">&lt;</span><span class="n">Extra</span> <span class="n">info</span><span class="o">&gt;</span><span class="p">]</span><span class="o">.</span><span class="n">rdev</span>
+</pre></div>
+</div>
+<p>For different type of chips, you should select the corresponding rdev file before downloading image to flash. You can click the <span class="menuselection">File &gt; Open</span> to select corresponding rdev file. Then, select the corresponding image files.</p>
+<p>Bofore downloading image, the chip should enter download mode at first.
+You can press and hold the <span class="guilabel">DOWNLOAD</span> button on chip, then press the <span class="guilabel">CHIP_EN</span> button, the chip will enter download mode after you loosen them both.</p>
+<p>Then connect the chip module to PC with USB cable, and press the <span class="guilabel">DOWNLOAD</span> button of Image Tool to start downloading the image files.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="AT Command" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="common_at_command.html" class="btn btn-neutral float-right" title="Common AT Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Realsil.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
