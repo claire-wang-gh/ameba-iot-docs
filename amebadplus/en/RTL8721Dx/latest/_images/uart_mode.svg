@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 uart_mode.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="3.49467in" height="1.95713in"
+		viewBox="0 0 251.616 140.913" xml:space="preserve" color-interpolation-filters="sRGB" class="st10">
+	<v:documentProperties v:langID="2052" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {fill:#000000}
+		.st4 {stroke:#000000;stroke-dasharray:5.25,3.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st5 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st6 {font-size:1em}
+		.st7 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st8 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st9 {fill:#ffffff;stroke:none;stroke-linecap:butt}
+		.st10 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.375,-89.7324)">
+			<title>工作表.1</title>
+			<desc>Module</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="35.4331" cy="125.165" width="70.87" height="31.4961"/>
+			<rect x="0" y="109.417" width="70.8661" height="31.4961" class="st1"/>
+			<text x="22.79" y="127.57" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Module</text>		</g>
+		<g id="group2-4" transform="translate(180.375,-70.0473)" v:mID="2" v:groupContext="group">
+			<v:custProps>
+				<v:cp v:nameU="AssetNumber" v:lbl="资产号" v:prompt="" v:type="0" v:format="" v:sortKey="Asset" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="SerialNumber" v:lbl="序列号" v:prompt="" v:type="0" v:format="" v:sortKey="Asset" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="Location" v:lbl="位置" v:prompt="" v:type="0" v:format="" v:sortKey="Asset" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="Building" v:lbl="构建" v:prompt="" v:type="0" v:format="" v:sortKey="Asset" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="Room" v:lbl="空间" v:prompt="" v:type="0" v:format="" v:sortKey="Asset" v:invis="false" v:ask="false"
+						v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="Manufacturer" v:lbl="制造商" v:prompt="" v:type="0" v:format="" v:sortKey="Equipment" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="ProductNumber" v:lbl="产品编号" v:prompt="" v:type="0" v:format="" v:sortKey="Equipment" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="PartNumber" v:lbl="部件号" v:prompt="" v:type="0" v:format="" v:sortKey="Equipment" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="ProductDescription" v:lbl="产品说明" v:prompt="" v:type="0" v:format="" v:sortKey="Equipment"
+						v:invis="false" v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="NetworkName" v:lbl="网络名称" v:prompt="" v:type="0" v:format="" v:sortKey="Network" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="IPAddress" v:lbl="IP 地址" v:prompt="" v:type="0" v:format="" v:sortKey="Network" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="SubnetMask" v:lbl="子网掩码" v:prompt="" v:type="0" v:format="" v:sortKey="Network" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="AdminInterface" v:lbl="管理接口" v:prompt="" v:type="0" v:format="" v:sortKey="Network" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="NumberofPorts" v:lbl="端口数目" v:prompt="" v:type="0" v:format="" v:sortKey="Network" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="CommunityString" v:lbl="团体字符串" v:prompt="" v:type="0" v:format="" v:sortKey="Network"
+						v:invis="false" v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="NetworkDescription" v:lbl="网络说明" v:prompt="" v:type="0" v:format="" v:sortKey="Network"
+						v:invis="false" v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="MACAddress" v:lbl="MAC 地址" v:prompt="" v:type="0" v:format="" v:sortKey="Network" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="CPU" v:lbl="CPU" v:prompt="" v:type="0" v:format="" v:sortKey="Workstation" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="Memory" v:lbl="内存" v:prompt="" v:type="0" v:format="" v:sortKey="Workstation" v:invis="false"
+						v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="OperatingSystem" v:lbl="操作系统" v:prompt="" v:type="0" v:format="" v:sortKey="Workstation"
+						v:invis="false" v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="HardDriveSize" v:lbl="硬盘容量" v:prompt="" v:type="0" v:format="" v:sortKey="Workstation"
+						v:invis="false" v:ask="false" v:langID="2052" v:cal="0"/>
+				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(设备)"/>
+				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(计算机)"/>
+				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(笔记本电脑)"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
+				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
+				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
+			</v:userDefs>
+			<title>笔记本电脑</title>
+			<g id="shape3-5" v:mID="3" v:groupContext="shape" transform="translate(0,-6.56146)">
+				<title>工作表.3</title>
+				<path d="M0 140.91 L70.87 140.91 L70.87 133.49 L64.8 123.23 L5.71 123.23 L0 133.49 L0 140.91 ZM64.99 121.54 L64.99
+							 89.1 C64.99 85.82 62.34 83.17 59.06 83.17 L11.64 83.17 C8.37 83.17 5.71 85.82 5.71 89.1 L5.71 121.54
+							 L64.99 121.54 Z" class="st1"/>
+			</g>
+			<g id="shape4-7" v:mID="4" v:groupContext="shape" transform="translate(6.97248,-14.8259)">
+				<title>工作表.4</title>
+				<v:userDefs>
+					<v:ud v:nameU="SurroundingRegionColor" v:prompt="" v:val="VT0(1):26"/>
+				</v:userDefs>
+				<path d="M2.86 135.8 L0 140.91 L56.8 140.91 L53.93 135.8 L2.86 135.8 Z" class="st3"/>
+			</g>
+			<g id="shape5-10" v:mID="5" v:groupContext="shape" transform="translate(11.4259,-32.1061)">
+				<title>工作表.5</title>
+				<v:userDefs>
+					<v:ud v:nameU="SurroundingRegionColor" v:prompt="" v:val="VT0(1):26"/>
+				</v:userDefs>
+				<rect x="0" y="114.263" width="48.0152" height="26.6509" class="st1"/>
+			</g>
+		</g>
+		<g id="shape6-12" v:mID="6" v:groupContext="shape" transform="translate(71.2411,-105.677)">
+			<title>工作表.6</title>
+			<desc>Download image Debug logs</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="57.4016" cy="140.913" width="114.81" height="0"/>
+			<path d="M0 140.91 L114.8 140.91" class="st4"/>
+			<rect v:rectContext="textBkgnd" x="30.019" y="131.314" width="54.7649" height="19.1997" class="st5"/>
+			<text x="30.02" y="138.51" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Download image<v:newlineChar/><tspan
+						x="39.49" dy="1.2em" class="st6">Debug logs</tspan></text>		</g>
+		<g id="shape7-18" v:mID="7" v:groupContext="shape" transform="translate(71.2411,-0.375)">
+			<title>工作表.7</title>
+			<desc>USB2TTL</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="54.5669" cy="125.165" width="109.14" height="31.4961"/>
+			<rect x="0" y="109.417" width="109.134" height="31.4961" class="st1"/>
+			<text x="40.38" y="127.57" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>USB2TTL</text>		</g>
+		<g id="shape8-21" v:mID="8" v:groupContext="shape" transform="translate(35.8081,-16.123)">
+			<title>工作表.8</title>
+			<path d="M0 67.3 L0 140.91 L35.43 140.91" class="st7"/>
+		</g>
+		<g id="shape9-24" v:mID="9" v:groupContext="shape" transform="translate(180.375,-16.123)">
+			<title>工作表.9</title>
+			<path d="M0 140.91 L35.43 140.91 L35.43 80.06" class="st7"/>
+		</g>
+		<g id="shape10-27" v:mID="10" v:groupContext="shape" transform="translate(11.7136,-48.6757)">
+			<title>工作表.10</title>
+			<desc>Tx/Rx/GND</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="24.0945" cy="136.662" width="48.19" height="8.50394"/>
+			<rect x="0" y="132.41" width="48.189" height="8.50394" class="st8"/>
+			<rect v:rectContext="textBkgnd" x="5.85242" y="131.862" width="36.4845" height="9.59985" class="st5"/>
+			<text x="5.85" y="139.06" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Tx/Rx/GND</text>		</g>
+		<g id="shape11-31" v:mID="11" v:groupContext="shape" transform="translate(168.402,-48.6757)">
+			<title>工作表.11</title>
+			<desc>AT input and response</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="41.4194" cy="136.662" width="82.84" height="8.50394"/>
+			<rect x="0" y="132.41" width="82.8388" height="8.50394" class="st8"/>
+			<rect v:rectContext="textBkgnd" x="4.04077" y="131.862" width="74.7573" height="9.59985" class="st9"/>
+			<text x="4.04" y="139.06" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>AT input and  response</text>		</g>
+	</g>
+</svg>
